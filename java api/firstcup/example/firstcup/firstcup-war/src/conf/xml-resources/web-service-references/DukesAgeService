@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?><definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://webservice.firstcup.sun.com/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://webservice.firstcup.sun.com/" name="DukesAgeService">
+  <types>
+    <xsd:schema>
+      <xsd:import namespace="http://webservice.firstcup.sun.com/" schemaLocation="http://127.0.0.1:8080/DukesAgeService/DukesAgeService/__container$publishing$subctx/WEB-INF/wsdl/DukesAgeService_schema1.xsd" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/"/>
+    </xsd:schema>
+  </types>
+  <message name="getDukesAge">
+    <part name="parameters" element="tns:getDukesAge"/>
+  </message>
+  <message name="getDukesAgeResponse">
+    <part name="parameters" element="tns:getDukesAgeResponse"/>
+  </message>
+  <portType name="DukesAge">
+    <operation name="getDukesAge">
+      <input message="tns:getDukesAge"/>
+      <output message="tns:getDukesAgeResponse"/>
+    </operation>
+  </portType>
+  <binding name="DukesAgePortBinding" type="tns:DukesAge">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+    <operation name="getDukesAge">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+  </binding>
+  <service name="DukesAgeService">
+    <port name="DukesAgePort" binding="tns:DukesAgePortBinding">
+      <soap:address location="http://127.0.0.1:8080/DukesAgeService/DukesAgeService" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/"/>
+    </port>
+  </service>
+</definitions>

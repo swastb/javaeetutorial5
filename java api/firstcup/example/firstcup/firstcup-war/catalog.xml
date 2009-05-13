@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+<system systemId="http://localhost:8080/DukesAgeService/DukesAgeService?wsdl" uri="src/conf/xml-resources/web-service-references/DukesAgeService/wsdl/localhost_8080/DukesAgeService/DukesAgeService.wsdl"/>
+<system systemId="http://129.150.27.6:8080/DukesAgeService/DukesAgeService/__container$publishing$subctx/WEB-INF/wsdl/DukesAgeService_schema1.xsd" uri="src/conf/xml-resources/web-service-references/DukesAgeService/wsdl/129.150.27.6_8080/DukesAgeService/DukesAgeService/__container$publishing$subctx/WEB-INF/wsdl/DukesAgeService_schema1.xsd"/>
+</catalog>
