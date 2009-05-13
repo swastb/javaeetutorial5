@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="GBK"?>
+<!DOCTYPE dwr PUBLIC "-//GetAhead Limited//DTD Direct Web Remoting 2.0//EN"
+	"http://getahead.ltd.uk/dwr/dwr20.dtd">
+
+<dwr>
+	<allow>
+		<create creator="spring" javascript="checkCode"> 
+			<param name="beanName" value="appSysMgr"/> 
+		</create>
+		
+		<create creator="spring" javascript="pstlvl"> 
+			<param name="beanName" value="pstlvlMgr"/> 
+		</create>
+		
+		<create creator="spring" javascript="userlvl"> 
+			<param name="beanName" value="userlvlMgr"/> 
+		</create>
+		<create creator="spring" javascript="roleCheck"> 
+			<param name="beanName" value="roleMgr"/> 
+		</create>
+		<create creator="spring" javascript="deptCheck"> 
+			<param name="beanName" value="deptMgr"/> 
+		</create>
+		<create creator="spring" javascript="postCheck"> 
+			<param name="beanName" value="pstMgr"/> 
+		</create>
+		
+		<create creator="spring" javascript="userCheck"> 
+			<param name="beanName" value="userMgr"/> 
+		</create>
+		
+		<create creator="spring" javascript="funCheck"> 
+			<param name="beanName" value="functionMgr"/> 
+		</create>
+	
+		
+		<create creator="spring" javascript="authlvl"> 
+			<param name="beanName" value="authlvlMgr"/>
+		</create>
+		
+		<create creator="spring" javascript="deptlvl"> 
+			<param name="beanName" value="deptlvlMgr"/> 
+		</create>
+		
+		<create creator="spring" javascript="righttype"> 
+			<param name="beanName" value="rightTypeMgr"/> 
+		</create>
+		<create creator="spring" javascript="caAuth"> 
+			<param name="beanName" value="userMgr"/> 
+		</create>	
+
+			<create creator="spring" javascript="individualcomm"> 
+			<param name="beanName" value="individualCommMgr"/> 
+		</create>	
+
+		<create creator="spring" javascript="weeksecheduleselectuser"> 
+			<param name="beanName" value="userMgr"/> 
+		</create>
+		<create creator="spring" javascript="weeksecheduleselectdept"> 
+			<param name="beanName" value="deptMgr"/> 
+		</create>
+
+		<create creator="spring" javascript="commonalityComm"> 
+			<param name="beanName" value="commonalityCommMgr"/> 
+		</create>
+		
+		<create creator="spring" javascript="infocomm"> 
+			<param name="beanName" value="infoPubContentMgr"/> 
+		</create>
+
+		<create creator="spring" javascript="selectcla"> 
+			<param name="beanName" value="infoPubClaMgr"/> 
+		</create>
+
+		<create creator="spring" javascript="meetingRoomCheck"> 
+			<param name="beanName" value="meetingRoomMgr"/> 
+		</create>
+		
+		<create creator="spring" javascript="iscannotdo"> 
+			<param name="beanName" value="infoPubClaMgr"/> 
+		</create>
+	</allow>
+</dwr>

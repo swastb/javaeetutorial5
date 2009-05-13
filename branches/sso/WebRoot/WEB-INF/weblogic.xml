@@ -1,0 +1,18 @@
+<!DOCTYPE weblogic-web-app PUBLIC "-//BEA Systems, Inc.//DTD Web Application 6.0//EN" "http://127.0.0.1/j2ee/dtds/weblogic-web-jar.dtd">
+<weblogic-web-app>
+	<context-root>/sso</context-root>
+
+	<jsp-descriptor>
+		<jsp-param>
+			<param-name>encoding</param-name>
+			<param-value>GBK</param-value>
+		</jsp-param>
+	</jsp-descriptor>
+	<reference-descriptor>
+		<resource-description>
+			<res-ref-name>ORADBSOURCE</res-ref-name>
+			<jndi-name>ORADBSOURCE</jndi-name>
+		</resource-description>
+	</reference-descriptor>
+
+</weblogic-web-app>

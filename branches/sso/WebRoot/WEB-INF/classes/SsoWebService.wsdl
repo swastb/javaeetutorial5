@@ -1,0 +1,400 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://mode.baosight.com" xmlns:tns="http://mode.baosight.com" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://www.w3.org/2003/05/soap-envelope" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenc11="http://schemas.xmlsoap.org/soap/encoding/" xmlns:soapenc12="http://www.w3.org/2003/05/soap-encoding" xmlns:soap11="http://schemas.xmlsoap.org/soap/envelope/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://mode.baosight.com">
+<xsd:element name="getUserGroupByDept">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element maxOccurs="1" minOccurs="1" name="in0" nillable="true" type="xsd:string"/>
+<xsd:element maxOccurs="1" minOccurs="1" name="in1" nillable="true" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:complexType name="ArrayOfUserGroup">
+<xsd:sequence>
+<xsd:element maxOccurs="unbounded" minOccurs="0" name="UserGroup" nillable="true" type="tns:UserGroup"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="UserGroup">
+<xsd:sequence>
+<xsd:element minOccurs="0" name="code" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="lvl" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="name" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="rmk" nillable="true" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:element name="getUserGroupByDeptResponse">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element maxOccurs="1" minOccurs="1" name="out" nillable="true" type="tns:ArrayOfUserGroup"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="getUserInfoByDept">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element maxOccurs="1" minOccurs="1" name="in0" nillable="true" type="xsd:string"/>
+<xsd:element maxOccurs="1" minOccurs="1" name="in1" nillable="true" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:complexType name="ArrayOfUser">
+<xsd:sequence>
+<xsd:element maxOccurs="unbounded" minOccurs="0" name="User" nillable="true" type="tns:User"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="User">
+<xsd:sequence>
+<xsd:element minOccurs="0" name="dept" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="lvl" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="name" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="pst" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="pwd" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="rmk" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="tel" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="useracc" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="userid" nillable="true" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:element name="getUserInfoByDeptResponse">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element maxOccurs="1" minOccurs="1" name="out" nillable="true" type="tns:ArrayOfUser"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="getUser">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element maxOccurs="1" minOccurs="1" name="in0" nillable="true" type="xsd:string"/>
+<xsd:element maxOccurs="1" minOccurs="1" name="in1" nillable="true" type="xsd:string"/>
+<xsd:element maxOccurs="1" minOccurs="1" name="in2" nillable="true" type="xsd:string"/>
+<xsd:element maxOccurs="1" minOccurs="1" name="in3" nillable="true" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="getUserResponse">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element maxOccurs="1" minOccurs="1" name="out" nillable="true" type="tns:User"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="getUserInfoByGroup">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element maxOccurs="1" minOccurs="1" name="in0" nillable="true" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="getUserInfoByGroupResponse">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element maxOccurs="1" minOccurs="1" name="out" nillable="true" type="tns:ArrayOfUser"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="getDept">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element maxOccurs="1" minOccurs="1" name="in0" nillable="true" type="xsd:string"/>
+<xsd:element maxOccurs="1" minOccurs="1" name="in1" nillable="true" type="xsd:string"/>
+<xsd:element maxOccurs="1" minOccurs="1" name="in2" nillable="true" type="xsd:string"/>
+<xsd:element maxOccurs="1" minOccurs="1" name="in3" nillable="true" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:complexType name="Dept">
+<xsd:sequence>
+<xsd:element minOccurs="0" name="code" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="ctc" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="lvl" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="name" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="rmk" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="superior" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="tel" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="type" nillable="true" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:element name="getDeptResponse">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element maxOccurs="1" minOccurs="1" name="out" nillable="true" type="tns:Dept"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="getUserInfo">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element maxOccurs="1" minOccurs="1" name="in0" nillable="true" type="xsd:string"/>
+<xsd:element maxOccurs="1" minOccurs="1" name="in1" nillable="true" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:complexType name="UserInfo">
+<xsd:sequence>
+<xsd:element minOccurs="0" name="appSysList" nillable="true" type="tns:ArrayOfTbAppsys"/>
+<xsd:element minOccurs="0" name="authInfoList" nillable="true" type="tns:ArrayOfTbAuthInfo"/>
+<xsd:element minOccurs="0" name="deptId" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="deptName" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="funList" nillable="true" type="tns:ArrayOfTbFunction"/>
+<xsd:element minOccurs="0" name="loginName" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="postId" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="postName" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="rightTypeList" nillable="true" type="tns:ArrayOfTbRighttype"/>
+<xsd:element minOccurs="0" name="roleAuthList" nillable="true" type="tns:ArrayOfTbRoleAuth"/>
+<xsd:element minOccurs="0" name="roleList" nillable="true" type="tns:ArrayOfTbRole"/>
+<xsd:element minOccurs="0" name="userName" nillable="true" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="ArrayOfTbRighttype">
+<xsd:sequence>
+<xsd:element maxOccurs="unbounded" minOccurs="0" name="TbRighttype" nillable="true" type="tns:TbRighttype"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="TbRighttype">
+<xsd:sequence>
+<xsd:element minOccurs="0" name="appsysid" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="code" nillable="true" type="xsd:long"/>
+<xsd:element minOccurs="0" name="funid" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="id" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="insure" nillable="true" type="xsd:long"/>
+<xsd:element minOccurs="0" name="name" nillable="true" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="ArrayOfTbRoleAuth">
+<xsd:sequence>
+<xsd:element maxOccurs="unbounded" minOccurs="0" name="TbRoleAuth" nillable="true" type="tns:TbRoleAuth"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="TbRoleAuth">
+<xsd:sequence>
+<xsd:element minOccurs="0" name="authid" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="id" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="roleid" nillable="true" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="ArrayOfTbFunction">
+<xsd:sequence>
+<xsd:element maxOccurs="unbounded" minOccurs="0" name="TbFunction" nillable="true" type="tns:TbFunction"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="TbFunction">
+<xsd:sequence>
+<xsd:element minOccurs="0" name="defor" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="deforder" nillable="true" type="xsd:long"/>
+<xsd:element minOccurs="0" name="funKey" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="id" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="inuse" nillable="true" type="xsd:long"/>
+<xsd:element minOccurs="0" name="name" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="node" nillable="true" type="xsd:int"/>
+<xsd:element minOccurs="0" name="nodetype" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="parId" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="righttypeid" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="sysId" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="url" nillable="true" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="ArrayOfTbAppsys">
+<xsd:sequence>
+<xsd:element maxOccurs="unbounded" minOccurs="0" name="TbAppsys" nillable="true" type="tns:TbAppsys"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="TbAppsys">
+<xsd:sequence>
+<xsd:element minOccurs="0" name="code" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="id" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="insure" nillable="true" type="xsd:long"/>
+<xsd:element minOccurs="0" name="ischild" nillable="true" type="xsd:long"/>
+<xsd:element minOccurs="0" name="name" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="rem" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="url" nillable="true" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="ArrayOfTbAuthInfo">
+<xsd:sequence>
+<xsd:element maxOccurs="unbounded" minOccurs="0" name="TbAuthInfo" nillable="true" type="tns:TbAuthInfo"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="TbAuthInfo">
+<xsd:sequence>
+<xsd:element minOccurs="0" name="funid" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="hasChild" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="id" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="name" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="rem" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="righttypeid" nillable="true" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="ArrayOfTbRole">
+<xsd:sequence>
+<xsd:element maxOccurs="unbounded" minOccurs="0" name="TbRole" nillable="true" type="tns:TbRole"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="TbRole">
+<xsd:sequence>
+<xsd:element minOccurs="0" name="code" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="id" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="insure" nillable="true" type="xsd:long"/>
+<xsd:element minOccurs="0" name="name" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="rem" nillable="true" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:element name="getUserInfoResponse">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element maxOccurs="1" minOccurs="1" name="out" nillable="true" type="tns:UserInfo"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+</xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="getUserInfoResponse">
+    <wsdl:part name="parameters" element="tns:getUserInfoResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getDeptRequest">
+    <wsdl:part name="parameters" element="tns:getDept">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getUserInfoRequest">
+    <wsdl:part name="parameters" element="tns:getUserInfo">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getDeptResponse">
+    <wsdl:part name="parameters" element="tns:getDeptResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getUserRequest">
+    <wsdl:part name="parameters" element="tns:getUser">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getUserInfoByDeptRequest">
+    <wsdl:part name="parameters" element="tns:getUserInfoByDept">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getUserGroupByDeptResponse">
+    <wsdl:part name="parameters" element="tns:getUserGroupByDeptResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getUserInfoByGroupRequest">
+    <wsdl:part name="parameters" element="tns:getUserInfoByGroup">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getUserInfoByDeptResponse">
+    <wsdl:part name="parameters" element="tns:getUserInfoByDeptResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getUserGroupByDeptRequest">
+    <wsdl:part name="parameters" element="tns:getUserGroupByDept">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getUserInfoByGroupResponse">
+    <wsdl:part name="parameters" element="tns:getUserInfoByGroupResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getUserResponse">
+    <wsdl:part name="parameters" element="tns:getUserResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="ISsoWebServicePortType">
+    <wsdl:operation name="getUserGroupByDept">
+      <wsdl:input name="getUserGroupByDeptRequest" message="tns:getUserGroupByDeptRequest">
+    </wsdl:input>
+      <wsdl:output name="getUserGroupByDeptResponse" message="tns:getUserGroupByDeptResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getUserInfoByDept">
+      <wsdl:input name="getUserInfoByDeptRequest" message="tns:getUserInfoByDeptRequest">
+    </wsdl:input>
+      <wsdl:output name="getUserInfoByDeptResponse" message="tns:getUserInfoByDeptResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getUser">
+      <wsdl:input name="getUserRequest" message="tns:getUserRequest">
+    </wsdl:input>
+      <wsdl:output name="getUserResponse" message="tns:getUserResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getUserInfoByGroup">
+      <wsdl:input name="getUserInfoByGroupRequest" message="tns:getUserInfoByGroupRequest">
+    </wsdl:input>
+      <wsdl:output name="getUserInfoByGroupResponse" message="tns:getUserInfoByGroupResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDept">
+      <wsdl:input name="getDeptRequest" message="tns:getDeptRequest">
+    </wsdl:input>
+      <wsdl:output name="getDeptResponse" message="tns:getDeptResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getUserInfo">
+      <wsdl:input name="getUserInfoRequest" message="tns:getUserInfoRequest">
+    </wsdl:input>
+      <wsdl:output name="getUserInfoResponse" message="tns:getUserInfoResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ISsoWebServiceHttpBinding" type="tns:ISsoWebServicePortType">
+    <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="getUserGroupByDept">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="getUserGroupByDeptRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getUserGroupByDeptResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getUserInfoByDept">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="getUserInfoByDeptRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getUserInfoByDeptResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getUser">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="getUserRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getUserResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getUserInfoByGroup">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="getUserInfoByGroupRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getUserInfoByGroupResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDept">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="getDeptRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getDeptResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getUserInfo">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="getUserInfoRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getUserInfoResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ISsoWebService">
+    <wsdl:port name="ISsoWebServiceHttpPort" binding="tns:ISsoWebServiceHttpBinding">
+      <wsdlsoap:address location="http://31.16.3.158/sso/SsoWebService.ws"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

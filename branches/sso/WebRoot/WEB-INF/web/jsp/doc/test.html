@@ -1,0 +1,225 @@
+<!--#include file="./config.asp"-->
+<html>
+<head>
+
+
+<title>编辑正文</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+
+<SCRIPT LANGUAGE=javascript>
+<!--
+// ---------------------=== 控件初始化WebOffice方法 ===---------------------- //
+function WebOffice1_NotifyCtrlReady() {
+
+		document.all.WebOffice1.LoadOriginalFile("", "doc");
+
+}
+
+
+// ---------------------== 关闭页面时调用此函数，关闭文件 ==---------------------- //
+function window_onunload() {
+	document.all.WebOffice1.Close();
+}
+ 
+// ---------------------------== 解除文档保护 ==---------------------------------- //
+function UnProtect() {
+	document.all.WebOffice1.ProtectDoc(0,1, myform.docPwd.value);
+}
+
+// ---------------------------== 设置文档保护 ==---------------------------------- //
+function ProtectFull() {
+	document.all.WebOffice1.ProtectDoc(1,1, myform.docPwd.value);
+}
+// -----------------------------== 修订文档 ==------------------------------------ //
+function ProtectRevision() {
+	document.all.WebOffice1.SetTrackRevisions(1) 
+}
+
+// -----------------------------== 隐藏修订 ==------------------------------------ //
+function UnShowRevisions() {
+	document.all.WebOffice1.ShowRevisions(0);
+}
+
+// --------------------------== 显示当前修订 ==---------------------------------- //
+function ShowRevisions() {
+	document.all.WebOffice1.ShowRevisions(1);
+
+}
+
+// -------------------------== 接受当前所有修订 ==------------------------------- //
+function AcceptAllRevisions() {
+ 	document.all.WebOffice1.SetTrackRevisions(4);
+}
+
+// ---------------------------== 设置当前操作用户 ==------------------------------- //
+function SetUserName() {
+	if(myform.UserName.value ==""){
+		alert("用户名不可为空")
+		myform.UserName.focus();
+		return false;
+	}
+ 	document.all.WebOffice1.SetCurrUserName(myform.UserName.value);
+}
+
+// -------------------------=== 设置书签套加红头 ===------------------------------ //
+function addBookmark() {
+	document.all.WebOffice1.SetFieldValue("mark_1", "北京点聚信息技术有限公司", "::ADDMARK::");			
+}
+
+// -------------------------=== 设置书签套加红头 ===------------------------------ //
+function addRedHead() {
+	document.all.WebOffice1.SetFieldValue("mark_1", "", "::ADDMARK::");			// 添加书签
+	document.all.WebOffice1.SetFieldValue("mark_1", "tmp1.doc", "::FILE::");
+}
+
+// -----------------------------== 返回首页 ==------------------------------------ //
+function return_onclick() {
+	document.all.WebOffice1.Close();
+	window.location.href  = "index.asp"
+}
+// 打开本地文件
+function docOpen() {
+	if(myform.DocFilePath.value == "") {
+		alert("文件路径不可以为空");
+		myform.DocFilePath.focus();
+		return false;
+	}
+	if( 0 == document.all.WebOffice1.LoadOriginalFile(myform.DocFilePath.value,"doc")){
+		alert("文件打开失败，请检查路径是否合法");
+		myform.DocFilePath.focus();
+		return false;
+	}	
+}
+// -----------------------------== 保存文档 ==------------------------------------ //
+function SaveDoc() {
+	 if(myform.DocTitle.value ==""){
+		alert("标题不可为空")
+		myform.DocTitle.focus();
+		return false;
+	}
+	if(myform.DocID.value ==""){
+		alert("文号不可为空")
+		myform.DocID.focus();
+		return false;
+	}
+	
+	document.all.WebOffice1.HttpInit();			//初始化Http引擎
+	// 添加相应的Post元素 
+	document.all.WebOffice1.HttpAddPostString("DocTitle", myform.DocTitle.value);
+	document.all.WebOffice1.HttpAddPostString("DocID", myform.DocID.value);
+	document.all.WebOffice1.HttpAddPostString("DocType","doc");
+	document.all.WebOffice1.HttpAddPostCurrFile("DocContent","");		// 上传文件
+
+	if("OK" == document.all.WebOffice1.HttpPost("")){
+		alert("文件上传成功");	
+	}else
+		alert("文件上传失败")
+	return_onclick(); 
+}
+//-->
+</SCRIPT>
+<!-- --------------------=== 调用Weboffice初始化方法 ===--------------------- -->
+<SCRIPT LANGUAGE=javascript FOR=WebOffice1 EVENT=NotifyCtrlReady>
+<!--
+ WebOffice1_NotifyCtrlReady()			// 在装载完Weboffice(执行<object>...</object>)控件后执行 "WebOffice1_NotifyCtrlReady"方法
+//-->
+</SCRIPT>
+
+<link href="style.css" rel="stylesheet" type="text/css">
+</head>
+<body leftMargin=0 topMargin=0 marginheight="0" marginwidth="0"  onunload="return window_onunload()">
+<form name="myform">
+  <table width="100%" height="100%" border="0" cellpadding="0" cellspacing="1" bgcolor="#3366cc">
+
+    <tr bgcolor="#FFFFFF">
+      <td width="78"  bgcolor="#FFFFFF" class="maintxt"><div align="center"><strong>文 号：</strong></div></td>
+        <td width="138"><input name="DocID" value="DJ-001" size="14" ></td>
+		  <td width="395" rowspan="2" nowrap><input name="DocFilePath" type="file" size="14">
+	      <input type="button" value="打开本地文件" onClick="return docOpen()"></td>
+		  <td width="377" rowspan="2" bgcolor="#FFFFFF"><div align="center">
+            <input type="button" classs="rollout" value="上传到服务器"  onClick="return SaveDoc()">　　
+              <input type="button" value="  返  回  "  onClick="return return_onclick()"></div></td>
+				</tr>
+
+    <tr bgcolor="#FFFFFF">
+      <td height="13" bgcolor="#FFFFFF" class="maintxt"><div align="center"><strong>标 题：</strong></div></td>
+        <td><input name="DocTitle" value="Test" size="14"></td>
+	</tr>
+
+    <tr bgcolor="#FFFFFF">
+	  <td valign="top" bgcolor="#FFFFFF">
+		<!-- -------------------=== Start 嵌套Table ===------------------------------- -->
+		<table width="100%" height="289" border="0" cellpadding="0">
+
+          <tr>
+            <td nowrap class="maintxt">用户名：<br>
+              <input name="UserName" type="text" value="Test" style="width:74px;" maxlength="10"><br>
+                <input type="button" value="设置用户"  onclick="return SetUserName()" class="btn"></td>
+		  </tr>
+
+          <tr><td class="maintxt">
+			<Hr color="#3366cc" size=1 >保护密码：<br>
+              <input name="docPwd" type="text" value="Password" style="width:74px;" maxlength="10"><br>
+			    <input type="button" class="btn" value="保护文档" onClick="return ProtectFull()"></td>
+		  </tr>
+
+          <tr><td><input type="button" class="btn" value="解除保护" onclick="return UnProtect()"></td></tr>
+
+          <tr><td>
+			<hr color="#3366cc" size=1>
+			  <input  type="button" class="btn" value="修订文档" onclick="return ProtectRevision()"></td>
+		  </tr>
+
+          <tr><td><input type="button" class="btn" value="显示修订" onclick="return ShowRevisions()"></td></tr>
+          <tr><td><input type="button" class="btn" value="隐藏修订" onclick="return UnShowRevisions()"></td></tr>
+          <tr><td><input type="button" class="btn" value="接受修订" onclick="return AcceptAllRevisions()"></td></tr>
+
+          <tr><td>
+			<hr color="#3366cc" size=1>
+             <input  type="button" class="btn" value="设置书签" onclick="return addBookmark()"></td>
+	      </tr>
+
+          <tr><td><input  type="button" class="btn" value="套加红头" onClick="return addRedHead()"></td></tr>
+
+		  <tr><td>&nbsp;
+              </td>
+		  </tr>
+
+		  <tr>
+		    <td>&nbsp;</td>
+		  </tr>
+		  <tr>
+		    <td>&nbsp;</td>
+	      </tr>
+
+        </table>
+	    <!-- -------------------=== End 嵌套Table ===------------------------------- -->
+	  </td>
+
+	  <td colspan="3" valign="top">
+		<!-- -----------------------------== 装载weboffice控件 ==--------------------------------- -->
+        <object id=WebOffice1 height=560 width="100%" style="LEFT: 0px; TOP: 0px" 
+			  classid="clsid:E77E049B-23FC-4DB8-B756-60529A35FAD5" codebase=WebOffice.ocx#V3,0,0,0>
+          <param name="_ExtentX" value="6350">
+          <param name="_ExtentY" value="6350">
+          <param name="BorderColor" value="-2147483632">
+          <param name="BackColor" value="-2147483643">
+          <param name="ForeColor" value="-2147483640">
+          <param name="TitlebarColor" value="-2147483635">
+          <param name="TitlebarTextColor" value="-2147483634">
+          <param name="BorderStyle" value="1">
+          <param name="Titlebar" value="1">
+          <param name="Toolbars" value="1">
+          <param name="Menubar" value="1">
+        </object>	    
+        <!-- --------------------------------== 结束装载控件 ==----------------------------------- -->
+	  </td>
+    </tr>
+  </table>
+</form>
+<p>&nbsp;</p>
+<p>
+
+</p>
+</body>
+</html>

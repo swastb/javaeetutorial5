@@ -1,0 +1,381 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<bean id="tbRoleAuthDAO"
+		class="com.baosight.base.dao.impl.TbRoleAuthDAOImpl"
+		parent="daoTemplate" />
+	<bean id="tbGroupDAO"
+		class="com.baosight.base.dao.impl.TbGroupDAOImpl"
+		parent="daoTemplate" />
+	<bean id="tbRighttypeDAO"
+		class="com.baosight.base.dao.impl.TbRighttypeDAOImpl"
+		parent="daoTemplate" />
+	<bean id="tbUserAuthDAO"
+		class="com.baosight.base.dao.impl.TbUserAuthDAOImpl"
+		parent="daoTemplate" />
+	<bean id="tbLicencepolicyDAO"
+		class="com.baosight.base.dao.impl.TbLicencepolicyDAOImpl"
+		parent="daoTemplate" />
+	<bean id="tbUserGroupDAO"
+		class="com.baosight.base.dao.impl.TbUserGroupDAOImpl"
+		parent="daoTemplate" />
+	<bean id="tbGroupRoleDAO"
+		class="com.baosight.base.dao.impl.TbGroupRoleDAOImpl"
+		parent="daoTemplate" />
+	<bean id="tbAuthInfoDAO"
+		class="com.baosight.base.dao.impl.TbAuthInfoDAOImpl"
+		parent="daoTemplate" />
+	<bean id="tbUserDAO"
+		class="com.baosight.base.dao.impl.TbUserDAOImpl" parent="daoTemplate" />
+	<bean id="tbUserRoleDAO"
+		class="com.baosight.base.dao.impl.TbUserRoleDAOImpl"
+		parent="daoTemplate" />
+	<bean id="tbUserinfoDAO"
+		class="com.baosight.base.dao.impl.TbUserinfoDAOImpl"
+		parent="daoTemplate" />
+	<bean id="tbFunctionDAO"
+		class="com.baosight.base.dao.impl.TbFunctionDAOImpl"
+		parent="daoTemplate" />
+	<bean id="tbGroupAuthDAO"
+		class="com.baosight.base.dao.impl.TbGroupAuthDAOImpl"
+		parent="daoTemplate" />
+	<bean id="tbDeptDAO"
+		class="com.baosight.base.dao.impl.TbDeptDAOImpl" parent="daoTemplate" />
+	<bean id="tbRoleDAO"
+		class="com.baosight.base.dao.impl.TbRoleDAOImpl" parent="daoTemplate" />
+	<bean id="tbPstlvlDAO"
+		class="com.baosight.base.dao.impl.TbPstlvlDAOImpl"
+		parent="daoTemplate" />
+	<bean id="tbPstDAO" class="com.baosight.base.dao.impl.TbPstDAOImpl"
+		parent="daoTemplate" />
+	<bean id="tbUserlvlDAO"
+		class="com.baosight.base.dao.impl.TbUserlvlDAOImpl"
+		parent="daoTemplate" />
+	<bean id="tbAuthlvlDAO"
+		class="com.baosight.base.dao.impl.TbAuthlvlDAOImpl"
+		parent="daoTemplate" />
+	<bean id="tbDeptlvlDAO"
+		class="com.baosight.base.dao.impl.TbDeptlvlDAOImpl"
+		parent="daoTemplate" />
+	<bean id="tbAppsysDAO"
+		class="com.baosight.base.dao.impl.TbAppsysDAOImpl"
+		parent="daoTemplate" />
+	<bean id="tbUserAppsysDAO"
+		class="com.baosight.base.dao.impl.TbUserAppsysDAOImpl"
+		parent="daoTemplate" />
+	<bean id="tbOaholidayDAO"
+		class="com.baosight.base.dao.impl.TbOaHolidayDAOImpl"
+		parent="daoTemplate" />
+	<bean id="tbZwWeekSecheduleDAO"
+		class="com.baosight.base.dao.impl.TbZwWeekSecheduleDAOImpl"
+		parent="daoTemplate" />
+	<bean id="tbMeetingDAO"
+		class="com.baosight.base.dao.impl.TbMeetingDAOImpl"
+		parent="daoTemplate" />
+	<bean id="tbMeetingRoomDAO"
+		class="com.baosight.base.dao.impl.TbMeetingRoomDAOImpl"
+		parent="daoTemplate" />
+	<bean id="tbUserdeptDAO"
+		class="com.baosight.base.dao.impl.TbUserdeptDAOImpl"
+		parent="daoTemplate" />
+	<bean id="tbCommonalityCommDAO"
+		class="com.baosight.base.dao.impl.TbCommonalityCommDAOImpl"
+		parent="daoTemplate" />
+	<bean id="tbCommonalityDAO"
+		class="com.baosight.base.dao.impl.TbCommonalityDAOImpl"
+		parent="daoTemplate" />
+	<bean id="tbIndividualDAO"
+		class="com.baosight.base.dao.impl.TbIndividualDAOImpl"
+		parent="daoTemplate" />
+	<bean id="tbIndividualCommDAO"
+		class="com.baosight.base.dao.impl.TbIndividualCommDAOImpl"
+		parent="daoTemplate" />
+	<bean id="tbInfoPubClaDAO"
+		class="com.baosight.base.dao.impl.TbInfoPubClaDAOImpl"
+		parent="daoTemplate" />
+	<bean id="tbInfoPubContentDAO"
+		class="com.baosight.base.dao.impl.TbInfoPubContentDAOImpl"
+		parent="daoTemplate" />
+	<bean id="tbApplyDAO"
+		class="com.baosight.base.dao.impl.TbApplyDAOImpl"
+		parent="daoTemplate" />
+	<bean id="tbYuanshuishujubiaoDAO"
+		class="com.baosight.base.dao.impl.TbYuanshuishujubiaoDAOImpl"
+		parent="daoTemplate" />
+	<!-- 政府信息公开 -->
+	<bean id="tbileAllZfDAO"
+		class="com.baosight.base.dao.impl.TFileAllZfDAOImpl"
+		parent="daoTemplate" />
+	<!--  用车申请管理 -->
+	<bean id="tbVehiclesApplyDAO"
+		class="com.baosight.base.dao.impl.TbVehiclesApplyDAOImpl"
+		parent="daoTemplate" />
+	<!--  政府信息审核 -->
+	<bean id="tbInfoAuditDAO"
+		class="com.baosight.base.dao.impl.TbInfoAuditDAOImpl"
+		parent="daoTemplate" />
+	<!--  车辆管理 -->
+	<bean id="tdVehiclesDAO"
+		class="com.baosight.base.dao.impl.TdVehiclesDAOImpl"
+		parent="daoTemplate" />
+	<!-- 消息通讯 -->
+	<bean id="tbMessageDAO"
+		class="com.baosight.base.dao.impl.TbMessageDAOImpl"
+		parent="daoTemplate" />
+	<!-- 答复书 -->
+	<bean id="tbReplyDAO"
+		class="com.baosight.base.dao.impl.TbReplyDAOImpl"
+		parent="daoTemplate" />
+	<!-- 待办事宜 -->
+	<bean id="tbNotiesDAO"
+		class="com.baosight.base.dao.impl.TbNotiesDAOImpl"
+		parent="daoTemplate" />
+
+	<bean id="tbGovInfoPubContentDAO"
+		class="com.baosight.base.dao.impl.TbGovInfoPubContentDAOImpl"
+		parent="daoTemplate" />
+	<!-- 待审核信息列表,请详细信息 -->
+	<bean id="tbGovInfoPubDAO"
+		class="com.baosight.base.dao.impl.TbGovInfoPubDAOImpl"
+		parent="daoTemplate" />
+	<bean id="tbGovInfoPubAuditDAO"
+		class="com.baosight.base.dao.impl.TbGovInfoPubAuditDAOImpl"
+		parent="daoTemplate" />
+	<bean id="tbZfxxbfgkgzsDAO"
+		class="com.baosight.base.dao.impl.TbZfxxbfgkgzsDAOImpl"
+		parent="daoTemplate" />
+	<bean id="tbBzsqgzsDAO"
+		class="com.baosight.base.dao.impl.TbBzsqgzsDAOImpl"
+		parent="daoTemplate" />
+	<!-- 政府信息公开告知书 -->
+	<bean id="tbZfxxgkgzsDAO"
+		class="com.baosight.base.dao.impl.TbZfxxgkgzsDAOImpl"
+		parent="daoTemplate" />
+	<bean id="tbWrit7DAO"
+		class="com.baosight.base.dao.impl.TbWrit7DAOImpl"
+		parent="daoTemplate" />
+	<bean id="tbWrit2DAO"
+		class="com.baosight.base.dao.impl.TbWrit2DAOImpl"
+		parent="daoTemplate" />
+	<bean id="tbWrit4DAO"
+		class="com.baosight.base.dao.impl.TbWrit4DAOImpl"
+		parent="daoTemplate" />
+	<bean id="tbWrit8DAO"
+		class="com.baosight.base.dao.impl.TbWrit8DAOImpl"
+		parent="daoTemplate" />
+	<bean id="tbWrit9DAO"
+		class="com.baosight.base.dao.impl.TbWrit9DAOImpl"
+		parent="daoTemplate" />
+
+	<!-- 档案管理 -->
+	<bean id="tbArchivesApplyDAO"
+		class="com.baosight.base.dao.impl.TbArchivesApplyDAOImpl"
+		parent="daoTemplate" />
+	<bean id="tbArchivesDAO"
+		class="com.baosight.base.dao.impl.TbArchivesDAOImpl"
+		parent="daoTemplate" />
+	<bean id="tbFormatDAO"
+		class="com.baosight.base.dao.impl.TbFormatDAOImpl"
+		parent="daoTemplate" />
+	<bean id="tbNopubdescDAO"
+		class="com.baosight.base.dao.impl.TbNopubdescDAOImpl"
+		parent="daoTemplate" />
+	<bean id="tbOffDocCateDAO"
+		class="com.baosight.base.dao.impl.TbOffDocCateDAOImpl"
+		parent="daoTemplate" />
+	<bean id="tbPubclassDAO"
+		class="com.baosight.base.dao.impl.TbPubclassDAOImpl"
+		parent="daoTemplate" />
+	<bean id="tbTopicDAO"
+		class="com.baosight.base.dao.impl.TbTopicDAOImpl"
+		parent="daoTemplate" />
+	<bean id="tbTypeDAO"
+		class="com.baosight.base.dao.impl.TbTypeDAOImpl" parent="daoTemplate" />
+	<bean id="tbUploadFileDAO"
+		class="com.baosight.base.dao.impl.TbUploadFileDAOImpl"
+		parent="daoTemplate" />
+
+	<!-- 文件传送-->
+	<bean id="tbFilesendDAO"
+		class="com.baosight.base.dao.impl.TbFilesendDAOImpl"
+		parent="daoTemplate" />
+	<bean id="tbFilesendAttachmentDAO"
+		class="com.baosight.base.dao.impl.TbFilesendAttachmentDAOImpl"
+		parent="daoTemplate" />
+	<bean id="tbYqdfgzsDAO"
+		class="com.baosight.base.dao.impl.TbYqdfgzsDAOImpl"
+		parent="daoTemplate" />
+	<bean id="tbZfxxgkcfsqgzsDAO"
+		class="com.baosight.base.dao.impl.TbZfxxgkcfsqgzsDAOImpl"
+		parent="daoTemplate" />
+	<bean id="tbZfxxgksqdfDAO"
+		class="com.baosight.base.dao.impl.TbZfxxgksqdfDAOImpl"
+		parent="daoTemplate" />
+	<bean id="tbZfxxgkbzsqgzsDAO"
+		class="com.baosight.base.dao.impl.TbZfxxgkbzsqgzsDAOImpl"
+		parent="daoTemplate" />
+	<bean id="tbFzfxxgksqgzsDAO"
+		class="com.baosight.base.dao.impl.TbFzfxxgksqgzsDAOImpl"
+		parent="daoTemplate" />
+	<!-- zfxxgkhf 2 4 5 start-->
+	<bean id="tbZfxxgksqSjhcDAO"
+		class="com.baosight.base.dao.impl.TbZfxxgksqSjhcDAOImpl"
+		parent="daoTemplate" />
+	<bean id="tbZfxxgkdfTwoDAO"
+		class="com.baosight.base.dao.impl.TbZfxxgkdfTwoDAOImpl"
+		parent="daoTemplate" />
+	<bean id="tbZfxxgkdfOneDAO"
+		class="com.baosight.base.dao.impl.TbZfxxgkdfOneDAOImpl"
+		parent="daoTemplate" />
+	<!-- zfxxgkhf 2 4 5 end -->
+	<bean id="tbZfxxgksqdfs4DAO"
+		class="com.baosight.base.dao.impl.TbZfxxgksqdfs4DAOImpl"
+		parent="daoTemplate" />
+	<bean id="tbZfxxgksqdfs3DAO"
+		class="com.baosight.base.dao.impl.TbZfxxgksqdfs3DAOImpl"
+		parent="daoTemplate" />
+
+
+	<!-- 网上咨询 -->
+	<bean id="tbConsultationOnlineDAO"
+		class="com.baosight.base.dao.impl.TbConsultationOnlineDAOImpl"
+		parent="daoTemplate" />
+	<bean id="tbPublicAffairTransactDAO"
+		class="com.baosight.base.dao.impl.TbPublicAffairTransactDAOImpl"
+		parent="daoTemplate" />
+	<!-- 收文 -->
+	<bean id="tbDocRecDAO"
+		class="com.baosight.base.dao.impl.TbDocRecDAOImpl"
+		parent="daoTemplate">
+	</bean>
+	<bean id="tbDocControlDAO"
+		class="com.baosight.base.dao.impl.TbDocControlDAOImpl"
+		parent="daoTemplate">
+	</bean>
+	<bean id="tbDocInfoLevelSeqDAO"
+		class="com.baosight.base.dao.impl.TbDocInfoLevelSeqDAOImpl"
+		parent="daoTemplate">
+	</bean>
+	<bean id="tbDocArchiveCodeDAO"
+		class="com.baosight.base.dao.impl.TbDocArchiveCodeDAOImpl"
+		parent="daoTemplate">
+	</bean>
+	<bean id="tbDocAttachDAO"
+		class="com.baosight.base.dao.impl.TbDocAttachDAOImpl"
+		parent="daoTemplate">
+	</bean>
+
+	<bean id="tbAppealOnlineDAO"
+		class="com.baosight.base.dao.impl.TbAppealOnlineDAOImpl"
+		parent="daoTemplate">
+	</bean>
+
+	<!-- 共享空间 -->
+	<bean id="tbShareFileDAO"
+		class="com.baosight.base.dao.impl.TbShareFileDAOImpl"
+		parent="daoTemplate">
+	</bean>
+
+	<!-- 局长信箱 -->
+	<bean id="tbOpinionOnlineDAO"
+		class="com.baosight.base.dao.impl.TbOpinionOnlineDAOImpl"
+		parent="daoTemplate">
+	</bean>
+	<!-- 发文 -->
+	<bean id="tbDocsendControlDAO"
+		class="com.baosight.base.dao.impl.TbDocsendControlDAOImpl"
+		parent="daoTemplate">
+	</bean>
+	<bean id="tbDocSendDAO"
+		class="com.baosight.base.dao.impl.TbDocSendDAOImpl"
+		parent="daoTemplate">
+	</bean>
+	<bean id="tbDocsendSubjectDAO"
+		class="com.baosight.base.dao.impl.TbDocsendSubjectDAOImpl"
+		parent="daoTemplate">
+	</bean>
+	<bean id="tbDocsendListitemsDAO"
+		class="com.baosight.base.dao.impl.TbDocsendListitemsDAOImpl"
+		parent="daoTemplate">
+	</bean>
+	<bean id="tbDocUrgentDAO"
+		class="com.baosight.base.dao.impl.TbDocUrgentDAOImpl"
+		parent="daoTemplate">
+	</bean>
+
+	<bean id="tbUserOpeationDAO"
+		class="com.baosight.base.dao.impl.TbUserOpeationDAOImpl"
+		parent="daoTemplate">
+	</bean>
+	<bean id="tbDocSendXxzxDAO"
+		class="com.baosight.infocenter.docsend.dao.impl.TbDocSendXxzxDAOImpl"
+		parent="daoTemplate">
+	</bean>
+	<bean id="tbDocsendControlXxzxDAO"
+		class="com.baosight.infocenter.docsend.dao.impl.TbDocsendControlXxzxDAOImpl"
+		parent="daoTemplate">
+	</bean>
+	<bean id="tbMeetingrecordDAO"
+		class="com.baosight.base.dao.impl.TbMeetingrecordDAOImpl"
+		parent="daoTemplate">
+	</bean>
+
+	<!-- 短信平台 -->
+	<bean id="tbSmsScheduleDAO"
+		class="com.baosight.base.dao.impl.TbSmsScheduleDAOImpl"
+		parent="daoTemplate">
+	</bean>
+	<bean id="smsTransferInfoDAO"
+		class="com.baosight.sms.dao.impl.SmsTransferInfoDAOImpl"
+		parent="daoTemplate" />
+	<bean id="smsTransferListDAO"
+		class="com.baosight.sms.dao.impl.SmsTransferListDAOImpl"
+		parent="daoTemplate" />
+	<!-- 短信订阅 -->
+	<bean id="tbSmsSubscribeDAO"
+		class="com.baosight.base.dao.impl.TbSmsSubscribeDAOImpl"
+		parent="daoTemplate" />
+	<bean id="tbSmSubjectDAO"
+		class="com.baosight.base.dao.impl.TbSmsSubjectDAOImpl"
+		parent="daoTemplate" />
+	<!-- 查询统计 -->
+	<bean id="tbSmsDepartDAO"
+		class="com.baosight.base.dao.impl.TbSmsDepartDAOImpl"
+		parent="daoTemplate" />
+	<bean id="tbSmsUserDAO"
+		class="com.baosight.base.dao.impl.TbSmsUserDAOImpl"
+		parent="daoTemplate" />
+	<bean id="tbFaxScheduleDAO"
+		class="com.baosight.fax.dao.impl.TbFaxScheduleDAOImpl"
+		parent="daoTemplate" />
+	<bean id="tbFaxQueryScheduleDAO"
+		class="com.baosight.fax.dao.impl.TbFaxQueryScheduleDAOImpl"
+		parent="daoTemplate" />
+	<bean id="tbSwrxDAO"
+		class="com.baosight.base.dao.impl.TbSwrxDAOImpl" parent="daoTemplate" />
+	<!-- 委托 -->
+	<bean id="tbCommissionDAO"
+		class="com.baosight.base.dao.impl.TbCommissionDAOImpl"
+		parent="daoTemplate">
+	</bean>
+	<bean id="tbTechDiscoureDAO"
+		class="com.baosight.tech.dao.impl.TbTechDiscoureDAOImpl"
+		parent="daoTemplate">
+	</bean>
+	<bean id="tbTechMapShareDAO"
+		class="com.baosight.tech.dao.impl.TbTechMapShareDAOImpl"
+		parent="daoTemplate">
+	</bean>
+	<bean id="tbTechResultDAO"
+		class="com.baosight.tech.dao.impl.TbTechResultDAOImpl"
+		parent="daoTemplate">
+	</bean>
+	<bean id="tbTechStandardDAO"
+		class="com.baosight.tech.dao.impl.TbTechStandardDAOImpl"
+		parent="daoTemplate">
+	</bean>
+	<bean id="tbWarningPubDAO"
+		class="com.baosight.base.dao.impl.TbWarningPubDAOImpl"
+		parent="daoTemplate">
+	</bean>
+</beans>
