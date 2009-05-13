@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<!-- Inserted by TRADOS: --><META HTTP-EQUIV="content-type" CONTENT="text/html; charset=utf-8">
+
+  <meta name="generator" content=
+  "HTML Tidy for Windows (vers 12 April 2005), see www.w3.org" />
+<link rel="stylesheet" href="../../css/tools.css"  type="text/css" />
+<title>extcheck - jar 競合検出ユーティリティー</title>
+<meta name="collection" content="reference">
+</head>
+
+<body>
+<h1>extcheck - jar の競合検出ユーティリティー</h1>
+
+  <blockquote><p>
+<b>extcheck</b> は、ターゲットの jar ファイルと現在インストールされている拡張機能の jar ファイル間のバージョンの競合を検出します。</p>
+  </blockquote>
+
+<h2>形式</h2>
+
+  <blockquote>
+    <pre>
+extcheck [ -verbose ] targetfile.jar
+</pre>
+  </blockquote>
+
+<h2>説明</h2>
+
+  <blockquote><p>
+<b>extcheck</b> ユーティリティーは、指定された Jar ファイルのタイトルおよびバージョンが Java<sup><font size="-2">TM</font></sup> 2 SDK にインストールされている拡張機能と競合していないかをチェックします。拡張機能をインストールする前に、このユーティリティーを使って、バージョンが同じか、より新しい拡張機能がすでにインストールされていないかどうかを調べることができます。
+</p>
+<p><b>extcheck</b> ユーティリティーは、<code>targetfile.jar</code> ファイルのマニフェスト内のヘッダー <code>Specification-title</code> および <code>Specification-version</code> を、拡張機能ディレクトリ内に現在インストールされているすべての Jar ファイル内の対応するヘッダーと比較します。デフォルトでは、拡張機能ディレクトリは、<tt>jre/lib/ext</tt> です。<b>extcheck</b> ユーティリティーは、<tt>java.lang.Package.isCompatibleWith</tt> メソッドと同様の方法でバージョン番号を比較します。</p>
+
+<p>競合が検出されない場合のリターンコードは <tt>0</tt> です。</p>
+
+<p>拡張機能ディレクトリ内のいずれかの jar ファイルのマニフェストに、同一の <code>Specification-title</code>、および同一またはより新しい <code>Specification-version</code> 番号がある場合は、ゼロでないエラーコードが返されます。<code>targetfile.jar</code> のマニフェストに <code>Specification-title</code> または <code>Specification-version</code> 属性がない場合も、ゼロでないエラーコードが返されます。</p>
+  </blockquote>
+
+<h2><a name="options"/>オプション</h2>
+
+  <blockquote>
+    <dl>
+<dt><b>-verbose</b></dt>
+
+<dd>拡張機能ディレクトリ内の Jar ファイルを、チェック時に一覧表示します。また、ターゲット jar ファイルのマニフェストの属性、および競合する jar ファイルについても報告します。</dd>
+
+<dt><b>-J</b><i>option</i></dt>
+
+<dd>Java 仮想マシンに <i>option</i> を渡します。<i> option</i> には、<a href="java.html">「Java アプリケーション起動ツール」</a>のリファレンスページに記載されているオプションを 1 つ指定します。たとえば、<b>-J-Xms48m</b> と指定すると、スタートアップメモリーは 48M バイトに設定されます。</dd>
+    </dl>
+  </blockquote>
+
+<h2>関連項目</h2>
+
+  <blockquote><p>
+<a href="jar.html">jar</a></p>
+  </blockquote>
+  <hr/>
+
+  <table border="0" width="100%" summary="layout">
+    <tr valign="top">
+      <td>
+<p><a href=         "../../../legal/SMICopyright.html">Copyright</a> &copy; 2002-2006 <a href="http://www.sun.com">Sun Microsystems, Inc.</a> All Rights Reserved.</p>
+      </td>
+
+<td align="right"><img src="../../../images/sunlogo64x30.gif"       alt="Sun" width="64" height="30" /><br /> <i> Java Software </i></td>
+    </tr>
+  </table>
+</body>
+</html>

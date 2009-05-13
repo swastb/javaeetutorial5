@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" href="../../css/tools.css"  type="text/css" />
+  <title>Native-to-ASCII Converter</title>
+<meta name="collection" content="reference">
+  <!-- Created by: Doug Kramer, 19-Aug-1996 -->
+</head>
+
+<body>
+  <h1>native2ascii - Native-to-ASCII Converter</h1>
+
+  <blockquote>
+  <p>
+    Converts a file with native-encoded characters (characters
+    which are non-Latin 1 and non-Unicode) to one with
+    Unicode-encoded characters.</p>
+  </blockquote>
+
+  <h2>SYNOPSIS</h2>
+
+  <blockquote>
+    <pre>
+<code><strong>native2ascii</strong> [options] [inputfile [outputfile]]</code>
+</pre>
+  </blockquote>
+
+  <h2>DESCRIPTION</h2>
+
+  <blockquote>
+  <p>
+    The Java compiler and other Java tools can only process files
+    which contain Latin-1 and/or Unicode-encoded (\udddd notation)
+    characters. <code>native2ascii</code> converts files which
+    contain other character encodings into files containing Latin-1
+    and/or Unicode-encoded charaters.</p>
+
+    <p>If <code>outputfile</code> is omitted, standard output is
+    used for output. If, in addition, <code>inputfile</code> is
+    omitted, standard input is used for input.</p>
+  </blockquote>
+
+  <h2><a name="Options"/>OPTIONS</h2>
+
+  <blockquote>
+    <dl>
+      <dt><code><b>-reverse</b></code></dt>
+
+      <dd>Perform the reverse operation: convert a file with
+      Latin-1 and/or Unicode encoded characters to one with
+      native-encoded characters.<br />
+      <br /></dd>
+
+      <dt><code><b>-encoding</b> encoding_name</code></dt>
+
+      <dd>Specify the encoding name which is used by the conversion
+      procedure. The default encoding is taken from System property
+      <code>file.encoding</code>. The <code>encoding_name</code>
+      string must be taken from the first column of the table of
+      supported encodings in the <a href=
+      "../../guides/intl/encoding.doc.html"><b>Supported
+      Encodings</b></a> document.</dd>
+
+      <dt><b>-J</b><i>option</i></dt>
+
+      <dd>Pass <i>option</i> to the Java virtual machine, where
+      <i>option</i> is one of the options described on the
+      reference page for the <a href="java.html">java application
+      launcher</a>. For example, <b>-J-Xms48m</b> sets the startup
+      memory to 48 megabytes.</dd>
+    </dl>
+  </blockquote>
+  <hr/>
+
+  <table border="0" width="100%" summary="layout">
+    <tr valign="top">
+      <td>
+        <p><a href=
+        "../../../legal/SMICopyright.html">Copyright</a> &copy;
+        2002-2006 <a href="http://www.sun.com">Sun Microsystems,
+        Inc.</a> All Rights Reserved.</p>
+      </td>
+
+      <td align="right"><img src="../../../images/sunlogo64x30.gif"
+      alt="Sun" width="64" height="30" /><br />
+      <i>Java Software</i></td>
+    </tr>
+  </table>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta name="generator" content=
+  "HTML Tidy for Windows (vers 12 April 2005), see www.w3.org" />
+<link rel="stylesheet" href="../../css/tools.css"  type="text/css" />
+  <title>appletviewer - The Java Applet Viewer</title>
+<meta name="collection" content="reference">
+</head>
+
+<body >
+  <h1>appletviewer - The Java Applet Viewer</h1>
+
+  <blockquote>
+    <p>The <b>appletviewer</b> command allows you to run applets
+    outside of a web browser.</p>
+  </blockquote>
+
+  <h2>SYNOPSIS</h2>
+
+  <blockquote>
+    <p><b><code>appletviewer</code></b> <code>[</code> <a href=
+    "#Options"><code>options</code></a> <code>] <i>urls</i>
+    ...</code></p>
+  </blockquote>
+
+  <h2>DESCRIPTION</h2>
+
+  <blockquote><p>
+    The <b>appletviewer</b> command connects to the documents or
+    resources designated by <i>urls</i> and displays each applet
+    referenced by the documents in its own window. Note: if the
+    documents referred to by <i>urls</i> do not reference any
+    applets with the <i>OBJECT</i>, <i>EMBED</i>, or <i>APPLET</i>
+    tag, then <b>appletviewer</b> does nothing. For details on the
+    HTML tags that <b>appletviewer</b> supports, see <a href=
+    "../appletviewertags.html">AppletViewer Tags</a>.
+</p>
+    <p><b>Note:</b> The <b>appletviewer</b> requires encoded URLs
+    according to the escaping mechanism defined in RFC2396. Only
+    encoded URLs are supported. However, file names must be
+    unencoded, as specified in RFC2396.</p>
+  </blockquote>
+
+
+
+  <h2><a name="Options"/>OPTIONS</h2>
+
+  <blockquote>
+    <dl>
+      <dt><b>-debug</b></dt>
+
+      <dd>Starts the applet viewer in the Java debugger, <a href=
+      "jdb.html"><b>jdb</b></a>, thus allowing you to debug the
+      applets in the document.</dd>
+
+      <dt><b>-encoding</b> <i>&nbsp; &nbsp;encoding name</i></dt>
+
+      <dd>Specify the input HTML file encoding name.</dd>
+
+      <dt><b>-J</b><i>javaoption</i></dt>
+
+      <dd>Passes through the string <i>javaoption</i> as a single
+      argument to the Java interpreter which runs the appletviewer.
+      The argument should not contain spaces. Multiple argument
+      words must all begin with the prefix <b>-J</b>, which is
+      stripped. This is useful for adjusting the compiler's
+      execution environment or memory usage.</dd>
+    </dl>
+  </blockquote>
+
+  <p>
+  <!-- PENDING: put in a SEE ALSO link to hotjava after the ADR --></p>
+  <hr/>
+
+  <table border="0" width="100%" summary="layout">
+    <tr valign="top">
+      <td>
+        <p><a href=
+        "../../../legal/SMICopyright.html">Copyright</a> &copy;
+        2002-2006 <a href="http://www.sun.com">Sun Microsystems,
+        Inc.</a> All Rights Reserved.</p>
+      </td>
+
+      <td align="right"><img src="../../../images/sunlogo64x30.gif"
+      alt="Sun" width="64" height="30" /><br />
+     <i>Java Software</i></td>
+    </tr>
+  </table>
+</body>
+</html>
