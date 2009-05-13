@@ -1,0 +1,352 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=iso-8859-1">
+<title>Modify <tt>DukesBirthdayBean.java</tt> - Your First Cup: An Introduction to the Java EE Platform</title>
+<meta name="robots" content="index,follow">
+<meta name="robots" content="index,follow">
+<meta name="date" content="2006-10-01">
+<link rel="stylesheet" type="text/css" href="css/default.css">
+<link rel="stylesheet" type="text/css" href="css/ipg.css">
+</head>
+
+<body leftmargin="0" topmargin="0" marginheight="0" marginwidth="0" bgcolor="#ffffff"  class="a0v0">
+<!--stopindex-->
+
+<a name="top"></a>
+
+<!-- BEGIN A1 COMPONENT V.0 -->
+<div class="a1">
+<div class="a1v0">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr valign="bottom">
+<td nowrap="nowrap">
+<span class="toolbarlinks">
+<a href="http://www.sun.com">sun.com</a>
+<a href="http://docs.sun.com/" class="dividelink">docs.sun.com</a>
+</span>
+</td><td align="right" nowrap="nowrap">
+<span class="toolbarlinks">
+<a href="http://www.sun.com/MySun/">My Sun</a>
+<a href="http://www.sun.com/worldwide/" class="dividelink">Worldwide Sites</a>
+</span>
+</td></tr>
+</table>
+</div>
+</div>
+<!-- END A1 COMPONENT V.0 -->
+
+<!-- BEGIN A2 COMPONENT V.0 -->
+<div class="a2" id="a2v0">
+<div class="cornerTL">
+<div class="cornerTR">
+<div class="cornerBL">
+<div class="cornerBR">
+<div class="a2topiclinks">
+<table cellpadding="1" cellspacing="0" border="0">
+<tr valign="bottom">
+<td><a href="http://www.sun.com/" title="Home Page"><img src="css/a.gif" alt="Home Page" width="104" height="58" border="0" class="sunlogo"></a></td><td><img src="css/a.gif" alt="" width="1" height="1" border="0" id="ip1"></td>
+<td class="navlinks" id="navlink1">
+<div>
+<a id="glink1" href="http://www.sun.com/products/">Products</a>
+</div>
+</td><td><img src="css/a.gif" alt="" width="1" height="1" border="0" id="ip2"></td>
+<td class="navlinks" id="navlink2">
+<div>
+<a id="glink2" href="http://www.sun.com/downloads/">Downloads</a>
+</div>
+</td><td><img src="css/a.gif" alt="" width="1" height="1" border="0" id="ip3"></td><td class="navlinks" id="navlink3">
+<div>
+<a id="glink3" href="http://www.sun.com/service/">Service &amp; Solutions</a>
+</div>
+</td><td><img src="css/a.gif" alt="" width="1" height="1" border="0" id="ip4"></td><td class="navlinks" id="navlink4">
+<div>
+<a id="glink4" href="http://www.sun.com/support/">Support</a>
+</div>
+</td><td><img src="css/a.gif" alt="" width="1" height="1" border="0" id="ip5"></td><td class="navlinks" id="navlink5">
+<div>
+<a id="glink5" href="http://www.sun.com/training/">Training</a>
+</div>
+</td><td><img src="css/a.gif" alt="" width="1" height="1" border="0" id="ip6"></td><td class="navlinks" id="navlink6">
+<div>
+<a id="glink6" href="http://research.sun.com/">Research</a>
+</div>
+</td>
+</tr>
+</table>
+</div>
+
+</div></div></div></div>
+</div>
+<!-- END A2 COMPONENT V.0 -->
+
+<!-- BEGIN BREADCRUMB -->
+<div id="breadcrumb">
+<?GenHTML ReferencePage >Your First Cup: An Introduction to the Java EE Platform<?GenHTML /ReferencePage> > <a href="p6.html">3.&nbsp;&nbsp;Creating Your First Java EE Application</a> > <a href="p6.html#gcrkm">Coding the Example Application</a> > <a href="p7.html#gcrlx">Creating the Enterprise Bean</a> > <a href="p7.html#gcrpi">Creating <tt>DukesBirthdayBean</tt> in NetBeans</a>
+</div><br />
+<!-- END BREADCRUMB -->
+
+<!-- BEGIN WRAPPER TABLE, 1 COLUMN, MAIN -->
+<table border="0" cellpadding="0" cellspacing="10" width="100%">
+<tr valign="bottom"><td width="100%" valign="top">
+<!-- BEGIN CENTRAL COLUMN COMPONENTS -->
+
+<!-- BEGIN PAGE CONTROL ROW -->
+<table border="0" cellpadding="5" cellspacing="0" width="100%">
+<tr><td colspan="4"></td></tr>
+<tr>
+<td></td>
+<td>&nbsp;</td>
+<td style="width: 1in"><a href="p7.html"><img style="padding-right: 3px" src="graphics/prev.gif" border="0">Previous</a></td>
+<td style="width: 1in"><a href="p9.html">Next<img style="padding-left: 3px" src="graphics/next.gif" border="0"></a></td>
+</tr>
+</table>
+<!-- END PAGE CONTROL ROW -->
+
+</td></tr>
+<tr><td width="100%" valign="top">
+<a name="skip2content"> </a>
+
+<div class="embeddedtocpane">
+  <div class="cornerTL"><div class="cornerTR"></div></div>
+
+  <h5><span class="toctitle"><a href="toc.html">Contents</a></span> <span class="index"></span></h5>
+  <div class="embeddedtoc">
+    <p class="toc level1"><a href="docinfo.html">Document Information</a></p>
+<p class="toc level1"><a href="p2.html">Preface</a></p>
+<p class="toc level1"><a href="p3.html">1.&nbsp;&nbsp;Introduction</a></p>
+<p class="toc level1"><a href="p4.html">2.&nbsp;&nbsp;The Java Platform, Enterprise Edition</a></p>
+<p class="toc level1"><a href="p6.html">3.&nbsp;&nbsp;Creating Your First Java EE Application</a></p>
+<p class="toc level2"><a href="p6.html#gentextid-350">Architecture of the Example Application</a></p>
+<p class="toc level3"><a href="p6.html#gcrlr">Tiers in the Example Application</a></p>
+<p class="toc level3"><a href="p6.html#gcrlu">Java EE Technologies Used in the Example Application</a></p>
+<p class="toc level2 tocsp"><a href="p6.html#gcrkm">Coding the Example Application</a></p>
+<p class="toc level3"><a href="p6.html#gcskg">Getting Started</a></p>
+<p class="toc level3"><a href="p6.html#gcskv">Register the Server with NetBeans</a></p>
+<p class="toc level3"><a href="p6.html#gcskj">Create a Directory for the Example</a></p>
+<p class="toc level3"><a href="p6.html#gcska">Specify Some Settings</a></p>
+<p class="toc level3"><a href="p6.html#gcrkn">Creating the Web Service Endpoint</a></p>
+<p class="toc level4"><a href="p6.html#gcrom">JAX-WS Endpoints</a></p>
+<p class="toc level4"><a href="p6.html#gcroi">Creating the Endpoint</a></p>
+<p class="toc level4"><a href="p7.html#gctoz">Building and Deploying the Web Service</a></p>
+<p class="toc level3 tocsp"><a href="p7.html#gcrlx">Creating the Enterprise Bean</a></p>
+<p class="toc level4"><a href="p7.html#gcrpi">Creating <tt>DukesBirthdayBean</tt> in NetBeans</a></p>
+<div class="onpage">
+<p class="toc level3 tocsp"><a href="#gcrlt">Creating the Web Client</a></p>
+<p class="toc level4"><a href="#gcroo">Setting <tt>firstcup-war</tt> to support JavaServer Faces Technology</a></p>
+<p class="toc level4"><a href="#gcsll">Creating a Web Service Client for the <tt>firstcup-war</tt> Web Module</a></p>
+<p class="toc level4"><a href="#gcrpf">Creating a Resource Bundle</a></p>
+</div>
+<p class="toc level4"><a href="p9.html">Configuring the Resource Bundle in the Configuration File</a></p>
+<p class="toc level4"><a href="p9.html#gcslm">Adding a Dependency on the Enterprise Bean Module</a></p>
+<p class="toc level4"><a href="p9.html#gcrqx">Creating the <tt>DukesBDay</tt> Managed Bean Class</a></p>
+<p class="toc level4"><a href="p10.html#gcrrd">Configuring the <tt>DukesBDay</tt> Bean in the Configuration File</a></p>
+<p class="toc level4"><a href="p10.html#gcrrw">Creating the <tt>greeting.jsp</tt> Page</a></p>
+<p class="toc level5"><a href="p10.html#gcruv">Creating an Empty JSP Page</a></p>
+<p class="toc level5"><a href="p10.html#gcrry">Declaring the JavaServer Faces Tag Libraries</a></p>
+<p class="toc level5"><a href="p10.html#gcrqp">Adding the <tt>f:view</tt> and <tt>f:form</tt> Tags</a></p>
+<p class="toc level5"><a href="p10.html#gcrqz">Adding Output Labels to Display Read-only Content</a></p>
+<p class="toc level5"><a href="p11.html">Add an Input Component to Accept the User's Birth Date</a></p>
+<p class="toc level5"><a href="p11.html#gcrqg">Registering a Converter on the Input Component</a></p>
+<p class="toc level5"><a href="p11.html#gcrrp">Adding an Error Message to Display if Conversion Fails</a></p>
+<p class="toc level5"><a href="p11.html#gcrsf">Add a Button for Submitting the Form</a></p>
+<p class="toc level4 tocsp"><a href="p11.html#gcrsp">Defining Page Navigation</a></p>
+<p class="toc level4"><a href="p11.html#gcrti">Creating the <tt>response.jsp</tt> Page</a></p>
+<p class="toc level3 tocsp"><a href="p12.html">Building, Packaging, Deploying, and Running the <tt>firstcup</tt> Enterprise Application</a></p>
+<p class="toc level3"><a href="p12.html#gctqk">Preparing the Deployment Descriptor</a></p>
+<p class="toc level3"><a href="p12.html#gctoj">Building and Packaging the <tt>firstcup</tt> Enterprise Application</a></p>
+<p class="toc level3"><a href="p12.html#gctqe">Deploying the <tt>firstcup</tt> Enterprise Application</a></p>
+<p class="toc level3"><a href="p12.html#gctqc">Running the <tt>firstcup</tt> Application</a></p>
+<p class="toc level1 tocsp"><a href="p13.html">4.&nbsp;&nbsp;Building, Packaging, and Deploying and Running the Example Application</a></p>
+<p class="toc level1"><a href="p15.html">5.&nbsp;&nbsp;Next Steps</a></p>
+
+  </div>
+  <div class="cornerBL"><div class="cornerBR"></div></div>
+</div>
+
+
+
+
+<div class="maincontent">
+<!-- startindex -->
+	<a name="gcrpg"></a><h5><img src="graphics/procedure.gif"> Modify <tt>DukesBirthdayBean.java</tt></h5>
+<p>Now you'll add the code that calculates the difference in age in
+years between Duke and the user.</p><ol>
+<li><b>In <tt>DukesBirthdayBean.java</tt>, delete the empty default constructor that NetBeans generated.</b></li>
+<li><b>Directly after the class declaration, paste in the following code:</b><pre>private static Logger logger = 
+		Logger.getLogger("com.sun.firstcup.ejb.DukesBirthdayBean");
+public int getAgeDifference(Date date) {
+	int ageDifference;
+
+	Calendar theirBirthday = new GregorianCalendar();
+	Calendar dukesBirthday = new GregorianCalendar(1995, Calendar.MAY, 23);
+
+	// Set the Calendar object to the passed in Date
+	theirBirthday.setTime(date);
+
+	// Subtract the user's age from Duke's age
+	ageDifference = dukesBirthday.get(Calendar.YEAR) - 
+	theirBirthday.get(Calendar.YEAR);
+	logger.info("Raw ageDifference is: " + ageDifference);
+	// Check to see if Duke's birthday occurs before the user's. If so, 
+	// subtract one from the age difference
+	if (dukesBirthday.before(theirBirthday) &amp;&amp; (ageDifference > 0)) {
+		ageDifference--;
+	}
+	logger.info("Final ageDifference is: " + ageDifference);
+
+	return ageDifference;
+}</pre></li>
+<li><b>Right-click in the editor window and select Fix Imports.</b></li>
+<li><b>Choose the <tt>java.util.logging.Logger</tt> fully-qualified name for the <tt>Logger</tt> class.</b></li>
+<li><b>Choose the <tt>java.util.Date</tt> fully-qualified name for the <tt>Date</tt> class.</b></li>
+<li><b>Click OK.</b></li>
+<li><b>Right-click within the new <tt>getAgeDifference</tt> method and select EJB Methods&rarr;Add to Remote Interface.</b></li>
+<li><b>Select File&rarr;Save.</b></li></ol><a name="gcsxy"></a><h5><img src="graphics/procedure.gif"> Modify <tt>DukesBirthdayRemote.java</tt></h5>
+<ol>
+<li><b>Expand the <tt>firstcup-ejb</tt> module in the Projects pane.</b></li>
+<li><b>Double-click <tt>DukesBirthdayRemote.java</tt> under Source Packages&rarr;<tt>com.sun.firstcup.ejb</tt>.</b></li>
+<li><b>Right-click in the editor window and select Fix Imports.</b></li>
+<li><b>Select <tt>java.util.Date</tt> as the fully-qualified class name of the <tt>Date</tt> class and click
+OK.</b></li>
+<li><b>Remove the <tt>throws</tt> clause from the method definition so that you are left
+with <tt>int getAgeDifference(Date date);</tt>.</b></li>
+<li><b>Select File&rarr;Save.</b></li></ol><a name="gcrlt"></a><h4>Creating the Web Client</h4>
+<p>To create the web client, you need to perform the following tasks:</p>
+<ul><li><p>Set the <tt>firstcup-war</tt> module to support JavaServer Faces technology. This will create a <tt>web.xml</tt> file that has a mapping to <tt>FacesServlet</tt>.</p></li>
+<li><p>Create a web service client.</p></li>
+<li><p>Create a resource bundle to hold localized messages used by the JSP pages.</p></li>
+<li><p>Configure the resource bundle in the configuration file.</p></li>
+<li><p>Create the <tt>DukesBDay</tt> managed bean class.</p></li>
+<li><p>Configure <tt>DukesBDay</tt> in the configuration file.</p></li>
+<li><p>Create the <tt>greeting.jsp</tt> page.</p></li>
+<li><p>Configure the navigation rules in the configuration file.</p></li>
+<li><p>Create the <tt>response.jsp</tt> page.</p></li></ul>
+<a name="gcroo"></a><h5>Setting <tt>firstcup-war</tt> to support JavaServer Faces Technology</h5>
+<p>All JavaServer Faces applications must include a mapping to the <tt>FacesServlet</tt> instance
+in their deployment descriptors. The <tt>FacesServlet</tt> instance accepts incoming requests, passes them to
+the life cycle for processing, and initializes resources. </p><p>You create the mapping to <tt>FacesServlet</tt> in the web application's deployment descriptor. Rather
+than adding the mapping to the <tt>web.xml</tt> file directly, NetBeans will create
+the <tt>web.xml</tt> file and perform the mapping to <tt>FacesServlet</tt> for you when you specify
+that your web application supports JavaServer Faces technology. To do this, perform the
+following task.</p><a name="gcrps"></a><h5><img src="graphics/procedure.gif"> Setting <tt>firstcup-war</tt> to support JavaServer Faces technology</h5>
+<ol>
+<li><b>Right-click the <tt>firstcup-war</tt> module of the <tt>firstcup</tt> enterprise application in the Projects
+pane.</b></li>
+<li><b>Select Properties from the popup menu.</b></li>
+<li><b>Select Frameworks from the Categories tree.</b></li>
+<li><b>Click Add.</b></li>
+<li><b>Select JavaServer Faces from the list of choices in the dialog.</b></li>
+<li><b>Click OK.</b></li>
+<li><b>Change the servlet URL mapping to <tt>/firstcupWeb/*</tt>.</b><p>This path will be the path to the <tt>FacesServlet</tt> instance. All requests must
+include this path in between the application's context path and the page in
+the URL. Users don't have to include this path in the URL because
+<tt>firstcup</tt> includes an <tt>index.jsp</tt> page that forwards users to the <tt>greeting.jsp</tt> page when
+they enter the following URL: </p><pre>http://localhost:8080/firstcup</pre></li>
+<li><b>De-select the Validate XML checkbox.</b></li>
+<li><b>Click OK. </b><p>The remaining steps tell you how to perform the forward to <tt>greeting.jsp</tt> from
+the <tt>index.jsp</tt> page.</p></li>
+<li><b>Expand the <tt>firstcup-war</tt> module in the Projects pane and double-click Web Pages.</b></li>
+<li><b>Right-click <tt>welcomeJSF.jsp</tt>, select Delete from the popup menu, and click Yes in the
+dialog.</b></li>
+<li><b>Double-click <tt>index.jsp</tt>. </b><p>NetBeans generated this file when you created the <tt>firstcup</tt> project.</p></li>
+<li><b>Delete everything on the page.</b></li>
+<li><b>Enter the following in the <tt>index.jsp</tt> page:</b><pre>&lt;jsp:forward page="/firstcupWeb/greeting.jsp"/></pre></li>
+<li><b>Save the file by selecting File &rarr; Save from the menu bar.</b></li></ol><a name="gcsll"></a><h5>Creating a Web Service Client for the <tt>firstcup-war</tt> Web Module</h5>
+<p>The <tt>firstcup-war</tt> web module must consume the <tt>firstcup-dukes-age</tt> web service in order
+to get Duke's current age. For this to happen, you need to create
+a web service client for the <tt>firstcup-war</tt> web module.</p><a name="gcslr"></a><h5><img src="graphics/procedure.gif"> Creating a Web Service Client for the firstcup-war Web Module</h5>
+<ol>
+<li><b>Select <tt>firstcup-war</tt> from the Project pane.</b></li>
+<li><b>Select File &rarr; New File.</b></li>
+<li><b>Select Web Services from the Categories pane.</b></li>
+<li><b>Select Web Service client from the File Types pane.</b></li>
+<li><b>Click Next.</b></li>
+<li><b>Select WSDL URL.</b></li>
+<li><b>Into the WSDL URL field, enter the following location of the WSDL file
+of the web service that the web service client will consume.</b><p><tt>http://localhost:8080/DukesAgeService/DukesAgeService?WSDL</tt> </p></li>
+<li><b>Into the Package field, enter the following package where the client files will
+be generated.</b><p><tt>com.sun.firstcup.webservice</tt></p></li>
+<li><b>Click Finish.</b></li></ol><a name="gcrpf"></a><h5>Creating a Resource Bundle</h5>
+<p>In this section, we'll create the resource bundle that contains the static text
+and error messages used by the JSP pages. The <tt>firstcup</tt> client supports both
+English and Spanish locales. Therefore we need to create two properties files, each
+of which will contain the messages for one of the locales.</p><a name="gcrrz"></a><h5><img src="graphics/procedure.gif"> Creating a Resource Bundle</h5>
+<ol>
+<li><b>Right-click <tt>firstcup-war</tt> in the Projects pane.</b></li>
+<li><b>Select New &rarr; File/Folder from the popup menu.</b></li>
+<li><b>Select the Other category, then Properties File from the New File dialog.</b></li>
+<li><b>In the New Properties File dialog, enter <tt>WebMessages</tt> in the File Name field.</b></li>
+<li><b>In the Folder field, enter <tt>src/java/com/sun/firstcup/web</tt> as the location of the file.</b></li>
+<li><b>Click Finish.</b></li>
+<li><b>After NetBeans creates the properties file, enter the following messages or copy them
+from here to the file: </b><pre>Welcome=Hi. My name is Duke. Let us find out who is older -- You or me. 
+DukeIs=Duke is
+YearsOldToday=years old today.
+Instructions=Enter your birthday and click submit.
+YourBD=Your birthday
+Pattern=MM/dd/yyyy
+DateError=Please enter the date in the form MM/dd/yyyy.
+YouAre=You are 
+Year=year
+Years=years
+Older=older than Duke!
+Younger=younger than Duke!
+SameAge= the same age as Duke!
+Submit=Submit
+Back=Back</pre><p>These messages will be referenced from the JSP pages.</p></li>
+<li><b>Save the file by selecting File &rarr; Save from the menu.</b></li>
+<li><b>To add the Spanish translations of the messages, copy the properties file <tt>WebMessages_es.properties</tt>
+from <tt>&lt;INSTALL>/firstcup/example/firstcup/firstcup-war/src/java/com/sun/firstcup/web</tt>to <tt>&lt;INSTALL>/firstcup/myexample/firstcup/firstcup-war/src/java/com/sun/firstcup/web</tt>.</b><p>You can create multiple properties files, each with a set of messages for
+a different locale. By storing localized static text and messages in resource bundles,
+you don't need to create a separate set of JSP pages for each
+locale.</p></li>
+<li><b>Refresh the files in the application by selecting File &rarr; Refresh All Files
+from the menu bar.</b></li></ol>
+<!--stopindex-->
+</div>
+
+
+<!-- END CENTRAL COLUMN COMPONENTS -->
+</td></tr>
+
+<!-- BEGIN SPACER ROW -->
+<tr><td><img src="css/a.gif" width="780" height="1" border="0" alt="" /></td></tr>
+<!-- END SPACER ROW -->
+
+<tr><td>
+
+<!-- BEGIN PAGE CONTROL ROW -->
+<table border="0" cellpadding="5" cellspacing="0" width="100%">
+<tr valign="bottom">
+<td></td>
+<td style="width: 60%"></td>
+<td><a href="p7.html"><img style="padding-right: 3px" src="graphics/prev.gif" border="0">Previous</a></td>
+<td><a href="toc.html">Contents</a></td>
+<td></td>
+<td><a href="p9.html">Next<img style="padding-left: 3px" src="graphics/next.gif" border="0"></a></td>
+</tr>
+</table>
+<!-- END PAGE CONTROL ROW -->
+</td></tr>
+
+</table>
+<!-- END WRAPPER TABLE, 1 COLUMN, MAIN -->
+
+
+<!-- BEGIN A5 COMPONENT V.0 -->
+<div class="a5" id="a5v0">
+<span class="footerlinks">
+<a href="http://www.sun.com/company/">Company Info</a>
+<a href="http://www.sun.com/contact/">Contact</a>
+<a href="http://www.sun.com/share/text/termsofuse.html">Terms of Use</a>
+<a href="http://www.sun.com/privacy/">Privacy</a>
+
+<span class="footercopy">Copyright 1994-2006 Sun Microsystems, Inc.</span>
+</span>
+</div>
+<!-- END A5 COMPONENT V.0 -->
+
+</body>
+</html>
+
