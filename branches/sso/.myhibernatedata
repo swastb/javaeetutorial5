@@ -1,0 +1,22 @@
+#
+#Mon Apr 13 12:01:14 GMT 2009
+genBasicCompId=true
+sessionFactoryName=
+profile=
+daoSFId=sessionFactory
+version=3.1
+jndiPath=
+detectM2M=false
+reStrategyClass=
+springDaoFile=WebRoot/WEB-INF/spring/base/daoBaseContext.xml
+useJavaTypes=true
+keyGenerator=uuid.hex
+libInstallFolder=/WebRoot/WEB-INF/lib
+addLibs2Project=true
+genVersionTag=false
+sessionFactoryId=
+basePersistenceClass=
+reSettingsFile=
+configFile=/sso/src/hibernate.cfg.xml
+createConfigFile=false
+addLibs2Classpath=true
