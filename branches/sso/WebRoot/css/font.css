@@ -1,0 +1,37 @@
+.list-on {
+	border: 1px solid #99CCFF;
+	background-color: #99CCFF;
+	font-family: "Times New Roman", Times, serif;
+}
+
+.list-off {
+	border: 1px solid #99CCFF;
+	font-family: "Times New Roman", Times, serif;
+}
+
+.font-en {
+	font-family: "Times New Roman", Times, serif;
+	font-size: 14px;
+	font-style: normal;
+	font-weight: bold;
+	color: #FFFFFF;
+	text-align: center;
+}
+
+.font-ch {
+	font-family: "ºÚÌå";
+	font-size: 14px;
+	font-style: normal;
+	background-position: center;
+	color: #FFFFFF;
+}
+
+.inputon {
+	background-color: #DBF1FB;
+	border: 1px solid #355F88;
+}
+
+.inputoff {
+	background-color: #EEF8FD;
+	border: 1px solid #355F88;
+}
