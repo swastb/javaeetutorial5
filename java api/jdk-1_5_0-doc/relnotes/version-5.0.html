@@ -1,0 +1,141 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+    <title>Version 1.5.0 or 5.0?</title>
+<meta name="collection" content="reference">
+
+<STYLE type="text/css">
+<!--
+h1,h2        { font-family: Arial, Helvetica, sans-serif }
+.SansSerif   { font-family: Arial, Helvetica, sans-serif }
+.SmallFont   { font-size: 80% }
+.Indent      { margin-left: 4em; margin-right: 2em; }
+td.nowrap    { white-space: nowrap; }
+-->
+</STYLE>
+
+</head>
+
+<body>
+<center>
+    <h1>Version 1.5.0 or 5.0?</h1>
+</center>
+
+<div class="Indent">
+Both version numbers "1.5.0" and "5.0" are used to identify this
+release of the Java 2 Platform Standard Edition.
+Version "5.0" is the <b>product version</b>, while 
+"1.5.0" is the <b>developer version</b>.
+The number "5.0" is used to better reflect the level of maturity, 
+stability, scalability and security of the J2SE.  
+
+<p>
+The number "5.0" was arrived at by dropping the leading "<tt>1.</tt>" 
+from "1.5.0".   Where you might have expected to see 1.5.0, it
+is now 5.0 (and where it was 1.5, it is now 5). 
+
+</div>
+<p>
+<h2>"Version 5.0" Used in Platform and Product Names</h2>
+
+<div class="Indent">
+<p>
+Version 5.0 is used in the platform and product names as given 
+in this table:
+</p>
+
+<p>
+<table border="1" rules=all cellpadding=6 cellspacing=3>
+<tr class="SansSerif">
+        <td width="30"></td>
+
+        <td><b>Full Name</b>                                                  </td>
+        <td><b>Abbreviation</b>                                               </td>
+</tr>
+
+<tr>
+        <td class="SansSerif"><b>Platform name</b></td>
+        <td> Java<sup><font size="-4">TM</font></sup> 2 Platform Standard Edition 5.0 </td>
+
+        <td> J2SE<sup><font size="-4">TM</font></sup> 5.0         </td>
+</tr>
+
+<tr class=SansSerif>
+</tr>
+<tr>
+        <td class="SansSerif" rowspan="2"><b>Products delivered<br> under the platform</b></td>
+
+        <td> J2SE<sup><font size="-4">TM</font></sup> Development Kit 5.0     </td>
+        <td> JDK<sup><font size="-4">TM</font></sup> 5.0          </td>
+</tr>
+<tr>
+        <td> J2SE<sup><font size="-4">TM</font></sup> Runtime Environment 5.0 </td>
+
+        <td> JRE 5.0                                              </td>
+</tr>
+</table>
+</p>
+
+<p>
+Due to significant popularity within the Java developer community, 
+the development kit has reverted back to the name "JDK" from "Java&nbsp;2&nbsp;SDK" (or "J2SDK"),
+and the runtime environment has reverted back to "JRE" from "J2RE".
+Notice that "JDK" stands for "J2SE Development Kit" (to distinguish
+it from the J2EE Development Kit).  The name "Java Development Kit" 
+is no longer used, and has not been offically used since 1.1, prior 
+to the advent of J2EE and J2ME.
+</p>
+
+<p>
+As before, the "2" in Java 2 Platform Standard Edition indicates the 
+2nd generation Java platform, introduced with J2SE 1.2.  This generation
+number is also used with J2EE and J2ME.
+</p>
+</div>
+
+<h2>"Version 1.5.0" Used by Developers</h2>
+
+<div class="Indent">
+<p>
+J2SE also keeps the version number 1.5.0 (or 1.5) in some places that 
+are visible only to developers, or where the version number 
+is parsed by programs.  As mentioned, 1.5.0 refers to exactly the same
+platform and products numbered 5.0.  Version numbers 1.5.0 and 1.5 are used at:
+</p>
+<ul>
+  <li><tt>java -version</tt> &nbsp;(among other info, returns &nbsp;<tt>java version "1.5.0"</tt>)
+  <li><tt>java -fullversion</tt> &nbsp;(returns <tt>&nbsp;java full version "1.5.0-b64"</tt>)
+  <li><tt>javac -source 1.5</tt> &nbsp;(<tt>javac -source 5</tt> &nbsp;also works)
+  <li><tt>java.version</tt> &nbsp;system property
+  <li><tt>java.vm.version</tt> &nbsp;system property
+  <li><tt>@since 1.5</tt> &nbsp;tag values
+  <li><tt>jdk1.5.0</tt> &nbsp;installation directory
+  <li><tt>jre1.5.0</tt> &nbsp;installation directory
+  <li><tt>http://java.sun.com/j2se/1.5.0</tt> &nbsp;website (<tt>http://java.sun.com/j2se/5.0</tt> &nbsp;also works)
+
+</ul>
+
+<p>
+<!--
+Note: The number 1.5.0 adheres to a Sun convention where the leading "1" 
+changes only when there is a major break in backward-compatibility.
+-->
+</p>
+
+<p>
+Also see:
+</p>
+
+<ul>
+  <li> <a href="/j2se/versioning_naming.html">J2SE JDK/JRE Version String Naming Conventions</a>
+  <li> <a href="/j2se/codenames.html">J2SE Code Names</a>
+
+</ul>
+
+</div>
+
+
+
+
+</body>
+</html>
