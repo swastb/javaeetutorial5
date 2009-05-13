@@ -1,0 +1,3130 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0071) -->
+<HTML><HEAD><TITLE>Java Cryptography Extension</TITLE>
+<meta name="collection" content="reference">
+<META http-equiv=Content-Type content="text/html; charset=windows-1252">
+<META content="MSHTML 5.50.4934.1600" name=GENERATOR></HEAD>
+<BODY bgColor=#ffffff>
+<HR>
+
+<CENTER>
+<H1>Java<SUP><FONT size=-2>TM</FONT></SUP> Cryptography Extension (JCE)</H1>
+<H1>Reference Guide</H1>
+<H2>for the Java<SUP><FONT size=-2>TM</FONT></SUP> 2 SDK, Standard Edition, 
+5.0</H2></CENTER>
+<HR>
+
+<P>
+<DL>
+  <DT>
+  <DD><A 
+  href="#Introduction"><FONT 
+  size=+2><B>Introduction</B></FONT></A> <BR><BR>
+  <DT>
+  <DD><A 
+  href="#WhatsNew"><FONT 
+  size=+2><B>What's New in JCE in the JDK 5.0</B></FONT></A> <BR><BR>
+  <DT>
+  <DD><A 
+  href="#Concepts"><FONT 
+  size=+2><B>Cryptographic Concepts</B></FONT></A> 
+  <DL>
+    <DT>
+    <DD><A 
+    href="#EncrDecr"><B>Encryption 
+    and Decryption</B></A> 
+    <DT>
+    <DD><A 
+    href="#PBE"><B>Password-Based 
+    Encryption</B></A> 
+    <DT>
+    <DD><A 
+    href="#Cipher"><B>Cipher</B> 
+    <DT>
+    <DD><A 
+    href="#KeyAgree"><B>Key 
+    Agreement</B></A> 
+    <DT>
+    <DD><A 
+    href="#MAC"><B>Message 
+    Authentication Code</B></A> </DD></DL><BR>
+  <DT>
+  <DD><A 
+  href="#CoreClasses"><FONT 
+  size=+2><B>Core Classes</B></FONT></A> 
+  <DL>
+    <DT>
+    <DD><A 
+    href="#CipherClass"><B>The 
+    Cipher Class</B></A> 
+    <DT>
+    <DD><A 
+    href="#CipherStream"><B>The 
+    Cipher Stream Classes</B></A> 
+    <DL>
+      <DT>
+      <DD><A 
+      href="#CipherInput"><B>The 
+      CipherInputStream Class</B></A> 
+      <DT>
+      <DD><A 
+      href="#CipherOutput"><B>The 
+      CipherOutputStream Class</B></A> </DD></DL>
+    <DT>
+    <DD><A 
+    href="#KeyGenerator"><B>The 
+    KeyGenerator Class</B></A> 
+    <DT>
+    <DD><A 
+    href="#SecretFactory"><B>The 
+    SecretKeyFactory Class</B></A> 
+    <DT>
+    <DD><A 
+    href="#SealedObject"><B>The 
+    SealedObject Class</B></A> 
+    <DT>
+    <DD><A 
+    href="#KeyAgreement"><B>The 
+    KeyAgreement Class</B></A> 
+    <DT>
+    <DD><A 
+    href="#Mac"><B>The 
+    Mac Class</B></A> </DD></DL><BR>
+  <DT>
+  <DD><A 
+  href="#ExemptApps"><FONT 
+  size=+2><B>How to Make Applications "Exempt" from Cryptographic 
+  Restrictions</B></FONT></A> <BR><BR>
+  <DT>
+  <DD><A 
+  href="#InstallProvider"><FONT 
+  size=+2><B>Installing JCE Providers for the JDK 5.0</B></FONT></A> 
+  <BR><BR>
+  <DT>
+  <DD><A 
+  href="#JceKeystore"><FONT 
+  size=+2><B>JCE Keystore</B></FONT></A> <BR><BR>
+  <DT>
+  <DD><A 
+  href="#Examples"><FONT 
+  size=+2><B>Code Examples</B></FONT></A> 
+  <DL>
+    <DT>
+    <DD><A 
+    href="#SimpleEncrEx"><B>Using 
+    Encryption</B></A> 
+    <DT>
+    <DD><A 
+    href="#PBEEx"><B>Using 
+    Password-Based Encryption</B></A> 
+    <DT>
+    <DD><A 
+    href="#KeyAgreeEx"><B>Using 
+    Key Agreement</B></A> </DD></DL><BR><BR>
+  <DT>
+  <DD><A 
+  href="#AppA"><FONT 
+  size=+2><B>Appendix A: Standard Names</B></FONT></A> <BR><BR>
+  <DT>
+  <DD><A 
+  href="#AppB"><FONT 
+  size=+2><B>Appendix B: SunJCE Default Keysizes</B></FONT></A> <BR><BR>
+  <DT>
+  <DD><A 
+  href="#AppC"><FONT 
+  size=+2><B>Appendix C: SunJCE Keysize Restrictions</B></FONT></A> <BR><BR>
+  <DT>
+  <DD><A 
+  href="#AppD"><FONT 
+  size=+2><B>Appendix D: Jurisdiction Policy File Format</B></FONT></A> <BR><BR>
+  <DT>
+  <DD><A 
+  href="#AppE"><FONT 
+  size=+2><B>Appendix E: Maximum Key Sizes Allowed by "Strong" Jurisdiction 
+  Policy Files</B></FONT></A> <BR><BR>
+  <DT>
+  <DD><A 
+  href="#AppF"><FONT 
+  size=+2><B>Appendix F: Sample Programs</B></FONT></A>
+  <DL>
+    <DT>
+    <DD><A 
+    href="#DH2Ex"><B>Diffie-Hellman 
+    Key Exchange between 2 Parties</B></A> 
+    <DT>
+    <DD><A 
+    href="#DH3Ex"><B>Diffie-Hellman 
+    Key Exchange between 3 Parties</B></A> 
+    <DT>
+    <DD><A 
+    href="#BlowKeyEx"><B>Blowfish 
+    Example</B></A> 
+    <DT>
+    <DD><A 
+    href="#HmacEx"><B>HMAC-MD5 
+    Example</B></A> </DD></DL></DD></DL>
+<HR>
+
+<H1><A name=Introduction>Introduction</A></H1>
+<BLOCKQUOTE>
+  <P>This document is intended as a companion to the <A 
+  href="../CryptoSpec.html">Java<SUP><FONT 
+  size=-2>TM</FONT></SUP> Cryptography Architecture (JCA) API Specification 
+  &amp; Reference</A>. References to chapters not present in this document are 
+  to chapters in the JCA Specification. 
+  <P>The Java<SUP><FONT size=-2>TM</FONT></SUP> Cryptography Extension (JCE) 
+  provides a framework and implementations for encryption, key generation and 
+  key agreement, and Message Authentication Code (MAC) algorithms. Support for 
+  encryption includes symmetric, asymmetric, block, and stream ciphers. The 
+  software also supports secure streams and sealed objects. 
+  <P>JCE was previously an optional package (extension) to the Java<SUP><FONT 
+  size=-2>TM</FONT></SUP> 2 SDK, Standard Edition (Java 2 SDK), versions 1.2.x 
+  and 1.3.x. JCE has now been integrated into the JDK 5.0. 
+  <P>JCE is based on the same <A 
+  href="../CryptoSpec.html#Design">design 
+  principles</A> found elsewhere in the JCA: implementation independence and, 
+  whenever possible, algorithm independence. It uses the same "<A 
+  href="../CryptoSpec.html#ProviderArch">provider</A>" 
+  architecture. Providers signed by a trusted entity can be plugged into the JCE 
+  framework, and new algorithms can be added seamlessly. 
+  <P>The JCE API covers: 
+  <UL>
+    <LI>Symmetric bulk encryption, such as DES, RC2, and IDEA
+    <P></P>
+    <LI>Symmetric stream encryption, such as RC4
+    <P></P>
+    <LI>Asymmetric encryption, such as RSA
+    <P></P>
+    <LI>Password-based encryption (PBE)
+    <P></P>
+    <LI>Key Agreement
+    <P></P>
+    <LI>Message Authentication Codes (MAC) </LI></UL>
+  <P>The JDK 5.0 release comes standard with a JCE provider named 
+  "<CODE>SunJCE</CODE>", which comes pre-installed and registered and which 
+  supplies the following cryptographic services: 
+  <UL>
+    <LI>An implementation of the DES (FIPS PUB 46-1), Triple DES, and Blowfish 
+    encryption algorithms in the Electronic Code Book (ECB), Cipher Block 
+    Chaining (CBC), Cipher Feedback (CFB), Output Feedback (OFB), and 
+    Propagating Cipher Block Chaining (PCBC) modes. (Note: Throughout this 
+    document, the terms "Triple DES" and "DES-EDE" will be used 
+interchangeably.)
+    <P></P>
+    <LI>Key generators for generating keys suitable for the DES, Triple DES, 
+    Blowfish, HMAC-MD5, and HMAC-SHA1 algorithms.
+    <P></P>
+    <LI>An implementation of the MD5 with DES-CBC password-based encryption 
+    (PBE) algorithm defined in PKCS #5.
+    <P></P>
+    <LI>"Secret-key factories" providing bi-directional conversions between 
+    opaque DES, Triple DES and PBE key objects and transparent representations 
+    of their underlying key material.
+    <P></P>
+    <LI>An implementation of the Diffie-Hellman key agreement algorithm between 
+    two or more parties.
+    <P></P>
+    <LI>A Diffie-Hellman key pair generator for generating a pair of public and 
+    private values suitable for the Diffie-Hellman algorithm.
+    <P></P>
+    <LI>A Diffie-Hellman algorithm parameter generator.
+    <P></P>
+    <LI>A Diffie-Hellman "key factory" providing bi-directional conversions 
+    between opaque Diffie-Hellman key objects and transparent representations of 
+    their underlying key material.
+    <P></P>
+    <LI>Algorithm parameter managers for Diffie-Hellman, DES, Triple DES, 
+    Blowfish, and PBE parameters.
+    <P></P>
+    <LI>An implementation of the HMAC-MD5 and HMAC-SHA1 keyed-hashing algorithms 
+    defined in RFC 2104.
+    <P></P>
+    <LI>An implementation of the padding scheme described in PKCS #5.
+    <P></P>
+    <LI>A keystore implementation for the proprietary keystore type named 
+    "JCEKS". </LI></UL>
+  <H3><A name=Terminology>A Note on Terminology</A></H3>
+  <BLOCKQUOTE>
+    <P>The JCE within the JDK 5.0 includes two software components: 
+    <UL>
+      <LI>the framework that defines and supports cryptographic services that 
+      providers can supply implementations for. This framework includes 
+      everything in the <CODE>javax.crypto</CODE> package. 
+      <P></P>
+      <LI>a provider named "SunJCE" </LI></UL>Throughout this document, the term 
+    "JCE" by itself refers to the JCE framework in the JDK 5.0. 
+    Whenever the JCE provider supplied with the JDK 5.0 is mentioned, 
+    it will be referred to explicitly as the "SunJCE" provider. 
+</BLOCKQUOTE></BLOCKQUOTE><BR>
+
+<H1><A name=WhatsNew>What's New in JCE in the JDK 5.0</A></H1>
+<BLOCKQUOTE>
+  <P>Here are the differences between JDK 1.4 and 5.0:
+  <UL>
+    <LI><A 
+    href="#RSA-OAEP">
+    Full support for XML Encryption RSA-OAEP Algorithm</A>
+    <P></P>
+    <LI><A 
+    href="#SolarisCrypto">
+    Integration with Solaris Cryptographic Framework</A>
+    <P></P>
+    <LI><A 
+    href="#PKCSSupp">
+    Support for Additional Features of PKCS #11
+    <P></P>
+    <LI><A 
+    href="#PKCSSupp">
+    Support for ECC Algorithm
+    <P></P>
+    <LI><A 
+    href="#ByteBufferSupp">
+    Added ByteBuffer API Support to JCA/JCE
+    <P></P>
+    <LI><A 
+    href="#RC2ParameterSpec">
+    Support for RC2ParameterSpec
+    <P></P>
+    <LI><A 
+    href="#GeoTrustRootCerts">
+    Updated cacerts File to Include GeoTrust Root Certificates
+    <P></P>
+    <LI><A 
+    href="#EncryptedPrivateKeyInfo">
+    Simplified retrieval of <code>PKCS8EncodedKeySpec</code> from 
+    <code>javax.crypto.EncryptedPrivateKeyInfo</code>
+    <P></P>
+    <LI><A 
+    href="#PBECiphers">
+    Support for <code>PBEWithSHA1AndDESede</code> and <code>PBEWithSHA1AndRC2_40</code> Ciphers
+    <P></P>
+    <LI><A 
+    href="#XMLEncryptionPadding">
+    Support for XML Encryption Padding Algorithm in JCE Block Encryption Ciphers
+    <P></P>
+    </A> 
+    </LI></UL>
+
+  <H3><A name=RSA-OAEP>Full support for XML Encryption RSA-OAEP Algorithm</A></H3>
+  <BLOCKQUOTE>
+    <P>
+    Prior to 5.0, JCE did not define any parameter class for specifying the non-default 
+    values used in OAEP and PSS padding as defined in PKCS#1 v2.1. Therefore, there was
+    no generic way for applications to specify non-default values used in OAEP and PSS 
+    padding.
+    <p>
+    In 5.0, new parameter classes were added to fully support OAEP padding and the existing
+    existing PSS parameter class was enhanced with APIs to fully support RSA PSS signature 
+    implementations.
+
+    <P>
+    The following classes were added:
+    <UL>
+      <LI><A 
+      href="../../../api/java/crypto/spec/OAEPParameterSpec.html">
+      javax.crypto.spec.OAEPParameterSpec</A>
+      <LI><A 
+      href="../../../api/javax/crypto/spec/PSource.html">
+      javax.crypto.spec.PSource</A>
+
+      </LI></UL>
+    <P>The following methods and fields were added to <A 
+    href="../../../api/javax/security/spec/PSSParameterSpec.html">
+    javax.security.spec.PSSParameterSpec</A>: 
+    <PRE>
+    public static final PSSParameterSpec DEFAULT
+    public PSSParameterSpec(String mdName, String mgfName,
+                             AlgorithmParameterSpec mgfSpec,
+                             int saltLen, int trailerField)
+    public String getDigestAlgorithm()
+    public String getMGFAlgorithm()
+    public AlgorithmParameterSpec getMGFParameters()
+    public int getTrailerField()
+</PRE>
+</BLOCKQUOTE></BLOCKQUOTE>
+
+<blockquote>
+  <H3><A name=SolarisCrypto>Integration With Solaris Cryptographic Framework</A></H3>
+  <BLOCKQUOTE>
+    <P>
+The default Java security provider configuration has been changed in 5.0 to include an 
+instance of the SunPKCS11 provider that uses the Solaris Cryptographic Framework. It 
+is the provider with the highest precedence thereby allowing all existing applications 
+to take advantage of the improved performance on S10. There is no change in behavior on 
+S8 and S9 systems.
+<p>  
+As a result of this change, many cryptographic operations will execute several times as 
+fast as before on all S10 systems. On systems with cryptographic hardware acceleration, 
+the performance improvements may be two orders of magnitude.
+</blockquote>
+
+<H3><A name=PKCSSupp>Support for PKCS #11 Based Crypto Provider</A></H3>
+<BLOCKQUOTE>
+In 5.0, a JCA/JCE provider ("SunPKCS11") that acts as a generic gateway to the native 
+PKCS#11 API has been implemented. PKCS#11 is the de-facto standard for crypto accelerators 
+and also widely used to access cryptographic smartcards. The administrator/user can 
+configure this provider to talk any PKCS#11 v2.x compliant token.
+<p>
+[?? Need to include file format or link to SunPKCS11 configuration file: <code>sunpkcs11-format.txt</code>]
+</blockquote>
+
+<H3><A name=ECC-Support>Support for ECC Algorithm</A></H3>
+<BLOCKQUOTE>
+
+Prior to 5.0 the JCA/JCE framework did not include support classes for ECC-related
+crypto algorithms. Users who want to use ECC have to depend on 3rd party library for 
+using ECC implementations and it doesn't fit well with existing JCA/JCE framework. 
+<p>
+Starting in 5.0, full support for ECC classes to facilitate providers that support ECC
+have been included.
+
+<P>
+    The following interfaces were added:
+    <UL>
+      <LI><A 
+      href="../../../api/javax/security/interfaces/ECKey.html">
+       java.security.interfaces package.ECKey</A>
+      <LI><A 
+      href="../../../api/javax/security/interfaces/ECPublicKey.html">
+      java.security.interfaces.ECPublicKey</A>
+      <LI><A 
+      href="../../../api/javax/security/interfaces/ECPrivateKey.html">
+      java.security.interfaces.ECPrivateKey</A>
+      <LI><A 
+      href="../../../api/javax/security/interfaces/ECPoint.html">
+      java.security.interfaces.ECPoint</A>
+      <LI><A 
+      href="../../../api/javax/security/spec/ECField.html">
+      javax.security.spec.ECField</A>
+    </ul>
+<P>
+
+    The following classes were added:
+    <UL>
+      <LI><A 
+      href="../../../api/javax/security/spec/ECFieldFp.html">
+       java.security.interfaces package.ECKey</A>
+      <LI><A 
+      href="../../../api/javax/security/spec/ECFieldF2m.html">
+      java.security.interfaces.ECPublicKey</A>
+      <LI><A 
+      href="../../../api/javax/security/spec/EllipticCurve.html">
+      java.security.interfaces.ECPrivateKey</A>
+      <LI><A 
+      href="../../../api/javax/security/spec/ECPublicKeySpec.html">
+      java.security.interfaces.ECPoint</A>
+      <LI><A 
+      href="../../../api/javax/security/spec/ECPrivateKeySpec.html">
+      javax.security.spec.ECField</A>
+      <LI><A 
+      href="../../../api/javax/security/spec/ECGenParameterSpec.html">
+      javax.security.spec.ECField</A>
+      <LI><A 
+      href="../../../api/javax/security/spec/ECParameterSpec.html">
+      javax.security.spec.ECField</A>      
+
+      </LI></UL>
+</blockquote>
+
+<H3><A name=ByteBufferSupp>Added ByteBuffer API Support</A></H3>
+<BLOCKQUOTE>
+Methods that take ByteBuffer arguments are added to JCA/JCE API and SPI classes 
+that are used to process bulk data. Providers can override the engine* methods 
+if they can process ByteBuffers more efficiently than byte[].
+<p>
+The following methods were added to support ByteBuffers:
+<pre>
+    java.security.MessageDigest.update(ByteBuffer input)
+    java.security.Signature.update(ByteBuffer data)
+    java.security.SignatureSpi.engineUpdate(ByteBuffer data)
+    javax.crypto.Mac.update(ByteBuffer input)
+    javax.crypto.MacSpi.engineUpdate(ByteBuffer input)
+    javax.crypto.Cipher.update(ByteBuffer input, ByteBuffer output)
+    javax.crypto.Cipher.doFinal(ByteBuffer input, ByteBuffer output)
+    javax.crypto.CipherSpi.engineUpdate(ByteBuffer input, ByteBuffer output)
+    javax.crypto.CipherSpi.engineDoFinal(ByteBuffer input, ByteBuffer output)
+    java.security.MessageDigestSpi.engineUpdate(ByteBuffer input)
+</pre>
+</blockquote>
+
+<H3><A name=RC2ParameterSpec>Support for RC2ParameterSpec</A></H3>
+<blockquote>
+The RC2 algorithm implementation has been enhanced in 5.0 to support effective key size
+that is distinct from the length of the input key.
+</blockquote>
+
+<H3><A name=GeoTrustRootCerts>Cacerts file Updated with GeoTrust Root Certificates</A></H3>
+<BLOCKQUOTE>
+The GeoTrust root certificate fingerprints were verified before importing them into
+the cacerts file. Five root certificates were added with the following aliases:
+<pre>
+    geotrustglobalca
+    equifaxsecureebusinessca1
+    equifaxsecureca
+    equifaxsecureglobalebusinessca1
+    equifaxsecureebusinessca2
+</pre>
+</blockquote>
+
+<H3><A name=EncryptedPrivateKeyInfo>Simplified Retrieval of <code>PKCS8EncodedKeySpec</code> 
+from <code>javax.crypto.EncryptedPrivateKeyInfo</code></A></H3>
+<blockquote>
+In 5.0, <code>javax.crypto.EncryptedPrivateKeyInfo</code> only has one method, 
+<code>getKeySpec(Cipher)</code> for retrieving the PKCS8EncodedKeySpec from the encrypted data.
+This limitation requires users to specify a cipher which is initialized with the decryption key 
+and parameters. When users only have the decryption key, they would have to first retrieve the 
+parameters out of this EncryptedPrivateKeyInfo object, get hold of matching Cipher implementation, 
+initialize it, and then call the getKeySpec(Cipher) method.
+<P>
+To make <code>EncyptedPrivateKeyInfo</code> easier to use and to make its API consistent with
+<code>javax.crypto.SealedObject</code>, the following methods have been added to 
+<A href="../../../api/javax/crypto/EncryptedPrivateKeyInfo.html">
+       javax.crypto.EncryptedPrivateKeyInfo</A>:
+<pre>
+    getKeySpec(Key decryptKey)
+    getKeySpec(Key decryptKey, String provider)
+</pre>
+</blockquote>
+
+<H3><A name=EncryptedPrivateKeyInfo>Simplified Retrieval of <code>PKCS8EncodedKeySpec</code> </A></H3>
+<blockquote>
+In 1.4.2, the crypto jurisdiction policy files bundled in J2SE limits the maximum key length 
+(and parameter value for some crypto algorithms) that can be used for encryption/decryption. 
+Users who desire unlimited version of crypto jurisdiction files must download them separately.
+<p>
+Also, an exception is thrown when the Cipher instance is initialized with keys (or parameters 
+for certain crypto algorithms) exceeds the maximum values allowed by the crypto jurisdiction 
+files.
+<p>
+In 5.0, the Cipher class has been updated to provide the maximum values for key length and 
+parameters configured in the jurisdiction policy files, so that applications can use a 
+shorter key length when the default (limited strength) jurisdiction policy files are 
+installed.
+<p>
+The following methods have been added to 
+<A href="../../../api/javax/crypto/Cipher.html">
+       javax.crypto.Cipher</A>:
+<pre>
+    public static final int getMaxAllowedKeyLength(String transformation)
+             throws NoSuchAlgorithmException
+
+    public static final AlgorithmParameterSpec
+             getMaxAllowedParameterSpec(String transformation)
+             throws NoSuchAlgorithmException;
+</pre>
+</blockquote>
+
+<H3><A name=PBECiphers>Added Support for <code>PBEWithSHA1AndDESede</code> and <code>PBEWithSHA1AndRC2_40</code> Ciphers</A></H3>
+<blockquote>
+Added support for PBEWithSHA1AndDESede and PBEWithSHA1AndRC2_40 Ciphers in 
+SunJCE providers for implementing PKCS12 keystores.
+</blockquote>
+<H3><A name=XMLEncryptionPadding>Support for XML Encryption Padding Algorithm in JCE Block 
+Encryption Ciphers</A></H3>
+<blockquote>
+
+W3C XML Encryption defines a new padding algorithm for block ciphers. See
+<a href="http://www.w3.org/TR/xmlenc-core/#sec-Alg-Block"> 5.2 Block Encryption Algorithms</a> for 
+more information. 
+<p>
+To allow Sun's provider to be used by XML Encryption implementations and JSR 106 providers, we 
+have added support for this padding in 5.0.
+</blockquote>
+</blockquote>
+
+<H1><A name=Concepts>Cryptographic Concepts</A></H1>
+<BLOCKQUOTE>
+  <P>This section provides a high-level description of the concepts implemented 
+  by the API, and the exact meaning of the technical terms used in the API 
+  specification. 
+  <H4><A name=EncrDecr>Encryption and Decryption</A></H4>
+  <P>Encryption is the process of taking data (called <I>cleartext</I>) and a 
+  short string (a <I>key</I>), and producing data (<I>ciphertext</I>) 
+  meaningless to a third-party who does not know the key. Decryption is the 
+  inverse process: that of taking ciphertext and a short key string, and 
+  producing cleartext. 
+  <H4><A name=PBE>Password-Based Encryption</A></H4>
+  <P>Password-Based Encryption (PBE) derives an encryption key from a password. 
+  In order to make the task of getting from password to key very time-consuming 
+  for an attacker, most PBE implementations will mix in a random number, known 
+  as a <I>salt</I>, to create the key. 
+  <H4><A name=Cipher>Cipher</A></H4>
+  <P>Encryption and decryption are done using a cipher. A cipher is an object 
+  capable of carrying out encryption and decryption according to an encryption 
+  scheme (algorithm). 
+  <H4><A name=KeyAgree>Key Agreement</A></H4>
+  <P>Key agreement is a protocol by which 2 or more parties can establish the 
+  same cryptographic keys, without having to exchange any secret information.
+  <P>
+  <H4><A name=MAC>Message Authentication Code</A></H4>
+  <P>A Message Authentication Code (MAC) provides a way to check the integrity 
+  of information transmitted over or stored in an unreliable medium, based on a 
+  secret key. Typically, message authentication codes are used between two 
+  parties that share a secret key in order to validate information transmitted 
+  between these parties. 
+  <P>A MAC mechanism that is based on cryptographic hash functions is referred 
+  to as HMAC. HMAC can be used with any cryptographic hash function, e.g., MD5 
+  or SHA-1, in combination with a secret shared key. HMAC is specified in RFC 
+  2104. </P></BLOCKQUOTE><BR>
+<H1><A name=CoreClasses>Core Classes</A></H1>
+<BLOCKQUOTE>
+  <UL>
+    <LI>
+    <H2><A name=CipherClass>The Cipher Class</A></H2>
+    <BLOCKQUOTE>
+      <P>The Cipher class provides the functionality of a cryptographic cipher 
+      used for encryption and decryption. It forms the core of the JCE 
+      framework. 
+      <H4>Creating a Cipher Object</H4>
+      <BLOCKQUOTE>
+        <P>Like other engine classes in the API, Cipher objects are created 
+        using the <CODE>getInstance</CODE> factory methods of the Cipher class. 
+        A factory method is a static method that returns an instance of a class, 
+        in this case, an instance of <CODE>Cipher</CODE>, which implements a 
+        requested <I>transformation</I>. 
+        <P>To create a Cipher object, you must specify the transformation name. 
+        You may also specify which provider you want to supply the 
+        implementation of the requested transformation: <PRE>    public static Cipher getInstance(String transformation);
+
+    public static Cipher getInstance(String transformation,
+                                     String provider);
+</PRE>
+        <P>If just a transformation name is specified, the system will determine 
+        if there is an implementation of the requested transformation available 
+        in the environment, and if there is more than one, if there is a 
+        preferred one. 
+        <P>If both a transformation name and a package provider are specified, 
+        the system will determine if there is an implementation of the requested 
+        transformation in the package requested, and throw an exception if there 
+        is not. 
+        <P><A name=trans>A transformation is a string that describes the 
+        operation (or set of operations) to be performed on the given input, to 
+        produce some output. A transformation always includes the name of a 
+        cryptographic algorithm (e.g., <CODE>DES</CODE>), and may be followed by 
+        a mode and padding scheme. 
+        <P>A transformation is of the form:
+        <P>
+        <UL>
+          <LI>"<I>algorithm/mode/padding</I>" or 
+          <P></P>
+          <LI>"<I>algorithm</I>" </LI></UL>
+        <P>For example, the following are valid transformations:
+        <P><PRE>    "<I>DES/CBC/PKCS5Padding</I>"
+
+    "<I>DES</I>"
+</PRE>
+        <P>If no mode or padding have been specified, provider-specific default 
+        values for the mode and padding scheme are used. For example, the SunJCE 
+        provider uses <CODE>ECB</CODE> as the default mode, and 
+        <CODE>PKCS5Padding</CODE> as the default padding scheme for 
+        <CODE>DES</CODE>, <CODE>DES-EDE</CODE> and <CODE>Blowfish</CODE> 
+        ciphers. This means that in the case of the SunJCE provider, 
+        <P><PRE>    Cipher c1 = Cipher.getInstance("<I>DES/ECB/PKCS5Padding</I>");
+</PRE>
+        <P>and 
+        <P><PRE>    Cipher c1 = Cipher.getInstance("<I>DES</I>");
+</PRE>
+        <P>are equivalent statements. 
+        <P>When requesting a block cipher in stream cipher mode (e.g., 
+        <CODE>DES</CODE> in <CODE>CFB</CODE> or <CODE>OFB</CODE> mode), you may 
+        optionally specify the number of bits to be processed at a time, by 
+        appending this number to the mode name as shown in the 
+        "<I>DES/CFB8/NoPadding</I>" and "<I>DES/OFB32/PKCS5Padding</I>" 
+        transformations. If no such number is specified, a provider-specific 
+        default is used. (For example, the SunJCE provider uses a default of 64 
+        bits.) 
+        <P><A 
+        href="#AppA">Appendix 
+        A</A> of this document contains a list of standard names that can be 
+        used to specify the algorithm name, mode, and padding scheme components 
+        of a transformation. 
+        <P>The objects returned by factory methods are uninitialized, and must 
+        be initialized before they become usable. </P></BLOCKQUOTE>
+      <H4><A name=InitaCipher>Initializing a Cipher Object</H4></A>
+      <BLOCKQUOTE>
+        <P>A Cipher object obtained via <CODE>getInstance</CODE> must be 
+        initialized for one of four modes, which are defined as final integer 
+        constants in the <CODE>Cipher</CODE> class. The modes can be referenced 
+        by their symbolic names, which are shown below along with a description 
+        of the purpose of each mode:
+        <P>
+        <UL>
+          <LI>ENCRYPT_MODE
+          <P>
+          <BLOCKQUOTE>Encryption of data. </BLOCKQUOTE>
+          <LI>DECRYPT_MODE
+          <P>
+          <BLOCKQUOTE>Decryption of data. </BLOCKQUOTE>
+          <LI>WRAP_MODE
+          <P>
+          <BLOCKQUOTE>Wrapping a Key into bytes so that the key can be 
+            securely transported. </BLOCKQUOTE>
+          <LI>UNWRAP_MODE
+          <P>
+          <BLOCKQUOTE>Unwrapping of a previously wrapped key into a 
+            <CODE>java.security.Key</CODE> object. </BLOCKQUOTE></LI></UL>
+        <P>Each of the Cipher initialization methods takes a mode parameter 
+        (<CODE>opmode</CODE>), and initializes the Cipher object for that mode. 
+        Other parameters include the key (<CODE>key</CODE>) or certificate 
+        containing the key (<CODE>certificate</CODE>), algorithm parameters 
+        (<CODE>params</CODE>), and a source of randomness (<CODE>random</CODE>). 
+
+        <P>To initialize a Cipher object, call one of the following 
+        <CODE>init</CODE> methods: <PRE>    public void init(int opmode, Key key);
+
+    public void init(int opmode, Certificate certificate)
+
+    public void init(int opmode, Key key, 
+                     SecureRandom random);
+
+    public void init(int opmode, Certificate certificate, 
+                     SecureRandom random)
+
+    public void init(int opmode, Key key,
+                     AlgorithmParameterSpec params);
+
+    public void init(int opmode, Key key,
+                     AlgorithmParameterSpec params,
+                     SecureRandom random);
+
+    public void init(int opmode, Key key,
+                     AlgorithmParameters params)
+
+    public void init(int opmode, Key key,
+                     AlgorithmParameters params,
+                     SecureRandom random)
+</PRE>
+        <P>If a Cipher object that requires parameters (e.g., an initialization 
+        vector) is initialized for encryption, and no parameters are supplied to 
+        the <CODE>init</CODE> method, the underlying cipher implementation is 
+        supposed to supply the required parameters itself, either by generating 
+        random parameters or by using a default, provider-specific set of 
+        parameters. 
+        <P>However, if a Cipher object that requires parameters is initialized 
+        for decryption, and no parameters are supplied to the <CODE>init</CODE> 
+        method, an <CODE>InvalidKeyException</CODE> or 
+        <CODE>InvalidAlgorithmParameterException</CODE> exception will be 
+        raised, depending on the <CODE>init</CODE> method that was used. 
+        <P>See the section about <A 
+        href="#ManagingParameters">Managing 
+        Algorithm Parameters</A> for more details. 
+        <P>The same parameters that were used for encryption must be used for 
+        decryption. 
+        <P>Note that when a Cipher object is initialized, it loses all 
+        previously-acquired state. In other words, initializing a Cipher is 
+        equivalent to creating a new instance of that Cipher, and initializing 
+        it. For example, if a Cipher is first initialized for decryption with a 
+        given key, and then initialized for encryption, it will lose any state 
+        acquired while in decryption mode. </P></BLOCKQUOTE>
+      <H4><A name=EncrDecr>Encrypting and Decrypting Data</A></H4>
+      <BLOCKQUOTE>
+        <P>Data can be encrypted or decrypted in one step (<I>single-part 
+        operation</I>) or in multiple steps (<I>multiple-part operation</I>). A 
+        multiple-part operation is useful if you do not know in advance how long 
+        the data is going to be, or if the data is too long to be stored in 
+        memory all at once. 
+        <P>To encrypt or decrypt data in a single step, call one of the 
+        <CODE>doFinal</CODE> methods: <PRE>    public byte[] doFinal(byte[] input);
+
+    public byte[] doFinal(byte[] input, int inputOffset,
+                          int inputLen);
+
+    public int doFinal(byte[] input, int inputOffset, 
+                       int inputLen, byte[] output);
+
+    public int doFinal(byte[] input, int inputOffset, 
+                       int inputLen, byte[] output, int outputOffset)
+</PRE>
+        <P>To encrypt or decrypt data in multiple steps, call one of the 
+        <CODE>update</CODE> methods: <PRE>    public byte[] update(byte[] input);
+
+    public byte[] update(byte[] input, int inputOffset, int inputLen);
+
+    public int update(byte[] input, int inputOffset, int inputLen,
+                      byte[] output);
+
+    public int update(byte[] input, int inputOffset, int inputLen,
+                      byte[] output, int outputOffset)
+</PRE>
+        <P>A multiple-part operation must be terminated by one of the above 
+        <CODE>doFinal</CODE> methods (if there is still some input data left for 
+        the last step), or by one of the following <CODE>doFinal</CODE> methods 
+        (if there is no input data left for the last step): <PRE>    public byte[] doFinal();
+
+    public int doFinal(byte[] output, int outputOffset);
+</PRE>
+        <P>All the <CODE>doFinal</CODE> methods take care of any necessary 
+        padding (or unpadding), if padding (or unpadding) was requested as part 
+        of the specified transformation. 
+        <P>A call to <CODE>doFinal</CODE> resets the Cipher object to the state 
+        it was in when initialized via a call to <CODE>init</CODE>. That is, the 
+        Cipher object is reset and available to encrypt or decrypt (depending on 
+        the operation mode that was specified in the call to <CODE>init</CODE>) 
+        more data. </P></BLOCKQUOTE>
+      <H4><A name=WrapUnwrap>Wrapping and Unwrapping Keys</A></H4>
+      <BLOCKQUOTE>
+        <P>Wrapping a key enables secure transfer of the key from one place to 
+        another. 
+        <P>The <CODE>wrap/unwrap</CODE> API makes it more convenient to write 
+        code since it works with key objects directly. These methods also enable 
+        the possibility of secure transfer of hardware-based keys. 
+        <P>To <B>wrap</B> a Key, first initialize the Cipher object for 
+        WRAP_MODE, and then call the following: <PRE>    public final byte[] wrap(Key key);
+</PRE>
+        <P>If you are supplying the wrapped key bytes (the result of calling 
+        <CODE>wrap</CODE>) to someone else who will unwrap them, be sure to also 
+        send additional information the recipient will need in order to do the 
+        <CODE>unwrap</CODE>:
+        <P>
+        <OL>
+          <LI>the name of the key algorithm, and
+          <P></P>
+          <LI>the type of the wrapped key (one of 
+          <CODE>Cipher.SECRET_KEY</CODE>, <CODE>Cipher.PRIVATE_KEY</CODE>, or 
+          <CODE>Cipher.PUBLIC_KEY</CODE>). </LI></OL>
+        <P>The key algorithm name can be determined by calling the 
+        <CODE>getAlgorithm</CODE> method from the Key interface: <PRE>    public String getAlgorithm();
+</PRE>
+        <P>To <B>unwrap</B> the bytes returned by a previous call to 
+        <CODE>wrap</CODE>, first initialize a Cipher object for UNWRAP_MODE, 
+        then call the following: <PRE>    public final Key unwrap(byte[] wrappedKey,
+                            String wrappedKeyAlgorithm,
+                            int wrappedKeyType));
+</PRE>
+        <P>Here, <CODE>wrappedKey</CODE> is the bytes returned from the previous 
+        call to wrap, <CODE>wrappedKeyAlgorithm</CODE> is the algorithm 
+        associated with the wrapped key, and <CODE>wrappedKeyType</CODE> is the 
+        type of the wrapped key. This must be one of 
+        <CODE>Cipher.SECRET_KEY</CODE>, <CODE>Cipher.PRIVATE_KEY</CODE>, or 
+        <CODE>Cipher.PUBLIC_KEY</CODE>. </P></BLOCKQUOTE>
+      <H4><A name=ManagingParameters>Managing Algorithm Parameters</A></H4>
+      <BLOCKQUOTE>
+        <P>The parameters being used by the underlying Cipher implementation, 
+        which were either explicitly passed to the <CODE>init</CODE> method by 
+        the application or generated by the underlying implementation itself, 
+        can be retrieved from the Cipher object by calling its 
+        <CODE>getParameters</CODE> method, which returns the parameters as a 
+        <CODE>java.security.AlgorithmParameters</CODE> object (or 
+        <CODE>null</CODE> if no parameters are being used). If the parameter is 
+        an initialization vector (IV), it can also be retrieved by calling the 
+        <CODE>getIV</CODE> method. 
+        <P>In the following example, a Cipher object implementing password-based 
+        encryption is initialized with just a key and no parameters. However, 
+        the selected algorithm for password-based encryption requires two 
+        parameters - a <I>salt</I> and an <I>iteration count</I>. Those will be 
+        generated by the underlying algorithm implementation itself. The 
+        application can retrieve the generated parameters from the Cipher object 
+        as follows: <PRE>    import javax.crypto.*;
+    import java.security.AlgorithmParameters;
+
+    // get cipher object for password-based encryption
+    Cipher c = Cipher.getInstance("PBEWithMD5AndDES");
+
+    // initialize cipher for encryption, without supplying
+    // any parameters. Here, "myKey" is assumed to refer 
+    // to an already-generated key.
+    c.init(Cipher.ENCRYPT_MODE, myKey);
+ 
+    // encrypt some data and store away ciphertext
+    // for later decryption
+    byte[] cipherText = c.doFinal("This is just an example".getBytes());
+
+    // retrieve parameters generated by underlying cipher
+    // implementation
+    AlgorithmParameters algParams = c.getParameters();
+
+    // get parameter encoding and store it away
+    byte[] encodedAlgParams = algParams.getEncoded();
+</PRE>
+        <P>The same parameters that were used for encryption must be used for 
+        decryption. They can be instantiated from their encoding and used to 
+        initialize the corresponding Cipher object for decryption, as follows: <PRE>    import javax.crypto.*;
+    import java.security.AlgorithmParameters;
+
+    // get parameter object for password-based encryption
+    AlgorithmParameters algParams;
+    algParams = 
+      AlgorithmParameters.getInstance("PBEWithMD5AndDES");
+
+    // initialize with parameter encoding from above
+    algParams.init(encodedAlgParams);
+
+    // get cipher object for password-based encryption
+    Cipher c = Cipher.getInstance("PBEWithMD5AndDES");
+
+    // initialize cipher for decryption, using one of the 
+    // init() methods that takes an AlgorithmParameters 
+    // object, and pass it the algParams object from above
+    c.init(Cipher.DECRYPT_MODE, myKey, algParams);
+</PRE>
+        <P>If you did not specify any parameters when you initialized a Cipher 
+        object, and you are not sure whether or not the underlying 
+        implementation uses any parameters, you can find out by simply calling 
+        the <CODE>getParameters</CODE> method of your Cipher object and checking 
+        the value returned. A return value of <CODE>null</CODE> indicates that 
+        no parameters were used. 
+        <P>The following cipher algorithms implemented by the SunJCE provider 
+        use parameters:
+        <P>
+        <UL>
+          <LI>DES, DES-EDE, and Blowfish, when used in feedback (i.e., CBC, CFB, 
+          OFB, or PCBC) mode, use an initialization vector (IV). The 
+          <CODE>javax.crypto.spec.IvParameterSpec</CODE> class can be used to 
+          initialize a Cipher object with a given IV. 
+          <P></P>
+          <LI>PBEWithMD5AndDES uses a set of parameters, comprising a salt and 
+          an iteration count. The 
+          <CODE>javax.crypto.spec.PBEParameterSpec</CODE> class can be used to 
+          initialize a Cipher object implementing PBEWithMD5AndDES with a given 
+          salt and iteration count. </LI></UL>
+        <P>Note that you do not have to worry about storing or transferring any 
+        algorithm parameters for use by the decryption operation if you use the 
+        <A 
+        href="#SealedObject"><CODE>SealedObject</CODE></A> 
+        class. This class attaches the parameters used for sealing (encryption) 
+        to the encrypted object contents, and uses the same parameters for 
+        unsealing (decryption). </P></BLOCKQUOTE>
+      <H4>Cipher Output Considerations</H4>
+      <BLOCKQUOTE>
+        <P>Some of the <CODE>update</CODE> and <CODE>doFinal</CODE> methods of 
+        Cipher allow the caller to specify the output buffer into which to 
+        encrypt or decrypt the data. In these cases, it is important to pass a 
+        buffer that is large enough to hold the result of the encryption or 
+        decryption operation. 
+        <P>The following method in Cipher can be used to determine how big the 
+        output buffer should be: <PRE>    public int getOutputSize(int inputLen)
+</PRE></BLOCKQUOTE></BLOCKQUOTE>
+    <LI>
+    <H2><A name=CipherStream>The Cipher Stream Classes</A></H2>
+    <BLOCKQUOTE>
+      <P>JCE introduces the concept of secure streams, which combine an 
+      InputStream or OutputStream with a Cipher object. Secure streams are 
+      provided by the <CODE>CipherInputStream</CODE> and 
+      <CODE>CipherOutputStream</CODE> classes. 
+      <BLOCKQUOTE>
+        <UL>
+          <LI>
+          <H3><A name=CipherInput>The CipherInputStream Class</A></H3>
+          <BLOCKQUOTE>
+            <P>This class is a <CODE>FilterInputStream</CODE> that encrypts or 
+            decrypts the data passing through it. It is composed of an 
+            <CODE>InputStream</CODE>, or one of its subclasses, and a 
+            <CODE>Cipher</CODE>. CipherInputStream represents a secure input 
+            stream into which a Cipher object has been interposed. The 
+            <CODE>read</CODE> methods of CipherInputStream return data that are 
+            read from the underlying InputStream but have additionally been 
+            processed by the embedded Cipher object. The Cipher object must be 
+            fully initialized before being used by a CipherInputStream. 
+            <P>For example, if the embedded Cipher has been initialized for 
+            decryption, the CipherInputStream will attempt to decrypt the data 
+            it reads from the underlying InputStream before returning them to 
+            the application. 
+            <P>This class adheres strictly to the semantics, especially the 
+            failure semantics, of its ancestor classes 
+            <CODE>java.io.FilterInputStream</CODE> and 
+            <CODE>java.io.InputStream</CODE>. This class has exactly those 
+            methods specified in its ancestor classes, and overrides them all, 
+            so that the data are additonally processed by the embedded cipher. 
+            Moreover, this class catches all exceptions that are not thrown by 
+            its ancestor classes. In particular, the <CODE>skip(long)</CODE> 
+            method skips only data that have been processed by the Cipher. 
+            <P>It is crucial for a programmer using this class not to use 
+            methods that are not defined or overridden in this class (such as a 
+            new method or constructor that is later added to one of the super 
+            classes), because the design and implementation of those methods are 
+            unlikely to have considered security impact with regard to 
+            CipherInputStream. 
+            <P>As an example of its usage, suppose <CODE>cipher1</CODE> has been 
+            initialized for encryption. The code below demonstrates how to use a 
+            CipherInputStream containing that cipher and a FileInputStream in 
+            order to encrypt input stream data: <PRE>    FileInputStream fis;
+    FileOutputStream fos;
+    CipherInputStream cis;
+
+    fis = new FileInputStream("/tmp/a.txt");
+    cis = new CipherInputStream(fis, cipher1);
+    fos = new FileOutputStream("/tmp/b.txt");
+    byte[] b = new byte[8];
+    int i = cis.read(b);
+    while (i != -1) {
+        fos.write(b, 0, i);
+        i = cis.read(b);
+    }
+</PRE>
+            <P>The above program reads and encrypts the content from the file 
+            <CODE>/tmp/a.txt</CODE> and then stores the result (the encrypted 
+            bytes) in <CODE>/tmp/b.txt</CODE>. 
+            <P>The following example demonstrates how to easily connect several 
+            instances of CipherInputStream and FileInputStream. In this example, 
+            assume that <CODE>cipher1</CODE> and <CODE>cipher2</CODE> have been 
+            initialized for encryption and decryption (with corresponding keys), 
+            respectively. <PRE>    FileInputStream fis;
+    FileOutputStream fos;
+    CipherInputStream cis1, cis2;
+
+    fis = new FileInputStream("/tmp/a.txt");
+    cis1 = new CipherInputStream(fis, cipher1);
+    cis2 = new CipherInputStream(cis1, cipher2);
+    fos = new FileOutputStream("/tmp/b.txt");
+    byte[] b = new byte[8];
+    int i = cis2.read(b);
+    while (i != -1) {
+        fos.write(b, 0, i);
+        i = cis2.read(b);
+    }
+</PRE>
+            <P>The above program copies the content from file 
+            <CODE>/tmp/a.txt</CODE> to <CODE>/tmp/b.txt</CODE>, except that the 
+            content is first encrypted and then decrypted back when it is read 
+            from <CODE>/tmp/a.txt</CODE>. Of course since this program simply 
+            encrypts text and decrypts it back right away, it's actually not 
+            very useful except as a simple way of illustrating chaining of 
+            CipherInputStreams. </P></BLOCKQUOTE>
+          <LI>
+          <H3><A name=CipherOutput>The CipherOutputStream Class</A></H3>
+          <BLOCKQUOTE>
+            <P>This class is a <CODE>FilterOutputStream</CODE> that encrypts or 
+            decrypts the data passing through it. It is composed of an 
+            <CODE>OutputStream</CODE>, or one of its subclasses, and a 
+            <CODE>Cipher</CODE>. CipherOutputStream represents a secure output 
+            stream into which a Cipher object has been interposed. The 
+            <CODE>write</CODE> methods of CipherOutputStream first process the 
+            data with the embedded Cipher object before writing them out to the 
+            underlying OutputStream. The Cipher object must be fully initialized 
+            before being used by a CipherOutputStream. 
+            <P>For example, if the embedded Cipher has been initialized for 
+            encryption, the CipherOutputStream will encrypt its data, before 
+            writing them out to the underlying output stream. 
+            <P>This class adheres strictly to the semantics, especially the 
+            failure semantics, of its ancestor classes 
+            <CODE>java.io.OutputStream</CODE> and 
+            <CODE>java.io.FilterOutputStream</CODE>. This class has exactly 
+            those methods specified in its ancestor classes, and overrides them 
+            all, so that all data are additionally processed by the embedded 
+            cipher. Moreover, this class catches all exceptions that are not 
+            thrown by its ancestor classes. 
+            <P>It is crucial for a programmer using this class not to use 
+            methods that are not defined or overridden in this class (such as a 
+            new method or constructor that is later added to one of the super 
+            classes), because the design and implementation of those methods are 
+            unlikely to have considered security impact with regard to 
+            CipherOutputStream. 
+            <P>As an example of its usage, suppose <CODE>cipher1</CODE> has been 
+            initialized for encryption. The code below demonstrates how to use a 
+            CipherOutputStream containing that cipher and a FileOutputStream in 
+            order to encrypt data to be written to an output stream: <PRE>    FileInputStream fis;
+    FileOutputStream fos;
+    CipherOutputStream cos;
+
+    fis = new FileInputStream("/tmp/a.txt");
+    fos = new FileOutputStream("/tmp/b.txt");
+    cos = new CipherOutputStream(fos, cipher1);
+    byte[] b = new byte[8];
+    int i = fis.read(b);
+    while (i != -1) {
+        cos.write(b, 0, i);
+        i = fis.read(b);
+    }
+    cos.flush();
+</PRE>
+            <P>The above program reads the content from the file 
+            <CODE>/tmp/a.txt</CODE>, then encrypts and stores the result (the 
+            encrypted bytes) in <CODE>/tmp/b.txt</CODE>. 
+            <P>The following example demonstrates how to easily connect several 
+            instances of CipherOutputStream and FileOutputStream. In this 
+            example, assume that <CODE>cipher1</CODE> and <CODE>cipher2</CODE> 
+            have been initialized for decryption and encryption (with 
+            corresponding keys), respectively: <PRE>    FileInputStream fis;
+    FileOutputStream fos;
+    CipherOutputStream cos1, cos2;
+
+    fis = new FileInputStream("/tmp/a.txt");
+    fos = new FileOutputStream("/tmp/b.txt");
+    cos1 = new CipherOutputStream(fos, cipher1);
+    cos2 = new CipherOutputStream(cos1, cipher2);
+    byte[] b = new byte[8];
+    int i = fis.read(b);
+    while (i != -1) {
+        cos2.write(b, 0, i);
+        i = fis.read(b);
+    }
+    cos2.flush();
+</PRE>
+            <P>The above program copies the content from file 
+            <CODE>/tmp/a.txt</CODE> to <CODE>/tmp/b.txt</CODE>, except that the 
+            content is first encrypted and then decrypted back before it is 
+            written to <CODE>/tmp/b.txt</CODE>. 
+            <P>There is one important difference between the <CODE>flush</CODE> 
+            and <CODE>close</CODE> methods of this class, which becomes even 
+            more relevant if the encapsulated Cipher object implements a block 
+            cipher algorithm with padding turned on: 
+            <P><CODE>flush</CODE> flushes the underlying OutputStream by forcing 
+            any buffered output bytes that have already been processed by the 
+            encapsulated Cipher object to be written out. Any bytes buffered by 
+            the encapsulated Cipher object and waiting to be processed by it 
+            will <B>not</B> be written out. 
+            <P><CODE>close</CODE> closes the underlying OutputStream and 
+            releases any system resources associated with it. It invokes the 
+            <CODE>doFinal</CODE> method of the encapsulated Cipher object, 
+            causing any bytes buffered by it to be processed and written out to 
+            the underlying stream by calling its <CODE>flush</CODE> method. 
+          </P></BLOCKQUOTE></LI></UL></BLOCKQUOTE></BLOCKQUOTE>
+    <LI>
+    <H2><A name=KeyGenerator>The KeyGenerator Class</A></H2>
+    <BLOCKQUOTE>
+      <P>A key generator is used to generate secret keys for symmetric 
+      algorithms. 
+      <H4>Creating a Key Generator</H4>
+      <BLOCKQUOTE>
+        <P>Like other engine classes in the API, KeyGenerator objects are 
+        created using the <CODE>getInstance</CODE> factory methods of the 
+        KeyGenerator class. A factory method is a static method that returns an 
+        instance of a class, in this case, an instance of 
+        <CODE>KeyGenerator</CODE> which provides an implementation of the 
+        requested key generator. 
+        <P><CODE>getInstance</CODE> takes as its argument the name of a 
+        symmetric algorithm for which a secret key is to be generated. 
+        Optionally, a package provider name may be specified: <PRE>    public static KeyGenerator getInstance(String algorithm);
+
+    public static KeyGenerator getInstance(String algorithm,
+                                           String provider);
+</PRE>
+        <P>If just an algorithm name is specified, the system will determine if 
+        there is an implementation of the requested key generator available in 
+        the environment, and if there is more than one, if there is a preferred 
+        one. 
+        <P>If both an algorithm name and a package provider are specified, the 
+        system will determine if there is an implementation of the requested key 
+        generator in the package requested, and throw an exception if there is 
+        not. </P></BLOCKQUOTE>
+      <H4>Initializing a KeyGenerator Object</H4>
+      <BLOCKQUOTE>
+        <P>A key generator for a particular symmetric-key algorithm creates a 
+        symmetric key that can be used with that algorithm. It also associates 
+        algorithm-specific parameters (if any) with the generated key. 
+        <P>There are two ways to generate a key: in an algorithm-independent 
+        manner, and in an algorithm-specific manner. The only difference between 
+        the two is the initialization of the object: 
+        <P>
+        <UL>
+          <LI><B>Algorithm-Independent Initialization</B> 
+          <P>All key generators share the concepts of a <I>keysize</I> and a 
+          <I>source of randomness</I>. There is an <CODE>init</CODE> method that 
+          takes these two universally shared types of arguments. There is also 
+          one that takes just a <CODE>keysize</CODE> argument, and uses a 
+          system-provided source of randomness, and one that takes just a source 
+          of randomness: <PRE>    public void init(SecureRandom random);
+
+    public void init(int keysize);
+
+    public void init(int keysize, SecureRandom random);
+</PRE>
+          <P>Since no other parameters are specified when you call the above 
+          algorithm-independent <CODE>init</CODE> methods, it is up to the 
+          provider what to do about the algorithm-specific parameters (if any) 
+          to be associated with the generated key. 
+          <P></P>
+          <LI><B>Algorithm-Specific Initialization</B> 
+          <P>For situations where a set of algorithm-specific parameters already 
+          exists, there are two <CODE>init</CODE> methods that have an 
+          <CODE>AlgorithmParameterSpec</CODE> argument. One also has a 
+          <CODE>SecureRandom</CODE> argument, while the source of randomness is 
+          system-provided for the other: <PRE>    public void init(AlgorithmParameterSpec params);
+
+    public void init(AlgorithmParameterSpec params,
+                     SecureRandom random);
+</PRE></LI></UL>
+        <P>In case the client does not explicitly initialize the KeyGenerator 
+        (via a call to an <CODE>init</CODE> method), each provider must supply 
+        (and document) a default initialization. </P></BLOCKQUOTE>
+      <H4>Creating a Key</H4>
+      <BLOCKQUOTE>The following method generates a secret key: <PRE>    public SecretKey generateKey();
+</PRE></BLOCKQUOTE></BLOCKQUOTE>
+    <LI>
+    <H2><A name=SecretFactory>The SecretKeyFactory Class</A></H2>
+    <BLOCKQUOTE>
+      <P>This class represents a factory for secret keys. 
+      <P>Key factories are used to convert <I>keys</I> (opaque cryptographic 
+      keys of type <CODE>java.security.Key</CODE>) into <I>key 
+      specifications</I> (transparent representations of the underlying key 
+      material in a suitable format), and vice versa. 
+      <P>A <CODE>javax.crypto.SecretKeyFactory</CODE> object operates only on 
+      secret (symmetric) keys, whereas a <CODE>java.security.KeyFactory</CODE> 
+      object processes the public and private key components of a key pair. 
+      <P>Objects of type <CODE>java.security.Key</CODE>, of which 
+      <CODE>java.security.PublicKey</CODE>, 
+      <CODE>java.security.PrivateKey</CODE>, and 
+      <CODE>javax.crypto.SecretKey</CODE> are subclasses, are opaque key 
+      objects, because you cannot tell how they are implemented. The underlying 
+      implementation is provider-dependent, and may be software or hardware 
+      based. Key factories allow providers to supply their own implementations 
+      of cryptographic keys. 
+      <P>For example, if you have a key specification for a Diffie Hellman 
+      public key, consisting of the public value <CODE>y</CODE>, the prime 
+      modulus <CODE>p</CODE>, and the base <CODE>g</CODE>, and you feed the same 
+      specification to Diffie-Hellman key factories from different providers, 
+      the resulting <CODE>PublicKey</CODE> objects will most likely have 
+      different underlying implementations. 
+      <P>A provider should document the key specifications supported by its 
+      secret key factory. For example, the <CODE>SecretKeyFactory</CODE> for DES 
+      keys supplied by the "SunJCE" provider supports <CODE>DESKeySpec</CODE> as 
+      a transparent representation of DES keys, the 
+      <CODE>SecretKeyFactory</CODE> for DES-EDE keys supports 
+      <CODE>DESedeKeySpec</CODE> as a transparent representation of DES-EDE 
+      keys, and the <CODE>SecretKeyFactory</CODE> for PBE supports 
+      <CODE>PBEKeySpec</CODE> as a transparent representation of the underlying 
+      password. 
+      <P>The following is an example of how to use a 
+      <CODE>SecretKeyFactory</CODE> to convert secret key data into a 
+      <CODE>SecretKey</CODE> object, which can be used for a subsequent 
+      <CODE>Cipher</CODE> operation: <PRE>    // Note the following bytes are not realistic secret key data 
+    // bytes but are simply supplied as an illustration of using data
+    // bytes (key material) you already have to build a DESKeySpec.
+    byte[] desKeyData = { (byte)0x01, (byte)0x02, (byte)0x03, 
+        (byte)0x04, (byte)0x05, (byte)0x06, (byte)0x07, (byte)0x08 };
+    DESKeySpec desKeySpec = new DESKeySpec(desKeyData);
+    SecretKeyFactory keyFactory = SecretKeyFactory.getInstance("DES");
+    SecretKey secretKey = keyFactory.generateSecret(desKeySpec);
+</PRE>
+      <P>In this case, the underlying implementation of <CODE>secretKey</CODE> 
+      is based on the provider of <CODE>keyFactory</CODE>. 
+      <P>An alternative, provider-independent way of creating a functionally 
+      equivalent <CODE>SecretKey</CODE> object from the same key material is to 
+      use the <CODE>javax.crypto.spec.SecretKeySpec</CODE> class, which 
+      implements the <CODE>javax.crypto.SecretKey</CODE> interface: <PRE>    byte[] desKeyData = { (byte)0x01, (byte)0x02, ...};
+    SecretKeySpec secretKey = new SecretKeySpec(desKeyData, "DES");
+</PRE></BLOCKQUOTE>
+    <LI>
+    <H2><A name=SealedObject>The SealedObject Class</A></H2>
+    <BLOCKQUOTE>
+      <P>This class enables a programmer to create an object and protect its 
+      confidentiality with a cryptographic algorithm. 
+      <P>Given any object that implements the <CODE>java.io.Serializable</CODE> 
+      interface, one can create a <CODE>SealedObject</CODE> that encapsulates 
+      the original object, in serialized format (i.e., a "deep copy"), and seals 
+      (encrypts) its serialized contents, using a cryptographic algorithm such 
+      as DES, to protect its confidentiality. The encrypted content can later be 
+      decrypted (with the corresponding algorithm using the correct decryption 
+      key) and de-serialized, yielding the original object. 
+      <P>A typical usage is illustrated in the following code segment: In order 
+      to seal an object, you create a <CODE>SealedObject</CODE> from the object 
+      to be sealed and a fully initialized <CODE>Cipher</CODE> object that will 
+      encrypt the serialized object contents. In this example, the String "This 
+      is a secret" is sealed using the DES algorithm. Note that any algorithm 
+      parameters that may be used in the sealing operation are stored inside of 
+      <CODE>SealedObject</CODE>: 
+      <P><PRE>    // create Cipher object
+    // Note: sKey is assumed to refer to an already-generated
+    // secret DES key.
+    Cipher c = Cipher.getInstance("DES");
+    c.init(Cipher.ENCRYPT_MODE, sKey);
+
+    // do the sealing
+    SealedObject so = new SealedObject("This is a secret", c);
+</PRE>
+      <P>The original object that was sealed can be recovered in two different 
+      ways: 
+      <P>
+      <UL>
+        <LI>by using a <CODE>Cipher</CODE> object that has been initialized with 
+        the exact same algorithm, key, padding scheme, etc., that were used to 
+        seal the object:
+        <P><PRE>    c.init(Cipher.DECRYPT_MODE, sKey);
+    try {
+        String s = (String)so.getObject(c);
+    } catch (Exception e) {
+        // do something
+    };
+</PRE>
+        <P>This approach has the advantage that the party who unseals the sealed 
+        object does not require knowledge of the decryption key. For example, 
+        after one party has initialized the cipher object with the required 
+        decryption key, it could hand over the cipher object to another party 
+        who then unseals the sealed object. 
+        <P></P>
+        <LI>by using the appropriate decryption key (since DES is a symmetric 
+        encryption algorithm, we use the same key for sealing and unsealing):
+        <P><PRE>    try {
+        String s = (String)so.getObject(sKey);
+    } catch (Exception e) {
+        // do something
+    };
+</PRE>
+        <P>In this approach, the <CODE>getObject</CODE> method creates a cipher 
+        object for the appropriate decryption algorithm and initializes it with 
+        the given decryption key and the algorithm parameters (if any) that were 
+        stored in the sealed object. This approach has the advantage that the 
+        party who unseals the object does not need to keep track of the 
+        parameters (e.g., the IV) that were used to seal the object. 
+    </P></LI></UL></BLOCKQUOTE>
+    <LI>
+    <H2><A name=KeyAgreement>The KeyAgreement Class</A></H2>
+    <BLOCKQUOTE>
+      <P>The KeyAgreement class provides the functionality of a key agreement 
+      protocol. The keys involved in establishing a shared secret are created by 
+      one of the key generators (<CODE>KeyPairGenerator</CODE> or 
+      <CODE>KeyGenerator</CODE>), a <CODE>KeyFactory</CODE>, or as a result from 
+      an intermediate phase of the key agreement protocol. 
+      <H4>Creating a KeyAgreement Object</H4>
+      <BLOCKQUOTE>
+        <P>Each party involved in the key agreement has to create a KeyAgreement 
+        object. Like other engine classes in the API, KeyAgreement objects are 
+        created using the <CODE>getInstance</CODE> factory methods of the 
+        KeyAgreement class. A factory method is a static method that returns an 
+        instance of a class, in this case, an instance of 
+        <CODE>KeyAgreement</CODE> which provides the requested key agreement 
+        algorithm. 
+        <P><CODE>getInstance</CODE> takes as its argument the name of a key 
+        agreement algorithm. Optionally, a package provider name may be 
+        specified: <PRE>    public static KeyAgreement getInstance(String algorithm);
+
+    public static KeyAgreement getInstance(String algorithm,
+                                           String provider);
+</PRE>
+        <P>If just an algorithm name is specified, the system will determine if 
+        there is an implementation of the requested key agreement available in 
+        the environment, and if there is more than one, if there is a preferred 
+        one. 
+        <P>If both an algorithm name and a package provider are specified, the 
+        system will determine if there is an implementation of the requested key 
+        agreement in the package requested, and throw an exception if there is 
+        not. </P></BLOCKQUOTE>
+      <H4>Initializing a KeyAgreement Object</H4>
+      <BLOCKQUOTE>
+        <P>You initialize a KeyAgreement object with your private information. 
+        In the case of Diffie-Hellman, you initialize it with your 
+        Diffie-Hellman private key. Additional initialization information may 
+        contain a source of randomness and/or a set of algorithm parameters. 
+        Note that if the requested key agreement algorithm requires the 
+        specification of algorithm parameters, and only a key, but no parameters 
+        are provided to initialize the KeyAgreement object, the key must contain 
+        the required algorithm parameters. (For example, the Diffie-Hellman 
+        algorithm uses a prime modulus <CODE>p</CODE> and a base generator 
+        <CODE>g</CODE> as its parameters.) 
+        <P>To initialize a KeyAgreement object, call one of its 
+        <CODE>init</CODE> methods: <PRE>    public void init(Key key);
+
+    public void init(Key key, SecureRandom random);
+
+    public void init(Key key, AlgorithmParameterSpec params);
+
+    public void init(Key key, AlgorithmParameterSpec params,
+                     SecureRandom random);
+</PRE></BLOCKQUOTE>
+      <H4>Executing a KeyAgreement Phase</H4>
+      <BLOCKQUOTE>
+        <P>Every key agreement protocol consists of a number of phases that need 
+        to be executed by each party involved in the key agreement. 
+        <P>To execute the next phase in the key agreement, call the 
+        <CODE>doPhase</CODE> method: <PRE>    public Key doPhase(Key key, boolean lastPhase);
+</PRE>
+        <P>The <CODE>key</CODE> parameter contains the key to be processed by 
+        that phase. In most cases, this is the public key of one of the other 
+        parties involved in the key agreement, or an intermediate key that was 
+        generated by a previous phase. <CODE>doPhase</CODE> may return an 
+        intermediate key that you may have to send to the other parties of this 
+        key agreement, so they can process it in a subsequent phase. 
+        <P>The <CODE>lastPhase</CODE> parameter specifies whether or not the 
+        phase to be executed is the last one in the key agreeement: A value of 
+        <CODE>FALSE</CODE> indicates that this is not the last phase of the key 
+        agreement (there are more phases to follow), and a value of 
+        <CODE>TRUE</CODE> indicates that this is the last phase of the key 
+        agreement and the key agreement is completed, i.e., 
+        <CODE>generateSecret</CODE> can be called next. 
+        <P>In the example of Diffie-Hellman between two parties (see <A 
+        href="#AppF">Appendix 
+        F</A>), you call <CODE>doPhase</CODE> once, with <CODE>lastPhase</CODE> 
+        set to <CODE>TRUE</CODE>. In the example of Diffie-Hellman between three 
+        parties, you call <CODE>doPhase</CODE> twice: the first time with 
+        <CODE>lastPhase</CODE> set to <CODE>FALSE</CODE>, the 2nd time with 
+        <CODE>lastPhase</CODE> set to <CODE>TRUE</CODE>. </P></BLOCKQUOTE>
+      <H4>Generating the Shared Secret</H4>
+      <BLOCKQUOTE>
+        <P>After each party has executed all the required key agreement phases, 
+        it can compute the shared secret by calling one of the 
+        <CODE>generateSecret</CODE> methods: <PRE>    public byte[] generateSecret();
+
+    public int generateSecret(byte[] sharedSecret, int offset);
+
+    public SecretKey generateSecret(String algorithm);
+</PRE></BLOCKQUOTE></BLOCKQUOTE>
+    <LI>
+    <H2><A name=Mac>The Mac Class</A></H2>
+    <BLOCKQUOTE>
+      <P>The Mac class provides the functionality of a Message Authentication 
+      Code (MAC). Please refer to the <A 
+      href="#HmacEx">code 
+      example</A> in Appendix F. 
+      <H4>Creating a Mac Object</H4>
+      <BLOCKQUOTE>
+        <P>Like other engine classes in the API, Mac objects are created using 
+        the <CODE>getInstance</CODE> factory methods of the Mac class. A factory 
+        method is a static method that returns an instance of a class, in this 
+        case, an instance of <CODE>Mac</CODE> which provides the requested MAC 
+        algorithm. 
+        <P><CODE>getInstance</CODE> takes as its argument the name of a MAC 
+        algorithm. Optionally, a package provider name may be specified: <PRE>    public static Mac getInstance(String algorithm);
+
+    public static Mac getInstance(String algorithm,
+                                  String provider);
+</PRE>
+        <P>If just an algorithm name is specified, the system will determine if 
+        there is an implementation of the requested MAC algorithm available in 
+        the environment, and if there is more than one, if there is a preferred 
+        one. 
+        <P>If both an algorithm name and a package provider are specified, the 
+        system will determine if there is an implementation of the requested MAC 
+        algorithm in the package requested, and throw an exception if there is 
+        not. </P></BLOCKQUOTE>
+      <H4>Initializing a Mac Object</H4>
+      <BLOCKQUOTE>
+        <P>A Mac object is always initialized with a (secret) key and may 
+        optionally be initialized with a set of parameters, depending on the 
+        underlying MAC algorithm. 
+        <P>To initialize a Mac object, call one of its <CODE>init</CODE> 
+        methods: <PRE>    public void init(Key key);
+
+    public void init(Key key, AlgorithmParameterSpec params);
+</PRE>
+        <P>You can initialize your Mac object with any (secret-)key object that 
+        implements the <CODE>javax.crypto.SecretKey</CODE> interface. This could 
+        be an object returned by 
+        <CODE>javax.crypto.KeyGenerator.generateKey()</CODE>, or one that is the 
+        result of a key agreement protocol, as returned by 
+        <CODE>javax.crypto.KeyAgreement.generateSecret()</CODE>, or an instance 
+        of <CODE>javax.crypto.spec.SecretKeySpec</CODE>. 
+        <P>With some MAC algorithms, the (secret-)key algorithm associated with 
+        the (secret-)key object used to initialize the Mac object does not 
+        matter (this is the case with the HMAC-MD5 and HMAC-SHA1 implementations 
+        of the SunJCE provider). With others, however, the (secret-)key 
+        algorithm does matter, and an <CODE>InvalidKeyException</CODE> is thrown 
+        if a (secret-)key object with an inappropriate (secret-)key algorithm is 
+        used. </P></BLOCKQUOTE>
+      <H4>Computing a MAC</H4>
+      <BLOCKQUOTE>
+        <P>A MAC can be computed in one step (<I>single-part operation</I>) or 
+        in multiple steps (<I>multiple-part operation</I>). A multiple-part 
+        operation is useful if you do not know in advance how long the data is 
+        going to be, or if the data is too long to be stored in memory all at 
+        once. 
+        <P>To compute the MAC of some data in a single step, call the following 
+        <CODE>doFinal</CODE> method: <PRE>    public byte[] doFinal(byte[] input);
+</PRE>
+        <P>To compute the MAC of some data in multiple steps, call one of the 
+        <CODE>update</CODE> methods: <PRE>    public void update(byte input);
+
+    public void update(byte[] input);
+
+    public void update(byte[] input, int inputOffset, int inputLen);
+</PRE>
+        <P>A multiple-part operation must be terminated by the above 
+        <CODE>doFinal</CODE> method (if there is still some input data left for 
+        the last step), or by one of the following <CODE>doFinal</CODE> methods 
+        (if there is no input data left for the last step): <PRE>    public byte[] doFinal();
+
+    public void doFinal(byte[] output, int outOffset);
+</PRE></BLOCKQUOTE></BLOCKQUOTE></LI></UL></BLOCKQUOTE><BR>
+<H1><A name=ExemptApps>How to Make Applications "Exempt" from Cryptographic 
+Restrictions</A></H1>
+<BLOCKQUOTE>
+  <BLOCKQUOTE><FONT color=red><I>[Note 1: This section should be ignored by 
+    most application developers. It is only for people whose applications may be 
+    exported to those few countries whose governments mandate cryptographic 
+    restrictions, if it desired that such applications have fewer cryptographic 
+    restrictions than those mandated. If you want to skip this section, you can 
+    go on to <A 
+    href="#InstallProvider">Installing 
+    JCE Providers for the JDK 5.0</A>.]</I></FONT>
+    <P></P></BLOCKQUOTE>
+  <BLOCKQUOTE><FONT color=red><I>[Note 2: Throughout this section, the term 
+    "application" is meant to encompass both applications and applets.]</I> 
+    </FONT>
+    <P></P></BLOCKQUOTE>
+  <P>The JCE framework within the JDK 5,0 includes an ability to 
+  enforce restrictions regarding the cryptographic algorithms and maximum 
+  cryptographic strengths available to applets/applications in different 
+  jurisdiction contexts (locations). Any such restrictions are specified in 
+  "jurisdiction policy files". 
+  <P>Due to import control restrictions by the governments of a few countries, 
+  the jurisdiction policy files shipped with the JDK 5.0 from Sun 
+  Microsystems specify that "strong" but limited cryptography may be used. An 
+  "unlimited strength" version of these files indicating no restrictions on 
+  cryptographic strengths is available for those living in eligible countries 
+  (which is most countries). But only the "strong" version can be imported into 
+  those countries whose governments mandate restrictions. The JCE framework will 
+  enforce the restrictions specified in the installed jurisdiction policy files. 
+
+  <P>It is possible that the governments of some or all such countries may allow 
+  certain applications to become exempt from some or all cryptographic 
+  restrictions. For example, they may consider certain types of applications as 
+  "special" and thus exempt. Or they may exempt any application that utilizes an 
+  "exemption mechanism," such as key recovery. Applications deemed to be exempt 
+  could get access to stronger cryptography than that allowed for non-exempt 
+  applications in such countries. 
+  <P>In order for an application to be recognized as "exempt" at runtime, it 
+  must meet the following conditions: 
+  <UL>
+    <LI>It must have a permission policy file bundled with it in a JAR file. The 
+    permission policy file specifies what cryptography-related permissions the 
+    application has, and under what conditions (if any).
+    <P></P>
+    <LI>The JAR file containing the application and the permission policy file 
+    must have been signed using a code-signing certificate issued after the 
+    application was accepted as exempt. </LI></UL>
+  <P>Below are sample steps required in order to make an application exempt from 
+  some or all cryptographic restrictions. This is a basic outline that includes 
+  information about what is required by JCE in order to recognize and treat 
+  applications as being exempt. You will need to know the exemption requirements 
+  of the particular country or countries in which you would like your 
+  application to be able to be run but whose governments require cryptographic 
+  restrictions. You will also need to know the requirements of a JCE framework 
+  vendor that has a process in place for handling exempt applications. Consult 
+  such a vendor for further information. (Note: The SunJCE provider does not 
+  supply an implementation of the ExemptionMechanismSpi class.) 
+  <P>
+  <UL>
+    <LI>Step 1: Write and Compile Your Application Code
+    <P></P>
+    <LI>Step 2: Create a Permission Policy File Granting Appropriate 
+    Cryptographic Permissions
+    <P></P>
+    <LI>Step 3: Prepare for Testing
+    <P>
+    <BLOCKQUOTE>
+      <LI>Step 3a: Apply for Government Approval From the Government Mandating 
+      Restrictions.
+      <P></P>
+      <LI>Step 3b: Get a Code-Signing Certificate
+      <P></P>
+      <LI>Step 3c: Bundle the Application and Permission Policy File into a JAR 
+      file
+      <P></P>
+      <LI>Step 3d: Sign the JAR file
+      <P></P>
+      <LI>Step 3e: Set Up Your Environment Like That of a User in a Restricted 
+      Country
+      <P></P>
+      <LI>Step 3f: (only for apps using exemption mechanisms) Install a Provider 
+      Implementing the Exemption Mechanism Specified in the Permission Policy 
+      File
+      <P></P></LI></BLOCKQUOTE>
+    <LI>Step 4: Test Your Application
+    <P></P>
+    <LI>Step 5: Apply for U.S. Government Export Approval If Required 
+    <P></P>
+    <LI>Step 6: Deploy Your Application
+    <P></P></LI></UL><BR>
+  <H2>Special Code Requirements for Applications that Use Exemption 
+  Mechanisms</H2>
+  <BLOCKQUOTE>
+    <P>When an application has a permission policy file associated with it (in 
+    the same JAR file) and that permission policy file specifies an exemption 
+    mechanism, then when the Cipher <CODE>getInstance</CODE> method is called to 
+    instantiate a Cipher, the JCE code searches the installed providers for one 
+    that implements the specified exemption mechanism. If it finds such a 
+    provider, JCE instantiates an ExemptionMechanism API object associated with 
+    the provider's implementation, and then associates the ExemptionMechanism 
+    object with the Cipher returned by <CODE>getInstance</CODE>. 
+    <P>After instantiating a Cipher, and prior to initializing it (via a call to 
+    the Cipher <CODE>init</CODE> method), your code must call the following 
+    Cipher method: <PRE>    public ExemptionMechanism getExemptionMechanism()
+</PRE>
+    <P>This call returns the ExemptionMechanism object associated with the 
+    Cipher. You must then initialize the exemption mechanism implementation by 
+    calling the following method on the returned ExemptionMechanism: <PRE>     public final void init(Key key)
+</PRE>
+    <P>The argument you supply should be the same as the argument of the same 
+    types that you will subsequently supply to a Cipher <CODE>init</CODE> 
+    method. 
+    <P>Once you have initialized the ExemptionMechanism, you can proceed as 
+    usual to initialize and use the Cipher. </P></BLOCKQUOTE>
+  <H2>Permission Policy Files </H2>
+  <BLOCKQUOTE>
+    <P>In order for an application to be recognized at runtime as being "exempt" 
+    from some or all cryptographic restrictions, it must have a permission 
+    policy file bundled with it in a JAR file. The permission policy file 
+    specifies what cryptography-related permissions the application has, and 
+    under what conditions (if any). 
+    <P><FONT color=red><I>Note: The permission policy file bundled with an 
+    application must be named <B><CODE>cryptoPerms</CODE></B>.</I></FONT> 
+    <P>The format of a permission entry in a permission policy file that 
+    accompanies an exempt application is the same as the format for a 
+    jurisdiction policy file downloaded with the JDK 5.0, which is: 
+    <BLOCKQUOTE><PRE>permission &lt;crypto permission class name&gt;[ &lt;alg_name&gt;
+    [[, &lt;exemption mechanism name&gt;][, &lt;maxKeySize&gt;
+    [, &lt;AlgorithmParameterSpec class name&gt;,
+    &lt;parameters for constructing an AlgorithmParameterSpec object&gt;]]]];
+</PRE></BLOCKQUOTE>
+    <P>See <A 
+    href="#AppD">Appendix 
+    D</A> for more information about the jurisdiction policy file format. 
+    <H3>Permission Policy Files for Exempt Applications</H3>
+    <BLOCKQUOTE>
+      <P>Some applications may be allowed to be completely unrestricted. Thus, 
+      the permission policy file that accompanies such an application usually 
+      just needs to contain the following: 
+      <BLOCKQUOTE><PRE>grant {
+    // There are no restrictions to any algorithms.
+    permission javax.crypto.CryptoAllPermission;
+};
+</PRE></BLOCKQUOTE>
+      <P>If an application just uses a single algorithm (or several specific 
+      algorithms), then the permission policy file could simply mention that 
+      algorithm (or algorithms) explicitly, rather than granting 
+      CryptoAllPermission. For example, if an application just uses the Blowfish 
+      algorithm, the permission policy file doesn't have to grant 
+      CryptoAllPermission to all algorithms. It could just specify that there is 
+      no cryptographic restriction if the Blowfish algorithm is used. In order 
+      to do this, the permission policy file would look like the following: 
+      <BLOCKQUOTE><PRE>grant {
+    permission javax.crypto.CryptoPermission "Blowfish";
+};
+</PRE></BLOCKQUOTE></BLOCKQUOTE>
+    <H3>Permission Policy Files for Applications Exempt Due to Exemption 
+    Mechanisms</H3>
+    <BLOCKQUOTE>
+      <P>If an application is considered "exempt" if an exemption mechanism is 
+      enforced, then the permission policy file that accompanies the application 
+      must specify one or more exemption mechanisms. At runtime, the application 
+      will be considered exempt if any of those exemption mechanisms is 
+      enforced. Each exemption mechanism must be specified in a permission entry 
+      that looks like the following: 
+      <BLOCKQUOTE><PRE>    // No algorithm restrictions if specified
+    // exemption mechanism is enforced.
+    permission javax.crypto.CryptoPermission *, 
+        "&lt;ExemptionMechanismName&gt;";
+</PRE></BLOCKQUOTE>
+      <P>where <CODE>&lt;ExemptionMechanismName&gt;</CODE> specifies the name of 
+      an exemption mechanism. The list of possible exemption mechanism names 
+      includes: 
+      <UL>
+        <LI>KeyRecovery
+        <P></P>
+        <LI>KeyEscrow
+        <P></P>
+        <LI>KeyWeakening </LI></UL>As an example, suppose your application is 
+      exempt if either key recovery or key escrow is enforced. Then your 
+      permission policy file should contain the following: 
+      <BLOCKQUOTE><PRE>grant {
+    // No algorithm restrictions if KeyRecovery is enforced.
+    permission javax.crypto.CryptoPermission *, 
+        "KeyRecovery";
+    // No algorithm restrictions if KeyEscrow is enforced.
+    permission javax.crypto.CryptoPermission *, 
+        "KeyEscrow";
+};
+</PRE></BLOCKQUOTE>
+      <P>Note: Permission entries that specify exemption mechanisms should 
+      <I>not</I> also specify maximum key sizes. The allowed key sizes are 
+      actually determined from the installed exempt jurisdiction policy files, 
+      as described in the next section. </P></BLOCKQUOTE>
+    <H3>How Bundled Permission Policy Files Affect Cryptographic 
+Permissions</H3>
+    <BLOCKQUOTE>
+      <P>At runtime, when an application instantiates a Cipher (via a call to 
+      its <CODE>getInstance</CODE> method) and that application has an 
+      associated permission policy file, JCE checks to see whether the 
+      permission policy file has an entry that applies to the algorithm 
+      specified in the <CODE>getInstance</CODE> call. If it does, and the entry 
+      grants CryptoAllPermission or does not specify that an exemption mechanism 
+      must be enforced, it means there is no cryptographic restriction for this 
+      particular algorithm. 
+      <P>If the permission policy file has an entry that applies to the 
+      algorithm specified in the <CODE>getInstance</CODE> call and the entry 
+      <I>does</I> specify that an exemption mechanism must be enforced, then the 
+      exempt jurisdiction policy file(s) are examined. If the exempt permissions 
+      include an entry for the relevant algorithm and exemption mechanism, and 
+      that entry is implied by the permissions in the permission policy file 
+      bundled with the application, and if there is an implementation of the 
+      specified exemption mechanism available from one of the registered 
+      providers, then the maximum key size and algorithm parameter values for 
+      the Cipher are determined from the exempt permission entry. 
+      <P>If there is no exempt permission entry implied by the relevant entry in 
+      the permission policy file bundled with the application, or if there is no 
+      implementation of the specified exemption mechanism available from any of 
+      the registered providers, then the application is only allowed the 
+      standard default cryptographic permissions. 
+</P></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE><BR>
+<H1><A name=InstallProvider>Installing JCE Providers for the JDK
+5.0</A></H1>
+<BLOCKQUOTE>
+  <P>In order to be used, a cryptographic provider must be installed and 
+  registered, either statically or dynamically. Cryptographic providers for JCE 
+  in the JDK 5.0 are installed and configured the same way as all 
+  other providers for the Java<SUP><FONT size=-2>TM</FONT></SUP> 2 platform. 
+  More information about installing and configuring providers can be found in 
+  the <A 
+  href="../CryptoSpec.html#ProviderInstalling">Installing 
+  Providers</A> section of the <I>Java<SUP><FONT size=-2>TM</FONT></SUP> 
+  Cryptography Architecture API Specification &amp; Reference</I> document. 
+  <P>You do not need to register the "SunJCE" provider because it is 
+  pre-registered. If you want to use other providers, read the following 
+  sections to see how to register them. 
+  <P>Installing a provider is done in two steps: <A 
+  href="#InstallProv">installing 
+  the provider package classes</A>, and <A 
+  href="#Configuring">configuring 
+  the provider</A>. In some situations you will also need to <A 
+  href="#SettingPerms">set 
+  permissions</A> for the provider prior to using it. 
+  <H2><A name=InstallProv>Installing the Provider Classes</A></H2>
+  <BLOCKQUOTE>The first thing you must do is make the provider classes 
+    available so that they can be found when requested. Provider classes are 
+    shipped as a signed JAR (Java ARchive) file. 
+    <P>There are two possible ways to install the provider classes: 
+    <UL>
+      <LI>Install the JAR file containing the provider classes as an "installed" 
+      or "bundled" extension. 
+      <LI>Place the JAR file containing the provider classes in your class path. 
+      </LI></UL>
+    <P>The provider JAR file will be considered an <EM>installed</EM> extension 
+    if it is placed in the standard place for the JAR files of an installed 
+    extension: 
+    <BLOCKQUOTE><PRE>&lt;java-home&gt;/lib/ext         [Solaris]
+&lt;java-home&gt;\lib\ext         [Windows]
+</PRE></BLOCKQUOTE>
+    <P>
+    <P>Here <TT>&lt;java-home&gt;</TT> refers to the directory where the runtime 
+    software is installed, which is the top-level directory of the 
+    Java<SUP><FONT size=-2>TM</FONT></SUP> 2 Runtime Environment (JRE) or the 
+    <TT>jre</TT> directory in the Java<SUP><FONT size=-2>TM</FONT></SUP> 2 SDK 
+    (Java 2 SDK) software. For example, if you have the JDK 5.0 
+    installed on Solaris in a directory named <CODE>/home/user1/Java 2 
+    SDK1.5.0</CODE>, or on Microsoft Windows in a directory named <CODE>C:\Java 
+    2 SDK1.5.0</CODE>, then you need to install the JAR file in the following 
+    directory: 
+    <BLOCKQUOTE><PRE>/home/user1/Java 2 SDK1.5.0/jre/lib/ext    [Solaris]
+C:\Java 2 SDK1.5.0\jre\lib\ext             [Windows]
+</PRE></BLOCKQUOTE>
+    <P>Similarly, if you have the JRE 5.0 installed on Solaris in a directory 
+    named <CODE>/home/user1/j2re1.5.0</CODE>, or on Microsoft Windows in a 
+    directory named <CODE>C:\j2re1.5.0</CODE>, you need to install the JAR file 
+    in the following directory: 
+    <BLOCKQUOTE><PRE>/home/user1/j2re1.5.0/lib/ext         [Solaris]
+C:\j2re1.5.0\lib\ext                  [Windows]
+</PRE></BLOCKQUOTE>
+    <P>For more information, refer to these sections in the "Extension Mechanism 
+    Architecture" specification: <A 
+    href="http://java.sun.com/j2se/1.5/docs/guide/extensions/spec.html#installed">Installed 
+    Extensions</A> and <A 
+    href="http://java.sun.com/j2se/1.5/docs/guide/extensions/spec.html#bundled">Bundled 
+    Extensions</A>. </P></BLOCKQUOTE>
+  <H2><A name=Configuring>Configuring the Provider</A></H2>
+  <BLOCKQUOTE>
+    <P>The next step is to add the provider to your list of approved providers. 
+    This is done statically by editing the security properties file 
+    <BLOCKQUOTE><PRE>&lt;java-home&gt;/lib/security/java.security     [Solaris]
+&lt;java-home&gt;\lib\security\java.security     [Windows]
+</PRE></BLOCKQUOTE>
+    <P>Here <TT>&lt;java-home&gt;</TT> refers to the directory where the JRE was 
+    installed. For example, if you have the JDK 5.0 installed on 
+    Solaris in a directory named <CODE>/home/user1/Java 2 SDK1.5.0</CODE>, or on 
+    Microsoft Windows in a directory named <CODE>C:\Java 2 SDK1.5.0</CODE>, then 
+    you need to edit the following file: 
+    <BLOCKQUOTE><PRE>/home/user1/Java 2 SDK1.5.0/jre/lib/security/java.security  [Solaris]
+C:\Java 2 SDK1.5.0\jre\lib\security\java.security           [Windows]
+</PRE></BLOCKQUOTE>
+    <P>Similarly, if you have the Java 2 Runtime Environment, v 1.4 installed on 
+    Solaris in a directory named <CODE>/home/user1/j2re1.5.0</CODE>, or on 
+    Microsoft Windows in a directory named <CODE>C:\j2re1.5.0</CODE>, then you 
+    need to edit this file: 
+    <BLOCKQUOTE><PRE>/home/user1/j2re1.5.0/lib/security/java.security       [Solaris]
+C:\j2re1.5.0\lib\security\java.security                [Windows]
+</PRE></BLOCKQUOTE>
+    <P>For each provider, this file should have a statement of the following 
+    form: <PRE>    security.provider.<I>n</I>=<I>masterClassName</I>
+</PRE>
+    <P>This declares a provider, and specifies its preference order <I>n</I>. 
+    The preference order is the order in which providers are searched for 
+    requested algorithms when no specific provider is requested. The order is 
+    1-based; 1 is the most preferred, followed by 2, and so on. 
+    <P><I>masterClassName</I> must specify the fully qualified name of the 
+    provider's "master class". The provider vendor should supply you this name. 
+    <P>The JDK 5.0 comes standard with a provider named "SUN", which 
+    is automatically configured as a static provider in the 
+    <CODE>java.security</CODE> properties file, as follows: 
+    <BLOCKQUOTE><PRE>security.provider.1=sun.security.provider.Sun
+</PRE></BLOCKQUOTE>
+    <P>(The "SUN" provider's master class is the <CODE>Sun</CODE> class in the 
+    <CODE>sun.security.provider</CODE> package.) 
+    <P>The JCE provider "SunJCE" and other security-related providers shipped 
+    with the Java 2 platform are also automatically configured as static 
+    providers. 
+    <P>To utilize another JCE provider, add a line registering the alternate 
+    provider, giving it whatever preference order you prefer (and making 
+    corresponding adjustments to the other providers' orders, if needed). 
+    <P>Suppose that the master class of a provider you want to register is the 
+    <CODE>CryptoX</CODE> class in the <CODE>com.cryptox.provider</CODE> package, 
+    and that you would like to make this provider the second preferred provider. 
+    To do so, add the following line to the <CODE>java.security</CODE> file 
+    below the line for the "SUN" provider, and increment the preference order 
+    numbers for all other providers whose numbers were greater than or equal to 
+    2 before your addition: <PRE>    security.provider.2=com.cryptox.provider.CryptoX
+</PRE>Note: Providers may also be registered dynamically. To do so, a 
+    program can call either the <CODE>addProvider</CODE> or 
+    <CODE>insertProviderAt</CODE> method in the <CODE>Security</CODE> class. 
+    This type of registration is not persistent and can only be done by code 
+    which is granted the following permission: 
+    <BLOCKQUOTE><PRE>java.security.SecurityPermission "insertProvider.{name}"
+</PRE></BLOCKQUOTE>where <CODE>{name}</CODE> is replaced by the actual 
+    provider name. For example, if the provider name is "MyJCE" and if your code 
+    that dynamically registers this provider is in the <CODE>MyApp.jar</CODE> 
+    file in the <CODE>/localWork</CODE> directory, then here is a sample policy 
+    file <CODE>grant</CODE> statement granting that permission: 
+    <BLOCKQUOTE><PRE>grant codeBase "file:/localWork/MyApp.jar" {
+  permission java.security.SecurityPermission
+      "insertProvider.MyJCE";
+};
+</PRE></BLOCKQUOTE></BLOCKQUOTE>
+  <H2><A name=SettingPerms>Setting Provider Permissions</A></H2>
+  <BLOCKQUOTE>
+    <P>Whenever JCE providers are not installed extensions, <A 
+    href="http://java.sun.com/j2se/1.5/docs/guide/security/permissions.html">permissions</A> 
+    must be granted for when applets or applications using JCE are run while a 
+    security manager is installed. There is typically a security manager 
+    installed whenever an applet is running, and a security manager may be 
+    installed for an application either via code in the application itself or 
+    via a command-line argument. Permissions do not need to be granted to 
+    installed extensions, since the default system <A 
+    href="http://java.sun.com/j2se/1.5/docs/guide/security/PolicyFiles.html">policy 
+    configuration file</A> grants all permissions to installed extensions. 
+    <P>The documentation from the vendor of each provider you will be using 
+    should include information as to which permissions it requires, and how to 
+    grant such permissions. For example, the following permissions may be needed 
+    by a provider if it is not an installed extension and a security manager is 
+    installed: 
+    <UL>
+      <LI><CODE>java.lang.RuntimePermission</CODE> to get class protection 
+      domains. The provider may need to get its own protection domain in the 
+      process of doing self-integrity checking. 
+      <P></P>
+      <LI><CODE>java.security.SecurityPermission 
+      "putProviderProperty.{name}"</CODE> to set provider properties, where 
+      <CODE>{name}</CODE> is replaced by the actual provider name. </LI></UL>
+    <P>For example, a sample statement granting permissions to a provider whose 
+    name is "MyJCE" and whose code is in <CODE>myjce_provider.jar</CODE> appears 
+    below. Such a statement could appear in a policy file. In this example, the 
+    <CODE>myjce_provider.jar</CODE> file is assumed to be in the 
+    <CODE>/localWork</CODE> directory. 
+    <BLOCKQUOTE><PRE>grant codeBase "file:/localWork/myjce_provider.jar" {
+  permission java.lang.RuntimePermission "getProtectionDomain";
+  permission java.security.SecurityPermission
+      "putProviderProperty.MyJCE";
+};
+</PRE></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE><BR>
+<H1><A name=JceKeystore>JCE Keystore</A></H1>
+<BLOCKQUOTE>
+  <P>The "SunJCE" provider supplies its own implementation of the 
+  <CODE>java.security.KeyStore</CODE> class in the JDK 5.0. Its 
+  implementation employs a much stronger protection of private keys (using 
+  password-based encryption with Triple DES) than the keystore implementation 
+  supplied by the "SUN" provider in the JDK 5.0. (Note that because 
+  the JDK 5.0 is distributed world-wide in binary and source format, 
+  it cannot employ any strong encryption mechanisms.) 
+  <P>In order to take advantage of the keystore implementation of the "SunJCE" 
+  provider, you specify "<I>JCEKS</I>" as the keystore type. 
+  <P>You may upgrade your keystore of type "<I>JKS</I>" - this is the name of 
+  the keystore type implemented by the "SUN" provider in the Java 2 SDK - to a 
+  JCE keystore of type "<I>JCEKS</I>" by changing the password of a private-key 
+  entry in your keystore. 
+  <P>To apply the cryptographically strong(er) key protection supplied by 
+  "SunJCE" to a private key named "signkey" in your default keystore, use the 
+  following command, which will prompt you for the old and new key passwords: <PRE>    keytool -keypasswd -alias signkey -storetype jceks
+</PRE>
+  <P>You may want to change the password back to its old value, using the same 
+  command. 
+  <P>See <A 
+  href="http://java.sun.com/j2se/1.5/docs/tooldocs/index.html#security">Security 
+  Tools</A> for more information about <CODE>keytool</CODE> and about keystores 
+  and how they are managed. </P></BLOCKQUOTE><BR>
+<H1><A name=Examples>Code Examples</A></H1>
+<BLOCKQUOTE>
+  <P>This section is a short tutorial on how to use some of the major features 
+  of the JCE APIs in the JDK 5.0. Complete sample programs that 
+  exercise the APIs can be found in <A 
+  href="#AppF">Appendix 
+  F</A> of this document. 
+  <H2><A name=SimpleEncrEx>Using Encryption</A></H2>
+  <BLOCKQUOTE>
+    <P>This section takes the user through the process of generating a key, 
+    creating and initializing a cipher object, encrypting a file, and then 
+    decrypting it. Throughout this example, we use the Data Encryption Standard 
+    (DES). 
+    <H4>Generating a Key</H4>
+    <BLOCKQUOTE>
+      <P>To create a DES key, we have to instantiate a KeyGenerator for DES. We 
+      do not specify a provider, because we do not care about a particular DES 
+      key generation implementation. Since we do not initialize the 
+      KeyGenerator, a system-provided source of randomness will be used to 
+      create the DES key: <PRE>    KeyGenerator keygen = KeyGenerator.getInstance("DES");
+    SecretKey desKey = keygen.generateKey();
+</PRE>
+      <P>After the key has been generated, the same KeyGenerator object can be 
+      re-used to create further keys. </P></BLOCKQUOTE>
+    <H4>Creating a Cipher</H4>
+    <BLOCKQUOTE>
+      <P>The next step is to create a Cipher instance. To do this, we use one of 
+      the <CODE>getInstance</CODE> factory methods of the Cipher class. We must 
+      specify the name of the requested transformation, which includes the 
+      following components, separated by slashes (/): 
+      <UL>
+        <LI>the algorithm name 
+        <LI>the mode (optional) 
+        <LI>the padding scheme (optional) </LI></UL>
+      <P>In this example, we create a DES (Data Encryption Standard) cipher in 
+      Electronic Codebook mode, with PKCS #5-style padding. We do not specify a 
+      provider, because we do not care about a particular implementation of the 
+      requested transformation. 
+      <P>The standard algorithm name for DES is "DES", the standard name for the 
+      Electronic Codebook mode is "ECB", and the standard name for PKCS #5-style 
+      padding is "PKCS5Padding": <PRE>    Cipher desCipher;
+
+    // Create the cipher 
+    desCipher = Cipher.getInstance("DES/ECB/PKCS5Padding");
+</PRE>
+      <P>We use the generated <CODE>desKey</CODE> from above to initialize the 
+      Cipher object for encryption: <PRE>    // Initialize the cipher for encryption
+    desCipher.init(Cipher.ENCRYPT_MODE, desKey);
+
+    // Our cleartext
+    byte[] cleartext = "This is just an example".getBytes();
+
+    // Encrypt the cleartext
+    byte[] ciphertext = desCipher.doFinal(cleartext);
+
+    // Initialize the same cipher for decryption
+    desCipher.init(Cipher.DECRYPT_MODE, desKey);
+
+    // Decrypt the ciphertext
+    byte[] cleartext1 = desCipher.doFinal(ciphertext);
+</PRE>
+      <P><CODE>cleartext</CODE> and <CODE>cleartext1</CODE> are identical. 
+    </P></BLOCKQUOTE></BLOCKQUOTE>
+  <H2><A name=PBEEx>Using Password-Based Encryption</A></H2>
+  <BLOCKQUOTE>
+    <P>In this example, we prompt the user for a password from which we derive 
+    an encryption key. 
+    <P>It would seem logical to collect and store the password in an object of 
+    type <CODE>java.lang.String</CODE>. However, here's the caveat: Objects of 
+    type <CODE>String</CODE> are immutable, i.e., there are no methods defined 
+    that allow you to change (overwrite) or zero out the contents of a 
+    <CODE>String</CODE> after usage. This feature makes <CODE>String</CODE> 
+    objects unsuitable for storing security sensitive information such as user 
+    passwords. You should always collect and store security sensitive 
+    information in a char array instead. 
+    <P>For that reason, the <CODE>javax.crypto.spec.PBEKeySpec</CODE> class 
+    takes (and returns) a password as a char array. 
+    <P>The following method is an example of how to collect a user password as a 
+    char array: <PRE>    /**
+     * Reads user password from given input stream.
+     */
+    public char[] readPasswd(InputStream in) throws IOException {
+        char[] lineBuffer;
+        char[] buf;
+        int i;
+
+        buf = lineBuffer = new char[128];
+
+        int room = buf.length;
+        int offset = 0;
+        int c;
+
+loop:   while (true) {
+            switch (c = in.read()) {
+              case -1: 
+              case '\n':
+                break loop;
+
+              case '\r':
+                int c2 = in.read();
+                if ((c2 != '\n') &amp;&amp; (c2 != -1)) {
+                    if (!(in instanceof PushbackInputStream)) {
+                        in = new PushbackInputStream(in);
+                    }
+                    ((PushbackInputStream)in).unread(c2);
+                } else 
+                    break loop;
+
+              default:
+                if (--room &lt; 0) {
+                    buf = new char[offset + 128];
+                    room = buf.length - offset - 1;
+                    System.arraycopy(lineBuffer, 0, buf, 0, offset);
+                    Arrays.fill(lineBuffer, ' ');
+                    lineBuffer = buf;
+                }
+                buf[offset++] = (char) c;
+                break;
+            }
+        }
+
+        if (offset == 0) {
+            return null;
+        }
+
+        char[] ret = new char[offset];
+        System.arraycopy(buf, 0, ret, 0, offset);
+        Arrays.fill(buf, ' ');
+
+        return ret;
+    }
+</PRE>
+    <P>In order to use Password-Based Encryption (PBE) as defined in PKCS #5, we 
+    have to specify a <I>salt</I> and an <I>iteration count</I>. The same salt 
+    and iteration count that are used for encryption must be used for 
+    decryption: <PRE>    PBEKeySpec pbeKeySpec;
+    PBEParameterSpec pbeParamSpec;
+    SecretKeyFactory keyFac;
+
+    // Salt
+    byte[] salt = {
+        (byte)0xc7, (byte)0x73, (byte)0x21, (byte)0x8c,
+        (byte)0x7e, (byte)0xc8, (byte)0xee, (byte)0x99
+    };
+
+    // Iteration count
+    int count = 20;
+
+    // Create PBE parameter set
+    pbeParamSpec = new PBEParameterSpec(salt, count);
+
+    // Prompt user for encryption password.
+    // Collect user password as char array (using the
+    // "readPasswd" method from above), and convert
+    // it into a SecretKey object, using a PBE key
+    // factory.
+    System.out.print("Enter encryption password:  ");
+    System.out.flush();
+    pbeKeySpec = new PBEKeySpec(readPasswd(System.in));
+    keyFac = SecretKeyFactory.getInstance("PBEWithMD5AndDES");
+    SecretKey pbeKey = keyFac.generateSecret(pbeKeySpec);
+
+    // Create PBE Cipher
+    Cipher pbeCipher = Cipher.getInstance("PBEWithMD5AndDES");
+
+    // Initialize PBE Cipher with key and parameters
+    pbeCipher.init(Cipher.ENCRYPT_MODE, pbeKey, pbeParamSpec);
+
+    // Our cleartext
+    byte[] cleartext = "This is another example".getBytes();
+
+    // Encrypt the cleartext
+    byte[] ciphertext = pbeCipher.doFinal(cleartext);
+</PRE></BLOCKQUOTE>
+  <H2><A name=KeyAgreeEx>Using Key Agreement</A></H2>
+  <BLOCKQUOTE>
+    <P>Please refer to <A 
+    href="#AppF">Appendix 
+    F</A> for sample programs exercising the Diffie-Hellman key exchange between 
+    2 and 3 parties, respectively. </P></BLOCKQUOTE></BLOCKQUOTE>
+<HR>
+
+<H1><A name=AppA>Appendix A: Standard Names</A></H1>
+<BLOCKQUOTE>
+  <P>The JCE API requires and utilizes a set of standard names for algorithms, 
+  algorithm modes, and padding schemes. This specification establishes the 
+  following names as standard names. It supplements the list of standard names 
+  defined in <A 
+  href="../CryptoSpec.html#AppA">Appendix 
+  A</A> in the <I>Java<SUP><FONT size=-2>TM</FONT></SUP> Cryptography 
+  Architecture API Specification &amp; Reference</I>. Note that algorithm names 
+  are treated case-insensitively. 
+  <P>In some cases naming conventions are suggested for forming names that are 
+  not explicitly listed, to facilitate name consistency across provider 
+  implementations. Such suggestions use items in angle brackets (such as 
+  &lt;digest&gt; and &lt;encryption&gt;) as placeholders to be replaced by 
+  specific message digest, encryption algorithm, and other names. 
+  <H2>Cipher</H2>
+  <BLOCKQUOTE>
+    <H4>Algorithm</H4>
+    <BLOCKQUOTE>
+      <P>The following names can be specified as the <I>algorithm</I> component 
+      in a <A 
+      href="#trans">transformation</A> 
+      when requesting an instance of <CODE><BIG><B>Cipher</B></BIG></CODE>:
+      <P>
+      <UL>
+        <LI><B>AES</B>: Advanced Encryption Standard as specified by NIST in a 
+        draft FIPS. Based on the Rijndael algorithm by Joan Daemen and Vincent 
+        Rijmen, AES is a 128-bit block cipher supporting keys of 128, 192, and 
+        256 bits. 
+        <P></P>
+        <LI><B>Blowfish</B>: The block cipher designed by Bruce Schneier. 
+        <P></P>
+        <LI><B>DES</B>: The Digital Encryption Standard as described in FIPS PUB 
+        46-2. 
+        <P></P>
+        <LI><B>DESede</B>: Triple DES Encryption (DES-EDE). 
+        <P></P>
+        <LI><B>PBEWith&lt;digest&gt;And&lt;encryption&gt;</B> or 
+        <B>PBEWith&lt;prf&gt;And&lt;encryption&gt;</B>: The password-based 
+        encryption algorithm (PKCS #5), using the specified message digest 
+        (&lt;digest&gt;) or pseudo-random function (&lt;prf&gt;) and encryption 
+        algorithm (&lt;encryption&gt;). Examples: 
+        <P>
+        <UL>
+          <LI><B>PBEWithMD5AndDES</B>: The password-based encryption algorithm 
+          as defined in: RSA Laboratories, "PKCS #5: Password-Based Encryption 
+          Standard," version 1.5, Nov 1993. Note that this algorithm implies <A 
+          href="#cbcMode"><I>CBC</I></A> 
+          as the cipher mode and <A 
+          href="#pkcs5Pad"><I>PKCS5Padding</I></A> 
+          as the padding scheme and cannot be used with any other cipher modes 
+          or padding schemes. 
+          <P></P>
+          <LI><B>PBEWithHmacSHA1AndDESede</B>: The password-based encryption 
+          algorithm as defined in: RSA Laboratories, "PKCS #5: Password-Based 
+          Cryptography Standard," version 2.0, March 1999. </LI></UL>
+        <P></P>
+        <LI><B>RC2</B>, <B>RC4</B>, and <B>RC5</B>: Variable-key-size encryption 
+        algorithms developed by Ron Rivest for RSA Data Security, Inc. 
+        <P></P>
+        <LI><B>RSA</B>: The RSA encryption algorithm as defined in PKCS #1. 
+      </LI></UL></BLOCKQUOTE>
+    <H4>Mode</H4>
+    <BLOCKQUOTE>
+      <P>The following names can be specified as the <I>mode</I> component in a 
+      <A 
+      href="#trans">transformation</A> 
+      when requesting an instance of <CODE><BIG><B>Cipher</B></BIG></CODE>:
+      <P>
+      <UL>
+        <LI><B>NONE</B>: No mode. 
+        <P></P>
+        <LI><B><A name=cbcMode>CBC</A></B>: Cipher Block Chaining Mode, as 
+        defined in FIPS PUB 81. 
+        <P></P>
+        <LI><B>CFB</B>: Cipher Feedback Mode, as defined in FIPS PUB 81. 
+        <P></P>
+        <LI><B>ECB</B>: Electronic Codebook Mode, as defined in: The National 
+        Institute of Standards and Technology (NIST) Federal Information 
+        Processing Standard (FIPS) PUB 81, "DES Modes of Operation," U.S. 
+        Department of Commerce, Dec 1980. 
+        <P></P>
+        <LI><B>OFB</B>: Output Feedback Mode, as defined in FIPS PUB 81. 
+        <P></P>
+        <LI><B>PCBC</B>: Propagating Cipher Block Chaining, as defined by 
+        Kerberos V4. </LI></UL></BLOCKQUOTE>
+    <H4>Padding</H4>
+    <BLOCKQUOTE>
+      <P>The following names can be specified as the <I>padding</I> component in 
+      a <A 
+      href="#trans">transformation</A> 
+      when requesting an instance of <CODE><BIG><B>Cipher</B></BIG></CODE>:
+      <P>
+      <UL>
+        <LI><B>NoPadding</B>: No padding. 
+        <P></P>
+        <LI><B>OAEPWith&lt;digest&gt;And&lt;mgf&gt;Padding</B>: Optimal 
+        Asymmetric Encryption Padding scheme defined in PKCS #1, where 
+        &lt;digest&gt; should be replaced by the message digest and &lt;mgf&gt; 
+        by the mask generation function. Example: OAEPWithMD5AndMGF1Padding. 
+        <P></P>
+        <LI><B><A name=pkcs5Pad>PKCS5Padding</A></B>: The padding scheme 
+        described in: RSA Laboratories, "PKCS #5: Password-Based Encryption 
+        Standard," version 1.5, November 1993. 
+        <P></P>
+        <LI><B>SSL3Padding</B>: The padding scheme defined in the SSL Protocol 
+        Version 3.0, November 18, 1996, section 5.2.3.2 (CBC block cipher): <PRE>    block-ciphered struct {
+        opaque content[SSLCompressed.length];
+        opaque MAC[CipherSpec.hash_size];
+        uint8 padding[GenericBlockCipher.padding_length];
+        uint8 padding_length;
+    } GenericBlockCipher;
+</PRE>
+        <P>The size of an instance of a GenericBlockCipher must be a multiple of 
+        the block cipher's block length. 
+        <P>The padding length, which is always present, contributes to the 
+        padding, which implies that if: <PRE>    sizeof(content) + sizeof(MAC) % block_length = 0,
+</PRE>padding has to be (block_length - 1) bytes long, because of the 
+        existence of <CODE>padding_length</CODE>. 
+        <P>This make the padding scheme similar (but not quite) to PKCS5Padding, 
+        where the padding length is encoded in the padding (and ranges from 1 to 
+        block_length). With the SSL scheme, the sizeof(padding) is encoded in 
+        the always present <CODE>padding_length</CODE> and therefore ranges from 
+        0 to block_length-1. 
+        <P>Note that this padding mechanism is not supported by the "SunJCE" 
+        provider. </P></LI></UL></BLOCKQUOTE></BLOCKQUOTE>
+  <H2>KeyAgreement</H2>
+  <BLOCKQUOTE>
+    <P>The following algorithm names can be specified when requesting an 
+    instance of <CODE><BIG><B>KeyAgreement</B></BIG></CODE>: 
+    <P>
+    <UL>
+      <LI><B>DiffieHellman</B>: Diffie-Hellman Key Agreement as defined in PKCS 
+      #3: Diffie-Hellman Key-Agreement Standard, RSA Laboratories, version 1.4, 
+      November 1993. </LI></UL></BLOCKQUOTE>
+  <H2>KeyGenerator</H2>
+  <BLOCKQUOTE>
+    <P>The following algorithm names can be specified when requesting an 
+    instance of <CODE><BIG><B>KeyGenerator</B></BIG></CODE>: 
+    <P>
+    <UL>
+      <LI><B>AES</B> 
+      <P></P>
+      <LI><B>Blowfish</B> 
+      <P></P>
+      <LI><B>DES</B> 
+      <P></P>
+      <LI><B>DESede</B> 
+      <P></P>
+      <LI><B>HmacMD5</B> 
+      <P></P>
+      <LI><B>HmacSHA1</B> </LI></UL></BLOCKQUOTE>
+  <H2>KeyPairGenerator</H2>
+  <BLOCKQUOTE>
+    <P>The following algorithm names can be specified when requesting an 
+    instance of <CODE><BIG><B>KeyPairGenerator</B></BIG></CODE>: 
+    <P>
+    <UL>
+      <LI><B>DiffieHellman</B> </LI></UL></BLOCKQUOTE>
+  <H2>SecretKeyFactory</H2>
+  <BLOCKQUOTE>
+    <P>The following algorithm names can be specified when requesting an 
+    instance of <CODE><BIG><B>SecretKeyFactory</B></BIG></CODE>: 
+    <P>
+    <UL>
+      <LI><B>AES</B> 
+      <P></P>
+      <LI><B>DES</B> 
+      <P></P>
+      <LI><B>DESede</B> 
+      <P></P>
+      <LI><B>PBEWith&lt;digest&gt;And&lt;encryption&gt;</B> or 
+      <B>PBEWith&lt;prf&gt;And&lt;encryption&gt;</B>: Secret-key factory for use 
+      with PKCS #5 password-based encryption, where &lt;digest&gt; is a message 
+      digest, &lt;prf&gt; is a pseudo-random function, and &lt;encryption&gt; is 
+      an encryption algorithm. Examples: <B>PBEWithMD5AndDES</B> (PKCS #5, v 
+      1.5) and <B>PBEWithHmacSHA1AndDESede</B> (PKCS #5, v 2.0). Note: These 
+      both use only the low order 8 bits of each password character. 
+  </LI></UL></BLOCKQUOTE>
+  <H2>KeyFactory</H2>
+  <BLOCKQUOTE>
+    <P>The following algorithm names can be specified when requesting an 
+    instance of <CODE><BIG><B>KeyFactory</B></BIG></CODE>: 
+    <P>
+    <UL>
+      <LI><B>DiffieHellman</B> </LI></UL></BLOCKQUOTE>
+  <H2>AlgorithmParameterGenerator</H2>
+  <BLOCKQUOTE>
+    <P>The following algorithm names can be specified when requesting an 
+    instance of <CODE><BIG><B>AlgorithmParameterGenerator</B></BIG></CODE>: 
+    <P>
+    <UL>
+      <LI><B>DiffieHellman</B> </LI></UL></BLOCKQUOTE>
+  <H2>AlgorithmParameters</H2>
+  <BLOCKQUOTE>
+    <P>The following algorithm names can be specified when requesting an 
+    instance of <CODE><BIG><B>AlgorithmParameters</B></BIG></CODE>: 
+    <P>
+    <UL>
+      <LI><B>Blowfish</B> 
+      <P></P>
+      <LI><B>DES</B> 
+      <P></P>
+      <LI><B>DESede</B> 
+      <P></P>
+      <LI><B>DiffieHellman</B> 
+      <P></P>
+      <LI><B>PBE</B> </LI></UL></BLOCKQUOTE>
+  <H2>MAC</H2>
+  <BLOCKQUOTE>
+    <P>The following algorithm names can be specified when requesting an 
+    instance of <CODE><BIG><B>Mac</B></BIG></CODE>: 
+    <P>
+    <UL>
+      <LI><B>HmacMD5</B>: The HMAC-MD5 keyed-hashing algorithm as defined in RFC 
+      2104: "HMAC: Keyed-Hashing for Message Authentication" (February 1997). 
+      <P></P>
+      <LI><B>HmacSHA1</B>: The HMAC-SHA1 keyed-hashing algorithm as defined in 
+      RFC 2104: "HMAC: Keyed-Hashing for Message Authentication" (February 
+      1997). 
+      <P></P>
+      <LI><B>PBEWith&lt;mac&gt;</B>: MAC for use with PKCS #5 v 2.0 
+      password-based message authentication standard, where &lt;mac&gt; is a 
+      Message Authentication Code algorithm name. Example: PBEWithHmacSHA1. 
+    </LI></UL></BLOCKQUOTE>
+  <H2>Keystore Types</H2>
+  <BLOCKQUOTE>
+    <P>The following types can be specified when requesting an instance of 
+    <CODE><BIG><B>KeyStore</B></BIG></CODE>: 
+    <P>
+    <UL>
+      <LI><B>JCEKS</B>: The <A 
+      href="#JceKeystore">proprietary 
+      keystore type</A> implemented by the "SunJCE" provider. 
+</LI></UL></BLOCKQUOTE>
+  <H2>Exemption Mechanisms</H2>
+  <BLOCKQUOTE>
+    <P>The following exemption mechanism names can be specified in the 
+    permission policy file that accompanies an application considered "exempt" 
+    from cryptographic restrictions: 
+    <P>
+    <UL>
+      <LI><B>KeyEscrow</B>: An encryption system with a backup decryption 
+      capability that allows authorized persons (users, officers of an 
+      organization, and government officials), under certain prescribed 
+      conditions, to decrypt ciphertext with the help of information supplied by 
+      one or more trusted parties who hold special data recovery keys.
+      <P></P>
+      <LI><B>KeyRecovery</B>: A method of obtaining the secret key used to lock 
+      encrypted data. One use is as a means of providing fail-safe access to a 
+      corporation's own encrypted information in times of disaster.
+      <P></P>
+      <LI><B>KeyWeakening</B>: A method in which a part of the key can be 
+      escrowed or recovered. </LI></UL></BLOCKQUOTE></BLOCKQUOTE>
+<HR>
+
+<H1><A name=AppB>Appendix B: SunJCE Default Keysizes</A></H1>
+<BLOCKQUOTE>
+  <P>The SunJCE provider uses the following default keysizes: 
+  <UL>
+    <LI><B>KeyGenerator</B> 
+    <P>
+    <UL>
+      <LI><B>DES</B>: 56 bits
+      <P></P>
+      <LI><B>Triple DES</B>: 112 bits
+      <P></P>
+      <LI><B>Blowfish</B>: 56 bits
+      <P></P>
+      <LI><B>HmacMD5</B>: 64 bytes
+      <P></P>
+      <LI><B>HmacSHA1</B>: 64 bytes </LI></UL>
+    <P></P>
+    <LI><B>KeyPairGenerator</B> 
+    <P>
+    <UL>
+      <LI><B>Diffie-Hellman</B>: 1024 bits </LI></UL>
+    <P></P>
+    <LI><B>AlgorithmParameterGenerator</B> 
+    <P>
+    <UL>
+      <LI><B>Diffie-Hellman</B>: 1024 bits </LI></UL></LI></UL></BLOCKQUOTE>
+<HR>
+
+<H1><A name=AppC>Appendix C: SunJCE Keysize Restrictions</A></H1>
+<BLOCKQUOTE>
+  <P>The SunJCE provider enforces the following restrictions on the keysize 
+  passed to the initialization methods of the following classes: 
+  <UL>
+    <LI><B>KeyGenerator</B> 
+    <P>Restrictions (by algorithm): 
+    <P>
+    <UL>
+      <LI><B>DES</B>: keysize must be equal to <CODE>56</CODE>
+      <P></P>
+      <LI><B>Triple DES</B>: keysize must be equal to <CODE>112</CODE> or 
+      <CODE>168</CODE> 
+      <P>Note: A keysize of <CODE>112</CODE> will generate a Triple DES key with 
+      2 intermediate keys, and a keysize of <CODE>168</CODE> will generate a 
+      Triple DES key with 3 intermediate keys.
+      <P></P>
+      <LI><B>Blowfish</B>: keysize must be a multiple of <CODE>8</CODE>, and can 
+      only range from <CODE>32</CODE> to <CODE>448</CODE>, inclusive </LI></UL>
+    <P></P>
+    <LI><B>KeyPairGenerator</B> 
+    <P>Restrictions (by algorithm): 
+    <P>
+    <UL>
+      <LI><B>Diffie-Hellman</B>: keysize must be a multiple of <CODE>64</CODE>, 
+      and can only range from <CODE>512</CODE> to <CODE>1024</CODE>, inclusive 
+      </LI></UL>
+    <P></P>
+    <LI><B>AlgorithmParameterGenerator</B> 
+    <P>Restrictions (by algorithm): 
+    <P>
+    <UL>
+      <LI><B>Diffie-Hellman</B>: keysize must be a multiple of <CODE>64</CODE>, 
+      and can only range from <CODE>512</CODE> to <CODE>1024</CODE>, inclusive 
+      </LI></UL></LI></UL></BLOCKQUOTE>
+<HR>
+
+<H1><A name=AppD>Appendix D: Jurisdiction Policy File Format</A></H1>
+<BLOCKQUOTE>
+  <P>JCE represents its jurisdiction policy files as J2SE-style policy files 
+  with corresponding permission statements. As described in <A 
+  href="http://java.sun.com/j2se/1.5/docs/guide/security/PolicyFiles.html">Default 
+  Policy Implementation and Policy File Syntax</A>, a J2SE policy file specifies 
+  what permissions are allowed for code from specified code sources. A 
+  permission represents access to a system resource. In the case of JCE, the 
+  "resources" are cryptography algorithms, and code sources do not need to be 
+  specified, because the cryptographic restrictions apply to all code. 
+  <P>A jurisdiction policy file consists of a very basic "grant entry" 
+  containing one or more "permission entries." 
+  <BLOCKQUOTE><PRE>grant {
+    &lt;permission entries&gt;;
+};
+</PRE></BLOCKQUOTE>
+  <P>The format of a permission entry in a jurisdiction policy file is: 
+  <BLOCKQUOTE><PRE>permission &lt;crypto permission class name&gt;[ &lt;alg_name&gt;
+    [[, &lt;exemption mechanism name&gt;][, &lt;maxKeySize&gt;
+    [, &lt;AlgorithmParameterSpec class name&gt;,
+    &lt;parameters for constructing an 
+        AlgorithmParameterSpec object&gt;]]]];
+</PRE></BLOCKQUOTE>
+  <P>A sample jurisdiction policy file that includes restricting the "Blowfish" 
+  algorithm to maximum key sizes of 64 bits is: 
+  <BLOCKQUOTE><PRE>grant {
+    permission javax.crypto.CryptoPermission "Blowfish", 64;
+    . . .;
+};
+</PRE></BLOCKQUOTE>
+  <P>A permission entry must begin with the word <CODE>permission</CODE>. The 
+  <CODE>&lt;crypto permission class name&gt;</CODE> in the template above would 
+  actually be a specific permission class name, such as 
+  <CODE>javax.crypto.CryptoPermission</CODE>. A crypto permission class reflects 
+  the ability of an application/applet to use certain algorithms with certain 
+  key sizes in certain environments. There are two crypto permission classes: 
+  <CODE>CryptoPermission</CODE> and <CODE>CryptoAllPermission</CODE>. The 
+  special <CODE>CryptoAllPermission</CODE> class implies all 
+  cryptography-related permissions, that is, it specifies that there are no 
+  cryptography-related restrictions. 
+  <P>The &lt;alg_name&gt;, when utilized, is a quoted string specifying the 
+  standard name (see <A 
+  href="#AppA">Appendix 
+  A</A>) of a cryptography algorithm, such as "DES" or "RSA". 
+  <P>The &lt;exemption mechanism name&gt;, when specified, is a quoted string 
+  indicating an exemption mechanism which, if enforced, enables a reduction in 
+  cryptographic restrictions. Exemption mechanism names that can be used include 
+  "KeyRecovery" "KeyEscrow", and "KeyWeakening". 
+  <P>&lt;maxKeySize&gt; is an integer specifying the maximum key size (in bits) 
+  allowed for the specified algorithm. 
+  <P>For some algorithms it may not be sufficient to specify the algorithm 
+  strength in terms of just a key size. For example, in the case of the "RC5" 
+  algorithm, the number of rounds must also be considered. For algorithms whose 
+  strength needs to be expressed as more than a key size, the permission entry 
+  should also specify an AlgorithmParameterSpec class name (such as 
+  <CODE>javax.crypto.spec.RC5ParameterSpec</CODE>) and a list of parameters for 
+  constructing the specified AlgorithmParameterSpec object. 
+  <P>Items that appear in a permission entry must appear in the specified order. 
+  An entry is terminated with a semicolon. 
+  <P>Case is unimportant for the identifiers (<CODE>grant</CODE>, 
+  <CODE>permission</CODE>) but is significant for the <CODE>&lt;crypto 
+  permission class name&gt;</CODE> or for any string that is passed in as a 
+  value. 
+  <P>Note: An "*" can be used as a wildcard for any permission entry option. For 
+  example, an "*" (without the quotes) for an &lt;alg_name&gt; option means "all 
+  algorithms." </P></BLOCKQUOTE>
+<HR>
+
+<H1><A name=AppE>Appendix E: Maximum Key Sizes Allowed by "Strong" Jurisdiction 
+Policy Files</A></H1>
+<BLOCKQUOTE>
+  <P>Due to import control restrictions, the jurisdiction policy files shipped 
+  with the JDK 5.0 allow "strong" but limited cryptography to be used. 
+  Here are the maximum key sizes allowed by this "strong" version of the 
+  jurisdiction policy files: 
+  <P>
+  <TABLE summary="maximum key sizes">
+    <TBODY>
+    <TR>
+      <TH>
+        <P class=CellHeading>Algorithm </P></TH>
+      <TH>
+        <P class=CellHeading>Maximum Key Size </P></TH>
+    <TR>
+      <TD align=middle>
+        <P>DES </P></TD>
+      <TD align=middle>
+        <P>64 </P></TD></TR>
+    <TR>
+      <TD align=middle>
+        <P>DESede </P></TD>
+      <TD align=middle>
+        <P>* </P></TD></TR>
+    <TR>
+      <TD align=middle>
+        <P>RC2 </P></TD>
+      <TD align=middle>
+        <P>128 </P></TD></TR>
+    <TR>
+      <TD align=middle>
+        <P>RC4 </P></TD>
+      <TD align=middle>
+        <P>128 </P></TD></TR>
+    <TR>
+      <TD align=middle>
+        <P>RC5 </P></TD>
+      <TD align=middle>
+        <P>128 </P></TD></TR>
+    <TR>
+      <TD align=middle>
+        <P>RSA </P></TD>
+      <TD align=middle>
+        <P>2048 </P></TD></TR>
+    <TR>
+      <TD align=middle>
+        <P>* (all others) </P></TD>
+      <TD align=middle>
+        <P>128 </P></TD></TR></TBODY></TABLE></P></BLOCKQUOTE>
+<HR>
+
+<H1><A name=AppF>Appendix F: Sample Programs</A></H1>
+<UL>
+  <LI><A name=DH2Ex>
+  <H3>Diffie-Hellman Key Exchange between 2 Parties</H3></A><PRE>/*
+ * Copyright 1997-2001 by Sun Microsystems, Inc.,
+ * 901 San Antonio Road, Palo Alto, California, 94303, U.S.A.
+ * All rights reserved.
+ *
+ * This software is the confidential and proprietary information
+ * of Sun Microsystems, Inc. ("Confidential Information").  You
+ * shall not disclose such Confidential Information and shall use
+ * it only in accordance with the terms of the license agreement
+ * you entered into with Sun.
+ */
+
+import java.io.*;
+import java.math.BigInteger;
+import java.security.*;
+import java.security.spec.*;
+import java.security.interfaces.*;
+import javax.crypto.*;
+import javax.crypto.spec.*;
+import javax.crypto.interfaces.*;
+import com.sun.crypto.provider.SunJCE;
+
+/**
+ * This program executes the Diffie-Hellman key agreement protocol
+ * between 2 parties: Alice and Bob.
+ *
+ * By default, preconfigured parameters (1024-bit prime modulus and base
+ * generator used by SKIP) are used.
+ * If this program is called with the "-gen" option, a new set of
+ * parameters is created.
+ */
+
+public class DHKeyAgreement2 {
+
+    private DHKeyAgreement2() {}
+
+    public static void main(String argv[]) {
+        try {
+            String mode = "USE_SKIP_DH_PARAMS";
+
+            DHKeyAgreement2 keyAgree = new DHKeyAgreement2();
+
+            if (argv.length &gt; 1) {
+                keyAgree.usage();
+                throw new Exception("Wrong number of command options");
+            } else if (argv.length == 1) {
+                if (!(argv[0].equals("-gen"))) {
+                    keyAgree.usage();
+                    throw new Exception("Unrecognized flag: " + argv[0]);
+                }
+                mode = "GENERATE_DH_PARAMS";
+            }
+
+            keyAgree.run(mode);
+        } catch (Exception e) {
+            System.err.println("Error: " + e);
+            System.exit(1);
+        }
+    }
+
+    private void run(String mode) throws Exception {
+
+        DHParameterSpec dhSkipParamSpec;
+
+        if (mode.equals("GENERATE_DH_PARAMS")) {
+            // Some central authority creates new DH parameters
+            System.out.println
+                ("Creating Diffie-Hellman parameters (takes VERY long) ...");
+            AlgorithmParameterGenerator paramGen
+                = AlgorithmParameterGenerator.getInstance("DH");
+            paramGen.init(512);
+            AlgorithmParameters params = paramGen.generateParameters();
+            dhSkipParamSpec = (DHParameterSpec)params.getParameterSpec
+                (DHParameterSpec.class);
+        } else {
+            // use some pre-generated, default DH parameters
+            System.out.println("Using SKIP Diffie-Hellman parameters");
+            dhSkipParamSpec = new DHParameterSpec(skip1024Modulus,
+                                                  skip1024Base);
+        }
+
+        /*
+         * Alice creates her own DH key pair, using the DH parameters from
+         * above
+         */
+        System.out.println("ALICE: Generate DH keypair ...");
+        KeyPairGenerator aliceKpairGen = KeyPairGenerator.getInstance("DH");
+        aliceKpairGen.initialize(dhSkipParamSpec);
+        KeyPair aliceKpair = aliceKpairGen.generateKeyPair();
+
+        // Alice creates and initializes her DH KeyAgreement object
+        System.out.println("ALICE: Initialization ...");
+        KeyAgreement aliceKeyAgree = KeyAgreement.getInstance("DH");
+        aliceKeyAgree.init(aliceKpair.getPrivate());
+
+        // Alice encodes her public key, and sends it over to Bob.
+        byte[] alicePubKeyEnc = aliceKpair.getPublic().getEncoded();
+
+        /*
+         * Let's turn over to Bob. Bob has received Alice's public key
+         * in encoded format.
+         * He instantiates a DH public key from the encoded key material.
+         */
+        KeyFactory bobKeyFac = KeyFactory.getInstance("DH");
+        X509EncodedKeySpec x509KeySpec = new X509EncodedKeySpec
+            (alicePubKeyEnc);
+        PublicKey alicePubKey = bobKeyFac.generatePublic(x509KeySpec);
+
+        /*
+         * Bob gets the DH parameters associated with Alice's public key. 
+         * He must use the same parameters when he generates his own key
+         * pair.
+         */
+        DHParameterSpec dhParamSpec = ((DHPublicKey)alicePubKey).getParams();
+
+        // Bob creates his own DH key pair
+        System.out.println("BOB: Generate DH keypair ...");
+        KeyPairGenerator bobKpairGen = KeyPairGenerator.getInstance("DH");
+        bobKpairGen.initialize(dhParamSpec);
+        KeyPair bobKpair = bobKpairGen.generateKeyPair();
+
+        // Bob creates and initializes his DH KeyAgreement object
+        System.out.println("BOB: Initialization ...");
+        KeyAgreement bobKeyAgree = KeyAgreement.getInstance("DH");
+        bobKeyAgree.init(bobKpair.getPrivate());
+
+        // Bob encodes his public key, and sends it over to Alice.
+        byte[] bobPubKeyEnc = bobKpair.getPublic().getEncoded();
+
+        /*
+         * Alice uses Bob's public key for the first (and only) phase
+         * of her version of the DH
+         * protocol.
+         * Before she can do so, she has to instanticate a DH public key
+         * from Bob's encoded key material.
+         */
+        KeyFactory aliceKeyFac = KeyFactory.getInstance("DH");
+        x509KeySpec = new X509EncodedKeySpec(bobPubKeyEnc);
+        PublicKey bobPubKey = aliceKeyFac.generatePublic(x509KeySpec);
+        System.out.println("ALICE: Execute PHASE1 ...");
+        aliceKeyAgree.doPhase(bobPubKey, true);
+
+        /*
+         * Bob uses Alice's public key for the first (and only) phase
+         * of his version of the DH
+         * protocol.
+         */
+        System.out.println("BOB: Execute PHASE1 ...");
+        bobKeyAgree.doPhase(alicePubKey, true);
+            
+        /*
+         * At this stage, both Alice and Bob have completed the DH key
+         * agreement protocol.
+         * Both generate the (same) shared secret.
+         */
+        byte[] aliceSharedSecret = aliceKeyAgree.generateSecret();
+        int aliceLen = aliceSharedSecret.length;
+
+        byte[] bobSharedSecret = new byte[aliceLen];
+        int bobLen;
+        try {
+            // show example of what happens if you
+            // provide an output buffer that is too short
+            bobLen = bobKeyAgree.generateSecret(bobSharedSecret, 1);
+        } catch (ShortBufferException e) {
+            System.out.println(e.getMessage());
+        }
+        // provide output buffer of required size
+        bobLen = bobKeyAgree.generateSecret(bobSharedSecret, 0);
+
+        System.out.println("Alice secret: " + 
+          toHexString(aliceSharedSecret));
+        System.out.println("Bob secret: " + 
+          toHexString(bobSharedSecret));
+
+        if (!java.util.Arrays.equals(aliceSharedSecret, bobSharedSecret))
+            throw new Exception("Shared secrets differ");
+        System.out.println("Shared secrets are the same");
+
+        /*
+         * Now let's return the shared secret as a SecretKey object
+         * and use it for encryption. First, we generate SecretKeys for the
+         * "DES" algorithm (based on the raw shared secret data) and
+         * then we use DES in ECB mode
+         * as the encryption algorithm. DES in ECB mode does not require any
+         * parameters.
+         *
+         * Then we use DES in CBC mode, which requires an initialization
+         * vector (IV) parameter. In CBC mode, you need to initialize the
+         * Cipher object with an IV, which can be supplied using the
+         * javax.crypto.spec.IvParameterSpec class. Note that you have to use
+         * the same IV for encryption and decryption: If you use a different
+         * IV for decryption than you used for encryption, decryption will
+         * fail.
+         *
+         * Note: If you do not specify an IV when you initialize the
+         * Cipher object for encryption, the underlying implementation
+         * will generate a random one, which you have to retrieve using the
+         * javax.crypto.Cipher.getParameters() method, which returns an 
+         * instance of java.security.AlgorithmParameters. You need to transfer
+         * the contents of that object (e.g., in encoded format, obtained via
+         * the AlgorithmParameters.getEncoded() method) to the party who will
+         * do the decryption. When initializing the Cipher for decryption,
+         * the (reinstantiated) AlgorithmParameters object must be passed to
+         * the Cipher.init() method.
+         */
+        System.out.println("Return shared secret as SecretKey object ...");
+        // Bob
+        // Note: The call to bobKeyAgree.generateSecret above reset the key
+        // agreement object, so we call doPhase again prior to another
+        // generateSecret call
+        bobKeyAgree.doPhase(alicePubKey, true);
+        SecretKey bobDesKey = bobKeyAgree.generateSecret("DES");
+
+        // Alice
+        // Note: The call to aliceKeyAgree.generateSecret above reset the key
+        // agreement object, so we call doPhase again prior to another
+        // generateSecret call
+        aliceKeyAgree.doPhase(bobPubKey, true);
+        SecretKey aliceDesKey = aliceKeyAgree.generateSecret("DES");
+
+        /*
+         * Bob encrypts, using DES in ECB mode
+         */
+        Cipher bobCipher = Cipher.getInstance("DES/ECB/PKCS5Padding");
+        bobCipher.init(Cipher.ENCRYPT_MODE, bobDesKey);
+
+        byte[] cleartext = "This is just an example".getBytes();
+        byte[] ciphertext = bobCipher.doFinal(cleartext);
+
+        /*
+         * Alice decrypts, using DES in ECB mode
+         */
+        Cipher aliceCipher = Cipher.getInstance("DES/ECB/PKCS5Padding");
+        aliceCipher.init(Cipher.DECRYPT_MODE, aliceDesKey);
+        byte[] recovered = aliceCipher.doFinal(ciphertext);
+            
+        if (!java.util.Arrays.equals(cleartext, recovered))
+            throw new Exception("DES in CBC mode recovered text is " +
+              "different from cleartext");
+        System.out.println("DES in ECB mode recovered text is " +
+            "same as cleartext");    
+
+        /*
+         * Bob encrypts, using DES in CBC mode
+         */
+        bobCipher = Cipher.getInstance("DES/CBC/PKCS5Padding");
+        bobCipher.init(Cipher.ENCRYPT_MODE, bobDesKey);
+
+        cleartext = "This is just an example".getBytes();
+        ciphertext = bobCipher.doFinal(cleartext);
+        // Retrieve the parameter that was used, and transfer it to Alice in
+        // encoded format
+        byte[] encodedParams = bobCipher.getParameters().getEncoded();
+
+        /*
+         * Alice decrypts, using DES in CBC mode
+         */
+        // Instantiate AlgorithmParameters object from parameter encoding
+        // obtained from Bob
+        AlgorithmParameters params = AlgorithmParameters.getInstance("DES");
+        params.init(encodedParams);
+        aliceCipher = Cipher.getInstance("DES/CBC/PKCS5Padding");
+        aliceCipher.init(Cipher.DECRYPT_MODE, aliceDesKey, params);
+        recovered = aliceCipher.doFinal(ciphertext);
+            
+        if (!java.util.Arrays.equals(cleartext, recovered))
+            throw new Exception("DES in CBC mode recovered text is " +
+              "different from cleartext");
+        System.out.println("DES in CBC mode recovered text is " +
+            "same as cleartext");    
+    }
+
+    /*
+     * Converts a byte to hex digit and writes to the supplied buffer
+     */
+    private void byte2hex(byte b, StringBuffer buf) {
+        char[] hexChars = { '0', '1', '2', '3', '4', '5', '6', '7', '8',
+                            '9', 'A', 'B', 'C', 'D', 'E', 'F' };
+        int high = ((b &amp; 0xf0) &gt;&gt; 4);
+        int low = (b &amp; 0x0f);
+        buf.append(hexChars[high]);
+        buf.append(hexChars[low]);
+    }
+
+    /*
+     * Converts a byte array to hex string
+     */
+    private String toHexString(byte[] block) {
+        StringBuffer buf = new StringBuffer();
+
+        int len = block.length;
+
+        for (int i = 0; i &lt; len; i++) {
+             byte2hex(block[i], buf);
+             if (i &lt; len-1) {
+                 buf.append(":");
+             }
+        } 
+        return buf.toString();
+    }
+
+    /*
+     * Prints the usage of this test.
+     */
+    private void usage() {
+        System.err.print("DHKeyAgreement usage: ");
+        System.err.println("[-gen]");
+    }
+
+    // The 1024 bit Diffie-Hellman modulus values used by SKIP
+    private static final byte skip1024ModulusBytes[] = {
+        (byte)0xF4, (byte)0x88, (byte)0xFD, (byte)0x58,
+        (byte)0x4E, (byte)0x49, (byte)0xDB, (byte)0xCD,
+        (byte)0x20, (byte)0xB4, (byte)0x9D, (byte)0xE4,
+        (byte)0x91, (byte)0x07, (byte)0x36, (byte)0x6B,
+        (byte)0x33, (byte)0x6C, (byte)0x38, (byte)0x0D,
+        (byte)0x45, (byte)0x1D, (byte)0x0F, (byte)0x7C,
+        (byte)0x88, (byte)0xB3, (byte)0x1C, (byte)0x7C,
+        (byte)0x5B, (byte)0x2D, (byte)0x8E, (byte)0xF6,
+        (byte)0xF3, (byte)0xC9, (byte)0x23, (byte)0xC0,
+        (byte)0x43, (byte)0xF0, (byte)0xA5, (byte)0x5B,
+        (byte)0x18, (byte)0x8D, (byte)0x8E, (byte)0xBB,
+        (byte)0x55, (byte)0x8C, (byte)0xB8, (byte)0x5D,
+        (byte)0x38, (byte)0xD3, (byte)0x34, (byte)0xFD,
+        (byte)0x7C, (byte)0x17, (byte)0x57, (byte)0x43,
+        (byte)0xA3, (byte)0x1D, (byte)0x18, (byte)0x6C,
+        (byte)0xDE, (byte)0x33, (byte)0x21, (byte)0x2C,
+        (byte)0xB5, (byte)0x2A, (byte)0xFF, (byte)0x3C,
+        (byte)0xE1, (byte)0xB1, (byte)0x29, (byte)0x40,
+        (byte)0x18, (byte)0x11, (byte)0x8D, (byte)0x7C,
+        (byte)0x84, (byte)0xA7, (byte)0x0A, (byte)0x72,
+        (byte)0xD6, (byte)0x86, (byte)0xC4, (byte)0x03,
+        (byte)0x19, (byte)0xC8, (byte)0x07, (byte)0x29,
+        (byte)0x7A, (byte)0xCA, (byte)0x95, (byte)0x0C,
+        (byte)0xD9, (byte)0x96, (byte)0x9F, (byte)0xAB,
+        (byte)0xD0, (byte)0x0A, (byte)0x50, (byte)0x9B,
+        (byte)0x02, (byte)0x46, (byte)0xD3, (byte)0x08,
+        (byte)0x3D, (byte)0x66, (byte)0xA4, (byte)0x5D,
+        (byte)0x41, (byte)0x9F, (byte)0x9C, (byte)0x7C,
+        (byte)0xBD, (byte)0x89, (byte)0x4B, (byte)0x22,
+        (byte)0x19, (byte)0x26, (byte)0xBA, (byte)0xAB,
+        (byte)0xA2, (byte)0x5E, (byte)0xC3, (byte)0x55,
+        (byte)0xE9, (byte)0x2F, (byte)0x78, (byte)0xC7
+    };
+
+    // The SKIP 1024 bit modulus
+    private static final BigInteger skip1024Modulus
+    = new BigInteger(1, skip1024ModulusBytes);
+
+    // The base used with the SKIP 1024 bit modulus
+    private static final BigInteger skip1024Base = BigInteger.valueOf(2);
+}
+</PRE>
+  <HR>
+
+  <LI><A name=DH3Ex>
+  <H3>Diffie-Hellman Key Exchange between 3 Parties</H3></A><PRE>/*
+ * Copyright 1997-2001 by Sun Microsystems, Inc.,
+ * 901 San Antonio Road, Palo Alto, California, 94303, U.S.A.
+ * All rights reserved.
+ *
+ * This software is the confidential and proprietary information
+ * of Sun Microsystems, Inc. ("Confidential Information").  You
+ * shall not disclose such Confidential Information and shall use
+ * it only in accordance with the terms of the license agreement
+ * you entered into with Sun.
+ */
+
+import java.io.*;
+import java.math.BigInteger;
+import java.security.*;
+import java.security.spec.*;
+import java.security.interfaces.*;
+import javax.crypto.*;
+import javax.crypto.spec.*;
+import javax.crypto.interfaces.*;
+import com.sun.crypto.provider.SunJCE;
+
+/**
+ * This program executes the Diffie-Hellman key agreement protocol
+ * between 3 parties: Alice, Bob, and Carol.
+ *
+ * We use the same 1024-bit prime modulus and base generator that are 
+ * used by SKIP.
+ */
+
+public class DHKeyAgreement3 {
+
+    private DHKeyAgreement3() {}
+
+    public static void main(String argv[]) {
+        try {
+            DHKeyAgreement3 keyAgree = new DHKeyAgreement3();
+            keyAgree.run();
+        } catch (Exception e) {
+            System.err.println("Error: " + e);
+            System.exit(1);
+        }
+    }
+
+    private void run() throws Exception {
+
+        DHParameterSpec dhSkipParamSpec;
+
+        System.out.println("Using SKIP Diffie-Hellman parameters");
+        dhSkipParamSpec = new DHParameterSpec(skip1024Modulus, skip1024Base);
+
+        // Alice creates her own DH key pair
+        System.out.println("ALICE: Generate DH keypair ...");
+        KeyPairGenerator aliceKpairGen = KeyPairGenerator.getInstance("DH");
+        aliceKpairGen.initialize(dhSkipParamSpec);
+        KeyPair aliceKpair = aliceKpairGen.generateKeyPair();
+
+        // Bob creates his own DH key pair
+        System.out.println("BOB: Generate DH keypair ...");
+        KeyPairGenerator bobKpairGen = KeyPairGenerator.getInstance("DH");
+        bobKpairGen.initialize(dhSkipParamSpec);
+        KeyPair bobKpair = bobKpairGen.generateKeyPair();
+
+        // Carol creates her own DH key pair
+        System.out.println("CAROL: Generate DH keypair ...");
+        KeyPairGenerator carolKpairGen = KeyPairGenerator.getInstance("DH");
+        carolKpairGen.initialize(dhSkipParamSpec);
+        KeyPair carolKpair = carolKpairGen.generateKeyPair();
+
+
+        // Alice initialize
+        System.out.println("ALICE: Initialize ...");
+        KeyAgreement aliceKeyAgree = KeyAgreement.getInstance("DH");
+        aliceKeyAgree.init(aliceKpair.getPrivate());
+
+        // Bob initialize
+        System.out.println("BOB: Initialize ...");
+        KeyAgreement bobKeyAgree = KeyAgreement.getInstance("DH");
+        bobKeyAgree.init(bobKpair.getPrivate());
+
+        // Carol initialize
+        System.out.println("CAROL: Initialize ...");
+        KeyAgreement carolKeyAgree = KeyAgreement.getInstance("DH");
+        carolKeyAgree.init(carolKpair.getPrivate());
+
+
+        // Alice uses Carol's public key
+        Key ac = aliceKeyAgree.doPhase(carolKpair.getPublic(), false);
+
+        // Bob uses Alice's public key
+        Key ba = bobKeyAgree.doPhase(aliceKpair.getPublic(), false);
+
+        // Carol uses Bob's public key
+        Key cb = carolKeyAgree.doPhase(bobKpair.getPublic(), false);
+
+
+        // Alice uses Carol's result from above
+        aliceKeyAgree.doPhase(cb, true);
+
+        // Bob uses Alice's result from above
+        bobKeyAgree.doPhase(ac, true);
+
+        // Carol uses Bob's result from above
+        carolKeyAgree.doPhase(ba, true);
+
+
+        // Alice, Bob and Carol compute their secrets
+        byte[] aliceSharedSecret = aliceKeyAgree.generateSecret();
+        System.out.println("Alice secret: " + toHexString(aliceSharedSecret));
+
+        byte[] bobSharedSecret = bobKeyAgree.generateSecret();
+        System.out.println("Bob secret: " + toHexString(bobSharedSecret));
+
+        byte[] carolSharedSecret = carolKeyAgree.generateSecret();
+        System.out.println("Carol secret: " + toHexString(carolSharedSecret));
+
+
+        // Compare Alice and Bob
+        if (!java.util.Arrays.equals(aliceSharedSecret, bobSharedSecret))
+            throw new Exception("Alice and Bob differ");
+        System.out.println("Alice and Bob are the same");
+
+        // Compare Bob and Carol
+        if (!java.util.Arrays.equals(bobSharedSecret, carolSharedSecret))
+            throw new Exception("Bob and Carol differ");
+        System.out.println("Bob and Carol are the same");
+    }
+
+
+    /*
+     * Converts a byte to hex digit and writes to the supplied buffer
+     */
+    private void byte2hex(byte b, StringBuffer buf) {
+        char[] hexChars = { '0', '1', '2', '3', '4', '5', '6', '7', '8',
+                            '9', 'A', 'B', 'C', 'D', 'E', 'F' };
+        int high = ((b &amp; 0xf0) &gt;&gt; 4);
+        int low = (b &amp; 0x0f);
+        buf.append(hexChars[high]);
+        buf.append(hexChars[low]);
+    }
+
+    /*
+     * Converts a byte array to hex string
+     */
+    private String toHexString(byte[] block) {
+        StringBuffer buf = new StringBuffer();
+
+        int len = block.length;
+
+        for (int i = 0; i &lt; len; i++) {
+             byte2hex(block[i], buf);
+             if (i &lt; len-1) {
+                 buf.append(":");
+             }
+        } 
+        return buf.toString();
+    }
+
+    /*
+     * Prints the usage of this test.
+     */
+    private void usage() {
+        System.err.print("DHKeyAgreement usage: ");
+        System.err.println("[-gen]");
+    }
+
+    // The 1024 bit Diffie-Hellman modulus values used by SKIP
+    private static final byte skip1024ModulusBytes[] = {
+        (byte)0xF4, (byte)0x88, (byte)0xFD, (byte)0x58,
+        (byte)0x4E, (byte)0x49, (byte)0xDB, (byte)0xCD,
+        (byte)0x20, (byte)0xB4, (byte)0x9D, (byte)0xE4,
+        (byte)0x91, (byte)0x07, (byte)0x36, (byte)0x6B,
+        (byte)0x33, (byte)0x6C, (byte)0x38, (byte)0x0D,
+        (byte)0x45, (byte)0x1D, (byte)0x0F, (byte)0x7C,
+        (byte)0x88, (byte)0xB3, (byte)0x1C, (byte)0x7C,
+        (byte)0x5B, (byte)0x2D, (byte)0x8E, (byte)0xF6,
+        (byte)0xF3, (byte)0xC9, (byte)0x23, (byte)0xC0,
+        (byte)0x43, (byte)0xF0, (byte)0xA5, (byte)0x5B,
+        (byte)0x18, (byte)0x8D, (byte)0x8E, (byte)0xBB,
+        (byte)0x55, (byte)0x8C, (byte)0xB8, (byte)0x5D,
+        (byte)0x38, (byte)0xD3, (byte)0x34, (byte)0xFD,
+        (byte)0x7C, (byte)0x17, (byte)0x57, (byte)0x43,
+        (byte)0xA3, (byte)0x1D, (byte)0x18, (byte)0x6C,
+        (byte)0xDE, (byte)0x33, (byte)0x21, (byte)0x2C,
+        (byte)0xB5, (byte)0x2A, (byte)0xFF, (byte)0x3C,
+        (byte)0xE1, (byte)0xB1, (byte)0x29, (byte)0x40,
+        (byte)0x18, (byte)0x11, (byte)0x8D, (byte)0x7C,
+        (byte)0x84, (byte)0xA7, (byte)0x0A, (byte)0x72,
+        (byte)0xD6, (byte)0x86, (byte)0xC4, (byte)0x03,
+        (byte)0x19, (byte)0xC8, (byte)0x07, (byte)0x29,
+        (byte)0x7A, (byte)0xCA, (byte)0x95, (byte)0x0C,
+        (byte)0xD9, (byte)0x96, (byte)0x9F, (byte)0xAB,
+        (byte)0xD0, (byte)0x0A, (byte)0x50, (byte)0x9B,
+        (byte)0x02, (byte)0x46, (byte)0xD3, (byte)0x08,
+        (byte)0x3D, (byte)0x66, (byte)0xA4, (byte)0x5D,
+        (byte)0x41, (byte)0x9F, (byte)0x9C, (byte)0x7C,
+        (byte)0xBD, (byte)0x89, (byte)0x4B, (byte)0x22,
+        (byte)0x19, (byte)0x26, (byte)0xBA, (byte)0xAB,
+        (byte)0xA2, (byte)0x5E, (byte)0xC3, (byte)0x55,
+        (byte)0xE9, (byte)0x2F, (byte)0x78, (byte)0xC7
+    };
+
+    // The SKIP 1024 bit modulus
+    private static final BigInteger skip1024Modulus
+    = new BigInteger(1, skip1024ModulusBytes);
+
+    // The base used with the SKIP 1024 bit modulus
+    private static final BigInteger skip1024Base = BigInteger.valueOf(2);
+}
+</PRE>
+  <HR>
+
+  <LI><A name=BlowKeyEx>
+  <H3>Blowfish Example</H3></A><PRE>/*
+ * Copyright 1997-2001 by Sun Microsystems, Inc.,
+ * 901 San Antonio Road, Palo Alto, California, 94303, U.S.A.
+ * All rights reserved.
+ *
+ * This software is the confidential and proprietary information
+ * of Sun Microsystems, Inc. ("Confidential Information").  You
+ * shall not disclose such Confidential Information and shall use
+ * it only in accordance with the terms of the license agreement
+ * you entered into with Sun.
+ */
+
+import java.security.*;
+import javax.crypto.*;
+import javax.crypto.spec.*;
+
+/**
+ * This program generates a Blowfish key, retrieves its raw bytes, and 
+ * then reinstantiates a Blowfish key from the key bytes.
+ * The reinstantiated key is used to initialize a Blowfish cipher for
+ * encryption.
+ */
+
+public class BlowfishKey {
+
+    public static void main(String[] args) throws Exception {
+
+        KeyGenerator kgen = KeyGenerator.getInstance("Blowfish");
+        SecretKey skey = kgen.generateKey();
+        byte[] raw = skey.getEncoded();
+        SecretKeySpec skeySpec = new SecretKeySpec(raw, "Blowfish");
+
+        Cipher cipher = Cipher.getInstance("Blowfish");
+        cipher.init(Cipher.ENCRYPT_MODE, skeySpec);
+        byte[] encrypted = 
+            cipher.doFinal("This is just an example".getBytes());
+    }
+}
+</PRE>
+  <HR>
+
+  <LI><A name=HmacEx>
+  <H3>HMAC-MD5 Example</H3></A><PRE>/*
+ * Copyright 1997-2001 by Sun Microsystems, Inc.,
+ * 901 San Antonio Road, Palo Alto, California, 94303, U.S.A.
+ * All rights reserved.
+ *
+ * This software is the confidential and proprietary information
+ * of Sun Microsystems, Inc. ("Confidential Information").  You
+ * shall not disclose such Confidential Information and shall use
+ * it only in accordance with the terms of the license agreement
+ * you entered into with Sun.
+ */
+
+import java.security.*;
+import javax.crypto.*;
+
+/**
+ * This program demonstrates how to generate a secret-key object for
+ * HMAC-MD5, and initialize an HMAC-MD5 object with it.
+ */
+
+public class initMac {
+
+    public static void main(String[] args) throws Exception {
+
+        // Generate secret key for HMAC-MD5
+        KeyGenerator kg = KeyGenerator.getInstance("HmacMD5");
+        SecretKey sk = kg.generateKey();
+
+        // Get instance of Mac object implementing HMAC-MD5, and 
+        // initialize it with the above secret key
+        Mac mac = Mac.getInstance("HmacMD5");
+        mac.init(sk);
+        byte[] result = mac.doFinal("Hi There".getBytes());
+    }
+}
+</PRE></LI></UL><!-- Body text ends here --><!-- ============================================================== -->
+<HR noShade SIZE=3>
+
+<TABLE width="100%" border=0 summary="layout">
+  <TBODY>
+  <TR vAlign=top>
+    <TD>
+      <P><FONT size=-2><A 
+      href="http://java.sun.com/j2se/1.5/docs/relnotes/SMICopyright.html">Copyright 
+      ©</A> 1996-2002 <A href="http://www.sun.com/">Sun Microsystems, Inc.</A> 
+      All Rights Reserved.</FONT></P><FONT size=-1>Please send comments to: <A 
+      href="mailto:java-security@java.sun.com">java-security@java.sun.com</A>. 
+      </FONT></TD>
+    <TD align=right><IMG height=30 alt=Sun 
+      src="Java Cryptography Extension_files/sunlogo64x30.gif" width=64 
+      border=0> <BR><FONT size=+1><I>Java Software</I> 
+</FONT></TD></TR></TBODY></TABLE><!-- Created: Wed Jan 20 16:30:48 PST 1999 --><!-- hhmts start -->Last 
+modified: 10 Jan 2002 <!-- hhmts end --></BODY></HTML>

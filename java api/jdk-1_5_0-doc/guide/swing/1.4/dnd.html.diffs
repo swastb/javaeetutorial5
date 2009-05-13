@@ -1,0 +1,23 @@
+
+------- dnd.html -------
+218a219,220
+> If the insert type matches the current type,
+> uses the editor kit's read method.
+222d223
+< Also accepts imports of files, but replaces entire contents of the model.
+284d284
+< Also accepts import of files, but replaces entire contents of the model.
+297a298,299
+> If the insert type matches the current type,
+> uses the editor kit's read method.
+303d304
+< Also accepts imports of files, but replaces entire contents of the model.
+
+> These aren't the same changes you made to the dnd document, are they?
+
+They seem related, but he didn't give me all the nuances.  Anyway, you
+can see the diffs and judge for yourself.  The table rows I changed
+were for JTextArea (file import deletion only), JTextPane, and 
+JEditorPane.
+
+
