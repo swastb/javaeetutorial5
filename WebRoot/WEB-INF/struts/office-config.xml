@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://struts.apache.org/dtds/struts-config_1_2.dtd">
+
+<struts-config>
+	<form-beans>
+		<!-- 一周日程 -->
+		<form-bean name="weekSecheduleForm"
+			type="org.apache.struts.validator.DynaValidatorForm">
+			<form-property name="id" type="java.lang.String" />
+			<form-property name="itemTitle" type="java.lang.String" />
+			<form-property name="itemType" type="java.lang.String" />
+			<form-property name="dept" type="java.lang.String" />
+			<form-property name="startTime" type="java.lang.String" />
+			<form-property name="endTime" type="java.lang.String" />
+			<form-property name="attendance" type="java.lang.String" />
+			<form-property name="userId" type="java.lang.String" />
+			<form-property name="promulgator" type="java.lang.String" />
+			<form-property name="origin" type="java.lang.String" />
+			<form-property name="createTime" type="java.lang.String" />
+			<form-property name="rem" type="java.lang.String" />
+			<form-property name="weekofyear" type="java.lang.String" />
+			<form-property name="attr2" type="java.lang.String" />
+			<form-property name="attr3" type="java.lang.String" />
+			<form-property name="content" type="java.lang.String" />
+			<form-property name="deptId" type="java.lang.String" />
+			<form-property name="privateUserId" type="java.lang.String" />
+			<form-property name="ischild" type="java.lang.String" />
+			<form-property name="pid" type="java.lang.String" />
+		</form-bean>
+	</form-beans>
+	<action-mappings>
+		<!--  一周日程 weekSecheduleForm -->
+		<action path="/tbZwWeekSecheduleAction"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			input="/WEB-INF/web/jsp/weeksechedule/weeklistedit.jsp"
+			name="weekSecheduleForm" scope="request">
+			<forward name="list"
+				path="/WEB-INF/web/jsp/weeksechedule/weekSechedulelist.jsp">
+			</forward>
+			<forward name="bosslist"
+				path="/WEB-INF/web/jsp/weeksechedule/bossweekSechedulelist.jsp">
+			</forward>
+			<forward name="add"
+				path="/WEB-INF/web/jsp/weeksechedule/weekSecheduleedit.jsp">
+			</forward>
+			<forward name="daylist"
+				path="/WEB-INF/web/jsp/weeksechedule/daySechedulelist.jsp">
+			</forward>
+			<forward name="addSechedule"
+				path="/WEB-INF/web/jsp/weeksechedule/secheduleedit.jsp">
+			</forward>
+			<forward name="success"
+				path="/tbZwWeekSecheduleAction.do?method=resultlist">
+			</forward>
+			<forward name="selectuser"
+				path="/WEB-INF/web/jsp/weeksechedule/selectUser.jsp">
+			</forward>
+			<forward name="addSecheduleTwo"
+				path="/WEB-INF/web/jsp/weeksechedule/secheduleedittwo.jsp">
+			</forward>
+		</action>	
+	</action-mappings>
+</struts-config>
+

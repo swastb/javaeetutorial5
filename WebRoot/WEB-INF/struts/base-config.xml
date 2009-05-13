@@ -1,0 +1,3387 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://struts.apache.org/dtds/struts-config_1_2.dtd">
+
+<struts-config>
+	<form-beans>
+		<!-- 委托form -->
+		<form-bean name="commissionForm"
+			type="org.apache.struts.validator.DynaValidatorForm">
+			<form-property name="id" type="java.lang.String" />
+			<form-property name="commTitle" type="java.lang.String" />
+			<form-property name="commId" type="java.lang.String" />
+			<form-property name="commName" type="java.lang.String" />
+			<form-property name="becommedId" type="java.lang.String" />
+			<form-property name="becommedName" type="java.lang.String" />
+			<form-property name="begintime" type="java.lang.String" />
+			<form-property name="endtime" type="java.lang.String" />
+			<form-property name="commMatters" type="java.lang.String" />
+			<form-property name="commFlag" type="java.lang.Long" />
+		</form-bean>
+		<!-- 预警发布form -->
+		<form-bean name="warningPubForm"
+			type="org.apache.struts.validator.DynaValidatorForm">
+			<form-property name="id" type="java.lang.String" />
+			<form-property name="signal" type="java.lang.String" />
+			<form-property name="resp" type="java.lang.String" />
+			<form-property name="pubstart" type="java.lang.String" />
+			<form-property name="pubend" type="java.lang.String" />
+			<form-property name="attr1" type="java.lang.String" />
+			<form-property name="attr2" type="java.lang.String" />
+			<form-property name="attr3" type="java.lang.String" />
+		</form-bean>		
+		<!-- 用户信息表form -->
+		<form-bean name="userForm"
+			type="org.apache.struts.validator.DynaValidatorForm">
+			<form-property name="id" type="java.lang.String"></form-property>
+			<form-property name="name" type="java.lang.String" />
+			<form-property name="sex" type="java.lang.String" />
+			<form-property name="userAcc" type="java.lang.String" />
+			<form-property name="pwd" type="java.lang.String" />
+			<form-property name="deptCode" type="java.lang.String" />
+			<form-property name="lvl" type="java.lang.String" />
+			<form-property name="tel" type="java.lang.String" />
+			<form-property name="pst" type="java.lang.String" />
+			<form-property name="defOrder" type="java.lang.Long" />
+			<form-property name="userid" type="java.lang.String" />
+			<form-property name="birthday" type="java.lang.String" />
+			<form-property name="email" type="java.lang.String" />
+			<form-property name="linkaddress" type="java.lang.String" />
+			<form-property name="handset" type="java.lang.String" />
+			<form-property name="phone" type="java.lang.String" />
+			<form-property name="userdept" type="java.lang.String" />
+		</form-bean>
+		<!-- 职务等级管理form -->
+		<form-bean name="pstlvlForm"
+			type="org.apache.struts.validator.DynaValidatorForm">
+			<form-property name="id" type="java.lang.String"></form-property>
+			<form-property name="name" type="java.lang.String" />
+			<form-property name="code" type="java.lang.String" />
+		</form-bean>
+		<!-- 权限类型管理form -->
+		<form-bean name="righttypeForm"
+			type="org.apache.struts.validator.DynaValidatorForm">
+			<form-property name="id" type="java.lang.String"></form-property>
+			<form-property name="name" type="java.lang.String" />
+			<form-property name="code" type="java.lang.Long" />
+			<form-property name="appsysid" type="java.lang.String" />
+			<form-property name="funid" type="java.lang.String" />
+			<form-property name="insure" type="java.lang.Long"
+				initial="1" />
+		</form-bean>
+		<!-- 用户级别管理form -->
+		<form-bean name="userlvlForm"
+			type="org.apache.struts.validator.DynaValidatorForm">
+			<form-property name="id" type="java.lang.String"></form-property>
+			<form-property name="name" type="java.lang.String" />
+			<form-property name="ename" type="java.lang.String" />
+			<form-property name="code" type="java.lang.String" />
+			<form-property name="rm" type="java.lang.String" />
+		</form-bean>
+		<!-- 资源管理form -->
+		<form-bean name="functionForm"
+			type="org.apache.struts.validator.DynaValidatorForm">
+			<form-property name="id" type="java.lang.String"></form-property>
+			<form-property name="name" type="java.lang.String" />
+			<form-property name="fun_key" type="java.lang.String" />
+			<form-property name="sys_key" type="java.lang.String" />
+			<form-property name="par_id" type="java.lang.String" />
+			<form-property name="insure" type="java.lang.String"
+				initial="1" />
+			<form-property name="fid" type="java.lang.String" />
+			<form-property name="right_type" type="java.lang.String[]" />
+			<form-property name="url" type="java.lang.String" />
+			<form-property name="newDeforder" type="java.lang.String" />
+			<form-property name="imageName" type="java.lang.String" />
+		</form-bean>
+		<!-- 角色管理form -->
+		<form-bean name="roleForm"
+			type="org.apache.struts.validator.DynaValidatorForm">
+			<form-property name="id" type="java.lang.String" />
+			<form-property name="name" type="java.lang.String" />
+			<form-property name="rem" type="java.lang.String" />
+			<form-property name="code" type="java.lang.String" />
+			<form-property name="insure" type="java.lang.Long"
+				initial="1" />
+		</form-bean>
+		<!-- 用户组管理form -->
+		<form-bean name="groupForm"
+			type="org.apache.struts.validator.DynaValidatorForm">
+			<form-property name="id" type="java.lang.String" />
+			<form-property name="code" type="java.lang.String" />
+			<form-property name="name" type="java.lang.String" />
+			<form-property name="deptcode" type="java.lang.String" />
+			<form-property name="lvl" type="java.lang.String" />
+			<form-property name="rem" type="java.lang.String" />
+		</form-bean>
+		<!-- 部门form -->
+		<form-bean name="deptForm"
+			type="org.apache.struts.validator.DynaValidatorForm">
+			<form-property name="nodeid" type="java.lang.String" />
+			<form-property name="code" type="java.lang.String" />
+			<form-property name="name" type="java.lang.String" />
+			<form-property name="lvl" type="java.lang.String" />
+			<form-property name="parCode" type="java.lang.String" />
+			<form-property name="tel" type="java.lang.String" />
+			<form-property name="ctc" type="java.lang.String" />
+			<form-property name="rem" type="java.lang.String" />
+			<form-property name="defOrder" type="java.lang.Long" />
+			<form-property name="userdept" type="java.lang.String" />
+		</form-bean>
+		<!-- 职务form -->
+		<form-bean name="postForm"
+			type="org.apache.struts.validator.DynaValidatorForm">
+			<form-property name="nodeid" type="java.lang.String" />
+			<form-property name="name" type="java.lang.String" />
+			<form-property name="lvl" type="java.lang.String" />
+			<form-property name="code" type="java.lang.String" />
+			<form-property name="deptid" type="java.lang.String" />
+			<form-property name="defOrder" type="java.lang.Long" />
+		</form-bean>
+		<!-- 权限等级form -->
+		<form-bean name="authlvlForm"
+			type="org.apache.struts.validator.DynaValidatorForm">
+			<form-property name="id" type="java.lang.String" />
+			<form-property name="name" type="java.lang.String" />
+			<form-property name="ename" type="java.lang.String" />
+			<form-property name="code" type="java.lang.String" />
+			<form-property name="rem" type="java.lang.String" />
+		</form-bean>
+		<!-- 权限等级form -->
+		<form-bean name="deptlvlForm"
+			type="org.apache.struts.validator.DynaValidatorForm">
+			<form-property name="id" type="java.lang.String" />
+			<form-property name="name" type="java.lang.String" />
+			<form-property name="ename" type="java.lang.String" />
+			<form-property name="code" type="java.lang.String" />
+			<form-property name="rem" type="java.lang.String" />
+		</form-bean>
+
+		<!-- 应用系统管理form -->
+		<form-bean name="allappSysForm"
+			type="org.apache.struts.validator.DynaValidatorForm">
+			<form-property name="id" type="java.lang.String" />
+			<form-property name="name" type="java.lang.String" />
+			<form-property name="url" type="java.lang.String" />
+			<form-property name="code" type="java.lang.String" />
+			<form-property name="rem" type="java.lang.String" />
+			<form-property name="ischild" type="java.lang.Long"
+				initial="1" />
+			<form-property name="insure" type="java.lang.Long"
+				initial="1" />
+		</form-bean>
+		<!--节假日管理form -->
+		<form-bean name="oaholidayForm"
+			type="org.apache.struts.validator.DynaValidatorForm">
+			<form-property name="id" type="java.lang.String" />
+			<form-property name="holiday" type="java.lang.String" />
+			<form-property name="amPm" type="java.lang.String" />
+			<form-property name="day" type="java.lang.String" />
+			<form-property name="deptId" type="java.lang.String" />
+			<form-property name="description" type="java.lang.String" />
+			<form-property name="arb" type="java.lang.String" />
+		</form-bean>
+		<!--会议室管理form -->
+		<form-bean name="meetingroomForm"
+			type="org.apache.struts.validator.DynaValidatorForm">
+			<form-property name="id" type="java.lang.String" />
+			<form-property name="roomName" type="java.lang.String" />
+			<form-property name="location" type="java.lang.String" />
+			<form-property name="capability" type="java.lang.Long" />
+			<form-property name="status" type="java.lang.Long" />
+			<form-property name="rem" type="java.lang.String" />
+			<form-property name="dept" type="java.lang.String" />
+			<form-property name="attr1" type="java.lang.String" />
+			<form-property name="attr2" type="java.lang.String" />
+		</form-bean>
+		<!--会议纪要管理form -->
+		<form-bean name="meetingrecordForm"
+			type="org.apache.struts.validator.DynaValidatorForm">
+			<form-property name="id" type="java.lang.String" />
+			<form-property name="meetingrecordTitle"
+				type="java.lang.String" />
+			<form-property name="meetingrecordTime"
+				type="java.lang.String" />
+			<form-property name="meetingrecordName"
+				type="java.lang.String" />
+			<form-property name="meetingrecordAdv"
+				type="java.lang.String" />
+			<form-property name="meetingrecordRem"
+				type="java.lang.String" />
+			<form-property name="meetingrecordJoiner"
+				type="java.lang.String" />
+			<form-property name="joiner" type="java.lang.String" />
+			<form-property name="meetingrecordStatus"
+				type="java.lang.String" />
+			<form-property name="attr1S" type="java.lang.String" />
+			<form-property name="attr1" type="java.lang.String" />
+			<form-property name="attr2" type="java.lang.String" />
+			<form-property name="attr3" type="java.lang.String" />
+			<form-property name="title" type="java.lang.String" />
+			<form-property name="ftime" type="java.lang.String" />
+			<form-property name="ttime" type="java.lang.String" />
+		</form-bean>
+
+		<!--用户部门form -->
+		<form-bean name="userDeptForm"
+			type="org.apache.struts.validator.DynaValidatorForm">
+			<form-property name="id" type="java.lang.String" />
+			<form-property name="name" type="java.lang.String" />
+			<form-property name="attr1" type="java.lang.String" />
+			<form-property name="attr2" type="java.lang.String" />
+			<form-property name="attr3" type="java.lang.String" />
+		</form-bean>
+
+		<!--会议安排form -->
+		<form-bean name="meetingForm"
+			type="org.apache.struts.validator.DynaValidatorForm">
+			<form-property name="id" type="java.lang.String" />
+			<form-property name="meetingSn" type="java.lang.String" />
+			<form-property name="title" type="java.lang.String" />
+			<form-property name="startTime" type="java.lang.String" />
+			<form-property name="endTime" type="java.lang.String" />
+			<form-property name="meetingroom" type="java.lang.String" />
+			<form-property name="fee" type="java.lang.String" />
+			<form-property name="presider" type="java.lang.String" />
+			<form-property name="participant" type="java.lang.String" />
+			<form-property name="lvl" type="java.lang.String" />
+			<form-property name="topic" type="java.lang.String" />
+			<form-property name="rem" type="java.lang.String" />
+			<form-property name="presidername" type="java.lang.String" />
+			<form-property name="participantname"
+				type="java.lang.String" />
+			<form-property name="presideDept" type="java.lang.String" />
+			<form-property name="participantDept"
+				type="java.lang.String" />
+			<form-property name="schedule" type="java.lang.String" />
+			<!-- 尚 2008-11-19 添加-->
+			<form-property name="selParameter" type = "java.lang.String"/>
+			<form-property name="selParameterColl" type ="java.util.Collection"/>
+			<form-property name="selConditions" type = "java.lang.String"/>
+			<form-property name="selConditionsColl" type ="java.util.Collection"/>
+			<form-property name="selField" type = "java.lang.String"/>
+			<form-property name="selFieldColl" type ="java.util.Collection"/>
+			<form-property name="strStute" type = "java.lang.String"/>
+			<form-property name="selParameterDateTime" type = "java.lang.String"/>
+		</form-bean>
+
+		<!--公共通讯录form -->
+		<form-bean name="commonalityForm"
+			type="org.apache.struts.validator.DynaValidatorForm">
+			<form-property name="id" type="java.lang.String" />
+			<form-property name="name" type="java.lang.String" />
+			<form-property name="duty" type="java.lang.String" />
+			<form-property name="fax" type="java.lang.String" />
+			<form-property name="movePhone" type="java.lang.String" />
+			<form-property name="commonalityId" type="java.lang.String" />
+			<form-property name="comParentId" type="java.lang.String" />
+			<form-property name="remark" type="java.lang.String" />
+			<form-property name="attr1" type="java.lang.String" />
+			<form-property name="attr2" type="java.lang.String" />
+		</form-bean>
+
+		<!--公共通讯组form -->
+		<form-bean name="commonalityCommForm"
+			type="org.apache.struts.validator.DynaValidatorForm">
+			<form-property name="id" type="java.lang.String" />
+			<form-property name="parentId" type="java.lang.String" />
+			<form-property name="name" type="java.lang.String" />
+			<form-property name="inuse" type="java.lang.String" />
+			<form-property name="remark" type="java.lang.String" />
+		</form-bean>
+
+		<!--个人通讯组管理form -->
+		<form-bean name="individualcommForm"
+			type="org.apache.struts.validator.DynaValidatorForm">
+			<form-property name="id" type="java.lang.String" />
+			<form-property name="name" type="java.lang.String" />
+			<form-property name="inuse" type="java.lang.Long" />
+			<form-property name="remark" type="java.lang.String" />
+			<form-property name="groupname" type="java.lang.String" />
+			<form-property name="attr1" type="java.lang.String" />
+			<form-property name="attr2" type="java.lang.String" />
+		</form-bean>
+
+		<!--个人通讯管理form -->
+		<form-bean name="individualForm"
+			type="org.apache.struts.validator.DynaValidatorForm">
+			<form-property name="id" type="java.lang.String" />
+			<form-property name="individualId" type="java.lang.String" />
+			<form-property name="name" type="java.lang.String" />
+			<form-property name="duty" type="java.lang.String" />
+			<form-property name="department" type="java.lang.String" />
+			<form-property name="fax" type="java.lang.String" />
+			<form-property name="post" type="java.lang.String" />
+			<form-property name="address" type="java.lang.String" />
+			<form-property name="partmentPhone" type="java.lang.String" />
+			<form-property name="movePhone" type="java.lang.String" />
+			<form-property name="homePhone" type="java.lang.String" />
+			<form-property name="email" type="java.lang.String" />
+			<form-property name="qq" type="java.lang.String" />
+			<form-property name="msn" type="java.lang.String" />
+			<form-property name="remark" type="java.lang.String" />
+			<form-property name="attr1" type="java.lang.String" />
+			<form-property name="attr2" type="java.lang.String" />
+			<form-property name="pername" type="java.lang.String" />
+			<form-property name="perphone" type="java.lang.String" />
+		</form-bean>
+		<!--行政许可form -->
+		<form-bean name="applyForm"
+			type="org.apache.struts.validator.DynaValidatorForm">
+			<form-property name="id" type="java.lang.String" />
+			<form-property name="applyNo" type="java.lang.String" />
+			<form-property name="applyDate" type="java.util.Date" />
+			<form-property name="trade" type="java.lang.String" />
+			<form-property name="acceptType" type="java.lang.String" />
+			<form-property name="acceptName" type="java.lang.String" />
+			<form-property name="acceptNo" type="java.lang.String" />
+			<form-property name="projectName" type="java.lang.String" />
+			<form-property name="projectAddress"
+				type="java.lang.String" />
+			<form-property name="dueWorkDay" type="java.lang.Long" />
+			<form-property name="planEndDate" type="java.util.Date" />
+			<form-property name="actEndDate" type="java.util.Date" />
+			<form-property name="applyContent" type="java.lang.String" />
+			<form-property name="certNo" type="java.lang.String" />
+			<form-property name="status" type="java.lang.String" />
+			<form-property name="applyPerson" type="java.lang.String" />
+			<form-property name="legual" type="java.lang.String" />
+			<form-property name="applyAddress" type="java.lang.String" />
+			<form-property name="applyZipCode" type="java.lang.String" />
+			<form-property name="contractPerson"
+				type="java.lang.String" />
+			<form-property name="contractPhone" type="java.lang.String" />
+			<form-property name="contractFax" type="java.lang.String" />
+			<form-property name="contractMobile"
+				type="java.lang.String" />
+			<form-property name="instanceId" type="java.lang.String" />
+			<form-property name="modelId" type="java.lang.String" />
+			<form-property name="processId" type="java.lang.String" />
+			<form-property name="createDate" type="java.util.Date" />
+			<form-property name="createUser" type="java.lang.String" />
+			<form-property name="updateUser" type="java.lang.String" />
+			<form-property name="updateDate" type="java.util.Date" />
+			<form-property name="cert_Status" type="java.lang.String" />
+			<form-property name="dealStatus" type="java.lang.String" />
+			<form-property name="dealPerson" type="java.lang.String" />
+			<form-property name="dealDate" type="java.util.Date" />
+			<form-property name="remark" type="java.lang.String" />
+			<form-property name="attr1" type="java.lang.String" />
+			<form-property name="attr2" type="java.lang.String" />
+			<form-property name="attr3" type="java.lang.String" />
+			<form-property name="drawDate" type="java.util.Date" />
+			<form-property name="requestDate" type="java.lang.String" />
+			<form-property name="remark2" type="java.lang.String" />
+			<form-property name="userId" type="java.lang.Integer" />
+			<form-property name="presellno" type="java.lang.String" />
+			<form-property name="ismis" type="java.lang.Long" />
+			<form-property name="isover" type="java.lang.Long" />
+			<form-property name="comType" type="java.lang.Long" />
+			<form-property name="emailcontentok"
+				type="java.lang.String" />
+			<form-property name="emailcontentno"
+				type="java.lang.String" />
+		</form-bean>
+		<!--信息发布管理form -->
+		<form-bean name="infoPublicClaForm"
+			type="org.apache.struts.validator.DynaValidatorForm">
+			<form-property name="id" type="java.lang.String" />
+			<form-property name="name" type="java.lang.String" />
+			<form-property name="code" type="java.lang.String" />
+			<form-property name="parentid" type="java.lang.String" />
+			<form-property name="creattime" type="java.util.Date" />
+			<form-property name="deforder" type="java.lang.Long" />
+			<form-property name="onlyTree" type="java.lang.Long" />
+			<form-property name="enable" type="java.lang.Long" />
+			<form-property name="rem" type="java.lang.String" />
+		</form-bean>
+		<form-bean name="infoPublicConForm"
+			type="org.apache.struts.validator.DynaValidatorForm">
+			<form-property name="id" type="java.lang.String" />
+			<form-property name="infocla" type="java.lang.String" />
+			<form-property name="infoSource" type="java.lang.String" />
+			<form-property name="title" type="java.lang.String" />
+			<form-property name="authorName" type="java.lang.String" />
+			<form-property name="keyword1" type="java.lang.String" />
+			<form-property name="keyword2" type="java.lang.String" />
+			<form-property name="keyword3" type="java.lang.String" />
+			<form-property name="keyword4" type="java.lang.String" />
+			<form-property name="content" type="java.lang.String" />
+			<form-property name="createTime" type="java.lang.String" />
+			<form-property name="publishTime" type="java.lang.String" />
+			<form-property name="recordTime" type="java.lang.String" />
+			<form-property name="infosubject" type="java.lang.Long" />
+			<form-property name="summaryTitle" type="java.lang.String" />
+			<form-property name="summary" type="java.lang.String" />
+			<form-property name="titleColor" type="java.lang.String" />
+			<form-property name="iscopyright" type="java.lang.Long" />
+			<form-property name="topTime" type="java.lang.String" />
+			<form-property name="infoType" type="java.lang.String" />
+			<form-property name="clasel" type="java.lang.String" />
+			<form-property name="sendTo" type="java.lang.Long" />
+			<form-property name="infoclas" type="java.lang.String" />
+			<form-property name="col0V" type="java.lang.String" />
+			<form-property name="col1V" type="java.lang.String" />
+			<form-property name="col2V" type="java.lang.String" />
+			<form-property name="col3V" type="java.lang.String" />
+			<form-property name="col4V" type="java.lang.String" />
+			<form-property name="col5V" type="java.lang.String" />
+			<form-property name="col6V" type="java.lang.String" />
+			<form-property name="col7V" type="java.lang.String" />
+			<form-property name="col8V" type="java.lang.String" />
+		</form-bean>
+		<form-bean name="govinfoPublicConForm"
+			type="org.apache.struts.validator.DynaValidatorForm">
+			<form-property name="id" type="java.lang.String" />
+			<form-property name="infoSource" type="java.lang.String" />
+			<form-property name="title" type="java.lang.String" />
+			<form-property name="authorName" type="java.lang.String" />
+			<form-property name="keyword" type="java.lang.String" />
+			<form-property name="content" type="java.lang.String" />
+			<form-property name="createTime" type="java.lang.String" />
+			<form-property name="publishType" type="java.lang.String" />
+			<form-property name="fileCode" type="java.lang.String" />
+			<form-property name="applyId" type="java.lang.String" />
+			<form-property name="infoSubject" type="java.lang.String" />
+			<form-property name="offerWay" type="java.lang.String" />
+			<form-property name="summary" type="java.lang.String" />
+			<form-property name="status" type="java.lang.Long" />
+			<form-property name="clasel" type="java.lang.String" />
+			<form-property name="attr2" type="java.lang.String" />
+		</form-bean>
+
+
+		<!-- 车辆管理-->
+		<form-bean name="vehiclesForm"
+			type="org.apache.struts.validator.DynaValidatorForm">
+			<form-property name="id" type="java.lang.String" />
+			<form-property name="license" type="java.lang.String" />
+			<form-property name="model" type="java.lang.String" />
+			<form-property name="capacity" type="java.lang.Long" />
+			<form-property name="status" type="java.lang.Long" />
+			<form-property name="rem" type="java.lang.String" />
+			<form-property name="belSys" type="java.lang.String" />
+			<form-property name="attr1" type="java.lang.String" />
+			<form-property name="attr2" type="java.lang.String" />
+			<form-property name="license1" type="java.lang.String" />
+			<form-property name="license2" type="java.lang.String" />
+		</form-bean>
+
+		<!-- 意见征询 -->
+		<form-bean name="opinionForm"
+			type="org.apache.struts.validator.DynaValidatorForm">
+			<form-property name="id" type="java.lang.String" />
+			<form-property name="govInfoId" type="java.lang.String" />
+			<form-property name="attr1" type="java.lang.String" />
+			<form-property name="attr2" type="java.lang.String" />
+			<form-property name="numb" type="java.lang.String" />
+			<form-property name="consultedName" type="java.lang.String" />
+			<form-property name="arriveDate" type="java.util.Date" />
+			<form-property name="applicant" type="java.lang.String" />
+			<form-property name="cause" type="java.lang.String" />
+			<form-property name="address" type="java.lang.String" />
+			<form-property name="postalcode" type="java.lang.String" />
+			<form-property name="signDate" type="java.util.Date" />
+			<form-property name="year" type="java.lang.String" />
+			<form-property name="month" type="java.lang.String" />
+			<form-property name="day" type="java.lang.String" />
+			<form-property name="year1" type="java.lang.String" />
+			<form-property name="month1" type="java.lang.String" />
+			<form-property name="day1" type="java.lang.String" />
+			<form-property name="action" type="java.lang.String" />
+		</form-bean>
+
+		<!-- 答复书6 -->
+		<form-bean name="reply6Form"
+			type="org.apache.struts.validator.DynaValidatorForm">
+			<form-property name="infoId" type="java.lang.String" />
+			<form-property name="id" type="java.lang.String" />
+			<form-property name="applicant" type="java.lang.String" />
+			<form-property name="year" type="java.lang.String" />
+			<form-property name="applyNo" type="java.lang.String" />
+			<form-property name="applyTitle" type="java.lang.String" />
+			<form-property name="type" type="java.lang.String" />
+			<form-property name="sendWay" type="java.lang.String" />
+			<form-property name="asignDate" type="java.util.Date" />
+			<form-property name="applyYear" type="java.lang.String" />
+			<form-property name="applyMonth" type="java.lang.String" />
+			<form-property name="applyDay" type="java.lang.String" />
+			<form-property name="signYear" type="java.lang.String" />
+			<form-property name="signMonth" type="java.lang.String" />
+			<form-property name="signDay" type="java.lang.String" />
+			<form-property name="action" type="java.lang.String" />
+			<form-property name="attr1" type="java.lang.String" />
+		</form-bean>
+		<!-- 答复书5 -->
+		<form-bean name="reply5Form"
+			type="org.apache.struts.validator.DynaValidatorForm">
+			<form-property name="infoId" type="java.lang.String" />
+			<form-property name="id" type="java.lang.String" />
+			<form-property name="applicant" type="java.lang.String" />
+			<form-property name="year" type="java.lang.String" />
+			<form-property name="applyNo" type="java.lang.String" />
+			<form-property name="applyTitle" type="java.lang.String" />
+			<form-property name="department" type="java.lang.String" />
+			<form-property name="contactAddr" type="java.lang.String" />
+			<form-property name="asignDate" type="java.util.Date" />
+			<form-property name="applyYear" type="java.lang.String" />
+			<form-property name="applyMonth" type="java.lang.String" />
+			<form-property name="applyDay" type="java.lang.String" />
+			<form-property name="signYear" type="java.lang.String" />
+			<form-property name="signMonth" type="java.lang.String" />
+			<form-property name="signDay" type="java.lang.String" />
+			<form-property name="action" type="java.lang.String" />
+			<form-property name="attr1" type="java.lang.String" />
+		</form-bean>
+		<!-- 答复书7 -->
+		<form-bean name="reply7Form"
+			type="org.apache.struts.validator.DynaValidatorForm">
+			<form-property name="infoId" type="java.lang.String" />
+			<form-property name="id" type="java.lang.String" />
+			<form-property name="applicant" type="java.lang.String" />
+			<form-property name="year" type="java.lang.String" />
+			<form-property name="applyNo" type="java.lang.String" />
+			<form-property name="applyTitle" type="java.lang.String" />
+			<form-property name="replyType" type="java.lang.String" />
+			<form-property name="offerWay" type="java.lang.String" />
+			<form-property name="asignDate" type="java.util.Date" />
+			<form-property name="applyYear" type="java.lang.String" />
+			<form-property name="applyMonth" type="java.lang.String" />
+			<form-property name="applyDay" type="java.lang.String" />
+			<form-property name="signYear" type="java.lang.String" />
+			<form-property name="signMonth" type="java.lang.String" />
+			<form-property name="signDay" type="java.lang.String" />
+			<form-property name="action" type="java.lang.String" />
+			<form-property name="attr1" type="java.lang.String" />
+			<form-property name="attr3" type="java.lang.String" />
+		</form-bean>
+		<form-bean name="obligeeMsgForm"
+			type="org.apache.struts.validator.DynaValidatorForm">
+			<form-property name="infoId" type="java.lang.String" />
+			<form-property name="id" type="java.lang.String" />
+			<form-property name="obligeeName" type="java.lang.String" />
+			<form-property name="year" type="java.lang.String" />
+			<form-property name="autoNo" type="java.lang.String" />
+			<form-property name="contentMsg" type="java.lang.String" />
+			<form-property name="involveMsg" type="java.lang.String" />
+			<form-property name="signDate" type="java.util.Date" />
+			<form-property name="signYear" type="java.lang.String" />
+			<form-property name="signMonth" type="java.lang.String" />
+			<form-property name="signDay" type="java.lang.String" />
+			<form-property name="action" type="java.lang.String" />
+			<form-property name="attr1" type="java.lang.String" />
+		</form-bean>
+		<form-bean name="obligeeOpinionForm"
+			type="org.apache.struts.validator.DynaValidatorForm">
+			<form-property name="infoId" type="java.lang.String" />
+			<form-property name="id" type="java.lang.String" />
+			<form-property name="consultName" type="java.lang.String" />
+			<form-property name="year" type="java.lang.String" />
+			<form-property name="autoNo" type="java.lang.String" />
+			<form-property name="contentMsg" type="java.lang.String" />
+			<form-property name="involveMsg" type="java.lang.String" />
+			<form-property name="opinion" type="java.lang.String" />
+			<form-property name="replyDate" type="java.util.Date" />
+			<form-property name="replyYear" type="java.lang.String" />
+			<form-property name="replyMonth" type="java.lang.String" />
+			<form-property name="replyDay" type="java.lang.String" />
+			<form-property name="address" type="java.lang.String" />
+			<form-property name="postalcode" type="java.lang.String" />
+			<form-property name="signYear" type="java.lang.String" />
+			<form-property name="signMonth" type="java.lang.String" />
+			<form-property name="signDay" type="java.lang.String" />
+			<form-property name="action" type="java.lang.String" />
+			<form-property name="attr1" type="java.lang.String" />
+
+		</form-bean>
+		<!-- 消息通讯 -->
+		<form-bean name="messagesForm"
+			type="org.apache.struts.validator.DynaValidatorForm">
+			<form-property name="id" type="java.lang.String" />
+			<form-property name="senderId" type="java.lang.String" />
+			<form-property name="senderName" type="java.lang.String" />
+			<form-property name="receiversId" type="java.lang.String" />
+			<form-property name="receiversName" type="java.lang.String" />
+			<form-property name="receiversEmail"
+				type="java.lang.String" />
+			<form-property name="receiversCellphone"
+				type="java.lang.String" />
+			<form-property name="title" type="java.lang.String" />
+			<form-property name="content" type="java.lang.String" />
+			<form-property name="sendWay" type="java.lang.Long" />
+			<form-property name="status" type="java.lang.Long" />
+			<form-property name="sendTime" type="java.lang.String" />
+			<form-property name="source" type="java.lang.String" />
+			<form-property name="sendWay1" type="java.lang.String" />
+			<form-property name="sendWay2" type="java.lang.String" />
+			<form-property name="selectTime" type="java.lang.String" />
+			<form-property name="nowTime" type="java.lang.String" />
+			<form-property name="setTime" type="java.lang.String" />
+			<form-property name="hourTime" type="java.lang.String" />
+			<form-property name="dayTime" type="java.lang.String" />
+			<form-property name="receiversname" type="java.lang.String" />
+			<form-property name="receivers" type="java.lang.String" />
+			<form-property name="messageType" type="java.lang.String" />
+		</form-bean>
+		<!--用车申请管理-->
+		<form-bean name="tbVehiclesApplyForm"
+			type="org.apache.struts.validator.DynaValidatorForm">
+			<form-property name="id" type="java.lang.String" />
+			<form-property name="applyDept" type="java.lang.String" />
+			<form-property name="model" type="java.lang.String" />
+			<form-property name="auditor" type="java.lang.String" />
+			<form-property name="capacity" type="java.lang.Long" />
+			<form-property name="applyer" type="java.lang.String" />
+			<form-property name="phone" type="java.lang.String" />
+			<form-property name="startTime" type="java.lang.String" />
+			<form-property name="endTime" type="java.lang.String" />
+			<form-property name="applyTime" type="java.lang.String" />
+			<form-property name="startLoc" type="java.lang.String" />
+			<form-property name="dest" type="java.lang.String" />
+			<form-property name="reason" type="java.lang.String" />
+			<form-property name="dispatcher" type="java.lang.String" />
+			<form-property name="driver" type="java.lang.String" />
+			<form-property name="license" type="java.lang.String" />
+			<form-property name="rem" type="java.lang.String" />
+			<form-property name="status" type="java.lang.Long" />
+			<form-property name="belSys" type="java.lang.String" />
+			<form-property name="attr1" type="java.lang.String" />
+			<form-property name="attr2" type="java.lang.String" />
+			<form-property name="attr3" type="java.lang.String" />
+		</form-bean>
+		<!-- 政府信息公开告知书form -->
+		<form-bean name="zfxxgkgzsForm"
+			type="org.apache.struts.validator.DynaValidatorForm">
+			<form-property name="id" type="java.lang.String" />
+			<form-property name="infoId" type="java.lang.String" />
+			<form-property name="attr1" type="java.lang.String" />
+			<form-property name="attr2" type="java.lang.String" />
+			<form-property name="attr3" type="java.lang.String" />
+			<form-property name="attr4" type="java.lang.String" />
+			<form-property name="attr5" type="java.lang.String" />
+			<form-property name="attr6" type="java.lang.String" />
+			<form-property name="attr7" type="java.lang.String" />
+			<form-property name="attr8" type="java.lang.String" />
+			<form-property name="attr9" type="java.lang.String" />
+			<form-property name="attr10" type="java.lang.String" />
+			<form-property name="attr11" type="java.lang.String" />
+			<form-property name="attr12" type="java.lang.String" />
+			<form-property name="attr13" type="java.lang.String" />
+			<form-property name="attr14" type="java.lang.String" />
+			<form-property name="attr15" type="java.lang.String" />
+			<form-property name="attr16" type="java.lang.String" />
+			<form-property name="attr17" type="java.lang.String" />
+			<form-property name="attr18" type="java.lang.String" />
+			<form-property name="attr19" type="java.lang.String" />
+			<form-property name="attr20" type="java.lang.String" />
+		</form-bean>
+		<!-- 政府信息部分公开告知书form -->
+		<form-bean name="zfxxbfgkgzsForm"
+			type="org.apache.struts.validator.DynaValidatorForm">
+			<form-property name="id" type="java.lang.String" />
+			<form-property name="infoId" type="java.lang.String" />
+			<form-property name="attr1" type="java.lang.String" />
+			<form-property name="attr2" type="java.lang.String" />
+			<form-property name="attr3" type="java.lang.String" />
+			<form-property name="attr4" type="java.lang.String" />
+			<form-property name="attr5" type="java.lang.String" />
+			<form-property name="attr6" type="java.lang.String" />
+			<form-property name="attr7" type="java.lang.String" />
+			<form-property name="attr8" type="java.lang.String" />
+			<form-property name="attr9" type="java.lang.String" />
+			<form-property name="attr10" type="java.lang.String" />
+			<form-property name="attr11" type="java.lang.String" />
+			<form-property name="attr12" type="java.lang.String" />
+			<form-property name="attr13" type="java.lang.String" />
+			<form-property name="attr14" type="java.lang.String" />
+			<form-property name="attr15" type="java.lang.String" />
+			<form-property name="attr16" type="java.lang.String" />
+			<form-property name="attr17" type="java.lang.String" />
+			<form-property name="attr18" type="java.lang.String" />
+			<form-property name="attr19" type="java.lang.String" />
+			<form-property name="attr20" type="java.lang.String" />
+			<form-property name="attr21" type="java.lang.String" />
+			<form-property name="attr22" type="java.lang.String" />
+			<form-property name="attr23" type="java.lang.String" />
+			<form-property name="attr24" type="java.lang.String" />
+			<form-property name="attr25" type="java.lang.String" />
+		</form-bean>
+		<form-bean name="bzsqgzsForm"
+			type="org.apache.struts.validator.DynaValidatorForm">
+			<form-property name="id" type="java.lang.String" />
+			<form-property name="infoId" type="java.lang.String" />
+			<form-property name="attr1" type="java.lang.String" />
+			<form-property name="attr2" type="java.lang.String" />
+			<form-property name="attr3" type="java.lang.String" />
+			<form-property name="attr4" type="java.lang.String" />
+			<form-property name="attr5" type="java.lang.String" />
+			<form-property name="attr6" type="java.lang.String" />
+			<form-property name="attr7" type="java.lang.String" />
+			<form-property name="attr8" type="java.lang.String" />
+			<form-property name="attr9" type="java.lang.String" />
+			<form-property name="attr10" type="java.lang.String" />
+			<form-property name="attr11" type="java.lang.String" />
+			<form-property name="attr12" type="java.lang.String" />
+			<form-property name="attr13" type="java.lang.String" />
+			<form-property name="attr14" type="java.lang.String" />
+			<form-property name="attr15" type="java.lang.String" />
+			<form-property name="attr16" type="java.lang.String" />
+			<form-property name="attr17" type="java.lang.String" />
+			<form-property name="attr18" type="java.lang.String" />
+			<form-property name="attr19" type="java.lang.String" />
+			<form-property name="attr20" type="java.lang.String" />
+			<form-property name="attr21" type="java.lang.String" />
+			<form-property name="attr22" type="java.lang.String" />
+			<form-property name="attr23" type="java.lang.String" />
+			<form-property name="attr24" type="java.lang.String" />
+			<form-property name="attr25" type="java.lang.String" />
+		</form-bean>
+		<!-- 政府信息公开申请答复书form -->
+		<form-bean name="zfxxgksqdfForm"
+			type="org.apache.struts.validator.DynaValidatorForm">
+			<form-property name="id" type="java.lang.String" />
+			<form-property name="infoId" type="java.lang.String" />
+			<form-property name="lsNo" type="java.lang.String" />
+			<form-property name="applicant" type="java.lang.String" />
+			<form-property name="sqTime" type="java.lang.String" />
+			<form-property name="dfTime" type="java.lang.String" />
+			<form-property name="attr1" type="java.lang.String" />
+			<form-property name="attr2" type="java.lang.String" />
+			<form-property name="attr3" type="java.lang.String" />
+		</form-bean>
+		<!-- 政府信息公开申请答复书（三）form -->
+		<form-bean name="zfxxgksqdfs3Form"
+			type="org.apache.struts.validator.DynaValidatorForm">
+			<form-property name="id" type="java.lang.String" />
+			<form-property name="infoId" type="java.lang.String" />
+			<form-property name="lsNo" type="java.lang.String" />
+			<form-property name="applicant" type="java.lang.String" />
+			<form-property name="sqTime" type="java.lang.String" />
+			<form-property name="dfTime" type="java.lang.String" />
+			<form-property name="attr1" type="java.lang.String" />
+		</form-bean>
+		<!-- 政府信息公开申请答复书（四）form -->
+		<form-bean name="zfxxgksqdfs4Form"
+			type="org.apache.struts.validator.DynaValidatorForm">
+			<form-property name="id" type="java.lang.String" />
+			<form-property name="infoId" type="java.lang.String" />
+			<form-property name="lsNo" type="java.lang.String" />
+			<form-property name="applicant" type="java.lang.String" />
+			<form-property name="sqTime" type="java.lang.String" />
+			<form-property name="dfTime" type="java.lang.String" />
+			<form-property name="attr1" type="java.lang.String" />
+		</form-bean>
+		<!-- 政府信息公开补正申请告知书form -->
+		<form-bean name="zfxxgkbzsqgzsForm"
+			type="org.apache.struts.validator.DynaValidatorForm">
+			<form-property name="id" type="java.lang.String" />
+			<form-property name="infoId" type="java.lang.String" />
+			<form-property name="lsNo" type="java.lang.String" />
+			<form-property name="applicant" type="java.lang.String" />
+			<form-property name="sqTime" type="java.lang.String" />
+			<form-property name="dfTime" type="java.lang.String" />
+			<form-property name="attr1" type="java.lang.String" />
+		</form-bean>
+		<!-- 政府信息公开重复申请告知书form -->
+		<form-bean name="zfxxgkcfsqgzsForm"
+			type="org.apache.struts.validator.DynaValidatorForm">
+			<form-property name="id" type="java.lang.String" />
+			<form-property name="infoId" type="java.lang.String" />
+			<form-property name="lsNo" type="java.lang.String" />
+			<form-property name="applicant" type="java.lang.String" />
+			<form-property name="sqTime" type="java.lang.String" />
+			<form-property name="dfTime" type="java.lang.String" />
+			<form-property name="attr1" type="java.lang.String" />
+		</form-bean>
+		<!-- 延期答复告知书form -->
+		<form-bean name="yqdfgzsForm"
+			type="org.apache.struts.validator.DynaValidatorForm">
+			<form-property name="id" type="java.lang.String" />
+			<form-property name="infoId" type="java.lang.String" />
+			<form-property name="lsNo" type="java.lang.String" />
+			<form-property name="applicant" type="java.lang.String" />
+			<form-property name="sqTime" type="java.lang.String" />
+			<form-property name="dfTime" type="java.lang.String" />
+			<form-property name="attr1" type="java.lang.String" />
+		</form-bean>
+		<!--非政府信息公开申请告知书form -->
+		<form-bean name="fzfxxgksqgzsForm"
+			type="org.apache.struts.validator.DynaValidatorForm">
+			<form-property name="id" type="java.lang.String" />
+			<form-property name="infoId" type="java.lang.String" />
+			<form-property name="lsNo" type="java.lang.String" />
+			<form-property name="applicant" type="java.lang.String" />
+			<form-property name="sqTime" type="java.lang.String" />
+			<form-property name="dfTime" type="java.lang.String" />
+			<form-property name="attr1" type="java.lang.String" />
+			<form-property name="attr2" type="java.lang.String" />
+		</form-bean>
+
+		<form-bean name="tbGovInfoPubMain"
+			type="org.apache.struts.validator.DynaValidatorForm">
+			<form-property name="id" type="java.lang.String" />
+			<form-property name="applyId" type="java.lang.String" />
+			<form-property name="applicant" type="java.lang.String" />
+			<form-property name="fileId" type="java.lang.String" />
+			<form-property name="descr" type="java.lang.String" />
+			<form-property name="reason" type="java.lang.String" />
+			<form-property name="startTime" type="java.util.Date" />
+			<form-property name="endTime" type="java.util.Date" />
+			<form-property name="offerWay" type="java.lang.String" />
+			<form-property name="passWay" type="java.lang.String" />
+			<form-property name="applyManner" type="java.lang.String" />
+			<form-property name="primaryConManner"
+				type="java.lang.String" />
+			<form-property name="applyAddr" type="java.lang.String" />
+			<form-property name="phone" type="java.lang.String" />
+			<form-property name="email" type="java.lang.String" />
+			<form-property name="cellPhone" type="java.lang.String" />
+			<form-property name="applyType" type="java.lang.String" />
+			<form-property name="certType" type="java.lang.String" />
+			<form-property name="certNo" type="java.lang.String" />
+			<form-property name="attr1" type="java.lang.String" />
+			<form-property name="attr2" type="java.lang.String" />
+			<form-property name="fee" type="java.lang.Long" />
+			<form-property name="status" type="java.lang.Long" />
+			<form-property name="rem" type="java.lang.String" />
+			<form-property name="postcode" type="java.lang.String" />
+			<form-property name="docName" type="java.lang.String" />
+			<form-property name="docNum" type="java.lang.String" />
+			<form-property name="companyName" type="java.lang.String" />
+		</form-bean>
+		<form-bean name="archivesEditForm"
+			type="org.apache.struts.validator.DynaValidatorForm">
+			<form-property name="id" type="java.lang.String" />
+			<form-property name="applyId" type="java.lang.String" />
+			<form-property name="title" type="java.lang.String" />
+			<form-property name="fileId" type="java.lang.String" />
+			<form-property name="createTime" type="java.lang.String" />
+			<form-property name="presidername" type="java.lang.String" />
+			<form-property name="presideDept" type="java.lang.String" />
+			<form-property name="topicId" type="java.lang.String" />
+			<form-property name="cateId" type="java.lang.String" />
+			<form-property name="nopubdescId" type="java.lang.String" />
+			<form-property name="keywords" type="java.lang.String" />
+			<form-property name="formatId" type="java.lang.String" />
+			<form-property name="typeId" type="java.lang.String" />
+			<form-property name="normalsign" type="java.lang.String" />
+			<form-property name="draftsign" type="java.lang.String" />
+			<form-property name="abstract" type="java.lang.String" />
+			<form-property name="pubId" type="java.lang.String" />
+		</form-bean>
+		<form-bean name="filesendEditForm"
+			type="org.apache.struts.validator.DynaValidatorForm">
+			<form-property name="id" type="java.lang.String" />
+			<form-property name="receivername" type="java.lang.String" />
+			<form-property name="receiver" type="java.lang.String" />
+			<form-property name="ccname" type="java.lang.String" />
+			<form-property name="cc" type="java.lang.String" />
+			<form-property name="sendDt" type="java.lang.String" />
+			<form-property name="sendName" type="java.lang.String" />
+			<form-property name="sendId" type="java.lang.String" />
+			<form-property name="stname" type="java.lang.String" />
+			<form-property name="st" type="java.lang.String" />
+			<form-property name="subject" type="java.lang.String" />
+			<form-property name="content" type="java.lang.String" />
+			<form-property name="forwardContent"
+				type="java.lang.String" />
+			<form-property name="forwardReceiver"
+				type="java.lang.String" />
+			<form-property name="forwardReceivername"
+				type="java.lang.String" />
+		</form-bean>
+		<form-bean name="docRecBookForm"
+			type="org.apache.struts.action.DynaActionForm">
+			<form-property name="docType" type="java.lang.String" />
+			<form-property name="infoLevel" type="java.lang.String" />
+			<form-property name="docName" type="java.lang.String" />
+			<form-property name="overDate" type="java.lang.String" />
+			<form-property name="bookUser" type="java.lang.String" />
+			<form-property name="leaderAudit" type="java.lang.String" />
+			<form-property name="dealState" type="java.lang.String" />
+			<form-property name="docNum" type="java.lang.Long" />
+			<form-property name="docPage" type="java.lang.Long" />
+			<form-property name="draftOpinion" type="java.lang.String" />
+			<form-property name="docDept" type="java.lang.String" />
+			<form-property name="mainDeptOpinion"
+				type="java.lang.String" />
+			<form-property name="assUserRemark" type="java.lang.String" />
+			<form-property name="docCode" type="java.lang.String" />
+			<form-property name="auditUser" type="java.lang.String" />
+			<form-property name="writeTime" type="java.lang.String" />
+			<form-property name="docId" type="java.lang.String" />
+			<form-property name="controlId" type="java.lang.String" />
+			<form-property name="auditUserId" type="java.lang.String" />
+			<form-property name="draftRadio" type="java.lang.String" />
+			<form-property name="leaderRadio" type="java.lang.String" />
+		</form-bean>
+		<form-bean name="consultationviewForm"
+			type="org.apache.struts.validator.DynaValidatorForm">
+			<form-property name="id" type="java.lang.String" />
+			<form-property name="asker" type="java.lang.String" />
+			<form-property name="askerEmail" type="java.lang.String" />
+			<form-property name="askerPhone" type="java.lang.String" />
+			<form-property name="Subject" type="java.lang.String" />
+			<form-property name="content" type="java.lang.String" />
+			<form-property name="askTime" type="java.lang.String" />
+			<form-property name="response" type="java.lang.String" />
+			<form-property name="responseTime" type="java.lang.String" />
+			<form-property name="responseor" type="java.lang.String" />
+			<form-property name="status" type="java.lang.String" />
+			<form-property name="ZBname" type="java.lang.String" />
+			<form-property name="ZB" type="java.lang.String" />
+			<form-property name="IDEAname" type="java.lang.String" />
+			<form-property name="IDEA" type="java.lang.String" />
+		</form-bean>
+		<form-bean name="sharefileForm"
+			type="org.apache.struts.validator.DynaValidatorForm">
+			<form-property name="id" type="java.lang.String" />
+			<form-property name="explanation" type="java.lang.String" />
+			<form-property name="type" type="java.lang.String" />
+			<form-property name="isShare" type="java.lang.String"
+				initial="0" />
+			<form-property name="file"
+				type="org.apache.struts.upload.FormFile" />
+		</form-bean>
+		<form-bean name="docSendForm"
+			type="org.apache.struts.action.DynaActionForm">
+			<form-property name="docId" type="java.lang.String" />
+			<form-property name="controlId" type="java.lang.String" />
+			<form-property name="printUser" type="java.lang.String" />
+			<form-property name="sendMain" type="java.lang.String" />
+			<form-property name="fileNo" type="java.lang.String" />
+			<form-property name="fileTitle" type="java.lang.String" />
+			<form-property name="topicWord" type="java.lang.String" />
+			<form-property name="fileDate" type="java.lang.String" />
+			<form-property name="sendSecond" type="java.lang.String" />
+			<form-property name="fileSecret" type="java.lang.String" />
+			<form-property name="draftOpinion" type="java.lang.String" />
+			<form-property name="sign" type="java.lang.String" />
+			<form-property name="mainDraftUser" type="java.lang.String" />
+			<form-property name="signOpinion" type="java.lang.String" />
+			<form-property name="fileNum" type="java.lang.Long" />
+			<form-property name="collateUser" type="java.lang.String" />
+			<form-property name="fileDept" type="java.lang.String" />
+			<form-property name="mainChargeUser"
+				type="java.lang.String" />
+			<form-property name="secret1" type="java.lang.String" />
+			<form-property name="secret2" type="java.lang.String" />
+			<form-property name="filePages" type="java.lang.Long" />
+			<form-property name="sendFileType" type="java.lang.String" />
+			<form-property name="officeDraftUser"
+				type="java.lang.String" />
+			<form-property name="officeChargeUser"
+				type="java.lang.String" />
+			<form-property name="mainSignDept" type="java.lang.String" />
+			<form-property name="fileType" type="java.lang.String" />
+		</form-bean>
+		<form-bean name="xdocSendForm"
+			type="org.apache.struts.action.DynaActionForm">
+			<form-property name="docId" type="java.lang.String" />
+			<form-property name="controlId" type="java.lang.String" />
+			<form-property name="printUser" type="java.lang.String" />
+			<form-property name="sendMain" type="java.lang.String" />
+			<form-property name="fileNo" type="java.lang.String" />
+			<form-property name="fileTitle" type="java.lang.String" />
+			<form-property name="topicWord" type="java.lang.String" />
+			<form-property name="fileDate" type="java.lang.String" />
+			<form-property name="sendSecond" type="java.lang.String" />
+			<form-property name="fileSecret" type="java.lang.String" />
+			<form-property name="fileCategory" type="java.lang.String" />
+			<form-property name="sign" type="java.lang.String" />
+			<form-property name="draftUser" type="java.lang.String" />
+			<form-property name="fileNum" type="java.lang.Long" />
+			<form-property name="collateUser" type="java.lang.String" />
+			<form-property name="fileDept" type="java.lang.String" />
+			<form-property name="chargeUser" type="java.lang.String" />
+			<form-property name="secret1" type="java.lang.String" />
+			<form-property name="secret2" type="java.lang.String" />
+			<form-property name="filePages" type="java.lang.Long" />
+			<form-property name="sendFileType" type="java.lang.String" />
+			<form-property name="fileType" type="java.lang.String" />
+			<form-property name="sendFileTypeX" type="java.lang.String" />
+		</form-bean>
+
+		<!-- 短信平台 -->
+		<form-bean name="smsScheduleForm"
+			type="org.apache.struts.action.DynaActionForm">
+			<form-property name="messageContent"
+				type="java.lang.String" />
+			<form-property name="destNumberObject"
+				type="java.lang.String" />
+			<form-property name="destNumberPhone"
+				type="java.lang.String" />
+			<form-property name="scheduletime" type="java.lang.String" />
+			<form-property name="sendTime_hour" type="java.lang.String" />
+			<form-property name="sendTime_minute"
+				type="java.lang.String" />
+			<form-property name="chkCommId" type="java.lang.String" />
+			<form-property name="chkInduId" type="java.lang.String" />
+			<form-property name="hhList" type="java.util.List" />
+			<form-property name="mmList" type="java.util.List" />
+		</form-bean>
+		<form-bean name="smsTransferForm"
+			type="org.apache.struts.action.DynaActionForm">
+			<form-property name="fee" type="java.lang.String" />
+			<form-property name="receiveMobile" type="java.lang.String" />
+			<form-property name="receiveDept" type="java.lang.String" />
+			<form-property name="receiveName" type="java.lang.String" />
+			<form-property name="receiveType" type="java.lang.String" />
+			<form-property name="id" type="java.lang.String" />
+		</form-bean>
+		<form-bean name="smsTransferListForm"
+			type="org.apache.struts.action.DynaActionForm">
+			<form-property name="senderMobile" type="java.lang.String" />
+			<form-property name="senderDept" type="java.lang.String" />
+			<form-property name="senderName" type="java.lang.String" />
+			<form-property name="id" type="java.lang.String" />
+			<form-property name="receiveId" type="java.lang.String" />
+			<form-property name="queryReceivers"
+				type="java.lang.String" />
+		</form-bean>
+		<form-bean name="smsSubscribeForm"
+			type="org.apache.struts.action.DynaActionForm">
+			<form-property name="collCommList" type="java.util.Collection" />
+			<form-property name="commDepartList" type="java.lang.String" />
+			<form-property name="subjectname" type="java.lang.String" />
+		</form-bean>
+		<!--查询统计form -->
+		<form-bean name="queryStatisticsForm"
+			type="org.apache.struts.action.DynaActionForm">
+			<form-property name="deptName" type="java.lang.String" />
+			<form-property name="departid" type="java.lang.String" />
+			<form-property name="userid" type="java.lang.String" />
+			<form-property name="content" type="java.lang.String" />
+			<form-property name="collDepart"
+				type="java.util.Collection" />
+			<form-property name="collUser" type="java.util.Collection" />
+			<form-property name="recordList" type="java.util.List" />
+			<form-property name="destnumber" type="java.lang.String" />
+			<form-property name="startTime" type="java.lang.String" />
+			<form-property name="endTime" type="java.lang.String" />
+		</form-bean>
+		<form-bean name="faxScheduleForm"
+			type="org.apache.struts.action.DynaActionForm">
+		</form-bean>
+		<form-bean name="faxQueryScheduleForm"
+			type="org.apache.struts.action.DynaActionForm">
+		</form-bean>
+	<!-- 科研管理 -->
+    <form-bean name="techDiscoureForm" type="org.apache.struts.action.DynaActionForm">
+      <form-property name="pianming" type="java.lang.String" />
+      <form-property name="danwei" type="java.lang.String" />
+      <form-property name="guanjianci" type="java.lang.String" />
+      <form-property name="a1" type="java.lang.String" />
+      <form-property name="zhaiyao" type="java.lang.String" />
+      <form-property name="qihao" type="java.lang.String" />
+      <form-property name="zuozhe1" type="java.lang.String" />
+      <form-property name="id" type="java.lang.String" />
+      <form-property name="kanming" type="java.lang.String" />
+    </form-bean>
+    <form-bean name="techStandardForm" type="org.apache.struts.action.DynaActionForm">
+      <form-property name="pubDepartment" type="java.lang.String" />
+      <form-property name="content" type="java.lang.String" />
+      <form-property name="levels" type="java.lang.String" />
+      <form-property name="pubTime" type="java.lang.String" />
+      <form-property name="name" type="java.lang.String" />
+      <form-property name="id" type="java.lang.String" />
+    </form-bean>
+    <form-bean name="techMapShareForm" type="org.apache.struts.action.DynaActionForm">
+      <form-property name="unitName" type="java.lang.String" />
+      <form-property name="getTime" type="java.lang.String" />
+      <form-property name="applyReason" type="java.lang.String" />
+      <form-property name="mapScope" type="java.lang.String" />
+      <form-property name="mapContent" type="java.lang.String" />
+      <form-property name="attachment1" type="java.lang.String" />
+      <form-property name="attachment2" type="java.lang.String" />
+      <form-property name="id" type="java.lang.String" />
+    </form-bean>
+    <form-bean name="techResultForm" type="org.apache.struts.action.DynaActionForm">
+      <form-property name="plan" type="java.lang.String" />
+      <form-property name="together" type="java.lang.String" />
+      <form-property name="itemBudget" type="java.lang.String" />
+      <form-property name="itemName" type="java.lang.String" />
+      <form-property name="itemInvest" type="java.lang.String" />
+      <form-property name="id" type="java.lang.String" />
+      <form-property name="endTime" type="java.lang.String" />
+      <form-property name="contentKey" type="java.lang.String" />
+      <form-property name="issuePaper" type="java.lang.String" />
+      <form-property name="itemPrincipal" type="java.lang.String" />
+      <form-property name="needSense" type="java.lang.String" />
+      <form-property name="workHeadway" type="java.lang.String" />
+      <form-property name="expectEffect" type="java.lang.String" />
+      <form-property name="bearUnit" type="java.lang.String" />
+      <form-property name="startTime" type="java.lang.String" />
+      <form-property name="itemFrom" type="java.lang.String" />
+    </form-bean>
+	</form-beans>
+	<global-exceptions></global-exceptions>
+	<global-forwards>
+		<forward name="error" path="/login.jsp"></forward>
+
+	</global-forwards>
+	<action-mappings>
+		<!-- 会议室管理 -->
+		<action path="/meetingroomaction" scope="request"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			name="meetingroomForm"
+			input="/WEB-INF/web/jsp/meeting/meetingroomlist.jsp">
+			<forward name="list"
+				path="/WEB-INF/web/jsp/meeting/meetingroomlist.jsp">
+			</forward>
+			<forward name="add"
+				path="/WEB-INF/web/jsp/meeting/meetingroomedit.jsp">
+			</forward>
+			<forward name="success"
+				path="/meetingroomaction.do?method=list">
+			</forward>
+		</action>
+		<!-- 会议纪要管理 -->
+		<action path="/meetingrecordaction" scope="request"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			name="meetingrecordForm"
+			input="/WEB-INF/web/jsp/meeting/meetingrecordlist.jsp">
+			<forward name="list"
+				path="/WEB-INF/web/jsp/meeting/meetingrecordlist.jsp">
+			</forward>
+			<forward name="add"
+				path="/WEB-INF/web/jsp/meeting/meetingrecordedit.jsp">
+			</forward>
+			<forward name="view"
+				path="/WEB-INF/web/jsp/meeting/meetingrecordview.jsp">
+			</forward>
+			<forward name="success"
+				path="/meetingrecordaction.do?method=list">
+			</forward>
+			<forward name="su"
+				path="/meetingrecordaction.do?method=delSelect">
+			</forward>
+			<forward name="trunToPage"
+				path="/WEB-INF/web/jsp/meeting/meetingrecordlist.jsp">
+			</forward>
+		</action>
+		<!-- 职务等级管理 -->
+		<action path="/pstlvlaction"
+			input="/web-inf/web/jsp/pstlvl/pstlvllist.jsp" name="pstlvlForm"
+			scope="request"
+			type="org.springframework.web.struts.DelegatingActionProxy">
+			<forward name="list"
+				path="/WEB-INF/web/jsp/pstlvl/pstlvllist.jsp">
+			</forward>
+			<forward name="add"
+				path="/WEB-INF/web/jsp/pstlvl/pstlvledit.jsp">
+			</forward>
+			<forward name="success"
+				path="/pstlvlaction.do?method=list">
+			</forward>
+		</action>
+		<!-- 权限类型管理 -->
+		<action path="/righttypeaction"
+			input="/WEB-INF/web/jsp/righttype/righttypelist.jsp"
+			name="righttypeForm" scope="request"
+			type="org.springframework.web.struts.DelegatingActionProxy">
+			<forward name="list"
+				path="/WEB-INF/web/jsp/righttype/righttypelist.jsp">
+			</forward>
+			<forward name="add"
+				path="/WEB-INF/web/jsp/righttype/righttypeedit.jsp">
+			</forward>
+			<forward name="success"
+				path="/righttypeaction.do?method=list">
+			</forward>
+		</action>
+		<!-- 用户级别管理 -->
+		<action path="/userlvlaction"
+			input="/WEB-INF/web/jsp/userlvl/userlvllist.jsp" name="userlvlForm"
+			scope="request"
+			type="org.springframework.web.struts.DelegatingActionProxy">
+			<forward name="list"
+				path="/WEB-INF/web/jsp/userlvl/userlvllist.jsp">
+			</forward>
+			<forward name="add"
+				path="/WEB-INF/web/jsp/userlvl/userlvledit.jsp">
+			</forward>
+			<forward name="success"
+				path="/userlvlaction.do?method=list">
+			</forward>
+		</action>
+		<!-- 资源管理 start-->
+
+		<!-- 主页导航到资源列表 start-->
+		<action path="/base/function/navigation"
+			forward="/WEB-INF/web/jsp/function/funlist.jsp" />
+		<!-- 资源功能跳转 -->
+		<action path="/base/function/forwardFunction" parameter="method"
+			attribute="functionForm" name="functionForm"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			scope="request">
+			<!-- 进入显示资源树页面 -->
+			<forward name="inputShowFunTree"
+				path="/WEB-INF/web/jsp/function/funtree.jsp" />
+			<!-- 显示资源树 -->
+			<forward name="success"
+				path="/WEB-INF/web/jsp/function/funtree.jsp" />
+			<!-- 进入增加资源页面 -->
+			<forward name="inputAddFun"
+				path="/WEB-INF/web/jsp/function/funadd.jsp" />
+			<!-- 增加资源 -->
+			<forward name="addFun"
+				path="/WEB-INF/web/jsp/function/funsuc.jsp" />
+			<!-- 进入更新资源页面 -->
+			<forward name="inputUpdateFun"
+				path="/WEB-INF/web/jsp/function/funupd.jsp" />
+			<!-- 更新资源 -->
+			<forward name="updateFun"
+				path="/WEB-INF/web/jsp/function/funsuc.jsp" />
+			<!-- 删除资源 -->
+			<forward name="deleteFun"
+				path="/WEB-INF/web/jsp/function/funsuc.jsp" />
+			<forward name="listSet"
+				path="/WEB-INF/web/jsp/function/resSetlist.jsp" />
+		</action>
+		<!-- 主页导航到资源列表 end-->
+		<!-- 角色管理 -->
+		<action path="/roleaction"
+			input="/WEB-INF/web/jsp/role/rolelist.jsp" name="roleForm"
+			scope="request"
+			type="org.springframework.web.struts.DelegatingActionProxy">
+			<forward name="list"
+				path="/WEB-INF/web/jsp/role/rolelist.jsp">
+			</forward>
+			<forward name="add"
+				path="/WEB-INF/web/jsp/role/roleedit.jsp">
+			</forward>
+			<forward name="success" path="/roleaction.do?method=list">
+			</forward>
+			<forward name="trunToPage"
+				path="/WEB-INF/web/jsp/role/rolelist.jsp" />
+		</action>
+		<!-- 组管理 -->
+		<action path="/groupaction"
+			input="/WEB-INF/web/jsp/group/grouplist.jsp" name="groupForm"
+			scope="request"
+			type="org.springframework.web.struts.DelegatingActionProxy">
+			<forward name="list"
+				path="/WEB-INF/web/jsp/group/grouplist.jsp">
+			</forward>
+			<forward name="add"
+				path="/WEB-INF/web/jsp/group/groupedit.jsp">
+			</forward>
+			<forward name="success"
+				path="/groupaction.do?method=list">
+			</forward>
+		</action>
+		<!-- 组织机构管理 -->
+		<action path="/orgmainaction"
+			input="/WEB-INF/web/jsp/org/orgmain.jsp" scope="request"
+			type="org.springframework.web.struts.DelegatingActionProxy">
+			<forward name="list"
+				path="/WEB-INF/web/jsp/org/orgmain.jsp">
+			</forward>
+			<forward name="success" path="/orgaction.do"></forward>
+		</action>
+		<!-- 权限等级管理 -->
+		<action path="/authlvlaction"
+			input="/WEB-INF/web/jsp/authlvl/authlvllist.jsp" name="authlvlForm"
+			scope="request"
+			type="org.springframework.web.struts.DelegatingActionProxy">
+			<forward name="list"
+				path="/WEB-INF/web/jsp/authlvl/authlvllist.jsp">
+			</forward>
+			<forward name="add"
+				path="/WEB-INF/web/jsp/authlvl/authlvledit.jsp">
+			</forward>
+			<forward name="success"
+				path="/authlvlaction.do?method=list">
+			</forward>
+		</action>
+		<!-- 部门等级管理 -->
+		<action path="/deptlvlaction"
+			input="/WEB-INF/web/jsp/deptlvl/deptlvllist.jsp" name="deptlvlForm"
+			scope="request"
+			type="org.springframework.web.struts.DelegatingActionProxy">
+			<forward name="list"
+				path="/WEB-INF/web/jsp/deptlvl/deptlvllist.jsp">
+			</forward>
+			<forward name="add"
+				path="/WEB-INF/web/jsp/deptlvl/deptlvledit.jsp">
+			</forward>
+			<forward name="success"
+				path="/deptlvlaction.do?method=list">
+			</forward>
+		</action>
+		<!-- 组织机构管理——左边的树 -->
+		<action path="/orglefttreeaction"
+			input="/WEB-INF/web/jsp/org/orgtreelist.jsp" scope="request"
+			type="org.springframework.web.struts.DelegatingActionProxy">
+			<forward name="list"
+				path="/WEB-INF/web/jsp/org/orgtreelist.jsp">
+			</forward>
+			<forward name="queryList"
+				path="/WEB-INF/web/jsp/query/querysOrgTreeList.jsp">
+			</forward>
+			<forward name="success" path="/orglefttreeaction.do">
+			</forward>
+		</action>
+		<!-- 组织机构管理——右边的详细信息 -->
+		<action path="/orgrightdetailaction"
+			input="/WEB-INF/web/jsp/org/detail.jsp" name="userForm"
+			scope="request"
+			type="org.springframework.web.struts.DelegatingActionProxy">
+			<forward name="list" path="/WEB-INF/web/jsp/org/list.jsp">
+			</forward>
+			<forward name="readonly"
+				path="/WEB-INF/web/jsp/org/detail.jsp">
+			</forward>
+			<forward name="deptedit"
+				path="/WEB-INF/web/jsp/org/deptedit.jsp">
+			</forward>
+			<forward name="pstedit"
+				path="/WEB-INF/web/jsp/org/pstedit.jsp">
+			</forward>
+			<forward name="useredit"
+				path="/WEB-INF/web/jsp/org/useredit.jsp">
+			</forward>
+			<forward name="usereditS"
+				path="/WEB-INF/web/jsp/org/usereditS.jsp">
+			</forward>
+			<forward name="deletefail"
+				path="/WEB-INF/web/jsp/org/delfail.jsp">
+			</forward>
+			<forward name="success"
+				path="/orgrightdetailaction.do?method=list">
+			</forward>
+			<forward name="modify"
+				path="/orgrightdetailaction.do?method=modify">
+			</forward>
+			<forward name="modifyUser"
+				path="/orgrightdetailaction.do?method=modifyUser">
+			</forward>
+		</action>
+		<!--部门编辑 -->
+		<action path="/deptEdit" input="/WEB-INF/web/jsp/org/detail.jsp"
+			name="deptForm" scope="request"
+			type="org.springframework.web.struts.DelegatingActionProxy">
+			<forward name="success"
+				path="/orgrightdetailaction.do?method=list">
+			</forward>
+			<forward name="deptedit"
+				path="/WEB-INF/web/jsp/org/deptedit.jsp">
+			</forward>
+		</action>
+		<!--职务编辑 -->
+		<action path="/postEdit" input="/WEB-INF/web/jsp/org/detail.jsp"
+			name="postForm" scope="request"
+			type="org.springframework.web.struts.DelegatingActionProxy">
+			<forward name="success"
+				path="/orgrightdetailaction.do?method=list">
+			</forward>
+			<forward name="pstedit"
+				path="/WEB-INF/web/jsp/org/pstedit.jsp">
+			</forward>
+		</action>
+		<!-- 角色权限管理 start-->
+		<!-- 主页导航到角色权限管理列表 -->
+		<action path="/base/roleAuth/navigation"
+			forward="/WEB-INF/web/jsp/roleauth/rolelist.jsp" />
+		<!-- 角色管理跳转 -->
+		<action path="/base/roleAuth/forwardRoleAuth" parameter="method"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			scope="request">
+			<!-- 进入显示角色树页面 -->
+			<forward name="inputShowRoleTree"
+				path="/WEB-INF/web/jsp/roleauth/roletree.jsp" />
+			<!-- 显示角色树 -->
+			<forward name="success"
+				path="/WEB-INF/web/jsp/roleauth/roletree.jsp" />
+			<!-- 进入显示资源树页面 -->
+			<forward name="inputShowFunTree"
+				path="/WEB-INF/web/jsp/roleauth/funtree.jsp" />
+			<!-- 显示资源树 -->
+			<forward name="success"
+				path="/WEB-INF/web/jsp/roleauth/funtree.jsp" />
+			<!-- 显示详细资源 -->
+			<forward name="showDetailFun"
+				path="/WEB-INF/web/jsp/roleauth/fundetail.jsp" />
+		</action>
+		<!-- 给角色授权资源 -->
+		<action path="/base/roleAuth/toAuth"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			scope="request">
+			<forward name="success"
+				path="/WEB-INF/web/jsp/roleauth/rolesuc.jsp" />
+		</action>
+		<!-- 角色权限管理 end-->
+		<!-- 角色用户管理 -->
+		<action path="/roleusermainaction"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			scope="request">
+			<forward name="list"
+				path="/WEB-INF/web/jsp/roleuser/roleusermain.jsp">
+			</forward>
+		</action>
+		<!-- 角色用户管理 —— 左边的角色树 -->
+		<action path="/roletreeaction"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			scope="request">
+			<forward name="list"
+				path="/WEB-INF/web/jsp/roleuser/roletreelist.jsp">
+			</forward>
+			<forward name="success"
+				path="/WEB-INF/web/jsp/roleuser/rolesofuserlist.jsp">
+			</forward>
+		</action>
+		<!-- 角色用户管理 —— 右边的组织机构数 -->
+		<action path="/orgtreeaction"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			scope="request">
+			<forward name="list"
+				path="/WEB-INF/web/jsp/roleuser/orgtreelist.jsp">
+			</forward>
+			<forward name="week_sechedule_selectuser"
+				path="/WEB-INF/web/jsp/weeksechedule/week_sechedule_selectuser.jsp">
+			</forward>
+			<forward name="week_sechedule_selectdept"
+				path="/WEB-INF/web/jsp/weeksechedule/week_sechedule_selectdept.jsp">
+			</forward>
+			<forward name="meetingedit_selectuser"
+				path="/WEB-INF/web/jsp/meeting/meetingedit_selectuser.jsp">
+			</forward>
+			<forward name="meetingedit_selectdept"
+				path="/WEB-INF/web/jsp/meeting/meetingedit_selectdept.jsp">
+			</forward>
+			<forward name="filesendedit_selectuser"
+				path="/WEB-INF/web/jsp/filesendEdit/filesendEdit_selectuser.jsp">
+			</forward>
+			<forward name="shouwen_selectdept"
+				path="/WEB-INF/web/jsp/docrec/selectdept.jsp">
+			</forward>
+			<forward name="shouwen_selectuser"
+				path="/WEB-INF/web/jsp/docrec/selectuser.jsp">
+			</forward>
+			<forward name="showBookUser"
+				path="/WEB-INF/web/jsp/subscription/smsSubscribe.jsp">
+			</forward>
+		</action>
+
+
+		<!-- 应用系统管理 -->
+		<action path="/allappSys"
+			input="/web-inf/web/jsp/allappsys/allappsyslist.jsp"
+			name="allappSysForm" scope="request"
+			type="org.springframework.web.struts.DelegatingActionProxy">
+			<forward name="list"
+				path="/WEB-INF/web/jsp/allappsys/allappsyslist.jsp">
+			</forward>
+			<forward name="add"
+				path="/WEB-INF/web/jsp/allappsys/allappsysedit.jsp">
+			</forward>
+			<forward name="success" path="/allappSys.do?method=list">
+			</forward>
+		</action>
+
+		<!-- CA认证 -->
+		<!-- 角色管理跳转 -->
+		<action path="/base/caAuth" parameter="method"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			scope="request">
+		</action>
+		<!-- 节假日管理 -->
+		<action path="/oaholidayaction" scope="request"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			name="oaholidayForm"
+			input="/WEB-INF/web/jsp/holiday/holidaylist.jsp">
+			<forward name="list"
+				path="/WEB-INF/web/jsp/holiday/holidaylist.jsp">
+			</forward>
+			<forward name="add"
+				path="/WEB-INF/web/jsp/holiday/holidayedit.jsp">
+			</forward>
+			<forward name="success"
+				path="/oaholidayaction.do?method=selectDate">
+			</forward>
+			<forward name="ok" path="/oaholidayaction.do?method=list">
+			</forward>
+		</action>
+
+		<!--  用户部门  -->
+		<action path="/userDeptAction"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			scope="request " name="userDeptForm">
+
+		</action>
+
+		<!-- 会议安排管理 -->
+		<action path="/meetingaction" name="meetingForm"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			scope="request">
+			<forward name="list"
+				path="/WEB-INF/web/jsp/meeting/meetinglist.jsp" />
+			<forward name="add"
+				path="/WEB-INF/web/jsp/meeting/meetingedit.jsp" />
+			<forward name="success"
+				path="/meetingaction.do?method=list&amp;action=thismonth" />
+		</action>
+
+		<!-- 公共通讯录 -->
+		<action path="/commonalityaction" name="commonalityForm"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			scope="request">
+			<forward name="list"
+				path="/WEB-INF/web/jsp/commonality/commonalitylist.jsp" />
+			<forward name="add"
+				path="/WEB-INF/web/jsp/commonality/commonalityedit.jsp" />
+			<forward name="info"
+				path="/WEB-INF/web/jsp/commonality/commonalityinfo.jsp" />
+			<forward name="success"
+				path="/commonalityaction.do?method=list&amp;action=all" />
+			<forward name="trunToPage"
+				path="/WEB-INF/web/jsp/commonality/commonalitylist.jsp" />
+
+		</action>
+
+		<!-- 公共通讯组 -->
+		<action path="/commonalityCommAction" name="commonalityCommForm"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			scope="request">
+			<forward name="list"
+				path="/WEB-INF/web/jsp/commonality/commonalitycommlist.jsp" />
+			<forward name="add"
+				path="/WEB-INF/web/jsp/commonality/commonalitycommedit.jsp" />
+			<forward name="success"
+				path="/commonalityCommAction.do?method=list" />
+			<forward name="trunToPage"
+				path="/WEB-INF/web/jsp/commonality/commonalitycommlist.jsp" />
+			<forward name="maininfo"
+				path="/WEB-INF/web/jsp/commonality/maininfo.jsp" />
+			<forward name="treeList"
+				path="/WEB-INF/web/jsp/commonality/commtreelist.jsp" />
+			<forward name="selectZu"
+				path="/WEB-INF/web/jsp/commonality/zuSelectlist.jsp" />
+			<forward name="subscribeTree"
+				path="/WEB-INF/web/jsp/subscription/subscribeTreeList.jsp" />
+		</action>
+
+		<!-- 个人通讯组管理 -->
+		<action path="/individualcommaction" scope="request"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			name="individualcommForm"
+			input="/WEB-INF/web/jsp/individual/individualcommlist.jsp">
+			<forward name="list"
+				path="/WEB-INF/web/jsp/individual/individualcommlist.jsp">
+			</forward>
+			<forward name="add"
+				path="/WEB-INF/web/jsp/individual/individualcommedit.jsp">
+			</forward>
+			<forward name="success"
+				path="/individualcommaction.do?method=list&amp;groupname=">
+			</forward>
+			<forward name="ok"
+				path="/individualcommaction.do?method=list">
+			</forward>
+			<forward name="trunToPage"
+				path="/WEB-INF/web/jsp/individual/individualcommlist.jsp" />
+		</action>
+
+		<!-- 个人通讯管理 -->
+		<action path="/individualaction" scope="request"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			name="individualForm"
+			input="/WEB-INF/web/jsp/individual/individuallist.jsp">
+			<forward name="list"
+				path="/WEB-INF/web/jsp/individual/individuallist.jsp">
+			</forward>
+			<forward name="add"
+				path="/WEB-INF/web/jsp/individual/individualedit.jsp">
+			</forward>
+			<forward name="view"
+				path="/WEB-INF/web/jsp/individual/individualview.jsp">
+			</forward>
+			<forward name="success"
+				path="/individualaction.do?method=list&amp;pername=&amp;perphone=">
+			</forward>
+			<forward name="trunToPage"
+				path="/WEB-INF/web/jsp/individual/individuallist.jsp" />
+		</action>
+
+		<!--信息发布栏目 -->
+		<action path="/infopubclaaction" scope="request"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			name="infoPublicClaForm" parameter="method"
+			input="/WEB-INF/web/jsp/infopublic/infopubliclist.jsp">
+			<forward name="clalist"
+				path="/WEB-INF/web/jsp/infopublic/infopubliclist.jsp">
+			</forward>
+			<forward name="trunToPage"
+				path="/WEB-INF/web/jsp/infopublic/infopubliclist.jsp" />
+			<forward name="list"
+				path="/WEB-INF/web/jsp/infopublic/infopubclalist.jsp">
+			</forward>
+			<forward name="treelist"
+				path="/WEB-INF/web/jsp/infopublic/infotreelist.jsp">
+			</forward>
+			<forward name="treelist"
+				path="/WEB-INF/web/jsp/infopublic/infotreelist.jsp">
+			</forward>
+			<forward name="maininfo"
+				path="/WEB-INF/web/jsp/infopublic/maininfo.jsp">
+			</forward>
+			<forward name="add"
+				path="/WEB-INF/web/jsp/infopublic/infopubclaedit.jsp">
+			</forward>
+			<forward name="doubleClaSeclist"
+				path="/WEB-INF/web/jsp/infopublic/claSelectlist.jsp">
+			</forward>
+			<forward name="infopubframeset"
+				path="/WEB-INF/web/jsp/infopublic/infopubframeset.jsp">
+			</forward>
+			<forward name="leftchildclas"
+				path="/WEB-INF/web/jsp/infopublic/leftchildclas.jsp">
+			</forward>
+		</action>
+		<!-- 信息发布内容 -->
+		<action path="/infopubContentaction" scope="request"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			name="infoPublicConForm" parameter="method"
+			input="/WEB-INF/web/jsp/infopublic/infopubcontentlist.jsp">
+			<forward name="trunToPage"
+				path="/WEB-INF/web/jsp/infopublic/infopubcontentlist.jsp" />
+			<forward name="infolist"
+				path="/WEB-INF/web/jsp/infopublic/infopubcontentlist.jsp">
+			</forward>
+			<forward name="bsdshlist"
+				path="/WEB-INF/web/jsp/infopublic/bsdshlist.jsp">
+			</forward>
+			<forward name="bsdshview"
+				path="/WEB-INF/web/jsp/infopublic/bsdspview.jsp">
+			</forward>
+			<forward name="news"
+				path="/WEB-INF/web/jsp/infopublic/news.jsp">
+			</forward>
+			<forward name="wzdt"
+				path="/WEB-INF/web/jsp/infopublic/wzdt.jsp">
+			</forward>
+			<forward name="tztg"
+				path="/WEB-INF/web/jsp/infopublic/tztg.jsp">
+			</forward>
+			<forward name="swdt"
+				path="/WEB-INF/web/jsp/infopublic/swdt.jsp">
+			</forward>
+			<forward name="zxbb"
+				path="/WEB-INF/web/jsp/infopublic/zxbb.jsp">
+			</forward>
+			<forward name="gongshi"
+				path="/WEB-INF/web/jsp/infopublic/gongshi.jsp">
+			</forward>
+			<forward name="information"
+				path="/WEB-INF/web/jsp/infopublic/information.jsp">
+			</forward>
+			<forward name="tztg_login"
+				path="/WEB-INF/web/jsp/infopublic/tztg_login.jsp">
+			</forward>
+			<forward name="information_login"
+				path="/WEB-INF/web/jsp/infopublic/information_login.jsp">
+			</forward>
+			<forward name="gongshi_login"
+				path="/WEB-INF/web/jsp/infopublic/gongshi_login.jsp">
+			</forward>
+			<forward name="wzdt_more"
+				path="/WEB-INF/web/jsp/infopublic/wzdt_more.jsp">
+			</forward>
+			<forward name="turnToPage"
+				path="/WEB-INF/web/jsp/infopublic/wzdt_more.jsp">
+			</forward>
+			<forward name="view"
+				path="/WEB-INF/web/jsp/infopublic/infopubcontentview.jsp">
+			</forward>
+			<forward name="fxdt"
+				path="/WEB-INF/web/jsp/infopublic/fxdt.jsp">
+			</forward>
+			<forward name="szydt"
+				path="/WEB-INF/web/jsp/infopublic/szydt.jsp">
+			</forward>
+			<forward name="fxdt_more"
+				path="/WEB-INF/web/jsp/infopublic/wzdt_more.jsp">
+			</forward>
+			<forward name="szydt_more"
+				path="/WEB-INF/web/jsp/infopublic/wzdt_more.jsp">
+			</forward>
+			<forward name="add"
+				path="/WEB-INF/web/jsp/infopublic/infopubconedit.jsp">
+			</forward>
+			<forward name="test"
+				path="/WEB-INF/web/jsp/infopublic/test.jsp">
+			</forward>
+			<forward name="addSuccess"
+				path="/WEB-INF/web/jsp/infopublic/test.jsp">
+			</forward>
+			<forward name="gknb"
+				path="/WEB-INF/web/jsp/infopublic/gknb.jsp">
+			</forward>
+			<forward name="slzxInfoList"
+				path="/WEB-INF/web/jsp/infopublic/slzxInfoList.jsp">
+			</forward>
+		</action>
+		<!-- 政府信息公布信息发布 -->
+		<action path="/govinfopubContentaction" scope="request"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			name="govinfoPublicConForm" parameter="method"
+			input="/WEB-INF/web/jsp/infopublic/govinfopubcontentlist.jsp">
+			<forward name="list"
+				path="/WEB-INF/web/jsp/infopublic/govinfopubcontentlist.jsp" />
+			<forward name="trunToPage"
+				path="/WEB-INF/web/jsp/infopublic/govinfopubcontentlist.jsp" />
+			<forward name="add"
+				path="/WEB-INF/web/jsp/infopublic/govinfopubconedit.jsp" />
+			<forward name="govdshlist"
+				path="/WEB-INF/web/jsp/infopublic/govinfodshlist.jsp">
+			</forward>
+			<forward name="govbsdshview"
+				path="/WEB-INF/web/jsp/infopublic/govinfopubbsdshview.jsp">
+			</forward>
+		</action>
+
+
+		<!-- 行政许可 -->
+		<action path="/applyaction" name="applyForm"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			scope="request" parameter="method"
+			input="/WEB-INF/web/jsp/apply/applylist.jsp">
+			<forward name="wsbs"
+				path="/WEB-INF/web/jsp/apply/applylist.jsp">
+			</forward>
+			<forward name="wsbs_login"
+				path="/WEB-INF/web/jsp/apply/wsbs_login.jsp">
+			</forward>
+			<forward name="turnToPage"
+				path="/WEB-INF/web/jsp/apply/wsbs_login.jsp">
+			</forward>
+		</action>
+
+		<!--  政府信息公开-->
+		<action path="/govern"
+			input="/WEB-INF/web/jsp/gov/government.jsp" scope="request"
+			parameter="method"
+			type="org.springframework.web.struts.DelegatingActionProxy">
+			<forward name="zfxxgk"
+				path="/WEB-INF/web/jsp/gov/government.jsp">
+			</forward>
+			<forward name="zfxxgk_login"
+				path="/WEB-INF/web/jsp/gov/government_login.jsp">
+			</forward>
+			<forward name="zfxxgk_more"
+				path="/WEB-INF/web/jsp/gov/government_more.jsp">
+			</forward>
+			<forward name="turnToPage"
+				path="/WEB-INF/web/jsp/gov/government_more.jsp">
+			</forward>
+			<forward name="view"
+				path="/WEB-INF/web/jsp/gov/government_contentview.jsp">
+			</forward>
+		</action>
+		<!-- yuanshuishujubiao -->
+		<action path="/yuanshuishujubiaoaction"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			input="/WEB-INF/web/jsp/yuanshuishujubiao/yuanshuishujubiaolist.jsp">
+			<forward name="list"
+				path="/WEB-INF/web/jsp/yuanshuishujubiao/yuanshuishujubiaolist.jsp">
+			</forward>
+		</action>
+		<!-- 政府信息审核-->
+		<action path="/infoAudit" parameter="method" scope="request"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			input="/WEB-INF/web/jsp/infoAudit/infoAudit.jsp">
+			<forward name="list"
+				path="/WEB-INF/web/jsp/infoAudit/infoAudit.jsp">
+			</forward>
+			<forward name="success"
+				path="/infoAudit.do?method=findAuditList&amp;condition=auditing">
+			</forward>
+			<forward name="opinionConsultList"
+				path="/WEB-INF/web/jsp/infoAudit/opinionConsult.jsp">
+			</forward>
+			<forward name="trunToPage"
+				path="/WEB-INF/web/jsp/infoAudit/infoAudit.jsp">
+			</forward>
+		</action>
+		<!-- 意见征询 -->
+		<action path="/opinionConsult" parameter="method"
+			name="opinionForm"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			input="/WEB-INF/web/jsp/infoAudit/opinionConsult.jsp">
+			<forward name="opinionConsultList"
+				path="/WEB-INF/web/jsp/infoAudit/opinionConsult.jsp">
+			</forward>
+			<forward name="turnToAuditing"
+				path="/infoAudit.do?method=findAuditList&amp;condition=auditing">
+			</forward>
+		</action>
+		<!-- 答复书6 -->
+		<action path="/reply6" parameter="method" name="reply6Form"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			input="/WEB-INF/web/jsp/infoAudit/reply6.jsp">
+			<forward name="list"
+				path="/WEB-INF/web/jsp/infoAudit/reply6.jsp">
+			</forward>
+			<forward name="success"
+				path="/tbGovInfoPubMain.do?method=list&amp;action=all">
+			</forward>
+			<forward name="print"
+				path="/WEB-INF/web/jsp/infoAudit/printReply6.jsp">
+			</forward>
+		</action>
+		<!-- 答复书5 -->
+		<action path="/reply5" parameter="method" name="reply5Form"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			input="/WEB-INF/web/jsp/infoAudit/reply5.jsp">
+			<forward name="list"
+				path="/WEB-INF/web/jsp/infoAudit/reply5.jsp">
+			</forward>
+			<forward name="success"
+				path="/tbGovInfoPubMain.do?method=list&amp;action=all">
+			</forward>
+			<forward name="print"
+				path="/WEB-INF/web/jsp/infoAudit/printReply5.jsp">
+			</forward>
+		</action>
+
+		<!-- 答复书7 -->
+		<action path="/reply7" parameter="method" name="reply7Form"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			input="/WEB-INF/web/jsp/infoAudit/reply7.jsp">
+			<forward name="list"
+				path="/WEB-INF/web/jsp/infoAudit/reply7.jsp">
+			</forward>
+			<forward name="success"
+				path="/tbGovInfoPubMain.do?method=list&amp;action=all">
+			</forward>
+			<forward name="print"
+				path="/WEB-INF/web/jsp/infoAudit/printReply7.jsp">
+			</forward>
+		</action>
+		<!-- 公开权利人信息告知单 -->
+		<action path="/obligeeMsg" parameter="method"
+			name="obligeeMsgForm"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			input="/WEB-INF/web/jsp/infoAudit/obligeeMsg.jsp">
+			<forward name="list"
+				path="/WEB-INF/web/jsp/infoAudit/obligeeMsg.jsp">
+			</forward>
+			<forward name="success"
+				path="/infoAudit.do?method=findAuditList&amp;condition=audited_pass">
+			</forward>
+			<forward name="print"
+				path="/WEB-INF/web/jsp/infoAudit/printObligeeMsg.jsp">
+			</forward>
+		</action>
+		<!-- 权利人意见征询单 -->
+		<action path="/obligeeOpinion" parameter="method"
+			name="obligeeOpinionForm"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			input="/WEB-INF/web/jsp/infoAudit/obligeeOpinion.jsp">
+			<forward name="list"
+				path="/WEB-INF/web/jsp/infoAudit/obligeeOpinion.jsp">
+			</forward>
+			<forward name="success"
+				path="/tbGovInfoPubMain.do?method=list&amp;action=all">
+			</forward>
+			<forward name="print"
+				path="/WEB-INF/web/jsp/infoAudit/printObligeeOpinion.jsp">
+			</forward>
+		</action>
+		<!-- 车辆管理-->
+		<action path="/vehicles" name="vehiclesForm" parameter="method"
+			scope="request"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			input="/WEB-INF/web/jsp/vehicles/vehicles.jsp">
+			<forward name="list"
+				path="/WEB-INF/web/jsp/vehicles/vehicles.jsp">
+			</forward>
+			<forward name="add"
+				path="/WEB-INF/web/jsp/vehicles/addVehicles.jsp">
+			</forward>
+			<forward name="success"
+				path="/vehicles.do?method=findVehiclesList">
+			</forward>
+			<forward name="trunToPage"
+				path="/WEB-INF/web/jsp/vehicles/vehicles.jsp">
+			</forward>
+		</action>
+		<!-- 短信通讯 -->
+		<action path="/messages" name="messagesForm" parameter="method"
+			scope="request"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			input="/WEB-INF/web/jsp/messages/messages.jsp">
+			<forward name="list"
+				path="/WEB-INF/web/jsp/messages/messages.jsp">
+			</forward>
+			<forward name="messagelogin"
+				path="/WEB-INF/web/jsp/messages/message.jsp">
+			</forward>
+			<forward name="lookupMessages"
+				path="/WEB-INF/web/jsp/messages/lookupMessages.jsp">
+			</forward>
+			<forward name="revertMessages"
+				path="/WEB-INF/web/jsp/messages/revertMessages.jsp">
+			</forward>
+			<forward name="success"
+				path="/messages.do?method=findMessages">
+			</forward>
+			<forward name="notReadMessages"
+				path="/WEB-INF/web/jsp/messages/notReadMsg.jsp">
+			</forward>
+			<forward name="sendMessages"
+				path="/WEB-INF/web/jsp/messages/sendMessages.jsp">
+			</forward>
+			<forward name="listMessagesbox"
+				path="/WEB-INF/web/jsp/messages/listMessagesbox.jsp">
+			</forward>
+			<forward name="delMessagesbox"
+				path="/messages.do?method=sendBoxList">
+			</forward>
+			<forward name="trunToPage"
+				path="/WEB-INF/web/jsp/messages/messages.jsp">
+			</forward>
+		</action>
+		<!-- 发件箱列表 -->
+		<action path="/sendMessages" name="messagesForm"
+			parameter="method" scope="request"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			input="/WEB-INF/web/jsp/messages/messages.jsp">
+			<forward name="list"
+				path="/WEB-INF/web/jsp/messages/messages.jsp">
+			</forward>
+			<forward name="lookupMessages"
+				path="/WEB-INF/web/jsp/messages/lookupMessages.jsp">
+			</forward>
+			<forward name="revertMessages"
+				path="/WEB-INF/web/jsp/messages/revertMessages.jsp">
+			</forward>
+			<forward name="success"
+				path="/messages.do?method=findMessages">
+			</forward>
+			<forward name="notReadMessages"
+				path="/WEB-INF/web/jsp/messages/notReadMsg.jsp">
+			</forward>
+			<forward name="sendMessages"
+				path="/WEB-INF/web/jsp/messages/sendMessages.jsp">
+			</forward>
+			<forward name="listMessagesbox"
+				path="/WEB-INF/web/jsp/messages/listMessagesbox.jsp">
+			</forward>
+			<forward name="delMessagesbox"
+				path="/sendMessages.do?method=sendBoxList">
+			</forward>
+			<forward name="trunToPage"
+				path="/WEB-INF/web/jsp/messages/listMessagesbox.jsp">
+			</forward>
+		</action>
+		<action path="/notReadMsgMessages" name="messagesForm"
+			parameter="method" scope="request"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			input="/WEB-INF/web/jsp/messages/messages.jsp">
+			<forward name="list"
+				path="/WEB-INF/web/jsp/messages/notReadMsg.jsp">
+			</forward>
+			<forward name="lookupMessages"
+				path="/WEB-INF/web/jsp/messages/lookupMessages.jsp">
+			</forward>
+			<forward name="revertMessages"
+				path="/WEB-INF/web/jsp/messages/revertMessages.jsp">
+			</forward>
+			<forward name="success"
+				path="/notReadMsgMessages.do?method=findNotReadMessages">
+			</forward>
+			<forward name="notReadMessages"
+				path="/WEB-INF/web/jsp/messages/notReadMsg.jsp">
+			</forward>
+			<forward name="sendMessages"
+				path="/WEB-INF/web/jsp/messages/sendMessages.jsp">
+			</forward>
+			<forward name="listMessagesbox"
+				path="/WEB-INF/web/jsp/messages/listMessagesbox.jsp">
+			</forward>
+			<forward name="delMessagesbox"
+				path="/sendMessages.do?method=sendBoxList">
+			</forward>
+			<forward name="trunToPage"
+				path="/WEB-INF/web/jsp/messages/notReadMsg.jsp">
+			</forward>
+		</action>
+		<!-- 待办事宜 -->
+		<action path="/noties" parameter="method" scope="request"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			input="/WEB-INF/web/jsp/noties/noties.jsp">
+			<forward name="list"
+				path="/WEB-INF/web/jsp/noties/noties.jsp">
+			</forward>
+		</action>
+		<!-- 用车申请管理 -->
+		<action path="/tbVehiclesApply" scope="request"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			name="tbVehiclesApplyForm" parameter="method"
+			input="/WEB-INF/web/jsp/vehiclesapply/vehiclesapplylist.jsp">
+			<forward name="list"
+				path="/WEB-INF/web/jsp/vehiclesapply/vehiclesapplylist.jsp" />
+
+			<forward name="add"
+				path="/WEB-INF/web/jsp/vehiclesapply/vehiclesapplyedit.jsp">
+			</forward>
+			<forward name="success"
+				path="/tbVehiclesApply.do?method=list&amp;action=all">
+			</forward>
+			<forward name="trunToPage"
+				path="/WEB-INF/web/jsp/vehiclesapply/vehiclesapplylist.jsp">
+			</forward>
+		</action>
+		<!-- 用车审批管理 -->
+		<action path="/tbVehiclesApplyApproval" scope="request"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			name="tbVehiclesApplyForm" parameter="method"
+			input="/WEB-INF/web/jsp/vehiclesapply/vehiclesapplyApprovalList.jsp">
+			<forward name="list"
+				path="/WEB-INF/web/jsp/vehiclesapply/vehiclesapplyApprovalList.jsp" />
+
+			<forward name="success"
+				path="/tbVehiclesApplyApproval.do?method=list&amp;action=all" />
+
+			<forward name="trunToPage"
+				path="/WEB-INF/web/jsp/vehiclesapply/vehiclesapplyApprovalList.jsp" />
+		</action>
+
+		<!-- 政府信息公开告知书 -->
+		<action path="/zfxxgkgzsaction" scope="request"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			name="zfxxgkgzsForm" parameter="method">
+			<forward name="edit"
+				path="/WEB-INF/web/jsp/govinfoform/zfxxgkgzs.jsp">
+			</forward>
+			<forward name="success"
+				path="/tbGovInfoPubMain.do?method=list&amp;action=all">
+			</forward>
+		</action>
+		<action path="/zfxxbfgkgzsaction" scope="request"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			name="zfxxbfgkgzsForm" parameter="method">
+			<forward name="edit"
+				path="/WEB-INF/web/jsp/govinfoform/zfxxbfgkgzs.jsp">
+			</forward>
+			<forward name="success"
+				path="/tbGovInfoPubMain.do?method=list&amp;action=all">
+			</forward>
+		</action>
+		<action path="/bzsqgzsaction" scope="request"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			name="bzsqgzsForm" parameter="method">
+			<forward name="edit"
+				path="/WEB-INF/web/jsp/govinfoform/bzsqgzs.jsp">
+			</forward>
+			<forward name="success"
+				path="/tbGovInfoPubMain.do?method=list&amp;action=all">
+			</forward>
+		</action>
+		<!-- 政府信息公开申请答复书 -->
+		<action path="/zfxxgksqdfaction" scope="request"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			name="zfxxgksqdfForm" parameter="method">
+			<forward name="edit"
+				path="/WEB-INF/web/jsp/govinfoform/zfxxgksqdf.jsp">
+			</forward>
+			<forward name="success"
+				path="/tbGovInfoPubMain.do?method=list&amp;action=all">
+			</forward>
+			<forward name="print"
+				path="/WEB-INF/web/jsp/govinfoform/printZfxxgksqdf.jsp">
+			</forward>
+		</action>
+		<!-- 政府信息公开申请答复书（一二和回执） -->
+		<action path="/zfxxgkDealaction" scope="request"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			name="zfxxgksqdfs3Form" parameter="method">
+			<forward name="editOne"
+				path="/WEB-INF/web/jsp/govinfoform/zfxxgksqdfs1.jsp">
+			</forward>
+			<forward name="editTwo"
+				path="/WEB-INF/web/jsp/govinfoform/zfxxgksqdfs2.jsp">
+			</forward>
+			<forward name="editSjch"
+				path="/WEB-INF/web/jsp/govinfoform/zfxxgksqhz.jsp">
+			</forward>
+			<forward name="printOne"
+				path="/WEB-INF/web/jsp/govinfoform/printZfxxgksqdfs1.jsp">
+			</forward>
+			<forward name="printTwo"
+				path="/WEB-INF/web/jsp/govinfoform/printZfxxgksqdfs2.jsp">
+			</forward>
+			<forward name="printSjch"
+				path="/WEB-INF/web/jsp/govinfoform/printZfxxgksqhz.jsp">
+			</forward>
+			<forward name="success"
+				path="/tbGovInfoPubMain.do?method=list&amp;action=all">
+			</forward>
+		</action>
+		<!-- 政府信息公开申请答复书（三） -->
+		<action path="/zfxxgksqdfs3action" scope="request"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			name="zfxxgksqdfs3Form" parameter="method">
+			<forward name="edit"
+				path="/WEB-INF/web/jsp/govinfoform/zfxxgksqdfs3.jsp">
+			</forward>
+			<forward name="success"
+				path="/tbGovInfoPubMain.do?method=list&amp;action=all">
+			</forward>
+			<forward name="print"
+				path="/WEB-INF/web/jsp/govinfoform/printZfxxgksqdfs3.jsp">
+			</forward>
+		</action>
+		<!-- 政府信息公开申请答复书（四） -->
+		<action path="/zfxxgksqdfs4action" scope="request"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			name="zfxxgksqdfs4Form" parameter="method">
+			<forward name="edit"
+				path="/WEB-INF/web/jsp/govinfoform/zfxxgksqdfs4.jsp">
+			</forward>
+			<forward name="success"
+				path="/tbGovInfoPubMain.do?method=list&amp;action=all">
+			</forward>
+			<forward name="print"
+				path="/WEB-INF/web/jsp/govinfoform/printZfxxgksqdfs4.jsp">
+			</forward>
+		</action>
+
+		<!-- 政府信息公开补正申请告知书 -->
+		<action path="/zfxxgkbzsqgzsaction" scope="request"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			name="zfxxgkbzsqgzsForm" parameter="method">
+			<forward name="edit"
+				path="/WEB-INF/web/jsp/govinfoform/zfxxgkbzsqgzs.jsp">
+			</forward>
+			<forward name="success"
+				path="/tbGovInfoPubMain.do?method=list&amp;action=all">
+			</forward>
+			<forward name="print"
+				path="/WEB-INF/web/jsp/govinfoform/printZfxxgkbzsqgzs.jsp">
+			</forward>
+		</action>
+
+		<!-- 政府信息公开重复申请告知书 -->
+		<action path="/zfxxgkcfsqgzsaction" scope="request"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			name="zfxxgkcfsqgzsForm" parameter="method">
+			<forward name="edit"
+				path="/WEB-INF/web/jsp/govinfoform/zfxxgkcfsqgzs.jsp">
+			</forward>
+			<forward name="success"
+				path="/infoAudit.do?method=findAuditList&amp;condition=audited_pass">
+			</forward>
+			<forward name="print"
+				path="/WEB-INF/web/jsp/govinfoform/printZfxxgkcfsqgzs.jsp">
+			</forward>
+		</action>
+
+		<!-- 延期答复告知书 -->
+		<action path="/yqdfgzsaction" scope="request"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			name="yqdfgzsForm" parameter="method">
+			<forward name="edit"
+				path="/WEB-INF/web/jsp/govinfoform/yqdfgzs.jsp">
+			</forward>
+			<forward name="success"
+				path="/tbGovInfoPubMain.do?method=list&amp;action=all">
+			</forward>
+			<forward name="print"
+				path="/WEB-INF/web/jsp/govinfoform/printYqdfgzs.jsp">
+			</forward>
+		</action>
+
+		<!-- 非政府信息公开申请告知书 -->
+		<action path="/fzfxxgksqgzsaction" scope="request"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			name="fzfxxgksqgzsForm" parameter="method">
+			<forward name="edit"
+				path="/WEB-INF/web/jsp/govinfoform/fzfxxgksqgzs.jsp">
+			</forward>
+			<forward name="success"
+				path="/infoAudit.do?method=findAuditList&amp;condition=notAccept">
+			</forward>
+			<forward name="print"
+				path="/WEB-INF/web/jsp/govinfoform/printFzfxxgksqgzs.jsp">
+			</forward>
+		</action>
+		<!-- 待审核信息列表,请详细信息 -->
+		<action path="/tbGovInfoPubMain" scope="request"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			name="tbGovInfoPubMain" parameter="method"
+			input="/WEB-INF/web/jsp/govInfoPubMain/govInfoPubMainlist.jsp">
+			<forward name="list"
+				path="/WEB-INF/web/jsp/govInfoPubMain/govInfoPubMainlist.jsp">
+			</forward>
+			<forward name="view"
+				path="/WEB-INF/web/jsp/govInfoPubMain/govInfoPubMainView.jsp">
+			</forward>
+			<forward name="success"
+				path="/tbGovInfoPubMain.do?method=list&amp;action=all">
+			</forward>
+			<forward name="trunToPage"
+				path="/WEB-INF/web/jsp/govInfoPubMain/govInfoPubMainlist.jsp">
+			</forward>
+			<forward name="doc"
+				path="/WEB-INF/web/jsp/govInfoPubMain/doc.htm">
+			</forward>
+			<forward name="print"
+				path="/WEB-INF/web/jsp/govInfoPubMain/printGovInfoPubMainView.jsp">
+			</forward>
+		</action>
+		<action path="/xxgkAction"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			input="/WEB-INF/web/jsp/gkpermit/showdetail.jsp">
+			<forward name="showdetail"
+				path="/WEB-INF/web/jsp/gkpermit/showdetail.jsp">
+			</forward>
+			<forward name="success"
+				path="/tbGovInfoPubMain.do?method=list&amp;action=all">
+			</forward>
+		</action>
+		<action path="/writ7Action"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			input="/WEB-INF/web/jsp/gkpermit/writ7Detail.jsp">
+			<forward name="showdetail"
+				path="/WEB-INF/web/jsp/gkpermit/writ7Detail.jsp">
+			</forward>
+			<forward name="success"
+				path="/xxgkAction.do?method=getGovInfoPub">
+			</forward>
+		</action>
+		<action path="/writ2Action"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			input="/WEB-INF/web/jsp/gkpermit/writ2Detail.jsp">
+			<forward name="showdetail"
+				path="/WEB-INF/web/jsp/gkpermit/writ2Detail.jsp">
+			</forward>
+			<forward name="success"
+				path="/xxgkAction.do?method=getGovInfoPub">
+			</forward>
+		</action>
+		<action path="/writ4Action"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			input="/WEB-INF/web/jsp/gkpermit/writ4Detail.jsp">
+			<forward name="showdetail"
+				path="/WEB-INF/web/jsp/gkpermit/writ4Detail.jsp">
+			</forward>
+			<forward name="success"
+				path="/xxgkAction.do?method=getGovInfoPub">
+			</forward>
+		</action>
+		<action path="/writ8Action"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			input="/WEB-INF/web/jsp/gkpermit/writ8Detail.jsp">
+			<forward name="showdetail"
+				path="/WEB-INF/web/jsp/gkpermit/writ8Detail.jsp">
+			</forward>
+			<forward name="success"
+				path="/xxgkAction.do?method=getGovInfoPub">
+			</forward>
+		</action>
+		<action path="/writ9Action"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			input="/WEB-INF/web/jsp/gkpermit/writ9Detail.jsp">
+			<forward name="showdetail"
+				path="/WEB-INF/web/jsp/gkpermit/writ9Detail.jsp">
+			</forward>
+			<forward name="success"
+				path="/xxgkAction.do?method=getGovInfoPub">
+			</forward>
+		</action>
+		<!--档案管理-->
+		<action path="/archivesListAction" name="archivesListForm"
+			parameter="method" scope="request"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			input="/WEB-INF/web/jsp/archiveslist/archiveslist.jsp">
+			<forward name="noPigeonholeList"
+				path="/WEB-INF/web/jsp/archiveslist/archiveslist.jsp">
+			</forward>
+			<forward name="success"
+				path="/archivesListAction.do?method=noPigeonholeList"
+				redirect="true">
+			</forward>
+			<forward name="trunToPage"
+				path="/WEB-INF/web/jsp/archiveslist/archiveslist.jsp">
+			</forward>
+		</action>
+		<action path="/pigeonholedArchivesListAction"
+			name="archivesListForm" parameter="method" scope="request"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			input="/WEB-INF/web/jsp/archiveslist/pigeonholedarchiveslist.jsp">
+			<forward name="pigeonholedArchivesList"
+				path="/WEB-INF/web/jsp/archiveslist/pigeonholedarchiveslist.jsp">
+			</forward>
+			<forward name="success"
+				path="/pigeonholedArchivesListAction.do?method=pigeonholedArchivesList"
+				redirect="true">
+			</forward>
+			<forward name="trunToPage"
+				path="/WEB-INF/web/jsp/archiveslist/pigeonholedarchiveslist.jsp">
+			</forward>
+		</action>
+		<action path="/auditListAction" name="archivesListForm"
+			parameter="method" scope="request"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			input="/WEB-INF/web/jsp/archiveslist/auditlist.jsp">
+			<forward name="auditList"
+				path="/WEB-INF/web/jsp/archiveslist/auditlist.jsp">
+			</forward>
+			<forward name="success"
+				path="/auditListAction.do?method=auditList" redirect="true">
+			</forward>
+			<forward name="trunToPage"
+				path="/WEB-INF/web/jsp/archiveslist/auditlist.jsp">
+			</forward>
+		</action>
+
+		<action path="/archivesEdit" scope="request"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			name="archivesEditForm"
+			input="/WEB-INF/web/jsp/archivesEdit/archivesEdit.jsp">
+			<forward name="add"
+				path="/WEB-INF/web/jsp/archivesEdit/archivesEdit.jsp">
+			</forward>
+			<forward name="error"
+				path="/WEB-INF/web/jsp/archivesEdit/error.jsp">
+			</forward>
+			<forward name="success"
+				path="/archivesListAction.do?method=noPigeonholeList">
+			</forward>
+		</action>
+		<!--文件发送-->
+		<action path="/fileSendInListAction" name="fileSendInListForm"
+			parameter="method" scope="request"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			input="/WEB-INF/web/jsp/filesendlist/fileSendInList.jsp">
+			<forward name="fileSendInList"
+				path="/WEB-INF/web/jsp/filesendlist/fileSendInList.jsp">
+			</forward>
+			<forward name="success"
+				path="/fileSendInListAction.do?method=list" redirect="true">
+			</forward>
+			<forward name="trunToPage"
+				path="/WEB-INF/web/jsp/filesendlist/fileSendInList.jsp">
+			</forward>
+		</action>
+		<!--文件发送-->
+		<action path="/fileSendOutListAction" name="fileSendOutListForm"
+			parameter="method" scope="request"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			input="/WEB-INF/web/jsp/filesendlist/fileSendOutList.jsp">
+			<forward name="fileSendOutList"
+				path="/WEB-INF/web/jsp/filesendlist/fileSendOutList.jsp">
+			</forward>
+			<forward name="success"
+				path="/fileSendOutListAction.do?method=list" redirect="true">
+			</forward>
+			<forward name="trunToPage"
+				path="/WEB-INF/web/jsp/filesendlist/fileSendOutList.jsp">
+			</forward>
+		</action>
+		<action path="/filesendEdit" scope="request"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			name="filesendEditForm"
+			input="/WEB-INF/web/jsp/filesendEdit/filesendEdit.jsp">
+			<forward name="add"
+				path="/WEB-INF/web/jsp/filesendEdit/filesendEdit.jsp">
+			</forward>
+			<forward name="view"
+				path="/WEB-INF/web/jsp/filesendEdit/filesendView.jsp">
+			</forward>
+			<forward name="error"
+				path="/WEB-INF/web/jsp/archivesEdit/error.jsp">
+			</forward>
+			<forward name="success"
+				path="/fileSendInListAction.do?method=list">
+			</forward>
+		</action>
+
+		<action path="/docEditTest" scope="request" parameter="method"
+			name="archivesEditForm"
+			type="org.springframework.web.struts.DelegatingActionProxy">
+			<forward name="add" path="/WEB-INF/web/jsp/doc/test.jsp">
+			</forward>
+			<forward name="error"
+				path="/WEB-INF/web/jsp/doc/error.jsp">
+			</forward>
+			<forward name="success"
+				path="/WEB-INF/web/jsp/doc/test.jsp">
+			</forward>
+		</action>
+		<action path="/print" scope="request" parameter="method"
+			name="archivesEditForm"
+			type="org.springframework.web.struts.DelegatingActionProxy">
+			<forward name="add"
+				path="/WEB-INF/web/jsp/infoAudit/print.jsp">
+			</forward>
+			<forward name="error"
+				path="/WEB-INF/web/jsp/doc/error.jsp">
+			</forward>
+			<forward name="success"
+				path="/WEB-INF/web/jsp/infoAudit/print.jsp">
+			</forward>
+		</action>
+		<action path="/userpwdaction" scope="request" parameter="method"
+			name="archivesEditForm"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			input="/WEB-INF/passwdmod.jsp">
+			<forward name="passwdmod" path="/WEB-INF/passwdmod.jsp"></forward>
+			<forward name="success" path="/WEB-INF/passwdmod.jsp"></forward>
+		</action>
+		<action path="/forumsAction" scope="request" parameter="method"
+			type="org.springframework.web.struts.DelegatingActionProxy">
+		</action>
+		<!--网上咨询-->
+		<action path="/consultationSLWaitListAction"
+			name="consultationSLWaitListForm" parameter="method" scope="request"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			input="/WEB-INF/web/jsp/consultation/consultationslwaitlist.jsp">
+			<forward name="consultationslwaitlist"
+				path="/WEB-INF/web/jsp/consultation/consultationslwaitlist.jsp">
+			</forward>
+			<forward name="success"
+				path="/consultationSLWaitListAction.do?method=list"
+				redirect="true">
+			</forward>
+			<forward name="trunToPage"
+				path="/WEB-INF/web/jsp/consultation/consultationslwaitlist.jsp">
+			</forward>
+		</action>
+		<action path="/consultationSLProcessListAction"
+			name="consultationSLProcessListForm" parameter="method"
+			scope="request"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			input="/WEB-INF/web/jsp/consultation/consultationslprocesslist.jsp">
+			<forward name="consultationslprocesslist"
+				path="/WEB-INF/web/jsp/consultation/consultationslprocesslist.jsp">
+			</forward>
+			<forward name="success"
+				path="/consultationSLProcessListAction.do?method=list"
+				redirect="true">
+			</forward>
+			<forward name="trunToPage"
+				path="/WEB-INF/web/jsp/consultation/consultationslprocesslist.jsp">
+			</forward>
+		</action>
+		<action path="/consultationSLOverListAction"
+			name="consultationSLOverListForm" parameter="method" scope="request"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			input="/WEB-INF/web/jsp/consultation/consultationsloverlist.jsp">
+			<forward name="consultationsloverlist"
+				path="/WEB-INF/web/jsp/consultation/consultationsloverlist.jsp">
+			</forward>
+			<forward name="success"
+				path="/consultationSLOverListAction.do?method=list"
+				redirect="true">
+			</forward>
+			<forward name="trunToPage"
+				path="/WEB-INF/web/jsp/consultation/consultationsloverlist.jsp">
+			</forward>
+		</action>
+		<!--网上咨询（待答复列表）-->
+		<action path="/consultationWaitListAction"
+			name="consultationWaitListForm" parameter="method" scope="request"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			input="/WEB-INF/web/jsp/consultation/consultationwaitlist.jsp">
+			<forward name="consultationwaitlist"
+				path="/WEB-INF/web/jsp/consultation/consultationwaitlist.jsp">
+			</forward>
+			<forward name="success"
+				path="/consultationWaitListAction.do?method=list" redirect="true">
+			</forward>
+			<forward name="trunToPage"
+				path="/WEB-INF/web/jsp/consultation/consultationwaitlist.jsp">
+			</forward>
+		</action>
+		<!--网上咨询（已答复列表）-->
+		<action path="/consultationOverListAction"
+			name="consultationOverListForm" parameter="method" scope="request"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			input="/WEB-INF/web/jsp/consultation/consultationoverlist.jsp">
+			<forward name="consultationoverlist"
+				path="/WEB-INF/web/jsp/consultation/consultationoverlist.jsp">
+			</forward>
+			<forward name="success"
+				path="/consultationOverListAction.do?method=list" redirect="true">
+			</forward>
+			<forward name="trunToPage"
+				path="/WEB-INF/web/jsp/consultation/consultationoverlist.jsp">
+			</forward>
+		</action>
+		<!--网上咨询（答复）-->
+		<action path="/consultaionView" scope="request"
+			parameter="method" name="consultationviewForm"
+			type="org.springframework.web.struts.DelegatingActionProxy">
+			<forward name="view"
+				path="/WEB-INF/web/jsp/consultationView/consultationView.jsp">
+			</forward>
+			<forward name="save"
+				path="/consultationSLWaitListAction.do?method=list">
+			</forward>
+			<forward name="zb"
+				path="/consultationSLProcessListAction.do?method=list">
+			</forward>
+			<forward name="idea"
+				path="/consultationSLProcessListAction.do?method=list">
+			</forward>
+			<forward name="reply"
+				path="/consultationSLOverListAction.do?method=list">
+			</forward>
+		</action>
+		<!--网上投诉-->
+		<action path="/appealSLWaitListAction"
+			name="appealSLWaitListForm" parameter="method" scope="request"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			input="/WEB-INF/web/jsp/appeal/appealslwaitlist.jsp">
+			<forward name="appealslwaitlist"
+				path="/WEB-INF/web/jsp/appeal/appealslwaitlist.jsp">
+			</forward>
+			<forward name="success"
+				path="/appealSLWaitListAction.do?method=list" redirect="true">
+			</forward>
+			<forward name="trunToPage"
+				path="/WEB-INF/web/jsp/appeal/appealslwaitlist.jsp">
+			</forward>
+		</action>
+		<action path="/appealSLProcessListAction"
+			name="appealSLProcessListForm" parameter="method" scope="request"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			input="/WEB-INF/web/jsp/appeal/appealslprocesslist.jsp">
+			<forward name="appealslprocesslist"
+				path="/WEB-INF/web/jsp/appeal/appealslprocesslist.jsp">
+			</forward>
+			<forward name="success"
+				path="/appealSLProcessListAction.do?method=list" redirect="true">
+			</forward>
+			<forward name="trunToPage"
+				path="/WEB-INF/web/jsp/appeal/appealslprocesslist.jsp">
+			</forward>
+		</action>
+		<action path="/appealSLOverListAction"
+			name="appealSLOverListForm" parameter="method" scope="request"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			input="/WEB-INF/web/jsp/appeal/appealsloverlist.jsp">
+			<forward name="appealsloverlist"
+				path="/WEB-INF/web/jsp/appeal/appealsloverlist.jsp">
+			</forward>
+			<forward name="success"
+				path="/appealSLOverListAction.do?method=list" redirect="true">
+			</forward>
+			<forward name="trunToPage"
+				path="/WEB-INF/web/jsp/appeal/appealsloverlist.jsp">
+			</forward>
+		</action>
+		<action path="/appealWaitListAction" name="appealWaitListForm"
+			parameter="method" scope="request"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			input="/WEB-INF/web/jsp/appeal/appealwaitlist.jsp">
+			<forward name="appealwaitlist"
+				path="/WEB-INF/web/jsp/appeal/appealwaitlist.jsp">
+			</forward>
+			<forward name="success"
+				path="/appealWaitListAction.do?method=list" redirect="true">
+			</forward>
+			<forward name="trunToPage"
+				path="/WEB-INF/web/jsp/appeal/appealwaitlist.jsp">
+			</forward>
+		</action>
+		<action path="/appealOverListAction" name="appealOverListForm"
+			parameter="method" scope="request"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			input="/WEB-INF/web/jsp/appeal/appealoverlist.jsp">
+			<forward name="appealoverlist"
+				path="/WEB-INF/web/jsp/appeal/appealoverlist.jsp">
+			</forward>
+			<forward name="success"
+				path="/appealOverListAction.do?method=list" redirect="true">
+			</forward>
+			<forward name="trunToPage"
+				path="/WEB-INF/web/jsp/appeal/appealoverlist.jsp">
+			</forward>
+		</action>
+		<!--局长信箱-->
+		<action path="/opinionSLWaitListAction"
+			name="opinionSLWaitListForm" parameter="method" scope="request"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			input="/WEB-INF/web/jsp/opinion/opinionslwaitlist.jsp">
+			<forward name="opinionslwaitlist"
+				path="/WEB-INF/web/jsp/opinion/opinionslwaitlist.jsp">
+			</forward>
+			<forward name="success"
+				path="/opinionSLWaitListAction.do?method=list" redirect="true">
+			</forward>
+			<forward name="trunToPage"
+				path="/WEB-INF/web/jsp/opinion/opinionslwaitlist.jsp">
+			</forward>
+		</action>
+		<action path="/opinionSLProcessListAction"
+			name="opinionSLProcessListForm" parameter="method" scope="request"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			input="/WEB-INF/web/jsp/opinion/opinionslprocesslist.jsp">
+			<forward name="opinionslprocesslist"
+				path="/WEB-INF/web/jsp/opinion/opinionslprocesslist.jsp">
+			</forward>
+			<forward name="success"
+				path="/opinionSLProcessListAction.do?method=list" redirect="true">
+			</forward>
+			<forward name="trunToPage"
+				path="/WEB-INF/web/jsp/opinion/opinionslprocesslist.jsp">
+			</forward>
+		</action>
+		<action path="/opinionSLOverListAction"
+			name="opinionSLOverListForm" parameter="method" scope="request"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			input="/WEB-INF/web/jsp/opinion/opinionsloverlist.jsp">
+			<forward name="opinionsloverlist"
+				path="/WEB-INF/web/jsp/opinion/opinionsloverlist.jsp">
+			</forward>
+			<forward name="success"
+				path="/opinionSLOverListAction.do?method=list" redirect="true">
+			</forward>
+			<forward name="trunToPage"
+				path="/WEB-INF/web/jsp/opinion/opinionsloverlist.jsp">
+			</forward>
+		</action>
+		<action path="/opinionWaitListAction" name="opinionWaitListForm"
+			parameter="method" scope="request"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			input="/WEB-INF/web/jsp/opinion/opinionwaitlist.jsp">
+			<forward name="opinionwaitlist"
+				path="/WEB-INF/web/jsp/opinion/opinionwaitlist.jsp">
+			</forward>
+			<forward name="success"
+				path="/opinionWaitListAction.do?method=list" redirect="true">
+			</forward>
+			<forward name="trunToPage"
+				path="/WEB-INF/web/jsp/opinion/opinionwaitlist.jsp">
+			</forward>
+		</action>
+		<action path="/opinionOverListAction" name="opinionOverListForm"
+			parameter="method" scope="request"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			input="/WEB-INF/web/jsp/opinion/opinionoverlist.jsp">
+			<forward name="opinionoverlist"
+				path="/WEB-INF/web/jsp/opinion/opinionoverlist.jsp">
+			</forward>
+			<forward name="success"
+				path="/opinionOverListAction.do?method=list" redirect="true">
+			</forward>
+			<forward name="trunToPage"
+				path="/WEB-INF/web/jsp/opinion/opinionoverlist.jsp">
+			</forward>
+		</action>
+		<action name="docRecBookForm" path="/docrecBook" scope="request"
+			type="org.springframework.web.struts.DelegatingActionProxy">
+			<forward name="goInput"
+				path="/WEB-INF/web/jsp/docrec/book.jsp">
+			</forward>
+			<!-- 收文管理中各列表路径 -->
+			<forward name="newAndDisposingList"
+				path="/docRecListAction.do?method=newAndDisposingList"
+				redirect="true" />
+			<forward name="disposedList"
+				path="/docRecListAction.do?method=disposedList" redirect="true" />
+			<forward name="bookingList"
+				path="/docRecListAction.do?method=bookingList" redirect="true" />
+		</action>
+		<!-- 收文管理 列表 -->
+		<action path="/docRecListAction" scope="request"
+			parameter="method"
+			type="org.springframework.web.struts.DelegatingActionProxy">
+			<forward name="newAndDisposingList"
+				path="/WEB-INF/web/jsp/docrec/newAnddoDoclist.jsp">
+			</forward>
+			<forward name="newReceiveList"
+				path="/WEB-INF/web/jsp/docrec/newReceiveList.jsp">
+			</forward>
+			<forward name="disposingList"
+				path="/WEB-INF/web/jsp/docrec/disposingList.jsp">
+			</forward>
+			<forward name="canMonitorList"
+				path="/WEB-INF/web/jsp/docrec/canMonitorList.jsp">
+			</forward>
+			<forward name="disposedList"
+				path="/WEB-INF/web/jsp/docrec/disposedList.jsp">
+			</forward>
+			<forward name="bookingList"
+				path="/WEB-INF/web/jsp/docrec/bookingList.jsp">
+			</forward>
+		</action>
+		<action path="/docRecRelateAction" scope="request"
+			parameter="method" name="docRecBookForm"
+			type="org.springframework.web.struts.DelegatingActionProxy">
+			<forward name="argueNotice"
+				path="/WEB-INF/web/jsp/docrec/argue.jsp">
+			</forward>
+			<forward name="receiveDocView"
+				path="/WEB-INF/web/jsp/docrec/receiveDocView.jsp">
+			</forward>
+			<forward name="lcljd"
+				path="/WEB-INF/web/jsp/docrec/lcljd.jsp">
+			</forward>
+			<forward name="argueSuccess"
+				path="/docRecListAction.do?method=disposedList" redirect="true">
+			</forward>
+			<forward name="disposingList"
+				path="/docRecListAction.do?method=disposingList" />
+			<forward name="chargerLeader"
+				path="/WEB-INF/web/jsp/docsend/chargerLeader.jsp" />
+		</action>
+		<action attribute="docRecBookForm" name="docRecBookForm"
+			path="/docRecDispose" scope="request"
+			type="org.springframework.web.struts.DelegatingActionProxy">
+			<forward name="goInput"
+				path="/WEB-INF/web/jsp/docrec/dispose.jsp">
+			</forward>
+			<!-- 收文管理中各列表路径 -->
+			<forward name="newAndDisposingList"
+				path="/docRecListAction.do?method=newAndDisposingList"
+				redirect="true" />
+			<forward name="disposedList"
+				path="/docRecListAction.do?method=disposedList" redirect="true" />
+			<forward name="bookingList"
+				path="/docRecListAction.do?method=bookingList" redirect="true" />
+		</action>
+		<action attribute="docRecBookForm" name="docRecBookForm"
+			path="/docRecLeader" scope="request"
+			type="org.springframework.web.struts.DelegatingActionProxy">
+			<forward name="goInput"
+				path="/WEB-INF/web/jsp/docrec/leader.jsp">
+			</forward>
+			<!-- 收文管理中各列表路径 -->
+			<forward name="newAndDisposingList"
+				path="/docRecListAction.do?method=newAndDisposingList"
+				redirect="true" />
+			<forward name="disposedList"
+				path="/docRecListAction.do?method=disposedList" redirect="true" />
+			<forward name="bookingList"
+				path="/docRecListAction.do?method=bookingList" redirect="true" />
+		</action>
+		<action attribute="docRecBookForm" name="docRecBookForm"
+			path="/docRecMainDept" scope="request"
+			type="org.springframework.web.struts.DelegatingActionProxy">
+			<forward name="goInput"
+				path="/WEB-INF/web/jsp/docrec/main_dept.jsp">
+			</forward>
+			<forward name="success"
+				path="/WEB-INF/web/jsp/docrec/main_dept_select.jsp">
+			</forward>
+			<!-- 收文管理中各列表路径 -->
+			<forward name="newAndDisposingList"
+				path="/docRecListAction.do?method=newAndDisposingList"
+				redirect="true" />
+			<forward name="disposedList"
+				path="/docRecListAction.do?method=disposedList" redirect="true" />
+			<forward name="bookingList"
+				path="/docRecListAction.do?method=bookingList" redirect="true" />
+		</action>
+		<action attribute="docRecBookForm" name="docRecBookForm"
+			path="/docRecPerson" scope="request"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			validate="false">
+			<forward name="goInput"
+				path="/WEB-INF/web/jsp/docrec/person.jsp">
+			</forward>
+			<!-- 收文管理中各列表路径 -->
+			<forward name="newAndDisposingList"
+				path="/docRecListAction.do?method=newAndDisposingList"
+				redirect="true" />
+			<forward name="disposedList"
+				path="/docRecListAction.do?method=disposedList" redirect="true" />
+			<forward name="bookingList"
+				path="/docRecListAction.do?method=bookingList" redirect="true" />
+		</action>
+		<action attribute="docRecBookForm" name="docRecBookForm"
+			path="/docRecReadonly" scope="request"
+			type="org.springframework.web.struts.DelegatingActionProxy">
+			<forward name="goInput"
+				path="/WEB-INF/web/jsp/docrec/readonly.jsp">
+			</forward>
+			<!-- 收文管理中各列表路径 -->
+			<forward name="newAndDisposingList"
+				path="/docRecListAction.do?method=newAndDisposingList"
+				redirect="true" />
+			<forward name="disposedList"
+				path="/docRecListAction.do?method=disposedList" redirect="true" />
+			<forward name="bookingList"
+				path="/docRecListAction.do?method=bookingList" redirect="true" />
+		</action>
+		<action path="/docAttach"
+			type="org.springframework.web.struts.DelegatingActionProxy">
+			<forward name="error"
+				path="/WEB-INF/web/jsp/doc/error.jsp">
+			</forward>
+			<forward name="goDocContext"
+				path="/WEB-INF/web/jsp/doc/test.jsp">
+			</forward>
+		</action>
+		<action attribute="docRecBookForm" name="docRecBookForm"
+			path="/docrecwritedeal" scope="request"
+			type="org.springframework.web.struts.DelegatingActionProxy">
+			<forward name="goInput"
+				path="/WEB-INF/web/jsp/docrec/write_deal.jsp">
+			</forward>
+			<!-- 收文管理中各列表路径 -->
+			<forward name="newAndDisposingList"
+				path="/docRecListAction.do?method=newAndDisposingList"
+				redirect="true" />
+			<forward name="disposedList"
+				path="/docRecListAction.do?method=disposedList" redirect="true" />
+			<forward name="bookingList"
+				path="/docRecListAction.do?method=bookingList" redirect="true" />
+		</action>
+
+		<!-- 网上投诉 -->
+		<action path="/appealView" scope="request" parameter="method"
+			name="consultationviewForm"
+			type="org.springframework.web.struts.DelegatingActionProxy">
+			<forward name="view"
+				path="/WEB-INF/web/jsp/appealView/appealView.jsp">
+			</forward>
+			<forward name="save"
+				path="/appealSLWaitListAction.do?method=list">
+			</forward>
+			<forward name="zb"
+				path="/appealSLProcessListAction.do?method=list">
+			</forward>
+			<forward name="idea"
+				path="/appealSLProcessListAction.do?method=list">
+			</forward>
+			<forward name="reply"
+				path="/appealSLOverListAction.do?method=list">
+			</forward>
+		</action>
+		<!-- 共享文件 -->
+		<action path="/shareFileListAction" name="shareFileListForm"
+			parameter="method" scope="request"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			input="/WEB-INF/web/jsp/sharefilelist/sharefilelist.jsp">
+			<forward name="sharefilelist"
+				path="/WEB-INF/web/jsp/sharefilelist/sharefilelist.jsp">
+			</forward>
+			<forward name="success"
+				path="/shareFileListAction.do?method=list&amp;type=1"
+				redirect="true">
+			</forward>
+			<forward name="trunToPage"
+				path="/WEB-INF/web/jsp/sharefilelist/sharefilelist.jsp">
+			</forward>
+		</action>
+
+		<!-- 共享空间 -->
+		<action path="/sharefileEdit" scope="request"
+			name="sharefileForm"
+			type="org.springframework.web.struts.DelegatingActionProxy">
+			<forward name="error"
+				path="/WEB-INF/web/jsp/archivesEdit/error.jsp">
+			</forward>
+			<forward name="add"
+				path="/WEB-INF/web/jsp/sharefileEdit/sharefileEdit.jsp">
+			</forward>
+			<forward name="success"
+				path="/shareFileListAction.do?method=list&amp;type=1">
+			</forward>
+		</action>
+		<!-- 发文管理 -->
+		<action input="/WEB-INF/web/jsp/docsend/sign.jsp"
+			path="/docSendSign" scope="request" name="docSendForm"
+			type="org.springframework.web.struts.DelegatingActionProxy">
+			<forward name="goInput"
+				path="/WEB-INF/web/jsp/docsend/sign.jsp" />
+			<forward name="disposedList"
+				path="/docSendRelatedAction.do?method=docSendList&amp;type=0" />
+			<forward name="newAndDoing"
+				path="/docSendRelatedAction.do?method=docSendList&amp;type=newAndDoing" />
+		</action>
+		<action input="/WEB-INF/web/jsp/docsend/book.jsp"
+			path="/docSendBook" scope="request" name="docSendForm"
+			type="org.springframework.web.struts.DelegatingActionProxy">
+			<forward name="goInput"
+				path="/WEB-INF/web/jsp/docsend/book.jsp" />
+			<forward name="add"
+				path="/docSendRelatedAction.do?method=docSendList&amp;type=0"
+				redirect="true" />
+			<forward name="addTemp"
+				path="/docSendRelatedAction.do?method=docSendList&amp;type=3"
+				redirect="true" />
+		</action>
+		<action input="/WEB-INF/web/jsp/docsend/charger.jsp"
+			path="/docSendCharger" scope="request" name="docSendForm"
+			type="org.springframework.web.struts.DelegatingActionProxy">
+			<forward name="goInput"
+				path="/WEB-INF/web/jsp/docsend/charger.jsp" />
+			<forward name="disposedList"
+				path="/docSendRelatedAction.do?method=docSendList&amp;type=0" />
+		</action>
+		<action input="/WEB-INF/web/jsp/docsend/officer.jsp"
+			path="/docSendOfficer" scope="request" name="docSendForm"
+			type="org.springframework.web.struts.DelegatingActionProxy">
+			<forward name="goInput"
+				path="/WEB-INF/web/jsp/docsend/officer.jsp" />
+			<forward name="disposedList"
+				path="/docSendRelatedAction.do?method=docSendList&amp;type=0" />
+		</action>
+		<action input="/WEB-INF/web/jsp/docsend/printer.jsp"
+			path="/docSendPrinter" scope="request" name="docSendForm"
+			type="org.springframework.web.struts.DelegatingActionProxy">
+			<forward name="goInput"
+				path="/WEB-INF/web/jsp/docsend/printer.jsp" />
+			<forward name="disposedList"
+				path="/docSendRelatedAction.do?method=docSendList&amp;type=0" />
+		</action>
+    <action
+      input="/WEB-INF/web/jsp/docsend/draft.jsp"
+      path="/docSendDraft" scope="request"
+      name="docSendForm"
+      type="org.springframework.web.struts.DelegatingActionProxy">
+      <forward name="goInput" path="/WEB-INF/web/jsp/docsend/draft.jsp" />
+      <forward name="disposedList" path="/docSendRelatedAction.do?method=docSendList&amp;type=0" />
+    </action>
+    <action
+      input="/WEB-INF/web/jsp/docsend/signsend.jsp"
+      path="/docSendSignsend" scope="request"
+      name="docSendForm"
+      type="org.springframework.web.struts.DelegatingActionProxy">
+      <forward name="goInput" path="/WEB-INF/web/jsp/docsend/signsend.jsp" />
+      <forward name="disposedList" path="/docSendRelatedAction.do?method=docSendList&amp;type=0" />
+    </action>
+		<action path="/docSendRelatedAction" scope="request"
+			parameter="method" name="docSendForm"
+			type="org.springframework.web.struts.DelegatingActionProxy">
+			<forward name="docSendList"
+				path="/WEB-INF/web/jsp/docsend/docSendlist.jsp">
+			</forward>
+			<forward name="lcnzjd"
+				path="/WEB-INF/web/jsp/docsend/lcljd.jsp">
+			</forward>
+			<forward name="argueNoticeS"
+				path="/WEB-INF/web/jsp/docsend/argue.jsp">
+			</forward>
+			<forward name="chargerLeader"
+				path="/WEB-INF/web/jsp/docsend/chargerLeader.jsp">
+			</forward>
+			<forward name="docSendView"
+				path="/WEB-INF/web/jsp/docsend/view.jsp">
+			</forward>
+			<forward name="deptSel"
+				path="/WEB-INF/web/jsp/docsend/deptSelect.jsp">
+			</forward>
+			<forward name="mainTitle"
+				path="/WEB-INF/web/jsp/docsend/zhutici.jsp">
+			</forward>
+			<forward name="turnback"
+				path="/WEB-INF/web/jsp/docsend/turnback.jsp">
+			</forward>
+			<forward name="trunToPage"
+				path="/WEB-INF/web/jsp/docsend/docSendlist.jsp" />
+		</action>
+		<!-- 网上投诉 -->
+		<action path="/opinionView" scope="request" parameter="method"
+			name="consultationviewForm"
+			type="org.springframework.web.struts.DelegatingActionProxy">
+			<forward name="view"
+				path="/WEB-INF/web/jsp/opinionView/opinionView.jsp">
+			</forward>
+			<forward name="save"
+				path="/opinionSLWaitListAction.do?method=list">
+			</forward>
+			<forward name="zb"
+				path="/opinionSLProcessListAction.do?method=list">
+			</forward>
+			<forward name="idea"
+				path="/opinionSLProcessListAction.do?method=list">
+			</forward>
+			<forward name="reply"
+				path="/opinionSLOverListAction.do?method=list">
+			</forward>
+		</action>
+		<action path="/mailAction" scope="request"
+			name="/mailActionForm"
+			type="org.springframework.web.struts.DelegatingActionProxy">
+		</action>
+		<!-- 发文管理 -->
+		<action input="/WEB-INF/web/jsp/docsend/infocenter/book.jsp"
+			path="/xdocSendBook" scope="request" name="xdocSendForm"
+			type="org.springframework.web.struts.DelegatingActionProxy">
+			<forward name="goInput"
+				path="/WEB-INF/web/jsp/docsend/infocenter/book.jsp" />
+			<forward name="add"
+				path="/xdocSendRelatedAction.do?method=docSendList&amp;type=0"
+				redirect="true" />
+			<forward name="addTemp"
+				path="/xdocSendRelatedAction.do?method=docSendList&amp;type=3"
+				redirect="true" />
+		</action>
+		<action input="/WEB-INF/web/jsp/docsend/infocenter/charger.jsp"
+			path="/xdocSendCharger" scope="request" name="xdocSendForm"
+			type="org.springframework.web.struts.DelegatingActionProxy">
+			<forward name="goInput"
+				path="/WEB-INF/web/jsp/docsend/infocenter/charger.jsp" />
+			<forward name="disposedList"
+				path="/xdocSendRelatedAction.do?method=docSendList&amp;type=0" />
+		</action>
+		<action input="/WEB-INF/web/jsp/docsend/infocenter/leader.jsp"
+			path="/xdocSendLeader" scope="request" name="xdocSendForm"
+			type="org.springframework.web.struts.DelegatingActionProxy">
+			<forward name="goInput"
+				path="/WEB-INF/web/jsp/docsend/infocenter/leader.jsp" />
+			<forward name="disposedList"
+				path="/xdocSendRelatedAction.do?method=docSendList&amp;type=0" />
+			<forward name="newAndDoing"
+				path="/xdocSendRelatedAction.do?method=docSendList&amp;type=newAndDoing" />
+		</action>
+		<action input="/WEB-INF/web/jsp/docsend/infocenter/printer.jsp"
+			path="/xdocSendPrinter" scope="request" name="xdocSendForm"
+			type="org.springframework.web.struts.DelegatingActionProxy">
+			<forward name="goInput"
+				path="/WEB-INF/web/jsp/docsend/infocenter/printer.jsp" />
+			<forward name="disposedList"
+				path="/xdocSendRelatedAction.do?method=docSendList&amp;type=0" />
+		</action>
+		<action path="/xdocSendRelatedAction" scope="request"
+			parameter="method" name="xdocSendForm"
+			type="org.springframework.web.struts.DelegatingActionProxy">
+			<forward name="docSendList"
+				path="/WEB-INF/web/jsp/docsend/infocenter/docSendlist.jsp">
+			</forward>
+			<forward name="argueNoticeS"
+				path="/WEB-INF/web/jsp/docsend/argue.jsp">
+			</forward>
+			<forward name="lcnzjd"
+				path="/WEB-INF/web/jsp/docsend/infocenter/lcljd.jsp">
+			</forward>
+			<forward name="chargerLeader"
+				path="/WEB-INF/web/jsp/docsend/infocenter/chargerLeader.jsp">
+			</forward>
+			<forward name="docSendView"
+				path="/WEB-INF/web/jsp/docsend/infocenter/view.jsp">
+			</forward>
+			<forward name="turnback"
+				path="/WEB-INF/web/jsp/docsend/infocenter/turnback.jsp">
+			</forward>
+			<forward name="trunToPage"
+				path="/WEB-INF/web/jsp/docsend/infocenter/docSendlist.jsp" />
+		</action>
+
+		<action attribute="smsScheduleForm" parameter="method"
+			input="/WEB-INF/web/jsp/sendshortinfo/shortInfo.jsp"
+			name="smsScheduleForm" path="/shortInfo" scope="request"
+			type="org.springframework.web.struts.DelegatingActionProxy">
+			<forward name="list"
+				path="/WEB-INF/web/jsp/sendshortinfo/shortInfo.jsp">
+			</forward>
+			<forward name="submitForward"
+				path="/shortInfo.do?method=executeInput">
+			</forward>
+			<forward name="commonGroup"
+				path="/WEB-INF/web/jsp/sendshortinfo/commongroup.jsp" />
+			<forward name="inputCommonGroup"
+				path="/WEB-INF/web/jsp/sendshortinfo/commongroup.jsp" />
+			<forward name="inputIndualGroup"
+				path="/WEB-INF/web/jsp/sendshortinfo/indualgroup.jsp" />
+		</action>
+		<action parameter="method" scope="request"
+			input="/WEB-INF/web/jsp/sms/transfer/info.jsp"
+			path="/smsTransferInfo"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			name="smsTransferForm">
+			<forward name="goInput"
+				path="/WEB-INF/web/jsp/sms/transfer/info.jsp" />
+		</action>
+		<action parameter="method" scope="request"
+			input="/WEB-INF/web/jsp/sms/transfer/list.jsp"
+			path="/smsTransferList"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			name="smsTransferListForm">
+			<forward name="goInput"
+				path="/WEB-INF/web/jsp/sms/transfer/list.jsp" />
+			<forward name="addbook"
+				path="/WEB-INF/web/jsp/sms/transfer/addbooklist.jsp" />
+		</action>
+		<action attribute="smsSubscribeForm" parameter="method"
+			input="/WEB-INF/web/jsp/subscription/smsSubscribe.jsp"
+			name="smsSubscribeForm" path="/smsSubscribe" scope="request"
+			type="org.springframework.web.struts.DelegatingActionProxy">
+			<forward name="inputSmsSubscribe"
+				path="/WEB-INF/web/jsp/subscription/smsSubscribe.jsp" />
+			<forward name="inputSmsSubject"
+				path="/WEB-INF/web/jsp/subscription/selectitem.jsp" />
+			<forward name="inputSubjectName"
+				path="/WEB-INF/web/jsp/subscription/subjectnameitem.jsp" />
+			<forward name="trunToPage"
+				path="/WEB-INF/web/jsp/subscription/smsSubscribe.jsp" />
+			<forward name="deleteSmsSubscribe"
+				path="/WEB-INF/web/jsp/subscription/subscribeDelete.jsp"/>	
+				
+		</action>
+
+		<!-- 查询统计 -->
+		<action path="/queryStatistics" scope="request"
+			parameter="method" name="queryStatisticsForm"
+			attribute="queryStatisticsForm"
+			type="org.springframework.web.struts.DelegatingActionProxy">
+			<forward name="inputQuery"
+				path="/WEB-INF/web/jsp/query/querystatistics.jsp" />
+			<forward name="trunToPage"
+				path="/WEB-INF/web/jsp/query/querystatistics.jsp">
+			</forward>
+		</action>
+
+		<!-- 传真 -->
+		<action path="/faxSchedule" scope="request"
+			parameter="method" name="faxScheduleForm"
+			type="org.springframework.web.struts.DelegatingActionProxy">
+			<forward name="goInput"
+				path="/WEB-INF/web/jsp/fax/info.jsp" />
+			<forward name="list"
+				path="/WEB-INF/web/jsp/fax/list.jsp" />
+		</action>
+		<action path="/faxSend" scope="request"
+			parameter="method" name="faxScheduleForm"
+			type="org.springframework.web.struts.DelegatingActionProxy">
+		
+		</action>
+		<action path="/faxQuerySchedule" scope="request"
+			parameter="method" name="faxQueryScheduleForm"
+			type="org.springframework.web.struts.DelegatingActionProxy">
+			<forward name="query"
+				path="/faxQuerySchedule.do?method=query&amp;state=002" />
+			<forward name="list"
+				path="/WEB-INF/web/jsp/fax/queryStatistic.jsp" />
+			<forward name="trunToPage"
+				path="/WEB-INF/web/jsp/fax/queryStatistic.jsp" />
+		</action>
+		<!-- 公共通讯录的树 -->
+		<action path="/commonalityTree" scope="request"
+			parameter="method"
+			type="org.springframework.web.struts.DelegatingActionProxy">
+			<forward name="input"
+				path="/WEB-INF/web/jsp/common/commonality/addbookTree.jsp" />
+		</action>
+		<!-- 个人通讯录的树 -->
+		<action path="/individualTree" scope="request"
+			parameter="method"
+			type="org.springframework.web.struts.DelegatingActionProxy">
+			<forward name="input"
+				path="/WEB-INF/web/jsp/common/individual/addbookTree.jsp" />
+		</action>
+
+		<action path="/userTree" scope="request"
+			parameter="method"
+			type="org.springframework.web.struts.DelegatingActionProxy">
+			<forward name="input"
+				path="/WEB-INF/web/jsp/common/trees/userTree.jsp" />
+		</action>
+		<!-- LAYOUT -->
+		<action path="/layout" scope="request"
+			type="org.springframework.web.struts.DelegatingActionProxy">
+		</action>
+		<!-- LAYOUT -->
+		<action path="/layoutContent" scope="request"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			name="infoPublicConForm" parameter="method">
+			<forward name="content"
+				path="/WEB-INF/web/jsp/layout/content.jsp">
+			</forward>
+			<forward name="gsandpersonel"
+				path="/WEB-INF/web/jsp/layout/gsandpersonel.jsp">
+			</forward>			
+			<forward name="more"
+				path="/WEB-INF/web/jsp/layout/more.jsp">
+			</forward>
+			<forward name="turnToPage"
+				path="/WEB-INF/web/jsp/layout/more.jsp">
+			</forward>
+			<forward name="zfxxgkTurnToPage"
+				path="/WEB-INF/web/jsp/layout/zfxxgkmore.jsp">
+			</forward>			
+			<forward name="view"
+				path="/WEB-INF/web/jsp/layout/view.jsp">
+			</forward>
+			<forward name="zfxxgkview"
+				path="/WEB-INF/web/jsp/layout/zfxxgkview.jsp">
+			</forward>			
+			<forward name="djyd"
+				path="/WEB-INF/web/jsp/layout/djyd.jsp">
+			</forward>	
+			<forward name="zfxxgk"
+				path="/WEB-INF/web/jsp/layout/zfxxgk.jsp">
+			</forward>	
+			<forward name="zfxxgkmore"
+				path="/WEB-INF/web/jsp/layout/zfxxgkmore.jsp">
+			</forward>									
+		</action>		
+		<!-- 水务热线 -->
+		<action path="/swrxOverAction" scope="request"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			name="swrxForm" parameter="method">
+			<forward name="overList"
+				path="/WEB-INF/web/jsp/swrx/swrxoverlist.jsp">
+			</forward>
+			<forward name="viewCenterOver"
+				path="/WEB-INF/web/jsp/swrx/swrxOverView.jsp">
+			</forward>
+			<forward name="trunToPage"
+				path="/WEB-INF/web/jsp/swrx/swrxoverlist.jsp">
+			</forward>
+		</action>
+		<action path="/swrxProcessAction" scope="request"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			name="swrxForm" parameter="method">
+			<forward name="processList"
+				path="/WEB-INF/web/jsp/swrx/swrxprocesslist.jsp">
+			</forward>
+			<forward name="viewCenter"
+				path="/WEB-INF/web/jsp/swrx/swrxView.jsp">
+			</forward>
+			<forward name="turnToPage"
+				path="/WEB-INF/web/jsp/swrx/swrxprocesslist.jsp">
+			</forward>
+		</action>
+		<action path="/swrxWaitAction" scope="request"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			name="swrxForm" parameter="method">
+			<forward name="waitList"
+				path="/WEB-INF/web/jsp/swrx/swrxwaitlist.jsp">
+			</forward>
+			<forward name="viewCenter"
+				path="/WEB-INF/web/jsp/swrx/swrxView.jsp">
+			</forward>
+			<forward name="trunToPage"
+				path="/WEB-INF/web/jsp/swrx/swrxwaitlist.jsp">
+			</forward>
+			<forward name="processList"
+				path="/WEB-INF/web/jsp/swrx/swrxprocesslist.jsp">
+			</forward>
+			<forward name="overList"
+				path="/WEB-INF/web/jsp/swrx/swrxoverlist.jsp">
+			</forward>
+		</action>
+		<action path="/swrxZBoverAction" scope="request"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			name="swrxForm" parameter="method">
+			<forward name="overslList"
+				path="/WEB-INF/web/jsp/swrx/swrxZBoverlist.jsp">
+			</forward>
+			<forward name="viewCenterslOver"
+				path="/WEB-INF/web/jsp/swrx/swrxZBViewReadOnlysl.jsp">
+			</forward>
+			<forward name="trunToPage"
+				path="/WEB-INF/web/jsp/swrx/swrxZBoverlist.jsp">
+			</forward>
+		</action>
+		<action path="/swrxZBWaitAction" scope="request"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			name="swrxForm" parameter="method">
+			<forward name="waitslList"
+				path="/WEB-INF/web/jsp/swrx/swrxZBwaitlist.jsp">
+			</forward>
+			<forward name="trunToPage"
+				path="/WEB-INF/web/jsp/swrx/swrxZBwaitlist.jsp">
+			</forward>
+			<forward name="viewCentersl"
+				path="/WEB-INF/web/jsp/swrx/swrxZBViewReadOnly.jsp">
+			</forward>
+			
+			<forward name="overslList"
+				path="/WEB-INF/web/jsp/swrx/swrxZBoverlist.jsp">
+			</forward>
+			<forward name="overlsList"
+				path="/WEB-INF/web/jsp/swrx/swrxZXoverlist.jsp">
+			</forward>
+			<forward name="waitlsList"
+				path="/WEB-INF/web/jsp/swrx/swrxZXwaitlist.jsp">
+			</forward>
+		</action>
+		<action path="/swrxZXOverAction" scope="request"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			name="swrxForm" parameter="method">
+			<forward name="overlsList"
+				path="/WEB-INF/web/jsp/swrx/swrxZXoverlist.jsp">
+			</forward>
+			<forward name="viewCenterlsOver"
+				path="/WEB-INF/web/jsp/swrx/swrxZXViewReadOnly.jsp">
+			</forward>
+			<forward name="trunToPage"
+				path="/WEB-INF/web/jsp/swrx/swrxZXoverlist.jsp">
+			</forward>
+			<forward name="viewCenterslOver"
+				path="/WEB-INF/web/jsp/swrx/swrxZBViewReadOnlysl.jsp">
+			</forward>
+		</action>
+		<action path="/swrxZXWaitAction" scope="request"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			name="swrxForm" parameter="method">
+			<forward name="waitlsList"
+				path="/WEB-INF/web/jsp/swrx/swrxZXwaitlist.jsp">
+			</forward>
+			<forward name="viewCenterls"
+				path="/WEB-INF/web/jsp/swrx/swrxZXViewReadOnlyls.jsp">
+			</forward>
+			<forward name="viewCentersl"
+				path="/WEB-INF/web/jsp/swrx/swrxZBViewReadOnly.jsp">
+			</forward>
+			<forward name="trunToPage"
+				path="/WEB-INF/web/jsp/swrx/swrxZXwaitlist.jsp">
+			</forward>
+			<forward name="overlsList"
+				path="/WEB-INF/web/jsp/swrx/swrxZXoverlist.jsp">
+			</forward>
+		</action>			
+		<action path="/sessionNavigation" scope="request"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			parameter="method">
+			<forward name="top" path="/top.jsp" />
+			<forward name="top_ju" path="/top_ju.jsp" />
+			<forward name="top_xxzx" path="/top_xxzx.jsp" />
+			<forward name="top_slzx" path="/top_slzx.jsp" />
+			<forward name="outlook" path="/outlook.jsp" />
+			<forward name="right" path="/right.jsp" />
+			<forward name="fail" path="/index.jsp" />
+		</action>
+		<action path="/commission" scope="request" type="org.springframework.web.struts.DelegatingActionProxy"
+			parameter="method" name="commissionForm">
+			<forward name="commlist" path="/WEB-INF/web/jsp/commission/commissionlist.jsp"></forward>
+			<forward name="becommedlist" path="/WEB-INF/web/jsp/commission/becommissionedlist.jsp"></forward>
+			<forward name="add" path="/WEB-INF/web/jsp/commission/commissionedit.jsp"></forward>
+			<forward name="view" path="/WEB-INF/web/jsp/commission/commissionview.jsp"></forward>
+			<forward name="trunToPage" path="/WEB-INF/web/jsp/commission/becommissionedlist.jsp"></forward>
+			<forward name="userTree" path="/WEB-INF/web/jsp/commission/userTreeSelect.jsp"></forward>
+		</action>
+	<!-- 科研管理 -->
+		<action path="/techDiscoure" scope="request" type="org.springframework.web.struts.DelegatingActionProxy"
+			parameter="method" name="techDiscoureForm">
+			<forward name="info" path="/WEB-INF/web/jsp/techmanage/discoure/info.jsp"></forward>
+			<forward name="list" path="/WEB-INF/web/jsp/techmanage/discoure/list.jsp"></forward>
+			<forward name="trunToPage" path="/WEB-INF/web/jsp/techmanage/discoure/list.jsp"></forward>
+		</action>
+		<action path="/techMapShare" scope="request" type="org.springframework.web.struts.DelegatingActionProxy"
+			parameter="method" name="techMapShareForm">
+			<forward name="info" path="/WEB-INF/web/jsp/techmanage/mapshare/info.jsp"></forward>
+			<forward name="list" path="/WEB-INF/web/jsp/techmanage/mapshare/list.jsp"></forward>
+			<forward name="trunToPage" path="/WEB-INF/web/jsp/techmanage/mapshare/list.jsp"></forward>
+		</action>
+		<action path="/techStandard" scope="request" type="org.springframework.web.struts.DelegatingActionProxy"
+			parameter="method" name="techStandardForm">
+			<forward name="info" path="/WEB-INF/web/jsp/techmanage/standard/info.jsp"></forward>
+			<forward name="list" path="/WEB-INF/web/jsp/techmanage/standard/list.jsp"></forward>
+			<forward name="trunToPage" path="/WEB-INF/web/jsp/techmanage/standard/list.jsp"></forward>
+		</action>
+		<action path="/techResult" scope="request" type="org.springframework.web.struts.DelegatingActionProxy"
+			parameter="method" name="techResultForm">
+			<forward name="info" path="/WEB-INF/web/jsp/techmanage/techresult/info.jsp"></forward>
+			<forward name="list" path="/WEB-INF/web/jsp/techmanage/techresult/list.jsp"></forward>
+			<forward name="trunToPage" path="/WEB-INF/web/jsp/techmanage/techresult/list.jsp"></forward>
+		</action>
+		<action path="/warningPub" scope="request" type="org.springframework.web.struts.DelegatingActionProxy"
+			parameter="method" name="warningPubForm">
+			<forward name="info" path="/WEB-INF/web/jsp/warningpub/info.jsp"></forward>
+			<forward name="list" path="/WEB-INF/web/jsp/warningpub/list.jsp"></forward>
+			<forward name="trunToPage" path="/WEB-INF/web/jsp/warningpub/list.jsp"></forward>
+		</action>		
+	</action-mappings>
+</struts-config>
+

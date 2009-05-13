@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlowViewLayout Version="1.2">
+  <StrutsActivity path="/tbZwWeekSecheduleAction.do" location="1101,148" dimension="358,84" />
+  <StrutsActivity path="/WEB-INF/web/jsp/weeksechedule/weekSechedulelist.jsp" location="0,352" dimension="352,48" />
+  <StrutsActivity path="/WEB-INF/web/jsp/weeksechedule/weekSecheduleedit.jsp" location="452,352" dimension="352,48" />
+  <StrutsActivity path="/WEB-INF/web/jsp/weeksechedule/selectUser.jsp" location="904,352" dimension="310,48" />
+  <StrutsActivity path="/WEB-INF/web/jsp/weeksechedule/bossweekSechedulelist.jsp" location="1314,352" dimension="376,48" />
+  <StrutsActivity path="/WEB-INF/web/jsp/weeksechedule/secheduleedit.jsp" location="1790,352" dimension="328,48" />
+  <StrutsActivity path="/WEB-INF/web/jsp/weeksechedule/daySechedulelist.jsp" location="2218,352" dimension="346,48" />
+  <StrutsActivity path="/WEB-INF/web/jsp/weeksechedule/weeklistedit.jsp" location="1209,0" dimension="322,48" />
+  <StrutsTransition id="/tbZwWeekSecheduleAction.do,success,/tbZwWeekSecheduleAction.do,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1191,148" />
+      <AbsolutePoint location="1191,118" />
+      <AbsolutePoint location="1071,118" />
+      <AbsolutePoint location="1071,190" />
+      <AbsolutePoint location="1101,190" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/tbZwWeekSecheduleAction.do,add,/WEB-INF/web/jsp/weeksechedule/weekSecheduleedit.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1191,232" />
+      <AbsolutePoint location="1191,292" />
+      <AbsolutePoint location="628,292" />
+      <AbsolutePoint location="628,352" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/tbZwWeekSecheduleAction.do,addSechedule,/WEB-INF/web/jsp/weeksechedule/secheduleedit.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1370,232" />
+      <AbsolutePoint location="1370,292" />
+      <AbsolutePoint location="1954,292" />
+      <AbsolutePoint location="1954,352" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/tbZwWeekSecheduleAction.do,selectuser,/WEB-INF/web/jsp/weeksechedule/selectUser.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1250,232" />
+      <AbsolutePoint location="1250,322" />
+      <AbsolutePoint location="1059,322" />
+      <AbsolutePoint location="1059,352" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/tbZwWeekSecheduleAction.do,list,/WEB-INF/web/jsp/weeksechedule/weekSechedulelist.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1131,232" />
+      <AbsolutePoint location="1131,262" />
+      <AbsolutePoint location="176,262" />
+      <AbsolutePoint location="176,352" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/WEB-INF/web/jsp/weeksechedule/weeklistedit.jsp,null,/tbZwWeekSecheduleAction.do,2" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1370,48" />
+      <AbsolutePoint location="1370,148" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/tbZwWeekSecheduleAction.do,daylist,/WEB-INF/web/jsp/weeksechedule/daySechedulelist.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1429,232" />
+      <AbsolutePoint location="1429,262" />
+      <AbsolutePoint location="2391,262" />
+      <AbsolutePoint location="2391,352" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/tbZwWeekSecheduleAction.do,bosslist,/WEB-INF/web/jsp/weeksechedule/bossweekSechedulelist.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1310,232" />
+      <AbsolutePoint location="1310,322" />
+      <AbsolutePoint location="1502,322" />
+      <AbsolutePoint location="1502,352" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+</FlowViewLayout>
+

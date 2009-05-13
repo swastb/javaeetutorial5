@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans SYSTEM "D://spring-beans.dtd">
+<beans>
+	<!-- 协同办公管理模块ActionBean -->
+
+
+	<!-- 一周日程 -->
+	<bean id="tbZwWeekSecheduleMgr"
+		class="com.baosight.base.service.impl.TbZwWeekSecheduleMgrImpl">
+		<property name="tbZwWeekSecheduleDAO">
+			<ref bean="tbZwWeekSecheduleDAO" />
+		</property>
+		<property name="tbUserDAO">
+			<ref bean="tbUserDAO" />
+		</property>
+		<property name="tbDeptDAO">
+			<ref bean="tbDeptDAO" />
+		</property>
+		<property name="tbUserdeptDAO">
+			<ref bean="tbUserdeptDAO" />
+		</property>
+		<property name="tbMeetingDAO">
+			<ref bean="tbMeetingDAO" />
+		</property>
+	</bean>
+
+</beans>

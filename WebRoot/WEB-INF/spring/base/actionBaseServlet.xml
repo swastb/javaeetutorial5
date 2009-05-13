@@ -1,0 +1,1868 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans SYSTEM "D://spring-beans.dtd">
+<beans>
+	<bean name="/login" class="com.baosight.struts.action.LoginAction"
+		singleton="false">
+		<property name="userMgr">
+			<ref bean="userMgr" />
+		</property>
+		<property name="functionMgr">
+			<ref bean="functionMgr" />
+		</property>
+		<property name="appSysMgr">
+			<ref bean="appSysMgr" />
+		</property>
+		<property name="deptMgr">
+			<ref bean="deptMgr" />
+		</property>		
+	</bean>
+	<bean name="/loginSSL" class="com.baosight.struts.action.LoginAction"
+		singleton="false">
+		<property name="userMgr">
+			<ref bean="userMgr" />
+		</property>
+		<property name="functionMgr">
+			<ref bean="functionMgr" />
+		</property>
+		<property name="appSysMgr">
+			<ref bean="appSysMgr" />
+		</property>
+	</bean>	
+	<bean name="/autologin" class="com.baosight.struts.action.AutoLoginAction"
+		singleton="false">
+		<property name="userMgr">
+			<ref bean="userMgr" />
+		</property>
+		<property name="functionMgr">
+			<ref bean="functionMgr" />
+		</property>
+		<property name="deptMgr">
+			<ref bean="deptMgr" />
+		</property>
+	</bean>		
+	<bean name="/test" class="com.baosight.struts.action.TestAction"
+		singleton="false">
+	</bean>
+	<!-- 职务等级管理Action -->
+	<bean name="/pstlvlaction"
+		class="com.baosight.base.struts.action.PstlvlAction"
+		singleton="false">
+		<property name="pstlvlMgr">
+			<ref bean="pstlvlMgr" />
+		</property>
+	</bean>
+	<!-- 权限类型管理Action -->
+	<bean name="/righttypeaction"
+		class="com.baosight.base.struts.action.RightTypeAction"
+		singleton="false">
+		<property name="rightTypeMgr">
+			<ref bean="rightTypeMgr" />
+		</property>
+		<property name="functionMgr">
+			<ref bean="functionMgr" />
+		</property>
+		<property name="appSysMgr">
+			<ref bean="appSysMgr" />
+		</property>
+	</bean>
+	<!-- 用户等级管理Action -->
+	<bean name="/userlvlaction"
+		class="com.baosight.base.struts.action.UserlvlAction"
+		singleton="false">
+		<property name="userlvlMgr">
+			<ref bean="userlvlMgr" />
+		</property>
+	</bean>
+	<!-- 功能资源管理 start-->
+	<!-- 资源功能跳转-->
+	<bean name="/base/function/forwardFunction"
+		class="com.baosight.base.function.struts.action.ForwardFunctionAction"
+		singleton="false">
+		<property name="functionMgr">
+			<ref bean="functionMgr" />
+		</property>
+		<property name="appSysMgr">
+			<ref bean="appSysMgr" />
+		</property>
+	</bean>
+	<!-- 功能资源管理 end-->
+	<!-- 角色管理Action -->
+	<bean name="/roleaction"
+		class="com.baosight.base.struts.action.RoleAction"
+		singleton="false">
+		<property name="roleMgr">
+			<ref bean="roleMgr" />
+		</property>
+	</bean>
+	<!-- 组管理Action -->
+	<bean name="/groupaction"
+		class="com.baosight.base.struts.action.GroupAction"
+		singleton="false">
+		<property name="groupMgr">
+			<ref bean="groupMgr" />
+		</property>
+	</bean>
+	<!-- 组织机构管理Action -->
+	<bean name="/orgmainaction"
+		class="com.baosight.base.struts.action.OrgmainAction"
+		singleton="false">
+
+	</bean>
+	<!-- 组织机构管理——左边的树 -->
+	<bean name="/orglefttreeaction"
+		class="com.baosight.base.struts.action.OrgLeftTreeAction"
+		singleton="false">
+		<property name="deptMgr">
+			<ref bean="deptMgr" />
+		</property>
+		<property name="pstMgr">
+			<ref bean="pstMgr" />
+		</property>
+		<property name="userMgr">
+			<ref bean="userMgr" />
+		</property>
+	</bean>
+	<!-- 组织机构管理——右边的详细信息 -->
+	<bean name="/orgrightdetailaction"
+		class="com.baosight.base.struts.action.OrgRightDetailAction"
+		singleton="false">
+		<property name="deptMgr">
+			<ref bean="deptMgr" />
+		</property>
+		<property name="pstMgr">
+			<ref bean="pstMgr" />
+		</property>
+		<property name="userMgr">
+			<ref bean="userMgr" />
+		</property>
+		<property name="userInfoMgr">
+			<ref bean="userInfoMgr" />
+		</property>
+		<property name="userlvlMgr">
+			<ref bean="userlvlMgr" />
+		</property>
+		<property name="authlvlMgr">
+			<ref bean="authlvlMgr" />
+		</property>
+		<property name="deptlvlMgr">
+			<ref bean="deptlvlMgr" />
+		</property>
+		<property name="pstlvlMgr">
+			<ref bean="pstlvlMgr" />
+		</property>
+		<property name="userDeptMgr">
+			<ref bean="userDeptMgr" />
+		</property>
+		<property name="userRoleMgr">
+			<ref bean="userRoleMgr" />
+		</property>
+	</bean>
+	<bean name="/deptEdit"
+		class="com.baosight.base.struts.action.OrgRightDetailAction"
+		singleton="false">
+		<property name="deptMgr">
+			<ref bean="deptMgr" />
+		</property>
+		<property name="deptlvlMgr">
+			<ref bean="deptlvlMgr" />
+		</property>
+		<property name="userDeptMgr">
+			<ref bean="userDeptMgr" />
+		</property>
+	</bean>
+	<bean name="/postEdit"
+		class="com.baosight.base.struts.action.OrgRightDetailAction"
+		singleton="false">
+		<property name="pstMgr">
+			<ref bean="pstMgr" />
+		</property>
+		<property name="pstlvlMgr">
+			<ref bean="pstlvlMgr" />
+		</property>
+	</bean>
+	<!-- 角色权限管理 start-->
+	<!-- 角色管理跳转 -->
+	<bean name="/base/roleAuth/forwardRoleAuth"
+		class="com.baosight.base.roleauth.struts.action.ForwardRoleAuthAction"
+		singleton="false">
+		<property name="functionMgr">
+			<ref bean="functionMgr" />
+		</property>
+	</bean>
+	<!-- 给角色授权资源 -->
+	<bean name="/base/roleAuth/toAuth"
+		class="com.baosight.base.roleauth.struts.action.ToAuthAction"
+		singleton="false">
+		<property name="functionMgr">
+			<ref bean="functionMgr" />
+		</property>
+	</bean>
+	<!-- 角色权限管理 end-->
+	<!-- 角色用户管理 -->
+	<bean name="/roleusermainaction"
+		class="com.baosight.base.struts.action.RoleUserAction"
+		singleton="false">
+		<property name="userRoleMgr">
+			<ref bean="userRoleMgr" />
+		</property>
+	</bean>
+	<!-- 角色用户管理 —— 左边的角色树 -->
+	<bean name="/roletreeaction"
+		class="com.baosight.base.struts.action.RoleAction"
+		singleton="false">
+		<property name="roleMgr">
+			<ref bean="roleMgr" />
+		</property>
+		<property name="userRoleMgr">
+			<ref bean="userRoleMgr" />
+		</property>
+	</bean>
+	<!-- 角色用户管理 —— 右边的组织机构数 -->
+	<bean name="/orgtreeaction"
+		class="com.baosight.base.struts.action.OrgLeftTreeAction"
+		singleton="false">
+		<property name="deptMgr">
+			<ref bean="deptMgr" />
+		</property>
+		<property name="pstMgr">
+			<ref bean="pstMgr" />
+		</property>
+		<property name="userMgr">
+			<ref bean="userMgr" />
+		</property>
+		<property name="roleMgr">
+			<ref bean="roleMgr" />
+		</property>
+		<property name="userRoleMgr">
+			<ref bean="userRoleMgr" />
+		</property>
+		
+	</bean>
+	<!-- 权限等级管理 -->
+	<bean name="/authlvlaction"
+		class="com.baosight.base.struts.action.AuthlvlAction"
+		singleton="false">
+		<property name="authlvlMgr">
+			<ref bean="authlvlMgr" />
+		</property>
+	</bean>
+	<!-- 部门等级管理 -->
+	<bean name="/deptlvlaction"
+		class="com.baosight.base.struts.action.DeptlvlAction"
+		singleton="false">
+		<property name="deptlvlMgr">
+			<ref bean="deptlvlMgr" />
+		</property>
+	</bean>
+
+	<!-- 应用系统管理 -->
+	<bean name="/allappSys"
+		class="com.baosight.base.struts.action.AppsysAction"
+		singleton="false">
+		<property name="appSysMgr">
+			<ref bean="appSysMgr" />
+		</property>
+	</bean>
+
+	<!-- CA认证 -->
+	<bean name="/base/caAuth"
+		class="com.baosight.base.struts.action.CaAuthAction"
+		singleton="false">
+		<property name="userMgr">
+			<ref bean="userMgr" />
+		</property>
+	</bean>
+
+	<!-- 节假日管理 -->
+	<bean name="/oaholidayaction"
+		class="com.baosight.base.struts.action.OaHolidayAction"
+		singleton="false">
+		<property name="oaholidayMgr">
+			<ref bean="oaholidayMgr" />
+		</property>
+	</bean>
+	<!-- 会议室管理 -->
+	<bean name="/meetingroomaction"
+		class="com.baosight.base.struts.action.MeetingroomAction"
+		singleton="false">
+		<property name="meetingRoomMgr">
+			<ref bean="meetingRoomMgr" />
+		</property>
+	</bean>
+	<!-- 会议纪要管理 -->
+	<bean name="/meetingrecordaction"
+		class="com.baosight.base.struts.action.MeetingrecordAction"
+		singleton="false">
+		<property name="meetingrecordMgr">
+			<ref bean="meetingrecordMgr" />
+		</property>
+		<property name="messagesMgr">
+			<ref bean="messagesMgr" />
+		</property>
+		<property name="userMgr">
+			<ref bean="userMgr" />
+		</property>
+		<property name="userInfoMgr">
+			<ref bean="userInfoMgr" />
+		</property>
+	</bean>
+	<!-- 一周日程 -->
+	<bean name="/tbZwWeekSecheduleAction"
+		class="com.baosight.base.struts.action.TbZwWeekSecheduleAction"
+		singleton="false">
+		<property name="tbZwWeekSecheduleMgr">
+			<ref bean="tbZwWeekSecheduleMgr" />
+		</property>
+		<property name="userMgr">
+			<ref bean="userMgr" />
+		</property>
+	</bean>
+	<!--用户部门 -->
+	<bean name="/userDeptAction"
+		class="com.baosight.base.struts.action.UserDeptAction"
+		singleton="false">
+		<property name="userDeptMgr">
+			<ref bean="userDeptMgr" />
+		</property>
+
+	</bean>
+	<!--  会议安排 -->
+	<bean name="/meetingaction"
+		class="com.baosight.base.struts.action.MeetingAction"
+		singleton="false">
+		<property name="meetingMgr">
+			<ref bean="meetingMgr" />
+		</property>
+		<property name="meetingRoomMgr">
+			<ref bean="meetingRoomMgr" />
+		</property>
+		<property name="tbZwWeekSecheduleMgr">
+			<ref bean="tbZwWeekSecheduleMgr" />
+		</property>
+	</bean>
+	<!--  公共通讯录 -->
+	<bean name="/commonalityaction"
+		class="com.baosight.base.struts.action.CommonalityAction"
+		singleton="false">
+		<property name="commonalityMgr">
+			<ref bean="commonalityMgr" />
+		</property>
+		<property name="commonalityCommMgr">
+			<ref bean="commonalityCommMgr" />
+		</property>
+	</bean>
+	<!--  公共通讯组 -->
+	<bean name="/commonalityCommAction"
+		class="com.baosight.base.struts.action.CommonalityCommAction"
+		singleton="false">
+		<property name="commonalityCommMgr">
+			<ref bean="commonalityCommMgr" />
+		</property>
+	</bean>
+	<!-- 个人通讯组管理 -->
+	<bean name="/individualcommaction"
+		class="com.baosight.base.struts.action.IndividualCommAction"
+		singleton="false">
+		<property name="individualCommMgr">
+			<ref bean="individualCommMgr" />
+		</property>
+		<property name="individualMgr">
+			<ref bean="individualMgr" />
+		</property>
+	</bean>
+	<!-- 个人通讯管理 -->
+	<bean name="/individualaction"
+		class="com.baosight.base.struts.action.IndividualAction"
+		singleton="false">
+		<property name="individualMgr">
+			<ref bean="individualMgr" />
+		</property>
+				<property name="individualCommMgr">
+			<ref bean="individualCommMgr" />
+		</property>
+	</bean>
+	<!-- 选项卡 -->
+	<bean name="/layout" class="com.baosight.layout.struts.action.LayoutAction"
+		singleton="false">
+	</bean>	
+	<!-- 选项卡 -->
+	<bean name="/layoutContent"
+		class="com.baosight.layout.struts.action.LayoutContentAction"
+		singleton="false">
+		<property name="infoPubClaMgr">
+			<ref bean="infoPubClaMgr" />
+		</property>
+		<property name="infoPubContentMgr">
+			<ref bean="infoPubContentMgr" />
+		</property>
+		<property name="userMgr">
+			<ref bean="userMgr" />
+		</property>	
+		<property name="tbZwWeekSecheduleMgr">
+			<ref bean="tbZwWeekSecheduleMgr" />
+		</property>		
+	</bean>
+		
+		<!--信息发布栏目 -->
+	<bean name="/infopubclaaction"
+		class="com.baosight.base.struts.action.InfoPubClaAction"
+		singleton="false">
+		<property name="infoPubClaMgr">
+			<ref bean="infoPubClaMgr" />
+		</property>
+		<property name="infoPubContentMgr">
+			<ref bean="infoPubContentMgr" />
+		</property>
+	</bean>
+	<!-- 信息发布内容 -->
+	<bean name="/infopubContentaction"
+		class="com.baosight.base.struts.action.InfoPubContentAction"
+		singleton="false">
+		<property name="infoPubClaMgr">
+			<ref bean="infoPubClaMgr" />
+		</property>
+		<property name="infoPubContentMgr">
+			<ref bean="infoPubContentMgr" />
+		</property>
+		<property name="deptMgr">
+			<ref bean="deptMgr" />
+		</property>
+	</bean>
+	<!-- 政府信息发布信息发布内容 -->
+	<bean name="/govinfopubContentaction"
+		class="com.baosight.base.struts.action.GovInfoPubContentAction"
+		singleton="false">
+		<property name="infoPubClaMgr">
+			<ref bean="infoPubClaMgr" />
+		</property>
+		<property name="infoPubContentMgr">
+			<ref bean="infoPubContentMgr" />
+		</property>
+		<property name="deptMgr">
+			<ref bean="deptMgr" />
+		</property>
+	</bean>	
+	<bean name="/layout" class="com.baosight.layout.struts.action.LayoutAction"
+		singleton="false">
+	</bean>	
+	
+	<!-- 行政许可 -->
+	<bean name="/applyaction"
+		class="com.baosight.base.struts.action.ApplyAction"
+		singleton="false">
+		<property name="applyMgr">
+			<ref bean="applyMgr" />
+		</property>
+	</bean>
+
+	<!-- yuanshuishujubiao -->
+	<bean name="/yuanshuishujubiaoaction"
+		class="com.baosight.base.struts.action.YuanshuishujubiaoAction"
+		singleton="false">
+		<property name="yuanshuishujubiaoMgr">
+			<ref bean="yuanshuishujubiaoMgr" />
+		</property>
+	</bean>	
+	<!-- 政府信息公开Action -->
+	<bean name="/govern" class="com.baosight.base.struts.action.GovAction"
+		singleton="false">
+		<property name="tfileMgr">
+			<ref bean="tfileMgr" />
+		</property>
+		<property name="govMgr">
+			<ref bean="govMgr" />
+		</property>
+	</bean>
+	<!-- 车辆管理Action -->
+	<bean name="/vehicles" class="com.baosight.base.struts.action.VehiclesAction"
+		singleton="false">
+		<property name="vehiclesServiceMgr">
+			<ref bean="vehiclesServiceMgr" />
+		</property>
+	</bean>	
+	<!-- 政府信息审核Action -->
+	<bean name="/infoAudit" class="com.baosight.base.struts.action.InfoAuditAtion"
+		singleton="false">
+		<property name="infoAuditMgr">
+			<ref bean="infoAuditMgr" />
+		</property>
+		<property name="tbUserOpeationMgr">
+			<ref bean="tbUserOpeationMgr" />
+		</property>
+	</bean>
+	<!-- 意见征询Action -->
+	<bean name="/opinionConsult" class="com.baosight.base.struts.action.InfoAuditAtion" 
+		singleton="false">
+		<property name="infoAuditMgr">
+			<ref bean="infoAuditMgr" />
+		</property>
+	</bean>	
+	<!-- 消息通讯Action -->
+	<bean name="/messages" class="com.baosight.base.struts.action.MessagesAction" 
+		singleton="false">
+		<property name="messagesMgr">
+			<ref bean="messagesMgr" />
+		</property>
+		<property name="tbUserOpeationMgr">
+			<ref bean="tbUserOpeationMgr" />
+		</property>	
+	</bean>
+	<bean name="/notReadMsgMessages" class="com.baosight.base.struts.action.MessagesAction" 
+		singleton="false">
+		<property name="messagesMgr">
+			<ref bean="messagesMgr" />
+		</property>
+		<property name="tbUserOpeationMgr">
+			<ref bean="tbUserOpeationMgr" />
+		</property>	
+	</bean>
+	<bean name="/sendMessages" class="com.baosight.base.struts.action.MessagesAction" 
+		singleton="false">
+		<property name="messagesMgr">
+			<ref bean="messagesMgr" />
+		</property>
+		<property name="tbUserOpeationMgr">
+			<ref bean="tbUserOpeationMgr" />
+		</property>
+	</bean>
+	<!-- 答复书5-7 Action -->
+	<bean name="/reply6" class="com.baosight.base.struts.action.ReplyAction" 
+		singleton="false">
+		<property name="replyMgr">
+			<ref bean="replyMgr" />
+		</property>
+		<property name="tbGovInfoPubMgr">
+			<ref bean="tbGovInfoPubMgr" />
+		</property>
+		<property name="infoAuditMgr">
+			<ref bean="infoAuditMgr" />
+		</property>
+		<property name="tbUserOpeationMgr">
+			<ref bean="tbUserOpeationMgr" />
+		</property>
+	</bean>	
+	<bean name="/reply5" class="com.baosight.base.struts.action.ReplyAction" 
+		singleton="false">
+		<property name="replyMgr">
+			<ref bean="replyMgr" />
+		</property>
+		<property name="tbGovInfoPubMgr">
+			<ref bean="tbGovInfoPubMgr" />
+		</property>
+		<property name="infoAuditMgr">
+			<ref bean="infoAuditMgr" />
+		</property>
+		<property name="tbUserOpeationMgr">
+			<ref bean="tbUserOpeationMgr" />
+		</property>
+	</bean>	
+	
+	<bean name="/reply7" class="com.baosight.base.struts.action.ReplyAction" 
+		singleton="false">
+		<property name="replyMgr">
+			<ref bean="replyMgr" />
+		</property>
+		<property name="tbGovInfoPubMgr">
+			<ref bean="tbGovInfoPubMgr"/>
+		</property>
+		<property name="infoAuditMgr">
+			<ref bean="infoAuditMgr" />
+		</property>
+		<property name="zfxxgkdfMgr">
+			<ref bean="zfxxgkdfMgr" />
+		</property>
+	</bean>	
+	<!-- 公开权利人信息告知单 -->	
+	<bean name="/obligeeMsg" class="com.baosight.base.struts.action.ReplyAction" 
+		singleton="false">
+		<property name="replyMgr">
+			<ref bean="replyMgr" />
+		</property>
+		<property name="tbGovInfoPubMgr">
+			<ref bean="tbGovInfoPubMgr" />
+		</property>
+		<property name="infoAuditMgr">
+			<ref bean="infoAuditMgr" />
+		</property>
+		<property name="tbUserOpeationMgr">
+			<ref bean="tbUserOpeationMgr" />
+		</property>
+	</bean>	
+	<!-- 权利人意见征询单 -->	
+	<bean name="/obligeeOpinion" class="com.baosight.base.struts.action.ReplyAction" 
+		singleton="false">
+		<property name="replyMgr">
+			<ref bean="replyMgr" />
+		</property>
+		<property name="tbGovInfoPubMgr">
+			<ref bean="tbGovInfoPubMgr" />
+		</property>
+		<property name="infoAuditMgr">
+			<ref bean="infoAuditMgr" />
+		</property>
+		<property name="tbUserOpeationMgr">
+			<ref bean="tbUserOpeationMgr" />
+		</property>
+	</bean>			
+	<!-- 待办事宜Action -->
+	<bean name="/noties" class="com.baosight.base.struts.action.NotiesAction" 
+		singleton="false">
+		<property name="notiesMgr">
+			<ref bean="notiesMgr" />
+		</property>
+	</bean>				
+	<!-- 用车申请管理Action -->
+	<bean name="/tbVehiclesApply" class="com.baosight.base.struts.action.TbVehiclesApplyAction"
+		singleton="false">
+		<property name="tbVehiclesApplyMgr">
+			<ref bean="tbVehiclesApplyMgr" />
+		</property>
+		<property name="userMgr">
+			<ref bean="userMgr" />
+		</property>
+	</bean>	
+	<!-- 用车审批管理Action -->
+	<bean name="/tbVehiclesApplyApproval" class="com.baosight.base.struts.action.TbVehiclesApplyApprovalAction"
+		singleton="false">
+		<property name="tbVehiclesApplyMgr">
+			<ref bean="tbVehiclesApplyMgr" />
+		</property>
+		<property name="userMgr">
+			<ref bean="userMgr" />
+		</property>
+		<property name="tbUserOpeationMgr">
+			<ref bean="tbUserOpeationMgr" />
+		</property>
+	</bean>
+	<!-- 待审核信息列表,请详细信息Action -->
+	<bean name="/tbGovInfoPubMain" class="com.baosight.base.struts.action.TbGovInfoPubMainAction"
+		singleton="false">
+		<property name="tbGovInfoPubAuditMgr">
+			<ref bean="tbGovInfoPubAuditMgr" />
+		</property>
+		<property name="tbGovInfoPubMgr">
+			<ref bean="tbGovInfoPubMgr" />
+		</property>
+		<property name="infoAuditMgr">
+			<ref bean="infoAuditMgr" />
+		</property>
+	</bean>	
+	<!-- 政府信息公开告知书Action -->
+	<bean name="/zfxxgkgzsaction"
+		class="com.baosight.base.struts.action.ZfxxgkgzsAction"
+		singleton="false">
+		<property name="zfxxgkgzsMgr">
+			<ref bean="zfxxgkgzsMgr" />
+		</property>
+		<property name="tbGovInfoPubAuditMgr">
+			<ref bean="tbGovInfoPubAuditMgr" />
+		</property>	
+		<property name="tbGovInfoPubMgr">
+			<ref bean="tbGovInfoPubMgr" />
+		</property>
+	</bean>	
+	<bean name="/zfxxbfgkgzsaction"
+		class="com.baosight.base.struts.action.ZfxxbfgkgzsAction"
+		singleton="false">
+		<property name="zfxxbfgkgzsMgr">
+			<ref bean="zfxxbfgkgzsMgr" />
+		</property>
+		<property name="tbGovInfoPubAuditMgr">
+			<ref bean="tbGovInfoPubAuditMgr" />
+		</property>	
+		<property name="tbGovInfoPubMgr">
+			<ref bean="tbGovInfoPubMgr" />
+		</property>		
+	</bean>	
+	<bean name="/bzsqgzsaction"
+		class="com.baosight.base.struts.action.BzsqgzsAction"
+		singleton="false">
+		<property name="bzsqgzsMgr">
+			<ref bean="bzsqgzsMgr" />
+		</property>
+		<property name="tbGovInfoPubAuditMgr">
+			<ref bean="tbGovInfoPubAuditMgr" />
+		</property>	
+		<property name="tbGovInfoPubMgr">
+			<ref bean="tbGovInfoPubMgr" />
+		</property>		
+	</bean>
+	<!-- 政府信息公开申请答复书（八） -->
+	<bean name="/zfxxgksqdfaction"
+		class="com.baosight.base.struts.action.ZfxxgksqdfAction"
+		singleton="false">
+		<property name="zfxxgksqdfMgr">
+			<ref bean="zfxxgksqdfMgr" />
+		</property>
+		<property name="tbGovInfoPubAuditMgr">
+			<ref bean="tbGovInfoPubAuditMgr" />
+		</property>	
+		<property name="tbGovInfoPubMgr">
+			<ref bean="tbGovInfoPubMgr" />
+		</property>	
+		<property name="tbUserOpeationMgr">
+			<ref bean="tbUserOpeationMgr" />
+		</property>	
+	</bean>	
+	
+	<!-- 政府信息公开申请答复书（一二和回执） -->
+	<bean name="/zfxxgkDealaction"
+		class="com.baosight.base.struts.action.ZfxxgkbdfDealAction"
+		singleton="false">
+		<property name="zfxxgkdfMgr">
+			<ref bean="zfxxgkdfMgr" />
+		</property>
+		<property name="tbGovInfoPubAuditMgr">
+			<ref bean="tbGovInfoPubAuditMgr" />
+		</property>	
+		<property name="tbGovInfoPubMgr">
+			<ref bean="tbGovInfoPubMgr" />
+		</property>
+		<property name="tbUserOpeationMgr">
+			<ref bean="tbUserOpeationMgr" />
+		</property>	
+	</bean>	
+	<!-- 政府信息公开申请答复书（三） -->
+	<bean name="/zfxxgksqdfs3action"
+		class="com.baosight.base.struts.action.Zfxxgksqdfs3Action"
+		singleton="false">
+		<property name="zfxxgksqdfs3Mgr">
+			<ref bean="zfxxgksqdfs3Mgr" />
+		</property>
+		<property name="tbGovInfoPubAuditMgr">
+			<ref bean="tbGovInfoPubAuditMgr" />
+		</property>	
+		<property name="tbGovInfoPubMgr">
+			<ref bean="tbGovInfoPubMgr" />
+		</property>	
+		<property name="tbUserOpeationMgr">
+			<ref bean="tbUserOpeationMgr" />
+		</property>	
+	</bean>	
+	
+	<!-- 政府信息公开申请答复书（四） -->
+	<bean name="/zfxxgksqdfs4action"
+		class="com.baosight.base.struts.action.Zfxxgksqdfs4Action"
+		singleton="false">
+		<property name="zfxxgksqdfs4Mgr">
+			<ref bean="zfxxgksqdfs4Mgr" />
+		</property>
+		<property name="tbGovInfoPubAuditMgr">
+			<ref bean="tbGovInfoPubAuditMgr" />
+		</property>	
+		<property name="tbGovInfoPubMgr">
+			<ref bean="tbGovInfoPubMgr" />
+		</property>	
+		<property name="tbUserOpeationMgr">
+			<ref bean="tbUserOpeationMgr" />
+		</property>	
+	</bean>	
+
+	<!-- 政府信息公开补正申请告知书 -->
+	<bean name="/zfxxgkbzsqgzsaction"
+		class="com.baosight.base.struts.action.ZfxxgkbzsqgzsAction"
+		singleton="false">
+		<property name="zfxxgkbzsqgzsMgr">
+			<ref bean="zfxxgkbzsqgzsMgr" />
+		</property>
+		<property name="tbGovInfoPubAuditMgr">
+			<ref bean="tbGovInfoPubAuditMgr" />
+		</property>	
+		<property name="tbGovInfoPubMgr">
+			<ref bean="tbGovInfoPubMgr" />
+		</property>
+		<property name="tbUserOpeationMgr">
+			<ref bean="tbUserOpeationMgr" />
+		</property>			
+	</bean>	
+
+	<!-- 政府信息公开重复申请告知书 -->
+	<bean name="/zfxxgkcfsqgzsaction"
+		class="com.baosight.base.struts.action.ZfxxgkcfsqgzsAction"
+		singleton="false">
+		<property name="zfxxgkcfsqgzsMgr">
+			<ref bean="zfxxgkcfsqgzsMgr" />
+		</property>
+		<property name="tbGovInfoPubAuditMgr">
+			<ref bean="tbGovInfoPubAuditMgr" />
+		</property>	
+		<property name="tbGovInfoPubMgr">
+			<ref bean="tbGovInfoPubMgr" />
+		</property>	
+		<property name="tbUserOpeationMgr">
+			<ref bean="tbUserOpeationMgr" />
+		</property>	
+	</bean>	
+
+	<!-- 延期答复告知书 -->
+	<bean name="/yqdfgzsaction"
+		class="com.baosight.base.struts.action.YqdfgzsAction"
+		singleton="false">
+		<property name="yqdfgzsMgr">
+			<ref bean="yqdfgzsMgr" />
+		</property>
+		<property name="tbGovInfoPubAuditMgr">
+			<ref bean="tbGovInfoPubAuditMgr" />
+		</property>	
+		<property name="tbGovInfoPubMgr">
+			<ref bean="tbGovInfoPubMgr" />
+		</property>
+		<property name="tbUserOpeationMgr">
+			<ref bean="tbUserOpeationMgr" />
+		</property>			
+	</bean>	
+
+	<!-- 非政府信息公开申请告知书 -->
+	<bean name="/fzfxxgksqgzsaction"
+		class="com.baosight.base.struts.action.FzfxxgksqgzsAction"
+		singleton="false">
+		<property name="fzfxxgksqgzsMgr">
+			<ref bean="fzfxxgksqgzsMgr" />
+		</property>
+		<property name="tbGovInfoPubAuditMgr">
+			<ref bean="tbGovInfoPubAuditMgr" />
+		</property>	
+		<property name="tbGovInfoPubMgr">
+			<ref bean="tbGovInfoPubMgr" />
+		</property>	
+		<property name="tbUserOpeationMgr">
+			<ref bean="tbUserOpeationMgr" />
+		</property>		
+	</bean>		
+		<!-- 不予许可Action -->
+	<bean name="/xxgkAction"
+		class="com.baosight.base.struts.action.GovInfoPubAction"
+		singleton="false">
+		<property name="govInfoPubMgr">
+			<ref bean="govInfoPubMgr" />
+		</property>
+		<property name="govInfoPubAuditMgr">
+			<ref bean="tbGovInfoPubAuditMgr" />
+		</property>
+	</bean>
+	<!-- writ7Action -->
+	<bean name="/writ7Action"
+		class="com.baosight.base.struts.action.Writ7Action"
+		singleton="false">
+		<property name="writ7Mgr">
+			<ref bean="writ7Mgr" />
+		</property>
+		<property name="govInfoPubMgr">
+			<ref bean="govInfoPubMgr" />
+		</property>
+	</bean>
+	<!-- writ2Action -->
+	<bean name="/writ2Action"
+		class="com.baosight.base.struts.action.Writ2Action"
+		singleton="false">
+		<property name="writ2Mgr">
+			<ref bean="writ2Mgr" />
+		</property>
+		<property name="govInfoPubMgr">
+			<ref bean="govInfoPubMgr" />
+		</property>
+	</bean>
+	<!-- writ4Action -->
+	<bean name="/writ4Action"
+		class="com.baosight.base.struts.action.Writ4Action"
+		singleton="false">
+		<property name="writ4Mgr">
+			<ref bean="writ4Mgr" />
+		</property>
+		<property name="govInfoPubMgr">
+			<ref bean="govInfoPubMgr" />
+		</property>
+	</bean>
+		<!-- writ8Action -->
+	<bean name="/writ8Action"
+		class="com.baosight.base.struts.action.Writ8Action"
+		singleton="false">
+		<property name="writ8Mgr">
+			<ref bean="writ8Mgr" />
+		</property>
+		<property name="govInfoPubMgr">
+			<ref bean="govInfoPubMgr" />
+		</property>
+	</bean>
+		<!-- writ9Action -->
+	<bean name="/writ9Action"
+		class="com.baosight.base.struts.action.Writ9Action"
+		singleton="false">
+		<property name="writ9Mgr">
+			<ref bean="writ9Mgr" />
+		</property>
+		<property name="govInfoPubMgr">
+			<ref bean="govInfoPubMgr" />
+		</property>
+	</bean>	
+	<!-- 档案编辑 -->
+	<bean name="/archivesEdit"
+		class="com.baosight.base.struts.action.TbArchivesEditAction"
+		singleton="false">
+		
+		<property name="deptMgr">
+			<ref bean="deptMgr" />
+		</property>
+	
+		<property name="tbArchivesMgr">
+			<ref bean="tbArchivesMgr" />
+		</property>
+		<property name="tbFormatMgr">
+			<ref bean="tbFormatMgr" />
+		</property>
+		<property name="tbNopubdescMgr">
+			<ref bean="tbNopubdescMgr" />
+		</property>
+		<property name="tbOffDocCateMgr">
+			<ref bean="tbOffDocCateMgr" />
+		</property>
+		<property name="tbPubclassMgr">
+			<ref bean="tbPubclassMgr" />
+		</property>
+		<property name="tbTopicDAO">
+			<ref bean="tbTopicDAO" />
+		</property>
+		<property name="tbTypeMgr">
+			<ref bean="tbTypeMgr" />
+		</property>
+		<property name="tbUploadFileDAO">
+			<ref bean="tbUploadFileDAO" />
+		</property>		
+	</bean>	
+	<!-- 档案action -->
+	<bean name="/archivesListAction"
+		class="com.baosight.base.struts.action.ArchivesListAction"
+		singleton="false">
+		<property name="tbArchivesMgr">
+			<ref bean="tbArchivesMgr" />
+		</property>	
+	</bean>	
+	<bean name="/pigeonholedArchivesListAction"
+		class="com.baosight.base.struts.action.PigeonholedArchivesListAction"
+		singleton="false">
+		<property name="tbArchivesMgr">
+			<ref bean="tbArchivesMgr" />
+		</property>	
+		<property name="tbArchivesApplyMgr">
+			<ref bean="tbArchivesApplyMgr" />
+		</property>			
+		<property name="tbUserOpeationMgr">
+			<ref bean="tbUserOpeationMgr" />
+		</property>
+	</bean>	
+	<bean name="/auditListAction"
+		class="com.baosight.base.struts.action.AuditListAction"
+		singleton="false">
+		<property name="tbArchivesMgr">
+			<ref bean="tbArchivesMgr" />
+		</property>	
+		<property name="tbArchivesApplyMgr">
+			<ref bean="tbArchivesApplyMgr" />
+		</property>	
+		<property name="tbUserOpeationMgr">
+			<ref bean="tbUserOpeationMgr" />
+		</property>		
+	</bean>	
+	<bean name="/filesendEdit"
+		class="com.baosight.base.struts.action.FilesendEditAction"
+		singleton="false">
+		<property name="tbFilesendMgr">
+			<ref bean="tbFilesendMgr" />
+		</property>	
+		<property name="tbFilesendAttachmentDAO">
+			<ref bean="tbFilesendAttachmentDAO" />
+		</property>			
+		<property name="tbUserDAO">
+			<ref bean="tbUserDAO" />
+		</property>	
+		<property name="tbUserOpeationMgr">
+			<ref bean="tbUserOpeationMgr" />
+		</property>	
+	</bean>	
+	<!-- 文件发送action -->
+	<bean name="/fileSendInListAction"
+		class="com.baosight.base.struts.action.FileSendInListAction"
+		singleton="false">
+		<property name="tbFilesendMgr">
+			<ref bean="tbFilesendMgr" />
+		</property>	
+	</bean>	
+	<!-- 文件发送action -->
+	<bean name="/fileSendOutListAction"
+		class="com.baosight.base.struts.action.FileSendOutListAction"
+		singleton="false">
+		<property name="tbFilesendMgr">
+			<ref bean="tbFilesendMgr" />
+		</property>	
+		<property name="tbUserDAO">
+			<ref bean="tbUserDAO" />
+		</property>			
+	</bean>					
+
+	<bean name="/docEditTest"
+		class="com.baosight.base.struts.action.CopyOfTbArchivesEditAction"
+		singleton="false">		
+	</bean>	
+	<bean name="/print"
+		class="com.baosight.base.struts.action.PrintAction"
+		singleton="false">		
+	</bean>	
+	<bean name="/userpwdaction" class="com.baosight.base.struts.action.UserPassWdModAction"
+		singleton="false">
+		<property name="userMgr">
+			<ref bean="userMgr" />
+		</property>
+	</bean>
+	<bean name="/forumsAction" class="com.baosight.base.struts.action.ForumsAction"
+		singleton="false">
+	</bean>
+	<!-- 网上咨询action -->
+	<bean name="/consultationSLWaitListAction"
+		class="com.baosight.base.struts.action.ConsultationSLWaitListAction"
+		singleton="false">
+		<property name="tbConsultationOnlineMgr">
+			<ref bean="tbConsultationOnlineMgr" />
+		</property>	
+		<property name="tbUserOpeationMgr">
+			<ref bean="tbUserOpeationMgr" />
+		</property>
+	</bean>	
+	<bean name="/consultationSLProcessListAction"
+		class="com.baosight.base.struts.action.ConsultationSLProcessListAction"
+		singleton="false">
+		<property name="tbConsultationOnlineMgr">
+			<ref bean="tbConsultationOnlineMgr" />
+		</property>	
+	</bean>
+	<bean name="/consultationSLOverListAction"
+		class="com.baosight.base.struts.action.ConsultationSLOverListAction"
+		singleton="false">
+		<property name="tbConsultationOnlineMgr">
+			<ref bean="tbConsultationOnlineMgr" />
+		</property>	
+	</bean>	
+	<bean name="/consultationWaitListAction"
+		class="com.baosight.base.struts.action.ConsultationWaitListAction"
+		singleton="false">
+		<property name="tbConsultationOnlineMgr">
+			<ref bean="tbConsultationOnlineMgr" />
+		</property>	
+	</bean>		
+	<bean name="/consultationOverListAction"
+		class="com.baosight.base.struts.action.ConsultationOverListAction"
+		singleton="false">
+		<property name="tbConsultationOnlineMgr">
+			<ref bean="tbConsultationOnlineMgr" />
+		</property>	
+	</bean>		
+	
+	<bean name="/consultaionView" class="com.baosight.base.struts.action.ConsultationViewAction"
+		singleton="false">
+		<property name="tbPublicAffairTransactMgr">
+			<ref bean="tbPublicAffairTransactMgr" />
+		</property>
+		<property name="tbConsultationOnlineMgr">
+			<ref bean="tbConsultationOnlineMgr" />
+		</property>
+		<property name="tbUserOpeationMgr">
+			<ref bean="tbUserOpeationMgr" />
+		</property>
+	</bean>	
+	<!-- 网上投诉action -->
+	<bean name="/appealSLWaitListAction"
+		class="com.baosight.base.struts.action.AppealSLWaitListAction"
+		singleton="false">
+		<property name="tbAppealOnlineMgr">
+			<ref bean="tbAppealOnlineMgr" />
+		</property>	
+		<property name="tbUserOpeationMgr">
+			<ref bean="tbUserOpeationMgr" />
+		</property>
+	</bean>	
+	<bean name="/appealSLProcessListAction"
+		class="com.baosight.base.struts.action.AppealSLProcessListAction"
+		singleton="false">
+		<property name="tbAppealOnlineMgr">
+			<ref bean="tbAppealOnlineMgr" />
+		</property>	
+	</bean>
+	<bean name="/appealSLOverListAction"
+		class="com.baosight.base.struts.action.AppealSLOverListAction"
+		singleton="false">
+		<property name="tbAppealOnlineMgr">
+			<ref bean="tbAppealOnlineMgr" />
+		</property>	
+	</bean>	
+	<bean name="/appealWaitListAction"
+		class="com.baosight.base.struts.action.AppealWaitListAction"
+		singleton="false">
+		<property name="tbAppealOnlineMgr">
+			<ref bean="tbAppealOnlineMgr" />
+		</property>	
+	</bean>		
+	<bean name="/appealOverListAction"
+		class="com.baosight.base.struts.action.AppealOverListAction"
+		singleton="false">
+		<property name="tbAppealOnlineMgr">
+			<ref bean="tbAppealOnlineMgr" />
+		</property>	
+	</bean>	
+	<!-- 局长信箱action -->
+	<bean name="/opinionSLWaitListAction"
+		class="com.baosight.base.struts.action.OpinionSLWaitListAction"
+		singleton="false">
+		<property name="tbOpinionOnlineMgr">
+			<ref bean="tbOpinionOnlineMgr" />
+		</property>
+		<property name="tbUserOpeationMgr">
+			<ref bean="tbUserOpeationMgr" />
+		</property>	
+	</bean>	
+	<bean name="/opinionSLProcessListAction"
+		class="com.baosight.base.struts.action.OpinionSLProcessListAction"
+		singleton="false">
+		<property name="tbOpinionOnlineMgr">
+			<ref bean="tbOpinionOnlineMgr" />
+		</property>	
+	</bean>
+	<bean name="/opinionSLOverListAction"
+		class="com.baosight.base.struts.action.OpinionSLOverListAction"
+		singleton="false">
+		<property name="tbOpinionOnlineMgr">
+			<ref bean="tbOpinionOnlineMgr" />
+		</property>	
+	</bean>	
+	<bean name="/opinionWaitListAction"
+		class="com.baosight.base.struts.action.OpinionWaitListAction"
+		singleton="false">
+		<property name="tbOpinionOnlineMgr">
+			<ref bean="tbOpinionOnlineMgr" />
+		</property>	
+	</bean>		
+	<bean name="/opinionOverListAction"
+		class="com.baosight.base.struts.action.OpinionOverListAction"
+		singleton="false">
+		<property name="tbOpinionOnlineMgr">
+			<ref bean="tbOpinionOnlineMgr" />
+		</property>	
+	</bean>			
+	<!-- 收文管理 列表 -->
+	<bean name="/docRecListAction" class="com.baosight.base.struts.action.DocRecListAction"
+		singleton="false">
+		<property name="docRecListMgr">
+			<ref bean="docRecListMgr" />
+		</property>
+		<property name="docServiceMgr">
+			<ref bean="docServiceMgr" /> 
+		</property>
+	</bean>
+	<bean name="/docRecRelateAction" class="com.baosight.base.struts.action.DocRecRelatedAction"
+		singleton="false">
+		<property name="docRecListMgr">
+			<ref bean="docRecListMgr" />
+		</property>
+		<property name="tbDocRecMgr">
+			<ref bean="tbDocRecMgr" />
+		</property>
+		<property name="docAttachMgr">
+			<ref bean="docAttachMgr" />
+		</property>
+		<property name="docServiceMgr">
+			<ref bean="docServiceMgr" /> 
+		</property>
+		<property name="userMgr">
+			<ref bean="userMgr" />
+		</property>
+		<property name="tbUserOpeationMgr">
+			<ref bean="tbUserOpeationMgr" />
+		</property>
+	</bean>
+	<bean name="/docrecBook" class="com.baosight.base.struts.action.DocRecBookAction"
+		singleton="false">
+		<property name="tbDocRecMgr">
+			<ref bean="tbDocRecMgr" />
+		</property>
+		<property name="docServiceMgr">
+			<ref bean="docServiceMgr" />
+		</property>
+		<property name="docAttachMgr">
+			<ref bean="docAttachMgr" />
+		</property>
+		<property name="tbUserOpeationMgr">
+			<ref bean="tbUserOpeationMgr" />
+		</property>
+	</bean>
+	<bean name="/docRecDispose" class="com.baosight.base.struts.action.DocRecDisposeAction"
+		singleton="false">
+		<property name="tbDocRecMgr">
+			<ref bean="tbDocRecMgr" />
+		</property>
+		<property name="docServiceMgr">
+			<ref bean="docServiceMgr" />
+		</property>
+		<property name="docAttachMgr">
+			<ref bean="docAttachMgr" />
+		</property>
+		<property name="docRecListMgr">
+			<ref bean="docRecListMgr" />
+		</property>
+		<property name="tbUserOpeationMgr">
+			<ref bean="tbUserOpeationMgr" />
+		</property>
+	</bean>
+	<bean name="/docRecLeader" class="com.baosight.base.struts.action.DocRecLeaderAction"
+		singleton="false">
+		<property name="tbDocRecMgr">
+			<ref bean="tbDocRecMgr" />
+		</property>
+		<property name="docServiceMgr">
+			<ref bean="docServiceMgr" />
+		</property>
+		<property name="docAttachMgr">
+			<ref bean="docAttachMgr" />
+		</property>
+		<property name="docRecListMgr">
+			<ref bean="docRecListMgr" />
+		</property>
+		<property name="tbUserOpeationMgr">
+			<ref bean="tbUserOpeationMgr" />
+		</property>
+	</bean>
+	<bean name="/docRecMainDept" class="com.baosight.base.struts.action.DocRecMainDeptAction"
+		singleton="false">
+		<property name="tbDocRecMgr">
+			<ref bean="tbDocRecMgr" />
+		</property>
+		<property name="docServiceMgr">
+			<ref bean="docServiceMgr" />
+		</property>
+		<property name="docAttachMgr">
+			<ref bean="docAttachMgr" />
+		</property>
+		<property name="docRecListMgr">
+			<ref bean="docRecListMgr" />
+		</property>
+		<property name="tbUserOpeationMgr">
+			<ref bean="tbUserOpeationMgr" />
+		</property>
+	</bean>
+	<bean name="/docRecPerson" class="com.baosight.base.struts.action.DocRecPersonAction"
+		singleton="false">
+		<property name="tbDocRecMgr">
+			<ref bean="tbDocRecMgr" />
+		</property>
+		<property name="docServiceMgr">
+			<ref bean="docServiceMgr" />
+		</property>
+		<property name="docAttachMgr">
+			<ref bean="docAttachMgr" />
+		</property>
+		<property name="docRecListMgr">
+			<ref bean="docRecListMgr" />
+		</property>
+		<property name="tbUserOpeationMgr">
+			<ref bean="tbUserOpeationMgr" />
+		</property>
+	</bean>
+	<bean name="/docRecReadonly" class="com.baosight.base.struts.action.DocRecReadonlyAction"
+		singleton="false">
+		<property name="tbDocRecMgr">
+			<ref bean="tbDocRecMgr" />
+		</property>
+		<property name="docServiceMgr">
+			<ref bean="docServiceMgr" />
+		</property>
+		<property name="docAttachMgr">
+			<ref bean="docAttachMgr" />
+		</property>
+		<property name="docRecListMgr">
+			<ref bean="docRecListMgr" />
+		</property>
+		<property name="tbUserOpeationMgr">
+			<ref bean="tbUserOpeationMgr" />
+		</property>
+	</bean>
+	<bean name="/docrecwritedeal" class="com.baosight.base.struts.action.DocRecWriteDealAction"
+		singleton="false">
+		<property name="tbDocRecMgr">
+			<ref bean="tbDocRecMgr" />
+		</property>
+		<property name="docServiceMgr">
+			<ref bean="docServiceMgr" />
+		</property>
+		<property name="docAttachMgr">
+			<ref bean="docAttachMgr" />
+		</property>
+		<property name="docRecListMgr">
+			<ref bean="docRecListMgr" />
+		</property>
+		<property name="tbUserOpeationMgr">
+			<ref bean="tbUserOpeationMgr" />
+		</property>
+	</bean>
+	<bean name="/docAttach" class="com.baosight.base.struts.action.DocAttachAction"
+		singleton="false">
+		<property name="docAttachMgr">
+			<ref bean="docAttachMgr" />
+		</property>
+	</bean>
+	
+	<!-- 网上报诉 -->
+	<bean name="/appealView" class="com.baosight.base.struts.action.AppealViewAction"
+		singleton="false">
+		<property name="tbPublicAffairTransactMgr">
+			<ref bean="tbPublicAffairTransactMgr" />
+		</property>
+		<property name="tbAppealOnlineMgr">
+			<ref bean="tbAppealOnlineMgr" />
+		</property>
+		<property name="tbUserOpeationMgr">
+			<ref bean="tbUserOpeationMgr" />
+		</property>
+	</bean>	
+	<!-- 共享空间 -->
+	<bean name="/sharefileEdit" class="com.baosight.base.struts.action.SharefileEditAction"
+		singleton="false">
+		<property name="tbShareFileMgr">
+			<ref bean="tbShareFileMgr" />
+		</property>
+	</bean>
+	<!-- 共享文件 -->
+	<bean name="/shareFileListAction"
+		class="com.baosight.base.struts.action.ShareFileListAction"
+		singleton="false">
+		<property name="tbShareFileMgr">
+			<ref bean="tbShareFileMgr" />
+		</property>	
+	</bean>	
+	
+	<!-- 局长信箱 -->
+	<bean name="/opinionView" class="com.baosight.base.struts.action.OpinionViewAction"
+		singleton="false">
+		<property name="tbPublicAffairTransactMgr">
+			<ref bean="tbPublicAffairTransactMgr" />
+		</property>
+		<property name="tbOpinionOnlineMgr">
+			<ref bean="tbOpinionOnlineMgr" />
+		</property>
+		<property name="tbUserOpeationMgr">
+			<ref bean="tbUserOpeationMgr" />
+		</property>
+	</bean>
+
+	<!-- 发文管理 -->
+	<bean name="/docSendSign" class="com.baosight.base.struts.action.DocSendSignAction"
+		singleton="false">
+		<property name="docSendMgr">
+			<ref bean="docSendMgr" />
+		</property>
+		<property name="docServiceMgr">
+			<ref bean="docServiceMgr" />
+		</property>
+		<property name="docAttachMgr">
+			<ref bean="docAttachMgr" />
+		</property>
+		<property name="tbUserOpeationMgr">
+			<ref bean="tbUserOpeationMgr" />
+		</property>
+	</bean>
+	<bean name="/docSendRelatedAction" class="com.baosight.base.struts.action.DocSendRelatedAction" 
+		singleton="false">
+		<property name="docSendDealMgr">
+			<ref bean="docSendDealMgr" />
+		</property>
+		<property name="docSendMgr">
+			<ref bean="docSendMgr" />
+		</property>
+		<property name="docAttachMgr">
+			<ref bean="docAttachMgr" />
+		</property>
+		<property name="docRecListMgr">
+			<ref bean="docRecListMgr" />
+		</property>
+		<property name="tbUserOpeationMgr">
+			<ref bean="tbUserOpeationMgr" />
+		</property>
+	</bean>
+	<bean name="/docSendBook" class="com.baosight.base.struts.action.DocSendBookAction"
+		singleton="false">
+		<property name="docSendMgr">
+			<ref bean="docSendMgr" />
+		</property>
+		<property name="docServiceMgr">
+			<ref bean="docServiceMgr" />
+		</property>
+		<property name="docAttachMgr">
+			<ref bean="docAttachMgr" />
+		</property>
+		<property name="tbUserOpeationMgr">
+			<ref bean="tbUserOpeationMgr" />
+		</property>
+	</bean>
+	<bean name="/docSendCharger" class="com.baosight.base.struts.action.DocSendChargerAction"
+		singleton="false">
+		<property name="docSendMgr">
+			<ref bean="docSendMgr" />
+		</property>
+		<property name="docServiceMgr">
+			<ref bean="docServiceMgr" />
+		</property>
+		<property name="docAttachMgr">
+			<ref bean="docAttachMgr" />
+		</property>
+		<property name="tbUserOpeationMgr">
+			<ref bean="tbUserOpeationMgr" />
+		</property>
+	</bean>
+	<bean name="/docSendOfficer" class="com.baosight.base.struts.action.DocSendOfficerAction"
+		singleton="false">
+		<property name="docSendMgr">
+			<ref bean="docSendMgr" />
+		</property>
+		<property name="docServiceMgr">
+			<ref bean="docServiceMgr" />
+		</property>
+		<property name="docAttachMgr">
+			<ref bean="docAttachMgr" />
+		</property>
+		<property name="tbUserOpeationMgr">
+			<ref bean="tbUserOpeationMgr" />
+		</property>
+	</bean>
+	<bean name="/docSendDraft" class="com.baosight.base.struts.action.DocSendDraftAction"
+		singleton="false">
+		<property name="docSendMgr">
+			<ref bean="docSendMgr" />
+		</property>
+		<property name="docServiceMgr">
+			<ref bean="docServiceMgr" />
+		</property>
+		<property name="docAttachMgr">
+			<ref bean="docAttachMgr" />
+		</property>
+		<property name="tbUserOpeationMgr">
+			<ref bean="tbUserOpeationMgr" />
+		</property>
+	</bean>
+	<bean name="/docSendSignsend" class="com.baosight.base.struts.action.DocSendSignsendAction"
+		singleton="false">
+		<property name="docSendMgr">
+			<ref bean="docSendMgr" />
+		</property>
+		<property name="docServiceMgr">
+			<ref bean="docServiceMgr" />
+		</property>
+		<property name="docAttachMgr">
+			<ref bean="docAttachMgr" />
+		</property>
+		<property name="tbUserOpeationMgr">
+			<ref bean="tbUserOpeationMgr" />
+		</property>
+	</bean>
+	<bean name="/docSendPrinter" class="com.baosight.base.struts.action.DocSendPrinterAction"
+		singleton="false">
+		<property name="docSendMgr">
+			<ref bean="docSendMgr" />
+		</property>
+		<property name="docServiceMgr">
+			<ref bean="docServiceMgr" />
+		</property>
+		<property name="docAttachMgr">
+			<ref bean="docAttachMgr" />
+		</property>
+		<property name="tbUserOpeationMgr">
+			<ref bean="tbUserOpeationMgr" />
+		</property>
+	</bean>
+		<bean name="/mailAction" class="com.baosight.base.struts.action.MailAction"
+		singleton="false">
+		<property name="tbUserOpeationMgr">
+			<ref bean="tbUserOpeationMgr" />
+		</property>
+		<property name="tbVehiclesApplyMgr">
+			<ref bean="tbVehiclesApplyMgr" />
+		</property>
+		<property name="messagesMgr">
+			<ref bean="messagesMgr" />
+		</property>
+	</bean>
+	<!-- 信息中心发文管理 -->
+	<bean name="/xdocSendRelatedAction" class="com.baosight.infocenter.docsend.action.DocSendRelatedAction" 
+		singleton="false">
+		<property name="docSendDealXxzxMgr">
+			<ref bean="xdocSendDealMgr" />
+		</property>
+		<property name="docSendMgr">
+			<ref bean="xdocSendMgr" />
+		</property>
+		<property name="docAttachMgr">
+			<ref bean="docAttachMgr" />
+		</property>
+		<property name="docRecListMgr">
+			<ref bean="docRecListMgr" />
+		</property>
+		<property name="docServiceMgr">
+			<ref bean="docServiceMgr" />
+		</property>
+		<property name="tbUserOpeationMgr">
+			<ref bean="tbUserOpeationMgr" />
+		</property>
+	</bean>
+	<bean name="/xdocSendBook" class="com.baosight.infocenter.docsend.action.DocSendBookAction"
+		singleton="false">
+		<property name="docSendMgr">
+			<ref bean="xdocSendMgr" />
+		</property>
+		<property name="docServiceMgr">
+			<ref bean="docServiceMgr" />
+		</property>
+		<property name="docAttachMgr">
+			<ref bean="docAttachMgr" />
+		</property>
+		<property name="tbUserOpeationMgr">
+			<ref bean="tbUserOpeationMgr" />
+		</property>
+	</bean>
+	<bean name="/xdocSendCharger" class="com.baosight.infocenter.docsend.action.DocSendChargerAction"
+		singleton="false">
+		<property name="docSendMgr">
+			<ref bean="xdocSendMgr" />
+		</property>
+		<property name="docServiceMgr">
+			<ref bean="docServiceMgr" />
+		</property>
+		<property name="docAttachMgr">
+			<ref bean="docAttachMgr" />
+		</property>
+		<property name="tbUserOpeationMgr">
+			<ref bean="tbUserOpeationMgr" />
+		</property>
+	</bean>
+	<bean name="/xdocSendLeader" class="com.baosight.infocenter.docsend.action.DocSendLeaderAction"
+		singleton="false">
+		<property name="docSendMgr">
+			<ref bean="xdocSendMgr" />
+		</property>
+		<property name="docServiceMgr">
+			<ref bean="docServiceMgr" />
+		</property>
+		<property name="docAttachMgr">
+			<ref bean="docAttachMgr" />
+		</property>
+		<property name="tbUserOpeationMgr">
+			<ref bean="tbUserOpeationMgr" />
+		</property>
+	</bean>
+	<bean name="/xdocSendPrinter" class="com.baosight.infocenter.docsend.action.DocSendPrinterAction"
+		singleton="false">
+		<property name="docSendMgr">
+			<ref bean="xdocSendMgr" />
+		</property>
+		<property name="docServiceMgr">
+			<ref bean="docServiceMgr" />
+		</property>
+		<property name="docAttachMgr">
+			<ref bean="docAttachMgr" />
+		</property>
+		<property name="tbUserOpeationMgr">
+			<ref bean="tbUserOpeationMgr" />
+		</property>
+	</bean>
+	
+	<!-- 短信平台 -->
+	<bean name="/shortInfo" class="com.baosight.base.struts.action.ShortInfoAction"
+		singleton="false">
+		<property name="smsScheduleMgr">
+			<ref bean="smsScheduleMgr" />
+		</property>
+		<property name="commonalityCommMgr">
+			<ref bean="commonalityCommMgr" />
+		</property>
+		<property name="individualCommMgr">
+			<ref bean="individualCommMgr" />
+		</property>	
+		<property name="commonalityMgr">
+			<ref bean="commonalityMgr" />
+		</property>	
+		<property name="individualMgr">
+			<ref bean="individualMgr" />
+		</property>	
+		<property name="deptMgr">
+			<ref bean="deptMgr" />
+		</property>	
+		
+	</bean>	
+
+	<bean name="/smsTransferInfo" class="com.baosight.sms.action.TransferInfoAction"
+		singleton="false">
+		<property name="transferMgr">
+			<ref bean="smsTransferMgr" />
+		</property>
+	</bean>	
+	<bean name="/smsSubscribe" class="com.baosight.base.struts.action.SmsSubscribeAction">
+		<property name="commonalityCommMgr">
+			<ref bean="commonalityCommMgr" />
+		</property>
+		<property name="smsSubscribeMgr">
+			<ref bean="smsSubscribeMgr" />
+		</property>
+		<property name="smsSubjectMgr">
+			<ref bean="smsSubjectMgr" />
+		</property>
+	</bean>
+	<bean name="/smsTransferList" class="com.baosight.sms.action.TransferListAction"
+		singleton="false">
+		<property name="transferMgr">
+			<ref bean="smsTransferMgr" />
+		</property>
+	</bean>	
+	<!-- 短信订阅选择人员 -->
+	<bean name="/smsSubscribeSelPeo" class="com.baosight.base.struts.action.SmsSubscribeSelPeoAction"
+		singleton="false">		
+		<property name="commonalityCommMgr">
+			<ref bean="commonalityCommMgr" />
+		</property>			
+		<property name="commonalityMgr">
+			<ref bean="commonalityMgr" />
+		</property>			
+	</bean>	
+	<!-- 查询统计 -->
+	<bean name="/queryStatistics" class="com.baosight.base.struts.action.QueryStatisticsAction"
+		singleton="false">		
+		<property name="smsDepartMgr">
+			<ref bean="smsDepartMgr" />
+		</property>	
+		<property name="smsUserMgr">
+			<ref bean="smsUserMgr" />
+		</property>	
+		<property name="smsScheduleMgr">
+			<ref bean="smsScheduleMgr" />
+		</property>	
+		<property name="userMgr">
+			<ref bean="userMgr" />
+		</property>	
+		<property name="commonalityMgr">
+			<ref bean="commonalityMgr" />
+		</property>				
+	</bean>
+	<bean name="/faxSchedule" class="com.baosight.fax.action.FaxScheduleAction"
+		singleton="false">
+		<property name="scheduleMgr">
+			<ref bean="faxScheduleMgr" />
+		</property>
+		<property name="docAttachMgr">
+			<ref bean="docAttachMgr" />
+		</property>
+			<property name="commonalityMgr">
+			<ref bean="commonalityMgr" />
+		</property>
+	<property name="commonalityCommMgr">
+			<ref bean="commonalityCommMgr" />
+	</property>
+			<property name="smsScheduleMgr">
+			<ref bean="smsScheduleMgr" />
+		</property>
+	</bean>
+	<bean name="/faxSend" class="com.baosight.fax.action.FaxSendAction" singleton="false">
+	<property name="scheduleMgr">
+			<ref bean="faxScheduleMgr" />
+	</property>
+	<property name="docAttachMgr">
+			<ref bean="docAttachMgr" />
+	</property>
+	<property name="commonalityMgr">
+			<ref bean="commonalityMgr" />
+		</property>
+	<property name="commonalityCommMgr">
+			<ref bean="commonalityCommMgr" />
+	</property>
+			<property name="smsScheduleMgr">
+			<ref bean="smsScheduleMgr" />
+		</property>
+	</bean>
+	<bean name="/faxQuerySchedule" class="com.baosight.fax.action.FaxQueryScheduleAction"
+		singleton="false">
+		<property name="queryScheduleMgr">
+			<ref bean="faxQueryScheduleMgr" />
+		</property>
+		<property name="scheduleMgr">
+			<ref bean="faxScheduleMgr" />
+		</property>
+		<property name="docAttachMgr">
+			<ref bean="docAttachMgr" />
+		</property>
+	</bean>
+	<bean name="/commonalityTree" class="com.baosight.common.action.CommonalityTreeAction"
+		singleton="false">
+		<property name="commonalityMgr">
+			<ref bean="commonalityMgr" />
+		</property>
+		<property name="commonalityCommMgr">
+			<ref bean="commonalityCommMgr" />
+		</property>	
+	</bean>
+	<bean name="/individualTree" class="com.baosight.common.action.IndividualTreeAction"
+		singleton="false">
+		<property name="individualCommMgr">
+			<ref bean="individualCommMgr" />
+		</property>	
+		<property name="individualMgr">
+			<ref bean="individualMgr" />
+		</property>
+	</bean>
+	<bean name="/userTree" class="com.baosight.common.action.UserTreeAction"
+		singleton="false">
+		<property name="userMgr">
+			<ref bean="userMgr" />
+		</property>
+		<property name="deptMgr">
+			<ref bean="deptMgr" />
+		</property>
+	</bean>
+	<bean name="/swrxOverAction" class="com.baosight.base.struts.action.SwrxOverAction" singleton="false">
+		<property name="tbSwrxMgr">
+			<ref bean="tbSwrxMgr"/>
+		</property>
+		<property name="tbPublicAffairTransactMgr">
+			<ref bean="tbPublicAffairTransactMgr"/>
+		</property>
+	</bean>
+		<bean name="/swrxProcessAction" class="com.baosight.base.struts.action.SwrxProcessAction" singleton="false">
+		<property name="tbSwrxMgr">
+			<ref bean="tbSwrxMgr"/>
+		</property>
+		<property name="tbPublicAffairTransactMgr">
+			<ref bean="tbPublicAffairTransactMgr"/>
+		</property>
+	</bean>
+		<bean name="/swrxWaitAction" class="com.baosight.base.struts.action.SwrxWaitAction" singleton="false">
+		<property name="tbSwrxMgr">
+			<ref bean="tbSwrxMgr"/>
+		</property>
+		<property name="tbPublicAffairTransactMgr">
+			<ref bean="tbPublicAffairTransactMgr"/>
+		</property>
+	</bean>
+		<bean name="/swrxZBoverAction" class="com.baosight.base.struts.action.SwrxZBoverAction" singleton="false">
+		<property name="tbSwrxMgr">
+			<ref bean="tbSwrxMgr"/>
+		</property>
+		<property name="tbPublicAffairTransactMgr">
+			<ref bean="tbPublicAffairTransactMgr"/>
+		</property>
+	</bean>
+		<bean name="/swrxZBWaitAction" class="com.baosight.base.struts.action.SwrxZBWaitAction" singleton="false">
+		<property name="tbSwrxMgr">
+			<ref bean="tbSwrxMgr"/>
+		</property>
+		<property name="tbPublicAffairTransactMgr">
+			<ref bean="tbPublicAffairTransactMgr"/>
+		</property>
+	</bean>
+		<bean name="/swrxZXOverAction" class="com.baosight.base.struts.action.SwrxZXOverAction" singleton="false">
+		<property name="tbSwrxMgr">
+			<ref bean="tbSwrxMgr"/>
+		</property>
+		<property name="tbPublicAffairTransactMgr">
+			<ref bean="tbPublicAffairTransactMgr"/>
+		</property>
+	</bean>
+		<bean name="/swrxZXWaitAction" class="com.baosight.base.struts.action.SwrxZXWaitAction" singleton="false">
+		<property name="tbSwrxMgr">
+			<ref bean="tbSwrxMgr"/>
+		</property>
+		<property name="tbPublicAffairTransactMgr">
+			<ref bean="tbPublicAffairTransactMgr"/>
+		</property>
+	</bean>	
+	<bean name="/SessionNavigationLoginAfter" class="com.baosight.struts.action.SessionNavigationAction"
+		singleton="false">	
+		<property name="userMgr">
+			<ref bean="userMgr" />
+		</property>
+		<property name="functionMgr">
+			<ref bean="functionMgr" />
+		</property>
+		<property name="appSysMgr">
+			<ref bean="appSysMgr" />
+		</property>
+		<property name="deptMgr">
+			<ref bean="deptMgr" />
+		</property>		
+	</bean>		
+	<bean name="/sessionNavigation" class="com.baosight.struts.action.SessionNavigationAction"
+		singleton="false">	
+		<property name="userMgr">
+			<ref bean="userMgr" />
+		</property>
+		<property name="functionMgr">
+			<ref bean="functionMgr" />
+		</property>
+		<property name="appSysMgr">
+			<ref bean="appSysMgr" />
+		</property>
+		<property name="deptMgr">
+			<ref bean="deptMgr" />
+		</property>		
+	</bean>	
+	<!-- 委托 -->		
+	<bean name="/commission" class="com.baosight.base.struts.action.CommissionAction"
+		singleton="false">
+		<property name="commissionMgr">
+			<ref bean="commissionMgr" />
+		</property>
+		<property name="userMgr">
+			<ref bean="userMgr" />
+		</property>
+		<property name="tbUserOpeationMgr">
+			<ref bean="tbUserOpeationMgr" />
+		</property>		
+	</bean>
+	<!-- 科研成果 -->
+	<bean name="/techDiscoure" class="com.baosight.tech.action.TechDiscoureAction"
+		singleton="false">
+		<property name="techDiscoureMgr">
+			<ref bean="techDiscoureMgr" />
+		</property>
+		<property name="docAttachMgr">
+			<ref bean="docAttachMgr" />
+		</property>
+	</bean>
+	<bean name="/techMapShare" class="com.baosight.tech.action.TechMapShareAction"
+		singleton="false">
+		<property name="techMapShareMgr">
+			<ref bean="techMapShareMgr" />
+		</property>
+		<property name="docAttachMgr">
+			<ref bean="docAttachMgr" />
+		</property>
+	</bean>
+	<bean name="/techResult" class="com.baosight.tech.action.TechResultAction"
+		singleton="false">
+		<property name="techResultMgr">
+			<ref bean="techResultMgr" />
+		</property>
+		<property name="docAttachMgr">
+			<ref bean="docAttachMgr" />
+		</property>
+	</bean>
+	<bean name="/techStandard" class="com.baosight.tech.action.TechStandardAction"
+		singleton="false">
+		<property name="techStandardMgr">
+			<ref bean="techStandardMgr" />
+		</property>
+		<property name="docAttachMgr">
+			<ref bean="docAttachMgr" />
+		</property>
+	</bean>
+	<!-- 预警发布 -->		
+	<bean name="/warningPub" class="com.baosight.base.struts.action.WarningPubAction"
+		singleton="false">
+		<property name="warningPubMgr">
+			<ref bean="warningPubMgr" />
+		</property>	
+		<property name="docAttachMgr">
+			<ref bean="docAttachMgr" />
+		</property>		
+	</bean>	
+</beans>

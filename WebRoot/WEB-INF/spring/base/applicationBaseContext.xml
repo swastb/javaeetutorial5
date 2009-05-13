@@ -1,0 +1,810 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<!-- 用户管理器 -->
+	<bean id="userMgr"
+		class="com.baosight.base.service.impl.TbUserMgrImpl">
+		<property name="tbUserDAO">
+			<ref bean="tbUserDAO" />
+		</property>
+		<property name="tbUserRoleDAO">
+			<ref bean="tbUserRoleDAO" />
+		</property>
+		<property name="tbRoleDAO">
+			<ref bean="tbRoleDAO" />
+		</property>
+		<property name="tbUserdeptDAO">
+			<ref bean="tbUserdeptDAO" />
+		</property>		
+	</bean>
+	<!-- 职务等级管理器 -->
+	<bean id="pstlvlMgr"
+		class="com.baosight.base.service.impl.PstlvlMgrImpl">
+		<property name="tbPstlvlDAO">
+			<ref bean="tbPstlvlDAO" />
+		</property>
+		<property name="tbPstDAO">
+			<ref bean="tbPstDAO" />
+		</property>
+	</bean>
+	<!-- 权限类型管理器 -->
+	<bean id="rightTypeMgr"
+		class="com.baosight.base.service.impl.RightTypeMgrImpl">
+		<property name="tbRighttypeDAO">
+			<ref bean="tbRighttypeDAO" />
+		</property>
+	</bean>
+	<!-- 用户等级管理器  -->
+	<bean id="userlvlMgr"
+		class="com.baosight.base.service.impl.UserlvlMgrImpl">
+		<property name="tbUserlvlDAO">
+			<ref bean="tbUserlvlDAO" />
+		</property>
+		<property name="tbUserDAO">
+			<ref bean="tbUserDAO" />
+		</property>
+	</bean>
+	<!-- 资源管理器 -->
+	<bean id="functionMgr"
+		class="com.baosight.base.service.impl.FunctionMgrImpl">
+		<property name="tbFunctionDAO">
+			<ref bean="tbFunctionDAO" />
+		</property>
+		<property name="tbRighttypeDAO">
+			<ref bean="tbRighttypeDAO" />
+		</property>
+		<property name="tbRoleDAO">
+			<ref bean="tbRoleDAO" />
+		</property>
+		<property name="tbRoleAuthDAO">
+			<ref bean="tbRoleAuthDAO" />
+		</property>
+		<property name="tbAuthInfoDAO">
+			<ref bean="tbAuthInfoDAO" />
+		</property>
+		<property name="tbAppsysDAO">
+			<ref bean="tbAppsysDAO" />
+		</property>	
+		<property name="tbUserDAO">
+			<ref bean="tbUserDAO" />
+		</property>	
+		<property name="tbUserRoleDAO">
+			<ref bean="tbUserRoleDAO" />
+		</property>			
+	</bean>
+	<!-- 角色管理器 -->
+	<bean id="roleMgr"
+		class="com.baosight.base.service.impl.RoleMgrImpl">
+		<property name="tbRoleDAO">
+			<ref bean="tbRoleDAO" />
+		</property>
+	</bean>
+	<!-- 组管理器 -->
+	<bean id="groupMgr"
+		class="com.baosight.base.service.impl.GroupMgrImpl">
+		<property name="tbGroupDAO">
+			<ref bean="tbGroupDAO" />
+		</property>
+	</bean>
+	<!-- 部门管理器 -->
+	<bean id="deptMgr"
+		class="com.baosight.base.service.impl.DeptMgrImpl">
+		<property name="tbDeptDAO">
+			<ref bean="tbDeptDAO" />
+		</property>
+		<property name="tbPstDAO">
+			<ref bean="tbPstDAO" />
+		</property>
+		<property name="tbUserDAO">
+			<ref bean="tbUserDAO" />
+		</property>
+		<property name="pstMgr">
+			<ref local="pstMgr" />
+		</property>
+		<property name="userMgr">
+			<ref local="userMgr" />
+		</property>
+	</bean>
+	<!-- 职务管理器 -->
+	<bean id="pstMgr"
+		class="com.baosight.base.service.impl.PstMgrImpl">
+		<property name="tbPstDAO">
+			<ref bean="tbPstDAO" />
+		</property>
+		<property name="tbDeptDAO">
+			<ref bean="tbDeptDAO" />
+		</property>
+		<property name="tbUserDAO">
+			<ref bean="tbUserDAO" />
+		</property>
+	</bean>
+
+	<!-- 用户扩展信息管理器 -->
+	<bean id="userInfoMgr"
+		class="com.baosight.base.service.impl.UserInfoMgrImpl">
+		<property name="tbUserinfoDAO">
+			<ref bean="tbUserinfoDAO" />
+		</property>
+		<property name="tbUserRoleDAO">
+			<ref bean="tbUserRoleDAO" />
+		</property>
+	</bean>
+
+	<!-- 用户角色管理器 -->
+	<bean id="userRoleMgr"
+		class="com.baosight.base.service.impl.UserRoleMgrImpl">
+		<property name="tbUserRoleDAO">
+			<ref bean="tbUserRoleDAO" />
+		</property>
+	</bean>
+
+	<!-- 权限等级管理 -->
+	<bean id="authlvlMgr"
+		class="com.baosight.base.service.impl.AuthlvlMgrImpl">
+		<property name="tbAuthlvlDAO">
+			<ref bean="tbAuthlvlDAO" />
+		</property>
+	</bean>
+
+	<!-- 部门等级管理器 -->
+	<bean id="deptlvlMgr"
+		class="com.baosight.base.service.impl.DeptlvlMgrImpl">
+		<property name="tbDeptlvlDAO">
+			<ref bean="tbDeptlvlDAO" />
+		</property>
+		<property name="tbDeptDAO">
+			<ref bean="tbDeptDAO" />
+		</property>
+	</bean>
+	<!-- 系统应用管理器 -->
+	<bean id="appSysMgr"
+		class="com.baosight.base.service.impl.AppSysMgrImpl">
+		<property name="tbAppsysDAO">
+			<ref bean="tbAppsysDAO" />
+		</property>
+	</bean>
+	<!-- 用户个性化定制管理器 -->
+	<bean id="userAppsysMgr"
+		class="com.baosight.base.service.impl.UserAppsysMgrImpl">
+		<property name="tbUserAppsysDAO">
+			<ref bean="tbUserAppsysDAO" />
+		</property>
+		<property name="tbUserDAO">
+			<ref bean="tbUserDAO" />
+		</property>	
+		<property name="tbAppsysDAO">
+			<ref bean="tbAppsysDAO" />
+		</property>	
+		<property name="tbFunctionDAO">
+			<ref bean="tbFunctionDAO" />
+		</property>						
+	</bean>	
+	<!-- 节假日管理器 -->
+	<bean id="oaholidayMgr"
+		class="com.baosight.base.service.impl.OaHolidayMgrImpl">
+		<property name="oaHolidayDAO">
+			<ref bean="tbOaholidayDAO" />
+		</property>
+	</bean>	
+	<!-- 一周日程 -->
+	<bean id="tbZwWeekSecheduleMgr"
+		class="com.baosight.base.service.impl.TbZwWeekSecheduleMgrImpl">
+		<property name="tbZwWeekSecheduleDAO">
+			<ref bean="tbZwWeekSecheduleDAO" />
+		</property>
+		<property name="tbUserDAO">
+			<ref bean="tbUserDAO" />
+		</property>
+		<property name="tbDeptDAO">
+			<ref bean="tbDeptDAO" />
+		</property>
+	</bean>	
+	<!-- 会议安排管理器 -->
+	<bean id="meetingMgr"
+		class="com.baosight.base.service.impl.MeetingMgrImpl">
+		<property name="tbMeetingDAO">
+			<ref bean="tbMeetingDAO" />
+		</property>
+	</bean>
+	<!-- 会议室管理器 -->
+	<bean id="meetingRoomMgr"
+		class="com.baosight.base.service.impl.MeetingRoomMgrImpl">
+		<property name="tbMeetingRoomDAO">
+			<ref bean="tbMeetingRoomDAO" />
+		</property>
+	</bean>
+
+	<!-- 个人通讯管理器 -->
+	<bean id="individualMgr"
+		class="com.baosight.base.service.impl.IndividualMgrImpl">
+		<property name="tbIndividualDAO">
+			<ref bean="tbIndividualDAO" />
+		</property>
+	</bean>
+	<!-- 个人通讯组管理器 -->
+	<bean id="individualCommMgr"
+		class="com.baosight.base.service.impl.IndividualCommMgrImpl">
+		<property name="tbIndividualCommDAO">
+			<ref bean="tbIndividualCommDAO" />
+		</property>
+		
+	</bean>
+
+	<!-- 用户部门  -->
+	<bean id="userDeptMgr"
+		class="com.baosight.base.service.impl.UserDeptMgrImpl">
+		<property name="tbUserdeptDAO">
+			<ref bean="tbUserdeptDAO" />
+		</property>
+	</bean>	
+	<!-- 公共通讯录  -->
+	<bean id="commonalityMgr"
+		class="com.baosight.base.service.impl.CommonalityMgrImpl">
+		<property name="tbCommonalityDAO">
+			<ref bean="tbCommonalityDAO" />
+		</property>
+	</bean>
+	<!-- 公共通讯组 -->
+	<bean id="commonalityCommMgr"
+		class="com.baosight.base.service.impl.CommonalityCommMgrImpl">
+		<property name="tbCommonalityCommDAO">
+			<ref bean="tbCommonalityCommDAO" />
+		</property>
+	</bean>
+		<!-- 信息发布栏目 -->
+	<bean id="infoPubClaMgr"
+		class="com.baosight.base.service.impl.InfoPubClaMgrImpl">
+		<property name="tbInfoPubClaDAO">
+			<ref bean="tbInfoPubClaDAO" />
+		</property>
+	</bean>
+		<!-- 信息发布内容 -->
+	<bean id="infoPubContentMgr"
+		class="com.baosight.base.service.impl.InfoPubContentMgrImpl">
+		<property name="tbInfoPubContentDAO">
+			<ref bean="tbInfoPubContentDAO" />
+		</property>
+		<property name="tbInfoPubClaDAO">
+			<ref bean="tbInfoPubClaDAO" />
+		</property>
+		<property name="tbGovInfoPubContentDAO">
+			<ref bean="tbGovInfoPubContentDAO" />
+		</property>
+	</bean>
+	
+	<!-- 行政许可 -->
+	<bean id="applyMgr"
+		class="com.baosight.base.service.impl.ApplyMgrImpl">
+		<property name="tbApplyDAO">
+			<ref bean="tbApplyDAO" />
+		</property>
+	</bean>
+	<!-- yuanshuishujubiao -->
+	<bean id="yuanshuishujubiaoMgr"
+		class="com.baosight.base.service.impl.YuanshuishujubiaoMgrImpl">
+		<property name="tbYuanshuishujubiaoDAO">
+			<ref bean="tbYuanshuishujubiaoDAO" />
+		</property>
+	</bean>	
+	<!-- 政府信息公开 -->
+	<bean id="tfileMgr"
+		class="com.baosight.base.service.impl.TFileAllZfMgrImpl">
+		<property name="tbileAllZfDAO">
+			<ref bean="tbileAllZfDAO" />
+		</property>
+	</bean>	
+	<!-- 首页的政府信息公开-->
+	<bean id="govMgr"
+		class="com.baosight.base.service.impl.GovInfoPubContentMgrImpl">	
+	<property name="tbGovInfoPubContentDAO">
+			<ref bean="tbGovInfoPubContentDAO" />
+		</property>
+		</bean>
+	<!-- 用车管理 -->
+	<bean id="vehiclesServiceMgr"
+		class="com.baosight.base.service.impl.VehiclesServiceImpl">
+		<property name="tdVehiclesDAO">
+			<ref bean="tdVehiclesDAO" />
+		</property>
+	</bean>	
+	<!-- 政府信息审核 -->
+	<bean id="infoAuditMgr"
+		class="com.baosight.base.service.impl.InfoAuditMgrImpl">
+		<property name="tbInfoAuditDAO">
+			<ref bean="tbInfoAuditDAO" />
+		</property>
+	</bean>	
+	<!-- 消息通讯 -->
+	<bean id="messagesMgr"
+		class="com.baosight.base.service.impl.MessageMgrImpl">
+		<property name="tbMessageDAO">
+			<ref bean="tbMessageDAO" />
+		</property>
+	</bean>	
+	<!-- 答复书5-7 -->
+	<bean id="replyMgr" 
+		class="com.baosight.base.service.impl.ReplyMgrImpl">
+		<property name="tbReplyDAO">
+			<ref bean="tbReplyDAO" />
+		</property>
+	</bean>	
+	<!-- 待办事宜 -->
+	<bean id="notiesMgr"
+		class="com.baosight.base.service.impl.NotiesMgrImpl">
+		<property name="tbNotiesDAO">
+			<ref bean="tbNotiesDAO" />
+		</property>
+	</bean>	
+	<!-- 用车申请管理 -->
+	<bean id="tbVehiclesApplyMgr"
+		class="com.baosight.base.service.impl.TbVehiclesApplyMgrImpl">
+		<property name="tbVehiclesApplyDAO">
+			<ref bean="tbVehiclesApplyDAO" />
+		</property>
+	</bean>	
+		<!-- 不予许可 -->	
+	<bean id="govInfoPubMgr"
+		class="com.baosight.base.service.impl.GovInfoPubManagerImpl">
+		<property name="tbGovInfoPubDAO">
+			<ref bean="tbGovInfoPubDAO" />
+		</property>
+	</bean>
+		<!-- writ7 -->	
+	<bean id="writ7Mgr"
+		class="com.baosight.base.service.impl.Writ7MgrImpl">
+		<property name="tbWrit7DAO">
+			<ref bean="tbWrit7DAO" />
+		</property>
+	</bean>
+		<!-- writ2 -->	
+	<bean id="writ2Mgr"
+		class="com.baosight.base.service.impl.Writ2MgrImpl">
+		<property name="tbWrit2DAO">
+			<ref bean="tbWrit2DAO" />
+		</property>
+	</bean>
+		<!-- writ4 -->	
+	<bean id="writ4Mgr"
+		class="com.baosight.base.service.impl.Writ4MgrImpl">
+		<property name="tbWrit4DAO">
+			<ref bean="tbWrit4DAO" />
+		</property>
+	</bean>
+		<!-- writ8 -->	
+	<bean id="writ8Mgr"
+		class="com.baosight.base.service.impl.Writ8MgrImpl">
+		<property name="tbWrit8DAO">
+			<ref bean="tbWrit8DAO" />
+		</property>
+	</bean>
+		<!-- writ9 -->	
+	<bean id="writ9Mgr"
+		class="com.baosight.base.service.impl.Writ9MgrImpl">
+		<property name="tbWrit9DAO">
+			<ref bean="tbWrit9DAO" />
+		</property>
+	</bean>
+	
+	<!-- 待审核信息列表,请详细信息 donghui -->
+	<bean id="tbGovInfoPubMgr"
+		class="com.baosight.base.service.impl.TbGovInfoPubMgrImpl">
+		<property name="tbGovInfoPubDAO">
+			<ref bean="tbGovInfoPubDAO" />
+		</property>
+	</bean>
+	
+	<bean id="tbGovInfoPubAuditMgr"
+		class="com.baosight.base.service.impl.TbGovInfoPubAuditMgrImpl">
+		<property name="tbGovInfoPubAuditDAO">
+			 <ref bean="tbGovInfoPubAuditDAO" />
+		</property>
+	</bean>	
+	<!-- 政府信息公开告知书 -->
+	<bean id="zfxxgkgzsMgr"
+		class="com.baosight.base.service.impl.ZfxxgkgzsMgrImpl">
+		<property name="tbZfxxgkgzsDAO">
+			<ref bean="tbZfxxgkgzsDAO" />
+		</property>
+	</bean>
+	<bean id="zfxxbfgkgzsMgr"
+		class="com.baosight.base.service.impl.ZfxxbfgkgzsMgrImpl">
+		<property name="tbZfxxbfgkgzsDAO">
+			<ref bean="tbZfxxbfgkgzsDAO" />
+		</property>
+	</bean>
+	<bean id="bzsqgzsMgr"
+		class="com.baosight.base.service.impl.BzsqgzsMgrImpl">
+		<property name="tbBzsqgzsDAO">
+			<ref bean="tbBzsqgzsDAO" />
+		</property>
+	</bean>	
+
+	<!-- 政府信息公开申请答复书 -->
+	<bean id="zfxxgksqdfMgr"
+		class="com.baosight.base.service.impl.ZfxxgksqdfMgrImpl">
+		<property name="tbZfxxgksqdfDAO">
+			<ref bean="tbZfxxgksqdfDAO" />
+		</property>
+	</bean>	
+	<!-- 政府信息公开申请答复书（一二和回执） -->
+	<bean id="zfxxgkdfMgr"
+		class="com.baosight.base.service.impl.ZfxxgkdfMgrImpl">
+		<property name="tbZfxxgksqSjhcDAO">
+			<ref bean="tbZfxxgksqSjhcDAO" />
+		</property>
+		<property name="tbZfxxgkdfTwoDAO">
+			<ref bean="tbZfxxgkdfTwoDAO" />
+		</property>
+		<property name="tbZfxxgkdfOneDAO">
+			<ref bean="tbZfxxgkdfOneDAO" />
+		</property>
+	</bean>	  
+	<!-- 政府信息公开申请答复书（三）-->
+	<bean id="zfxxgksqdfs3Mgr"
+		class="com.baosight.base.service.impl.Zfxxgksqdfs3MgrImpl">
+		<property name="tbZfxxgksqdfs3DAO">
+			<ref bean="tbZfxxgksqdfs3DAO" />
+		</property>
+	</bean>	
+	<!-- 政府信息公开申请答复书（四）-->
+	<bean id="zfxxgksqdfs4Mgr"
+		class="com.baosight.base.service.impl.Zfxxgksqdfs4MgrImpl">
+		<property name="tbZfxxgksqdfs4DAO">
+			<ref bean="tbZfxxgksqdfs4DAO" />
+		</property>
+	</bean>	
+	<!-- 政府信息公开补正申请告知书 -->
+	<bean id="zfxxgkbzsqgzsMgr"
+		class="com.baosight.base.service.impl.ZfxxgkbzsqgzsMgrImpl">
+		<property name="tbZfxxgkbzsqgzsDAO">
+			<ref bean="tbZfxxgkbzsqgzsDAO" />
+		</property>
+	</bean>	
+	<!-- 政府信息公开重复申请告知书 -->
+	<bean id="zfxxgkcfsqgzsMgr"
+		class="com.baosight.base.service.impl.ZfxxgkcfsqgzsMgrImpl">
+		<property name="tbZfxxgkcfsqgzsDAO">
+			<ref bean="tbZfxxgkcfsqgzsDAO" />
+		</property>
+	</bean>	
+	<!-- 延期答复告知书 -->
+	<bean id="yqdfgzsMgr"
+		class="com.baosight.base.service.impl.YqdfgzsMgrImpl">
+		<property name="tbYqdfgzsDAO">
+			<ref bean="tbYqdfgzsDAO" />
+		</property>
+	</bean>	
+	<!-- 非政府信息公开申请告知书 -->
+	<bean id="fzfxxgksqgzsMgr"
+		class="com.baosight.base.service.impl.FzfxxgksqgzsMgrImpl">
+		<property name="tbFzfxxgksqgzsDAO">
+			<ref bean="tbFzfxxgksqgzsDAO" />
+		</property>
+	</bean>	
+
+	<!-- 档案管理 -->
+	<bean id="tbArchivesApplyMgr"
+		class="com.baosight.base.service.impl.TbArchivesApplyMgrImpl">
+		<property name="tbArchivesApplyDAO">
+			<ref bean="tbArchivesApplyDAO" />
+		</property>
+	</bean>	
+	<bean id="tbArchivesMgr"
+		class="com.baosight.base.service.impl.TbArchivesMgrImpl">
+		<property name="tbArchivesDAO">
+			<ref bean="tbArchivesDAO" />
+		</property>
+	</bean>	
+	<bean id="tbFormatMgr"
+		class="com.baosight.base.service.impl.TbFormatMgrImpl">
+		<property name="tbFormatDAO">
+			<ref bean="tbFormatDAO" />
+		</property>
+	</bean>	
+	<bean id="tbNopubdescMgr"
+		class="com.baosight.base.service.impl.TbNopubdescMgrImpl">
+		<property name="tbNopubdescDAO">
+			<ref bean="tbNopubdescDAO" />
+		</property>
+	</bean>	
+	<bean id="tbOffDocCateMgr"
+		class="com.baosight.base.service.impl.TbOffDocCateMgrImpl">
+		<property name="tbOffDocCateDAO">
+			<ref bean="tbOffDocCateDAO" />
+		</property>
+	</bean>	
+	<bean id="tbPubclassMgr"
+		class="com.baosight.base.service.impl.TbPubclassMgrImpl">
+		<property name="tbPubclassDAO">
+			<ref bean="tbPubclassDAO" />
+		</property>
+	</bean>	
+	<bean id="tbTopicMgr"
+		class="com.baosight.base.service.impl.TbTopicMgrImpl">
+		<property name="tbTopicDAO">
+			<ref bean="tbTopicDAO" />
+		</property>
+	</bean>	
+	<bean id="tbTypeMgr"
+		class="com.baosight.base.service.impl.TbTypeMgrImpl">
+		<property name="tbTypeDAO">
+			<ref bean="tbTypeDAO" />
+		</property>
+	</bean>	
+	
+	<!-- 文件传送 -->
+	<bean id="tbFilesendMgr"
+		class="com.baosight.base.service.impl.TbFilesendMgrImpl">
+		<property name="tbFilesendDAO">
+			<ref bean="tbFilesendDAO" />
+		</property>
+	</bean>	
+	
+	<!-- 网上咨询 -->
+	<bean id="tbConsultationOnlineMgr"
+		class="com.baosight.base.service.impl.TbConsultationOnlineMgrImpl">
+		<property name="tbConsultationOnlineDAO">
+			<ref bean="tbConsultationOnlineDAO" />
+		</property>
+	</bean>	
+	<bean id="tbPublicAffairTransactMgr"
+		class="com.baosight.base.service.impl.TbPublicAffairTransactMgrImpl">
+		<property name="tbPublicAffairTransactDAO">
+			<ref bean="tbPublicAffairTransactDAO" />
+		</property>
+	</bean>	
+	<bean id="tbDocRecMgr"
+		class="com.baosight.base.service.impl.TbDocRecMgrImpl">
+		<property name="tbDocRecDAO">
+			<ref bean="tbDocRecDAO" />
+		</property>
+		<property name="tbDocControlDAO">
+			<ref bean="tbDocControlDAO" />
+		</property>
+		<property name="tbDocInfoLevelSeqDAO">
+			<ref bean="tbDocInfoLevelSeqDAO" />
+		</property>
+	</bean>	
+	<!-- 收文管理 列表 -->
+	<bean id="docRecListMgr"
+		class="com.baosight.base.service.impl.DocRecListMgrImpl">
+		<property name="tbDocRecDAO">
+			<ref bean="tbDocRecDAO" />
+		</property>
+		<property name="tbDocControlDAO">
+			<ref bean="tbDocControlDAO" />
+		</property>
+		<property name="tbDocUrgentDAO">
+			<ref bean="tbDocUrgentDAO" />
+		</property>
+	</bean>	
+	<bean id="docServiceMgr"
+		class="com.baosight.base.service.impl.DocServiceMgrImpl">
+		<property name="tbDocRecDAO">
+			<ref bean="tbDocRecDAO" />
+		</property>
+		<property name="tbDocSendDAO">
+			<ref bean="tbDocSendDAO" />
+		</property>
+		<property name="tbDocControlDAO">
+			<ref bean="tbDocControlDAO" />
+		</property>
+		<property name="tbDocsendControlDAO">
+			<ref bean="tbDocsendControlDAO" />
+		</property>
+		<property name="tbDocSendXxzxDAO">
+			<ref bean="tbDocSendXxzxDAO" />
+		</property>
+		<property name="tbDocsendControlXxzxDAO">
+			<ref bean="tbDocsendControlXxzxDAO" />
+		</property>
+		<property name="tbDocArchiveCodeDAO">
+			<ref bean="tbDocArchiveCodeDAO" />
+		</property>
+		<property name="tbArchivesDAO">
+			<ref bean="tbArchivesDAO" />
+		</property>
+		<property name="tbUserOpeationDAO">
+			<ref bean="tbUserOpeationDAO" />
+		</property>
+	</bean>
+	<bean id="docAttachMgr"
+		class="com.baosight.base.service.impl.DocAttachMgrImpl">
+		<property name="tbDocAttachDAO">
+			<ref bean="tbDocAttachDAO" />
+		</property>
+	</bean>
+<!-- 网上投诉 -->	
+	<bean id="tbAppealOnlineMgr"
+		class="com.baosight.base.service.impl.TbAppealOnlineMgrImpl">
+		<property name="tbAppealOnlineDAO">
+			<ref bean="tbAppealOnlineDAO" />
+		</property>
+	</bean>		
+	<!-- 共享空间 -->
+	<bean id="tbShareFileMgr"
+		class="com.baosight.base.service.impl.TbShareFileMgrImpl">
+		<property name="tbShareFileDAO">
+			<ref bean="tbShareFileDAO" />
+		</property>
+	</bean>	
+	
+	<!-- 局长信箱 -->
+	<bean id="tbOpinionOnlineMgr"
+		class="com.baosight.base.service.impl.TbOpinionOnlineMgrImpl">
+		<property name="tbOpinionOnlineDAO">
+			<ref bean="tbOpinionOnlineDAO" />
+		</property>
+	</bean>
+
+	<!-- 发文管理 -->
+	<bean id="docSendMgr"
+		class="com.baosight.base.service.impl.DocSendMgrImpl">
+		<property name="tbDocSendDAO">
+			<ref bean="tbDocSendDAO" />
+		</property>
+		<property name="tbDocsendControlDAO">
+			<ref bean="tbDocsendControlDAO" />
+		</property>
+	</bean>
+	<bean id="docSendDealMgr"
+		class="com.baosight.base.service.impl.DocSendDealMgrImpl">
+		<property name="tbDocSendDAO">
+			<ref bean="tbDocSendDAO" />
+		</property>
+		<property name="tbDocsendControlDAO">
+			<ref bean="tbDocsendControlDAO" />
+		</property>
+		<property name="tbDocsendListitemsDAO">
+			<ref bean="tbDocsendListitemsDAO" />
+		</property>
+		<property name="tbDocsendSubjectDAO">
+			<ref bean="tbDocsendSubjectDAO" />
+		</property>
+	</bean>
+	<bean id="docSendBookMgr"
+		class="com.baosight.base.service.impl.DocSendBookMgrImpl">
+		<property name="tbDocSendDAO">
+			<ref bean="tbDocSendDAO" />
+		</property>
+		<property name="tbDocsendControlDAO">
+			<ref bean="tbDocsendControlDAO" />
+		</property>		
+	</bean>	
+	
+	<bean id="tbUserOpeationMgr"
+		class="com.baosight.base.service.impl.TbUserOpeationMgrImpl">
+		<property name="tbUserOpeationDAO">
+			<ref bean="tbUserOpeationDAO" />
+		</property>
+	</bean>
+	<!-- 信息中心发文管理 -->
+	<bean id="xdocSendMgr"
+		class="com.baosight.infocenter.docsend.service.impl.DocSendMgrImpl">
+		<property name="tbDocSendDAO">
+			<ref bean="tbDocSendXxzxDAO" />
+		</property>
+		<property name="tbDocsendControlDAO">
+			<ref bean="tbDocsendControlXxzxDAO" />
+		</property>
+	</bean>
+	<bean id="xdocSendDealMgr"
+		class="com.baosight.infocenter.docsend.service.impl.DocSendDealMgrImpl">
+		<property name="tbDocSendDAO">
+			<ref bean="tbDocSendXxzxDAO" />
+		</property>
+		<property name="tbDocsendControlDAO">
+			<ref bean="tbDocsendControlXxzxDAO" />
+		</property>
+		<property name="tbDocsendListitemsDAO">
+			<ref bean="tbDocsendListitemsDAO" />
+		</property>
+		<property name="tbDocsendSubjectDAO">
+			<ref bean="tbDocsendSubjectDAO" />
+		</property>
+	</bean>
+	<!-- 会议纪要管理 -->
+	<bean id="meetingrecordMgr"
+		class="com.baosight.base.service.impl.MeetingrecordMgrImpl">
+		<property name="tbMeetingrecordDAO">
+			<ref bean="tbMeetingrecordDAO" />
+		</property>
+	</bean>	
+	<!-- 短信平台 -->
+	<bean id="smsScheduleMgr"
+		class="com.baosight.base.service.impl.SmsScheduleMgrImpl">
+		<property name="tbSmsScheduleDAO">
+			<ref bean="tbSmsScheduleDAO" />
+		</property>
+	</bean>
+	<bean id="smsTransferMgr"
+		class="com.baosight.sms.service.impl.TransferMgrImpl">
+		<property name="infoDAO">
+			<ref bean="smsTransferInfoDAO" />
+		</property>
+		<property name="listDAO">
+			<ref bean="smsTransferListDAO" />
+		</property>
+	</bean>
+	<!-- 短信订阅 -->
+	<bean id="smsSubscribeMgr"
+		class="com.baosight.base.service.impl.SmsSubscribeMgrImpl">
+		<property name="tbSmsSubscribeDAO">
+			<ref bean="tbSmsSubscribeDAO" />
+		</property>
+	</bean>	
+	<bean id="smsSubjectMgr"
+		class="com.baosight.base.service.impl.SmsSubjectMgrImpl">
+		<property name="tbSmSubjectDAO">
+			<ref bean="tbSmSubjectDAO" />
+		</property>
+	</bean>
+	<!-- 查询统计 -->	
+	<bean id="smsDepartMgr"
+		class="com.baosight.base.service.impl.SmsDepartMgrImpl">
+		<property name="tbSmsDepartDao">
+			<ref bean="tbSmsDepartDAO" />
+		</property>
+	</bean>
+	<bean id="smsUserMgr"
+		class="com.baosight.base.service.impl.SmsUserMgrImpl">
+		<property name="tbSmsUserDao">
+			<ref bean="tbSmsUserDAO" />
+		</property>
+	</bean>
+	<bean id="faxScheduleMgr"
+		class="com.baosight.fax.service.impl.ScheduleMgrImpl">
+		<property name="tbFaxScheduleDAO">
+			<ref bean="tbFaxScheduleDAO" />
+		</property>
+	</bean>
+	<bean id="faxQueryScheduleMgr"
+		class="com.baosight.fax.service.impl.QueryScheduleMgrImpl">
+		<property name="tbFaxQueryScheduleDAO">
+			<ref bean="tbFaxQueryScheduleDAO" />
+		</property>
+	</bean>
+	<bean id="tbSwrxMgr"
+	class="com.baosight.base.service.impl.TbSwrxMgrImpl">
+		<property name="tbSwrxDAO">
+			<ref bean="tbSwrxDAO"/>
+		</property>
+	</bean>
+	<!-- 委托 -->
+	<bean id="commissionMgr"
+		class="com.baosight.base.service.impl.CommissionMgrImpl">
+		<property name="tbCommissionDAO">
+			<ref bean="tbCommissionDAO" />
+		</property>
+	</bean>
+	<bean id="techDiscoureMgr"
+		class="com.baosight.tech.service.impl.TechDiscoureMgrImpl">
+		<property name="tbTechDiscoureDAO">
+			<ref bean="tbTechDiscoureDAO" />
+		</property>
+	</bean>
+	<bean id="techMapShareMgr"
+		class="com.baosight.tech.service.impl.TechMapShareMgrImpl">
+		<property name="tbTechMapShareDAO">
+			<ref bean="tbTechMapShareDAO" />
+		</property>
+	</bean>
+	<bean id="techResultMgr"
+		class="com.baosight.tech.service.impl.TechResultMgrImpl">
+		<property name="tbTechResultDAO">
+			<ref bean="tbTechResultDAO" />
+		</property>
+	</bean>
+	<bean id="techStandardMgr"
+		class="com.baosight.tech.service.impl.TechStandardMgrImpl">
+		<property name="tbTechStandardDAO">
+			<ref bean="tbTechStandardDAO" />
+		</property>
+	</bean>
+	<bean id="warningPubMgr"
+		class="com.baosight.base.service.impl.WarningPubMgrImpl">
+		<property name="tbWarningPubDAO">
+			<ref bean="tbWarningPubDAO" />
+		</property>
+	</bean>	
+</beans>

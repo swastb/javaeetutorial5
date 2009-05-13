@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="configLocation">
+			<value>classpath:hibernate.cfg.xml</value>
+		</property>
+	</bean>
+	<bean id="transactionManager"
+		class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="transactionInterceptor"
+		class="org.springframework.transaction.interceptor.TransactionInterceptor">
+		<!--  事务拦截器bean需要依赖注入一个事务管理器 -->
+		<property name="transactionManager" ref="transactionManager" />
+		<property name="transactionAttributes">
+			<!--  下面定义事务传播属性-->
+			<props>
+				<!-- <prop key="get*">PROPAGATION_REQUIRED,readOnly</prop>
+					<prop key="add*">PROPAGATION_REQUIRED,-TMSAppException</prop>
+					<prop key="delete*">PROPAGATION_REQUIRED,-TMSAppException</prop>
+					<prop key="modify*">PROPAGATION_REQUIRED,-TMSAppException</prop>
+					<prop key="find*">PROPAGATION_REQUIRED,-TMSAppException,readOnly</prop>
+					<prop key="list*">PROPAGATION_REQUIRED,-TMSAppException,readOnly</prop> -->
+				<prop key="*">PROPAGATION_REQUIRED</prop>
+			</props>
+		</property>
+	</bean>
+	<!-- 定义BeanNameAutoProxyCreator-->
+	<bean
+		class="org.springframework.aop.framework.autoproxy.BeanNameAutoProxyCreator">
+		<!--  指定对满足哪些bean name的bean自动生成业务代理 -->
+		<property name="beanNames">
+			<!--  下面是所有需要自动创建事务代理的bean-->
+			<list>
+				<value>userMgr</value>
+				<value>pstlvlMgr</value>
+				<value>rightTypeMgr</value>
+				<value>userlvlMgr</value>
+				<value>functionMgr</value>
+				<value>roleMgr</value>
+				<value>groupMgr</value>
+				<value>deptMgr</value>
+				<value>pstMgr</value>
+				<value>authlvlMgr</value>
+				<value>deptlvlMgr</value>
+				<value>userInfoMgr</value>
+				<value>userRoleMgr</value>
+				<value>appSysMgr</value>
+				<value>userAppsysMgr</value>					
+				<value>SsoWebServiceBean</value>			
+				<value>tbZwWeekSecheduleMgr</value>
+				<value>oaholidayMgr</value>
+				<value>userDeptMgr</value>		
+				<value>meetingMgr</value>
+				<value>commonalityMgr</value>
+				<value>commonalityCommMgr</value>	
+				<value>meetingRoomMgr</value>
+				<value>individualCommMgr</value>	
+				<value>individualMgr</value>
+				<value>infoPubContentMgr</value>	
+				<value>infoPubClaMgr</value>
+				<value>applyMgr</value>			
+				<value>yuanshuishujubiaoMgr</value>		
+				<value>tfileMgr</value>	
+				<value>tbVehiclesApplyMgr</value>			
+				<value>vehiclesServiceMgr</value>
+				<value>infoAuditMgr</value>
+				<value>govInfoPubMgr</value>
+				<value>writ7Mgr</value>
+				<value>writ2Mgr</value>
+				<value>writ4Mgr</value>
+				<value>writ8Mgr</value>
+				<value>writ9Mgr</value>								
+				<value>infoAuditMgr</value>	
+				<value>tbGovInfoPubMgr</value>	
+				<value>zfxxgkgzsMgr</value>
+				<value>zfxxbfgkgzsMgr</value>
+				<value>bzsqgzsMgr</value>	
+				<value>zfxxgksqdfMgr</value>	
+				<value>zfxxgksqdfs3Mgr</value>	
+				<value>zfxxgksqdfs4Mgr</value>	
+				<value>zfxxgkbzsqgzsMgr</value>	
+				<value>zfxxgkcfsqgzsMgr</value>	
+				<value>yqdfgzsMgr</value>	
+				<value>fzfxxgksqgzsMgr</value>	
+				<value>tbArchivesMgr</value>	
+				<value>messagesMgr</value>
+				<value>notiesMgr</value>
+				<value>replyMgr</value>			
+		 		<value>*Mgr</value>	 
+		 		<value>tbConsultationOnlineMgr</value>	
+		 		<value>docRecListMgr</value>
+		 		<value>docSendBookMgr</value>
+		 		<value>tbArchivesApplyMgr</value>
+		 		<value>tbUserOpeationMgr</value>
+		 		<value>/auditListAction</value>
+		 		<value>govMgr</value>
+		 		<value>smsScheduleMgr</value>
+		 		<value>smsSubscribeMgr</value>
+		 		<value>tbSwrxMgr</value>
+			</list>
+			<!--  此处可增加其他需要自动创建事务代理的bean-->
+		</property>
+		<!--  下面定义BeanNameAutoProxyCreator所需的事务拦截器-->
+		<property name="interceptorNames">
+			<list>
+				<!-- 此处可增加其他新的Interceptor -->
+				<value>transactionInterceptor</value>
+			</list>
+		</property>
+	</bean>
+	<bean id="daoTemplate" abstract="true" lazy-init="true">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	
+	
+</beans>

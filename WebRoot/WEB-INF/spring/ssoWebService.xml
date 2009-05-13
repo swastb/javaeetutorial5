@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans SYSTEM "D://spring-beans.dtd">
+<beans>
+	<bean id="SsoWebServiceBean"
+		class="com.baosight.mode.SsoWebServiceImpl">
+		<property name="tbRoleAuthDAO">
+			<ref bean="tbRoleAuthDAO" />
+		</property>
+		<property name="tbGroupDAO">
+			<ref bean="tbGroupDAO" />
+		</property>
+		<property name="tbRighttypeDAO">
+			<ref bean="tbRighttypeDAO" />
+		</property>
+		<property name="tbUserAuthDAO">
+			<ref bean="tbUserAuthDAO" />
+		</property>
+		<property name="tbLicencepolicyDAO">
+			<ref bean="tbLicencepolicyDAO" />
+		</property>
+		<property name="tbUserGroupDAO">
+			<ref bean="tbUserGroupDAO" />
+		</property>
+		<property name="tbGroupRoleDAO">
+			<ref bean="tbGroupRoleDAO" />
+		</property>
+		<property name="tbAuthInfoDAO">
+			<ref bean="tbAuthInfoDAO" />
+		</property>
+		<property name="tbUserDAO">
+			<ref bean="tbUserDAO" />
+		</property>
+		<property name="tbUserRoleDAO">
+			<ref bean="tbUserRoleDAO" />
+		</property>		
+		<property name="tbUserinfoDAO">
+			<ref bean="tbUserinfoDAO" />
+		</property>	
+		<property name="tbFunctionDAO">
+			<ref bean="tbFunctionDAO" />
+		</property>	
+		<property name="tbGroupAuthDAO">
+			<ref bean="tbGroupAuthDAO" />
+		</property>	
+		<property name="tbDeptDAO">
+			<ref bean="tbDeptDAO" />
+		</property>		
+		<property name="tbRoleDAO">
+			<ref bean="tbRoleDAO" />
+		</property>
+			<property name="tbPstlvlDAO">
+			<ref bean="tbPstlvlDAO" />
+		</property>
+		<property name="tbPstDAO">
+			<ref bean="tbPstDAO" />
+		</property>
+		<property name="tbUserlvlDAO">
+			<ref bean="tbUserlvlDAO" />
+		</property>	
+		<property name="tbAppsysDAO">
+			<ref bean="tbAppsysDAO" />
+		</property>																																
+	</bean>	
+</beans>

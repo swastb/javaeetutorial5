@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans SYSTEM "D://spring-beans.dtd">
+<beans>
+	<!-- 协同办公管理模块DAOBean -->
+	
+	<bean id="tbZwWeekSecheduleDAO"
+		class="com.baosight.base.dao.impl.TbZwWeekSecheduleDAOImpl"
+		parent="daoTemplate" />
+</beans>
