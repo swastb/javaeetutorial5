@@ -1,0 +1,34 @@
+.bg {
+	font-size: 12px;
+	color: 4c6a95;
+	margin: 1px;
+	border: 1px solid d8ecf2 none;
+	padding: 1px;
+
+}
+.input-noborder{
+	border:none;
+}
+.tableborder {
+	border-collapse:collapse;
+
+}
+.bg-zw {
+	font-size: 12px;
+	color: 4c6a95;
+}
+.bg-zwbt {
+	font-size: 12px;
+	font-weight: bold;
+	color: 4c6a95;
+}
+
+a:link {
+        text-decoration: none;
+        color: #2c6b9e;
+}
+a:visited {
+        color:#2c6b9e;
+        text-decoration: none;
+}
+

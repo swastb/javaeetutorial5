@@ -1,0 +1,107 @@
+.shuruk1 {
+	color: 4c6a95;
+	text-indent: 1pt;
+	height: 18px;
+	border: 1px solid #a5a5a5;
+}
+.shuruk2 {	
+	border: 1px solid #a5a5a5;
+	color: 4c6a95;
+	text-indent: 1pt;
+}
+.shuruk3 {
+	color: 4c6a95;
+	text-indent: 1pt;
+	height: 18px;
+	border: 1px solid #a5a5a5;
+}
+.shuruk4 {
+	color: 4c6a95;
+	text-indent: 1pt;
+	height: 18px;
+	width: 90%;
+	border: 1px solid #a5a5a5;
+}
+.shuruk5 {
+	color: 4c6a95;
+	text-indent: 1pt;
+	height: 200px;
+	width: 90%;
+	border: 1px solid #a5a5a5;
+}
+.shuruk6 {
+	color: 4c6a95;
+	text-indent: 1pt;
+	height: 100px;
+	width: 85%;
+	border: 1px solid #a5a5a5;
+}
+.shuruk7 {
+	color: 4c6a95;
+	text-indent: 1pt;
+	height: 100px;
+	width: 60%;
+	border: 1px solid #a5a5a5;
+}
+.shurukrc {
+	border: 1px none;
+	color: 4c6a95;
+	text-indent: 1pt;
+	height: 18px;
+	width: 90%;
+	border: 1px solid #a5a5a5;
+}
+.lineInput {
+	height:27
+	font-size: 20px;
+	border: none;
+	text-align:center;
+	BORDER-BOTTOM: #404440 1px solid;
+	letter-spacing:0.1em;   
+}
+.lineInput1 {
+	height:27
+	font-size: 20px;
+	border: 1px none;
+	text-align:center;
+	BORDER-BOTTOM: 0;
+	letter-spacing:0.1em;
+	width:35px  
+}
+.titleTop {
+	font-size:18.0pt;
+	font-family:SimSun;
+}
+.content {
+	font-size:15.0pt;
+	mso-char-indent-count:2.0;
+	mso-bidi-font-size:12.0pt;
+	font-family:FangSong_GB2312;
+	mso-ascii-font-family:"Times New Roman";
+	color:black
+}
+.BeiZhu {
+	mso-char-indent-count:2.0;
+	mso-char-indent-count:2.0;
+	mso-bidi-font-size:10.5pt;
+	font-family:SimHei
+}
+.BeiZhuCon {
+	mso-char-indent-count:2.0;
+	mso-bidi-font-size:10.5pt;
+	font-family:KaiTi_GB2312
+}
+.trHeight {
+	line-height:28.0pt;
+	mso-line-height-rule:exactly;
+}
+.TEXTAREA1 {
+    border-color : ffffff;
+    border-style : inset;
+    border-width : 0px;
+}
+.TEXTAREA2 {
+    color: 4c6a95;
+    border-style : inset;
+    border-width : 0px;
+}

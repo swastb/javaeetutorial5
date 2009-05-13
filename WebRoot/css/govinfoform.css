@@ -1,0 +1,164 @@
+.table{
+	border:#000000 solid;
+	border-width:1 0 0 1;
+	background:#FFFFFF;
+	font-family: Arial, Helvetica, sans-serif, "??";
+	font-size: 12px;
+	color: #000000;
+	text-decoration: none;
+}
+.p12{
+	font-family: Arial, Helvetica, sans-serif, "??";
+	font-size: 12px;
+	color: #000000;
+	text-decoration: none;
+}
+.td{
+  border:#000000 solid;
+  border-width:0 1 1 0;
+}
+
+.toptitle {
+	font-family: Arial, Helvetica, sans-serif, "??";
+	font-size: 20px;
+	font-weight: bolder;
+	color: #000000;
+	text-decoration: none;
+}
+
+input.S_FUll{
+    border-right: black 0px solid;
+    border-top: black 0px solid;
+    border-left: black 0px solid;
+    border-bottom: black 0px solid;
+    vertical-align : text-bottom;
+    width : 100%;
+    height: 15px;
+}
+input.S_HALF{
+    border-right: black 0px solid;
+    border-top: black 0px solid;
+    border-left: black 0px solid;
+    border-bottom: black 0px solid;
+    vertical-align : text-bottom;
+    width : 50%;
+    height: 15px;
+}
+input.S_AUTO{
+	border-right: black 0px solid;
+	border-top: black 0px solid;
+	border-left: black 0px solid;
+	border-bottom: black 0px solid;
+	vertical-align: text-bottom;
+	width: auto;
+	height: 15px;
+}
+input.S_35{
+	border-right: black 0px solid;
+	border-top: black 0px solid;
+	border-left: black 0px solid;
+	border-bottom: black 0px solid;
+	vertical-align: text-bottom;
+	width: 35px;
+	height: 15px;
+}
+input.UNDERLINE35{
+border-width:0;
+text-align:center;
+border-bottom:1   solid   black;
+width:35px
+}
+input.UNDERLINE80{
+border-width:0;
+border-bottom:1   solid   black;
+width:80px
+}
+input.UNDERLINE100{
+border-width:0;
+border-bottom:1   solid   black;
+width:100px
+}
+input.UNDERLINE150{
+border-width:0;
+border-bottom:1   solid   black;
+width:150px
+}
+input.UNDERLINE170{
+border-width:0;
+border-bottom:1   solid   black;
+width:170px
+}
+input.UNDERLINE320{
+border-width:0;
+border-bottom:1   solid   black;
+text-align:center;
+width:320px
+}
+input.UNDERLINE420{
+border-width:0;
+border-bottom:1   solid   black;
+width:420px
+}
+input.UNDERLINE450{
+border-width:0;
+border-bottom:1   solid   black;
+width:450px
+}
+input.UNDERLINE_FULL{
+border-width:0;
+border-bottom:1   solid   black;
+width:100%
+}
+input.UNDERLINE_HALF{
+border-width:0;
+border-bottom:1   solid   black;
+width:50%
+}
+textarea.S_FUll{
+    border-right: black 0px solid;
+    border-top: black 0px solid;
+    border-left: black 0px solid;
+    border-bottom: black 0px solid;
+    vertical-align : text-bottom;
+    width : 100%;
+    height: 100%;
+}
+/* Begin of CSS for IDSign Widget*/
+.bottomline {
+	border-bottom:1px solid #d0d0d0;
+}
+.seperatorline {
+	padding-top:3px;
+	border-top:1px solid #d0d0d0;
+}
+.idsignbutton {
+	margin:1px;
+	border:2px solid #d0d0d0;
+	background-color:rgb(255, 255, 230);
+	padding-top:2px;
+}
+.idsignaturespan {
+	width:100%; /*important*/
+	height:100%;
+	font-family:Arial, san-serif;
+	font-style:oblique;
+	/*font-size:10pt;*/
+	text-align:center;
+}
+.idtimestamp {
+	text-align:center;
+	/*font-size:10pt;*/
+}
+.idwidget {
+	width:225px;
+	padding-top:150px;
+	position:relative; /*important*/
+}
+.dotline {
+BORDER-BOTTOM-STYLE: dotted; 
+BORDER-LEFT-STYLE: dotted; 
+BORDER-RIGHT-STYLE: dotted;
+BORDER-TOP-STYLE: dotted
+}
+
+/* End of CSS for IDSign Widget*/

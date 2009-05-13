@@ -1,0 +1,245 @@
+.xb {
+	font-size: 12px;
+	color: 2c6b9e;
+	line-height: normal;
+	
+
+}
+
+
+
+
+
+
+
+
+
+
+.tableborder {
+	border-collapse:collapse;
+	border: 1px solid #99cbe5;
+}
+
+
+
+
+
+
+
+
+
+.denglu {
+	font-size: 12px;
+	color: 2c6b9e;
+	width: 40px;
+	border: 1px solid;
+	height: 18px;
+
+	
+}
+.denglu1 {
+	font-size: 12px;
+	color: 2c6b9e;
+	width: 60px;
+	border: 1px solid;
+	height: 18px;
+
+	
+}
+.search {
+	font-size: 12px;
+	color: 2c6b9e;
+	width: 60px;
+	border: 1px solid #bdd9ed;
+	height: 18px;
+	width:100px;
+
+}
+.zw {
+	font-size: 12px;
+	color: 4c4c4e;
+	line-height: 16px;
+
+}
+.zw-time {
+	font-size: 12px;
+	color: 959597;
+}
+.chengse {
+	font-size: 12px;
+	font-weight: bold;
+	color: ff6529;
+}
+.zw-cu {
+	font-size: 12px;
+	font-weight: bold;
+	color: 40608e;
+}
+.xlk {
+	font-size: 12px;
+	color: 4c4c4c;
+	width: 130px;
+}
+.diaocha {
+
+	font-size: 12px;
+	color: 4d4d4f;
+	width: 220px;
+	border: 1px solid cccccc;
+	height: 20px;
+}
+.zwbg {
+	font-size: 12px;
+	color: 4c4c4e;
+	line-height: 10px;
+
+}
+.dl-l {
+	font-size: 12px;
+	font-weight: bold;
+	color: #FFFFFF;
+}
+.hs {
+	font-size: 12px;
+	font-weight: bold;
+	color: #FF0000;
+}
+.a {
+	font-size: 13px;
+	
+	color: #000000;
+}
+.b{
+	font-size: 13px;
+	
+	color: 40608e;
+}
+
+
+
+
+
+
+
+
+a:link {
+        text-decoration: none;
+        color: #3e3e3e;
+}
+a:visited {
+        color: #3e3e3e;
+        text-decoration: none;
+}
+
+
+
+
+
+
+
+a:hover {
+        color: #FF0000;
+        text-decoration: none;
+}
+a:active {
+        color: #FF0000;
+        text-decoration: none;
+}
+.shuruk {
+	font-size: 12px;
+	border: 1px none;
+	color: 4c6a95;
+	width: 120px;
+	text-indent: 1pt;
+}
+.shuruk2 {
+	font-size: 12px;
+	border: 1px none;
+	color: 4c6a95;
+	width: 690px;
+	text-indent: 1pt;
+}
+
+.shuruk3 {
+	font-size: 12px;
+	border: 1px none;
+	color: 4c6a95;
+	width: 760px;
+	text-indent: 1pt;
+}
+
+.shuruk4 {
+	font-size: 12px;
+	border: 1px none;
+	color: 4c6a95;
+	width: 790px;
+	text-indent: 1pt;
+}
+
+.shuruk5 {
+	font-size: 12px;
+	border: 1px none;
+	color: 4c6a95;
+	width: 670px;
+	text-indent: 1pt;
+}
+.shuruk6 {
+	font-size: 12px;
+	border: 1px none;
+	color: 4c6a95;
+	width: 410px;
+	text-indent: 1pt;
+}
+
+.xialak {
+	font-size: 12px;
+	color: 4c6a95;
+	width: 50px;
+}
+
+a.toptablemeun:link {
+        text-decoration: none;
+        color: #fff;
+       
+}
+a.toptablemeun:visited {
+        color: #fff;
+        text-decoration: none;
+       
+}
+
+
+a.toptablemeun:hover {
+        color: #FF0000;
+        text-decoration: none;
+      
+}
+a.toptablemeun:active {
+        color: #FF0000;
+        text-decoration: none;
+        
+}
+a.topmenu:link {
+        text-decoration: none;
+       font-size: 12px;
+       color: #3364da;
+}
+a.topmenu:visited {
+       font-size: 12px;
+       color: #3364da;
+        text-decoration: none;
+}
+
+
+a.topmenu:hover {
+        font-size: 12px;
+        color: #ff0000;
+        text-decoration: none;
+}
+a.topmenu:active {
+       font-size: 12px;
+       color: #ff0000;
+       text-decoration: none;
+}
+
+

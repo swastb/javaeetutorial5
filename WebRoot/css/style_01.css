@@ -1,0 +1,1280 @@
+BODY
+{
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	SCROLLBAR-FACE-COLOR: #E2E2E2; 
+	SCROLLBAR-HIGHLIGHT-COLOR: #E2E2E2;
+	SCROLLBAR-SHADOW-COLOR: ##F7F7F7;
+	SCROLLBAR-3DLIGHT-COLOR: #F7F7F7; 
+	SCROLLBAR-ARROW-COLOR: #000000; 
+	SCROLLBAR-TRACK-COLOR: #F7F7F7; 
+	SCROLLBAR-DARKSHADOW-COLOR: #F7F7F7;
+}
+.H_select {
+	font-family: "Arial", "Helvetica", "sans-serif";
+	font-size: 12px;
+	font-style: normal;
+	line-height: normal;
+	font-weight: normal;
+	font-variant: normal;
+	color: #042A62;
+	text-decoration: none;
+	border: 1px solid #000000;
+	background-color: #e1e5eb;
+}
+.H_tr {
+	background-image:  url(../imagine/1-tr.gif);
+}
+.H_tr_sub {
+	background-image:  url(../imagine/tr_sub.gif);
+}
+.H_tr_title_bg {
+	background-image:  url(../imagine/1-v_title_bg.gif);
+}
+.H_tree_bg {
+	background-image:  url(../imagine/1-tree_bg.gif);
+}
+.H_title {
+	font-family: "Arial", "Helvetica", "sans-serif";
+	font-size: 14px;
+	font-style: normal;
+	line-height: normal;
+	font-weight: bold;
+	font-variant: normal;
+	color: #042A62;
+	text-decoration: none;
+}
+.H_info_type {
+	font-family: "Arial", "Helvetica", "sans-serif";
+	font-size: 12px;
+	font-style: normal;
+	line-height: normal;
+	font-weight: normal;
+	font-variant: normal;
+	color: #042A62;
+	text-decoration: none;
+
+}
+A.H_info_link:link {
+	font-size: 12px;
+	color: #042A62;
+	text-decoration: none;
+	font-family: Arial, Helvetica, sans-serif;
+	font-style: normal;
+	line-height: normal;
+	font-weight: normal;
+	font-variant: normal;
+}
+A.H_info_link:visited {
+	font-size: 12px;
+	color: #042A62;
+	text-decoration: none;
+	font-weight: normal;
+	font-family: Arial, Helvetica, sans-serif;
+	font-style: normal;
+	line-height: normal;
+	font-variant: normal;
+}
+A.H_info_link:hover {
+	font-size: 12px;
+	color: #000000;
+	text-decoration: none;
+	font-family: "Arial", "Helvetica", "sans-serif";
+	font-style: normal;
+	line-height: normal;
+	font-weight: normal;
+	font-variant: normal;
+}
+A.H_info_link:active {
+	font-size: 12px;
+	color: #000000;
+	text-decoration: none;
+	font-family: "Arial", "Helvetica", "sans-serif";
+	font-style: normal;
+	line-height: normal;
+	font-weight: normal;
+	font-variant: normal;
+}
+A.H_content_link:link {
+	font-size: 12px;
+	color: #042A62;
+	text-decoration: none;
+	font-family: "Arial", "Helvetica", "sans-serif";
+	font-style: normal;
+	line-height: normal;
+	font-weight: normal;
+	font-variant: normal;
+}
+A.H_content_link:visited {
+	font-size: 12px;
+	color: #042A62;
+	text-decoration: none;
+	font-weight: normal;
+	font-family: "Arial", "Helvetica", "sans-serif";
+	font-style: normal;
+	line-height: normal;
+	font-variant: normal;
+}
+A.H_content_link:hover {
+	font-size: 12px;
+	color: #666666;
+	text-decoration: none;
+	font-family: "Arial", "Helvetica", "sans-serif";
+	font-style: normal;
+	line-height: normal;
+	font-weight: normal;
+	font-variant: normal;
+}
+A.H_content_link:active {
+	font-size: 12px;
+	color: #666666;
+	text-decoration: none;
+	font-family: "Arial", "Helvetica", "sans-serif";
+	font-style: normal;
+	line-height: normal;
+	font-weight: normal;
+	font-variant: normal;
+}
+.H_R_title {
+	font-family: "Arial", "Helvetica", "sans-serif";
+	font-size: 14px;
+	font-style: normal;
+	line-height: normal;
+	font-weight: bold;
+	font-variant: normal;
+	color: #042A62;
+	text-decoration: none;
+}
+.H_type {
+	font-family: "Arial", "Helvetica", "sans-serif";
+	font-size: 14px;
+	font-style: normal;
+	line-height: normal;
+	font-weight: normal;
+	font-variant: normal;
+	color: #042A62;
+	text-decoration: none;
+}
+.remind {
+	font-family: "Arial", "Helvetica", "sans-serif";
+	font-size: 12px;
+	font-style: normal;
+	line-height: normal;
+	font-weight: normal;
+	font-variant: normal;
+	color: #999999;
+	text-decoration: none;
+}
+<!--
+  设置对象未被访问时的树字体颜色
+-->
+a.tree:link {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #3466DA;
+	font-style: normal;
+	line-height: 14px;
+	font-weight: normal;
+	font-variant: normal;
+	text-decoration: none;
+}
+<!--
+  设置对象在其链接地址已被访问过时的树颜色
+-->
+a.tree:visited {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+    color: #3466DA;
+	font-style: normal;
+	line-height: 14px;
+	font-weight: normal;
+	font-variant: normal;
+	text-decoration: none;
+}
+<!--
+  鼠标移动到树中变字体颜色
+-->
+a.tree:hover {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #E64884;
+	font-style: normal;
+	line-height: 14px;
+	font-weight: normal;
+	font-variant: normal;
+	text-decoration: none;
+	
+}
+<!--
+  设置对象被激活时的树的字体颜色
+-->
+a.tree:active {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #E64884;
+	font-style: normal;
+	line-height: 14px;
+	font-weight: normal;
+	font-variant: normal;
+	text-decoration: none;
+	
+}
+.select {
+	font-family: "Arial", "Helvetica", "sans-serif";
+	font-size: 12px;
+	font-style: normal;
+	line-height: normal;
+	font-weight: normal;
+	font-variant: normal;
+	color: #042A62;
+	text-decoration: none;
+	border: 1px solid #000000;
+	background-color: #e1e5eb;
+}
+.e2_select {
+	font-family: "Arial", "Helvetica", "sans-serif";
+	font-size: 12px;
+	font-style: normal;
+	line-height: normal;
+	font-weight: normal;
+	font-variant: normal;
+	color: #042A62;
+	text-decoration: none;
+	border: 1px solid #000000;
+	background-color: #FFFFFF;
+}
+.content {
+	font-family: "Arial", "Helvetica", "sans-serif";
+	font-size: 12px;
+	font-style: normal;
+	line-height: normal;
+	font-weight: normal;
+	font-variant: normal;
+	color: #042A62;
+	text-decoration: none;
+}
+.C_year_month {
+	font-family: "Arial", "Helvetica", "sans-serif";
+	font-size: 12px;
+	font-style: bold;
+	line-height: normal;
+	font-weight: bold;
+	font-variant: normal;
+	color: #042A62;
+	text-decoration: none;
+}
+.C_day {
+	font-family: "Arial", "Helvetica", "sans-serif";
+	font-size: 12px;
+	font-style: normal;
+	line-height: normal;
+	font-weight: normal;
+	font-variant: normal;
+	color: #F27200;
+	text-decoration: none;
+}
+.C_week_1-5_CN {
+	font-family: "Arial", "Helvetica", "sans-serif";
+	font-size: 12px;
+	font-style: normal;
+	line-height: normal;
+	font-weight: normal;
+	font-variant: normal;
+	color: #042A62;
+	text-decoration: none;
+}
+.C_week_6-7_CN {
+	font-family: "Arial", "Helvetica", "sans-serif";
+	font-size: 12px;
+	font-style: normal;
+	line-height: normal;
+	font-weight: normal;
+	font-variant: normal;
+	color: #999999;
+	text-decoration: none;
+}
+.C_week_1-5 {
+	font-family: "Arial", "Helvetica", "sans-serif";
+	font-size: 12px;
+	font-style: normal;
+	line-height: normal;
+	font-weight: normal;
+	font-variant: normal;
+	color: #042A62;
+	text-decoration: none;
+	cursor: hand;
+}
+.C_week_6-7 {
+	font-family: "Arial", "Helvetica", "sans-serif";
+	font-size: 12px;
+	font-style: normal;
+	line-height: normal;
+	font-weight: normal;
+	font-variant: normal;
+	color: #999999;
+	text-decoration: none;
+	cursor: hand;
+}
+.C_hour {
+	font-family: "Arial", "Helvetica", "sans-serif";
+	font-size: 12px;
+	font-style: normal;
+	line-height: normal;
+	font-weight: normal;
+	font-variant: normal;
+	color: #F27200;
+	text-decoration: none;
+}
+.tr {
+	background-image:  url(../imagine/1-tr.gif);
+}
+.tr_sub {
+	background-image:  url(../imagine/tr_sub.gif);
+}
+.tr_title_bg {
+	background-image:  url(../imagine/1-v_title_bg.gif);
+}
+.tree_bg {
+	background-image:  url(../imagine/1-tree_bg.gif);
+}
+.type_b {
+	font-family: "Arial", "Helvetica", "sans-serif";
+	font-size: 12px;
+	font-style: normal;
+	line-height: normal;
+	font-weight: normal;
+	font-variant: normal;
+	color: #000000;
+	text-decoration: none;
+}
+.type_w {
+	font-family: "Arial", "Helvetica", "sans-serif";
+	font-size: 12px;
+	font-style: normal;
+	line-height: normal;
+	font-weight: normal;
+	font-variant: normal;
+	color: #ffffff;
+	text-decoration: none;
+}
+.V_title {
+	font-family: "Arial", "Helvetica", "sans-serif";
+	font-size: 14px;
+	font-style: normal;
+	line-height: normal;
+	font-weight: bold;
+	font-variant: normal;
+	color: #042A62;
+	text-decoration: none;
+}
+.V_info_type {
+	font-family: "Arial", "Helvetica", "sans-serif";
+	font-size: 12px;
+	font-style: normal;
+	line-height: normal;
+	font-weight: normal;
+	font-variant: normal;
+	color: #042A62;
+	text-decoration: none;
+
+}
+.V_content_type {
+	font-family: "Arial", "Helvetica", "sans-serif";
+	font-size: 12px;
+	font-style: normal;
+	line-height: normal;
+	font-weight: normal;
+	font-variant: normal;
+	color: #042A62;
+	text-decoration: none;
+
+}
+A.V_info_link:link {
+	font-size: 12px;
+	color: #042A62;
+	text-decoration: none;
+	font-family: Arial, Helvetica, sans-serif;
+	font-style: normal;
+	line-height: normal;
+	font-weight: normal;
+	font-variant: normal;
+}
+A.V_info_link:visited {
+	font-size: 12px;
+	color: #042A62;
+	text-decoration: none;
+	font-weight: normal;
+	font-family: Arial, Helvetica, sans-serif;
+	font-style: normal;
+	line-height: normal;
+	font-variant: normal;
+}
+A.V_info_link:hover {
+	font-size: 12px;
+	color: #000000;
+	text-decoration: none;
+	font-family: "Arial", "Helvetica", "sans-serif";
+	font-style: normal;
+	line-height: normal;
+	font-weight: normal;
+	font-variant: normal;
+}
+A.V_info_link:active {
+	font-size: 12px;
+	color: #000000;
+	text-decoration: none;
+	font-family: "Arial", "Helvetica", "sans-serif";
+	font-style: normal;
+	line-height: normal;
+	font-weight: normal;
+	font-variant: normal;
+}
+<!--
+
+  设置对象在其链接地址未被访问时的内容颜色
+-->
+A.V_content_link:link {
+	font-size: 12px;
+	color: #042A62;
+	text-decoration: none;
+	font-family: "Arial", "Helvetica", "sans-serif";
+	font-style: normal;
+	line-height: normal;
+	font-weight: normal;
+	font-variant: normal;
+}
+<!--
+  设置对象在其链接地址已被访问过时的内容颜色
+-->
+A.V_content_link:visited {
+	font-size: 12px;
+	color: #042A62;
+	text-decoration: none;
+	font-weight: normal;
+	font-family: "Arial", "Helvetica", "sans-serif";
+	font-style: normal;
+	line-height: normal;
+	font-variant: normal;
+}
+<!--
+  鼠标移动到内容上变字体颜色
+-->
+A.V_content_link:hover {
+	font-size: 12px;
+	color: #0033FF;
+	text-decoration: none;
+	font-family: "Arial", "Helvetica", "sans-serif";
+	font-style: normal;
+	line-height: normal;
+	font-weight: normal;
+	font-variant: normal;
+}
+
+<!--
+  设置对象被激活时的内容的字体颜色
+-->
+A.V_content_link:active {
+	font-size: 12px;
+	color: #0000CC;
+	text-decoration: none;
+	font-family: "Arial", "Helvetica", "sans-serif";
+	font-style: normal;
+	line-height: normal;
+	font-weight: normal;
+	font-variant: normal;
+}
+A.W_content_link:link {
+	font-size: 12px;
+	color: #042A62;
+	text-decoration: none;
+	font-family: "Arial", "Helvetica", "sans-serif";
+	font-style: normal;
+	line-height: normal;
+	font-weight: normal;
+	font-variant: normal;
+}
+A.W_content_link:visited {
+	font-size: 12px;
+	color: #042A62;
+	text-decoration: none;
+	font-weight: normal;
+	font-family: "Arial", "Helvetica", "sans-serif";
+	font-style: normal;
+	line-height: normal;
+	font-variant: normal;
+}
+A.W_content_link:hover {
+	font-size: 12px;
+	color: #000000;
+	text-decoration: none;
+	font-family: "Arial", "Helvetica", "sans-serif";
+	font-style: normal;
+	line-height: normal;
+	font-weight: normal;
+	font-variant: normal;
+}
+A.W_content_link:active {
+	font-size: 12px;
+	color: #000000;
+	text-decoration: none;
+	font-family: "Arial", "Helvetica", "sans-serif";
+	font-style: normal;
+	line-height: normal;
+	font-weight: normal;
+	font-variant: normal;
+}
+A.T_bbs_link:link {
+	font-size: 12px;
+	color: #042A62;
+	text-decoration: none;
+	font-family: "Arial", "Helvetica", "sans-serif";
+	font-style: normal;
+	line-height: normal;
+	font-weight: normal;
+	font-variant: normal;
+}
+A.T_bbs_link:visited {
+	font-size: 12px;
+	color: #042A62;
+	text-decoration: none;
+	font-weight: normal;
+	font-family: "Arial", "Helvetica", "sans-serif";
+	font-style: normal;
+	line-height: normal;
+	font-variant: normal;
+}
+A.T_bbs_link:hover {
+	font-size: 12px;
+	color: #000000;
+	text-decoration: none;
+	font-family: "Arial", "Helvetica", "sans-serif";
+	font-style: normal;
+	line-height: normal;
+	font-weight: normal;
+	font-variant: normal;
+}
+A.T_bbs_link:active {
+	font-size: 12px;
+	color: #000000;
+	text-decoration: none;
+	font-family: "Arial", "Helvetica", "sans-serif";
+	font-style: normal;
+	line-height: normal;
+	font-weight: normal;
+	font-variant: normal;
+}
+A.R_content_link:link {
+	font-size: 12px;
+	color: #000000;
+	text-decoration: none;
+	font-family: "Arial", "Helvetica", "sans-serif";
+	font-style: normal;
+	line-height: normal;
+	font-weight: normal;
+	font-variant: normal;
+}
+A.R_content_link:visited {
+	font-size: 12px;
+	color: #000000;
+	text-decoration: none;
+	font-weight: normal;
+	font-family: "Arial", "Helvetica", "sans-serif";
+	font-style: normal;
+	line-height: normal;
+	font-variant: normal;
+}
+A.R_content_link:hover {
+	font-size: 12px;
+	color: #666666;
+	text-decoration: none;
+	font-family: "Arial", "Helvetica", "sans-serif";
+	font-style: normal;
+	line-height: normal;
+	font-weight: normal;
+	font-variant: normal;
+}
+A.R_content_link:active {
+	font-size: 12px;
+	color: #666666;
+	text-decoration: none;
+	font-family: "Arial", "Helvetica", "sans-serif";
+	font-style: normal;
+	line-height: normal;
+	font-weight: normal;
+	font-variant: normal;
+}
+A.L_menu_link:link {
+	font-size: 14px;
+	color: #FFFFFF;
+	text-decoration: none;
+	font-family: Arial, Helvetica, sans-serif;
+	font-style: normal;
+	line-height: normal;
+	font-weight: bold;
+	font-variant: normal;
+}
+A.L_menu_link:visited {
+	font-size: 14px;
+	color: #FFFFFF;
+	text-decoration: none;
+	font-weight: bold;
+	font-family: Arial, Helvetica, sans-serif;
+	font-style: normal;
+	line-height: normal;
+	font-variant: normal;
+}
+A.L_menu_link:hover {
+	font-size: 14px;
+	color: #000000;
+	text-decoration: none;
+	font-family: Arial, Helvetica, sans-serif;
+	font-style: normal;
+	line-height: normal;
+	font-weight: bold;
+	font-variant: normal;
+}
+A.L_menu_link:active {
+	font-size: 14px;
+	color: #000000;
+	text-decoration: none;
+	font-family: Arial, Helvetica, sans-serif;
+	font-style: normal;
+	line-height: normal;
+	font-weight: bold;
+	font-variant: normal;
+}
+A.T_button_link:link {
+	font-size: 12px;
+	color: #FFFFFF;
+	text-decoration: none;
+	font-family: "Arial", "Helvetica", "sans-serif";
+	font-style: normal;
+	line-height: normal;
+	font-weight: normal;
+	font-variant: normal;
+}
+A.T_button_link:visited {
+	font-size: 12px;
+	color: #FFFFFF;
+	text-decoration: none;
+	font-weight: normal;
+	font-family: "Arial", "Helvetica", "sans-serif";
+	font-style: normal;
+	line-height: normal;
+	font-variant: normal;
+}
+A.T_button_link:hover {
+	font-size: 12px;
+	color: #000000;
+	text-decoration: none;
+	font-family: "Arial", "Helvetica", "sans-serif";
+	font-style: normal;
+	line-height: normal;
+	font-weight: normal;
+	font-variant: normal;
+}
+A.T_button_link:active {
+	font-size: 12px;
+	color: #000000;
+	text-decoration: none;
+	font-family: "Arial", "Helvetica", "sans-serif";
+	font-style: normal;
+	line-height: normal;
+	font-weight: normal;
+	font-variant: normal;
+}
+A.S_type_link:link {
+	font-size: 12px;
+	color: #000000;
+	text-decoration: none;
+	font-family: "Arial", "Helvetica", "sans-serif";
+	font-style: normal;
+	line-height: normal;
+	font-weight: normal;
+	font-variant: normal;
+}
+A.S_type_link:visited {
+	font-size: 12px;
+	color: #333333;
+	text-decoration: none;
+	font-weight: normal;
+	font-family: "Arial", "Helvetica", "sans-serif";
+	font-style: normal;
+	line-height: normal;
+	font-variant: normal;
+}
+A.S_type_link:hover {
+	font-size: 12px;
+	color: #000000;
+	text-decoration: none;
+	font-family: "Arial", "Helvetica", "sans-serif";
+	font-style: normal;
+	line-height: normal;
+	font-weight: normal;
+	font-variant: normal;
+}
+A.S_type_link:active {
+	font-size: 12px;
+	color: #000000;
+	text-decoration: none;
+	font-family: "Arial", "Helvetica", "sans-serif";
+	font-style: normal;
+	line-height: normal;
+	font-weight: normal;
+	font-variant: normal;
+}
+.V_input {
+	font-family: "Arial", "Helvetica", "sans-serif";
+	font-size: 12px;
+	font-style: normal;
+	line-height: normal;
+	font-weight: normal;
+	font-variant: normal;
+	color: ##042A62;
+	text-decoration: none;
+	background-color: #FFFFFF;
+	border: 1px solid #000000;
+	text-align: center;
+	height: 16px;
+	width: 25px;
+}
+.V_input_arrange {
+	font-family: "Arial", "Helvetica", "sans-serif";
+	font-size: 12px;
+	font-style: normal;
+	line-height: normal;
+	font-weight: normal;
+	font-variant: normal;
+	color: #4E72AA;
+	text-decoration: none;
+	background-color: #FFFFFF;
+	border: 1px solid #4E72AA;
+	text-align: center;
+	height: 16px;
+	width: 25px;
+}
+.S_input {
+	font-family: "Arial", "Helvetica", "sans-serif";
+	font-size: 12px;
+	font-style: normal;
+	line-height: normal;
+	font-weight: normal;
+	font-variant: normal;
+	color: #042A62;
+	text-decoration: none;
+	background-color: #FFFFFF;
+	border: 1px solid #000000;
+}
+.S_type {
+	font-family: "Arial", "Helvetica", "sans-serif";
+	font-size: 12px;
+	font-style: normal;
+	line-height: normal;
+	font-weight: normal;
+	font-variant: normal;
+	color: #042A62;
+}
+.button {
+	background-image:  url(../imagine/1-button.gif);
+	background-repeat: no-repeat;
+}
+.button_small {
+	background-image:  url(../imagine/1-button_small.gif);
+	background-repeat: no-repeat;
+}
+.e_title {
+	font-family: "Arial", "Helvetica", "sans-serif";
+	font-size: 14px;
+	font-style: normal;
+	line-height: normal;
+	font-weight: bold;
+	font-variant: normal;
+	color: #042A62;
+	text-decoration: none;
+}
+.e_type {
+	font-family: "Arial", "Helvetica", "sans-serif";
+	font-size: 12px;
+	font-style: normal;
+	line-height: normal;
+	font-weight: normal;
+	font-variant: normal;
+	color: #042A62;
+	text-decoration: none;
+}
+.T_bbs_type {
+	font-family: "Arial", "Helvetica", "sans-serif";
+	font-size: 12px;
+	font-style: normal;
+	line-height: normal;
+	font-weight: normal;
+	font-variant: normal;
+	color: #042A62;
+	text-decoration: none;
+}
+.T_bbs_title {
+	font-family: "Arial", "Helvetica", "sans-serif";
+	font-size: 14px;
+	font-style: normal;
+	line-height: normal;
+	font-weight: bold;
+	font-variant: normal;
+	color: #042A62;
+	text-decoration: none;
+}
+.bbs_input {
+	font-family: "Arial", "Helvetica", "sans-serif";
+	font-size: 12px;
+	font-style: normal;
+	line-height: normal;
+	font-weight: normal;
+	font-variant: normal;
+	color: #042A62;
+	text-decoration: none;
+	border: none;
+	text-align: right;
+	height: 16px;
+
+}
+.bbs_title_input {
+	font-family: "Arial", "Helvetica", "sans-serif";
+	font-size: 12px;
+	font-style: normal;
+	line-height: normal;
+	font-weight: normal;
+	font-variant: normal;
+	color: #042A62;
+	text-decoration: none;
+	border: none;
+	text-align: left;
+	height: 16px;
+
+}
+.e_type_red {
+	font-family: "Arial", "Helvetica", "sans-serif";
+	font-size: 12px;
+	font-style: normal;
+	line-height: normal;
+	font-weight: bold;
+	font-variant: normal;
+	color: #F74C00;
+	text-decoration: none;
+}
+.e_textarea_input {
+	font-family: "Arial", "Helvetica", "sans-serif";
+	font-size: 12px;
+	font-style: normal;
+	line-height: normal;
+	font-weight: normal;
+	font-variant: normal;
+	color: #042A62;
+	text-decoration: none;
+	border: 1px solid #666666;
+	SCROLLBAR-FACE-COLOR: #F7F7F7;
+	SCROLLBAR-HIGHLIGHT-COLOR: #F7F7F7;
+	SCROLLBAR-SHADOW-COLOR: #CCCCCC;
+	SCROLLBAR-3DLIGHT-COLOR: #F7F7F7;
+	SCROLLBAR-ARROW-COLOR: #000000;
+	SCROLLBAR-TRACK-COLOR: #F7F7F7;
+	SCROLLBAR-DARKSHADOW-COLOR: #F7F7F7;
+	background-color: #FFFFFF;
+}
+.e2_title {
+	font-family: "仿宋";
+	font-size: 24px;
+	font-style: normal;
+	line-height: normal;
+	font-weight: bold;
+	font-variant: normal;
+	color: #3D708D;
+	text-decoration: none;
+}
+<!--
+设置标题的字体大小、颜色等(总指挥部[办公室]稿签流转单专用)
+-->
+.e3_title {
+	font-family: "仿宋";
+	font-size: 24px;
+	font-style: normal;
+	line-height: normal;
+	font-weight: bold;
+	font-variant: normal;
+	color: #FF0000;
+	text-decoration: none;
+}
+<!--
+设置表个名称的字体大小、颜色等
+-->
+.e2_type {
+	font-family: "仿宋";
+	font-size: 12px;
+	font-style: normal;
+	line-height: normal;
+	font-weight: normal;
+	font-variant: normal;
+	color: #3D708D;
+	text-decoration: none;
+}
+<!--
+设置表个名称的字体大小、颜色等(防总指挥部[办公室]稿签流转单专用)
+-->
+.e3_type {
+	font-family: "仿宋";
+	font-size: 12px;
+	font-style: normal;
+	line-height: normal;
+	font-weight: normal;
+	font-variant: normal;
+	color: #FF0000;
+	text-decoration: none;
+}
+<!--
+
+-->
+.e2_input{
+	font-family: "仿宋";
+	font-size: 12px;
+	font-style: normal;
+	line-height: normal;
+	font-weight: normal;
+	font-variant: normal;
+	color: #000000;
+	text-decoration: none;
+}
+.e2_textarea_input {
+	font-family: "Arial", "Helvetica", "sans-serif";
+	font-size: 12px;
+	font-style: normal;
+	line-height: normal;
+	font-weight: normal;
+	font-variant: normal;
+	color: #000000;
+	text-decoration: none;
+	background-color: #FFFFFF;
+	border: none;
+	SCROLLBAR-FACE-COLOR: #F7F7F7; 
+	SCROLLBAR-HIGHLIGHT-COLOR: #F7F7F7;
+	SCROLLBAR-SHADOW-COLOR: #CCCCCC;
+	SCROLLBAR-3DLIGHT-COLOR: #F7F7F7; 
+	SCROLLBAR-ARROW-COLOR: #000000; 
+	SCROLLBAR-TRACK-COLOR: #F7F7F7; 
+	SCROLLBAR-DARKSHADOW-COLOR: #F7F7F7;
+}
+<!--
+表单中表格线颜色
+-->
+.e2_table_bg {
+	background-color: #3D708D;
+}
+<!--
+表单中表格线颜色(总指挥部[办公室]稿签流转单专用)
+-->
+.e3_table_bg {
+	background-color: #FF0000;
+}
+<!--
+维护列表中表格线颜色
+-->
+.e2_listing_bg {
+	background-color: #3D708D;
+}
+
+.L_table_bg{
+	background-image:  url(../imagine/L_table_bg.gif);
+}
+.L_table_tr{
+	background-color: #C4BBD1;
+}
+.L_date{
+	font-family: "Arial", "Helvetica", "sans-serif";
+	font-size: 12px;
+	font-style: normal;
+	line-height: normal;
+	font-weight: normal;
+	font-variant: normal;
+	color: #FFFFFF;
+	text-decoration: none;
+
+}
+.L_welcome{
+	font-family: "Arial", "Helvetica", "sans-serif";
+	font-size: 12px;
+	font-style: normal;
+	line-height: normal;
+	font-weight: normal;
+	font-variant: normal;
+	color: #FFFFFF;
+	text-decoration: none;
+
+}
+.L_user{
+	font-family: "Arial", "Helvetica", "sans-serif";
+	font-size: 12px;
+	font-style: normal;
+	line-height: normal;
+	font-weight: bold;
+	font-variant: normal;
+	color: #FFFFFF;
+	text-decoration: none;
+}
+.T_input{
+	background-color: #D2D2D2;
+	border: 1px solid #000000;
+}
+.T_top_bg {
+	background-image:  url(../imagine/1-top_bg.jpg);
+}
+.T_parameter_manage_bg {
+	background-image:  url(../imagine/1-parameter_manage_bg.jpg);
+}
+.T_archives_manage_bg {
+	background-image:  url(../imagine/1-archives_manage_bg.jpg);
+}
+.T_resource_manage_bg {
+	background-image:  url(../imagine/1-resource_manage_bg.jpg);
+}
+.T_observer_manage_bg {
+	background-image:  url(../imagine/1-observer_manage_bg.jpg);
+}
+.T_my_folder_bg {
+	background-image:  url(../imagine/1-my_folder_bg.jpg);
+}
+<!--
+资料管理图片
+-->
+.T_my_datum_bg {
+	background-image:  url(../imagine/1-my_datum_bg.gif);
+}
+
+<!--
+耗材管理图片
+-->
+.T_my_consume_bg{
+	background-image:  url(../imagine/1-my_consume_bg.gif);
+}
+
+
+.T_mail_bg {
+	background-image:  url(../imagine/1-mail_bg.jpg);
+}
+
+.T_bbs_bg {
+	background-image:  url(../imagine/1-bbs_bg.jpg);
+}
+.T_license_bg {
+	background-image:  url(../imagine/1-license_bg.jpg);
+}
+A.T_folder_type_link:link {
+	font-size: 12px;
+	color: #FFFFFF;
+	text-decoration: none;
+	font-family: "Arial", "Helvetica", "sans-serif";
+	font-style: normal;
+	line-height: normal;
+	font-weight: bold;
+	font-variant: normal;
+}
+A.T_folder_type_link:visited {
+	font-size: 12px;
+	color: #FFFFFF;
+	text-decoration: none;
+	font-weight: normal;
+	font-family: "Arial", "Helvetica", "sans-serif";
+	font-style: normal;
+	line-height: bold;
+	font-weight: bold;
+	font-variant: normal;
+}
+A.T_folder_type_link:hover {
+	font-size: 12px;
+	color: #FFCC00;
+	text-decoration: none;
+	font-family: "Arial", "Helvetica", "sans-serif";
+	font-style: normal;
+	line-height: normal;
+	font-weight: bold;
+	font-variant: normal;
+}
+A.T_folder_type_link:active {
+	font-size: 12px;
+	color: #FFCC00;
+	text-decoration: none;
+	font-family: "Arial", "Helvetica", "sans-serif";
+	font-style: normal;
+	line-height: normal;
+	font-weight: bold;
+	font-variant: normal;
+}
+.W_table_title_bg {
+	background-image:  url(../imagine/1-workaround.gif);
+}
+.W_table_title_type_bg {
+	background-image:  url(../imagine/workaround_title.gif);
+}
+.W_item {
+	font-family: "Arial", "Helvetica", "sans-serif";
+	font-size: 12px;
+	font-style: normal;
+	line-height: normal;
+	font-weight: normal;
+	font-variant: normal;
+	color: #042A62;
+	text-decoration: none;
+}
+.W_title {
+	font-family: "Arial", "Helvetica", "sans-serif";
+	font-size: 14px;
+	font-style: normal;
+	line-height: normal;
+	font-weight: bold;
+	font-variant: normal;
+	color: #042A62;
+	text-decoration: none;
+}
+.e_callingcard_input {
+	font-family: "Arial", "Helvetica", "sans-serif";
+	font-size: 12px;
+	font-style: normal;
+	line-height: normal;
+	font-weight: normal;
+	font-variant: normal;
+	color: #042A62;
+	text-decoration: none;
+	border: none;
+	text-align: left;
+	height: 16px;
+
+}
+.e_callingcard_input_name {
+	font-family: "Arial", "Helvetica", "sans-serif";
+	font-size: 14px;
+	font-style: normal;
+	line-height: normal;
+	font-weight: bold;
+	font-variant: normal;
+	color: #042A62;
+	text-decoration: none;
+	border: none;
+	height: 18px;
+	text-align: center;
+}
+.e_callingcard_input_job {
+	font-family: "Arial", "Helvetica", "sans-serif";
+	font-size: 12px;
+	font-style: normal;
+	line-height: normal;
+	font-weight: normal;
+	font-variant: normal;
+	color: #042A62;
+	text-decoration: none;
+	border: none;
+	height: 18px;
+	text-align: center;
+}
+.e_callingcard_input_units {
+	font-family: "Arial", "Helvetica", "sans-serif";
+	font-size: 14px;
+	font-style: normal;
+	line-height: normal;
+	font-weight: bold;
+	font-variant: normal;
+	color: #042A62;
+	text-decoration: none;
+	border: none;
+	height: 18px;
+	text-align: left;
+}
+.e_callingcard_table_broder {
+	border: 1px solid #B0A4C2;
+	background-image:  url(../imagine/callingcard_bg.gif);
+}
+.required {
+	font-family: "Arial", "Helvetica", "sans-serif";
+	font-size: 20px;
+	font-style: normal;
+	line-height: normal;
+	font-weight: normal;
+	font-variant: normal;
+	color: #FF0000;
+	text-decoration: none;
+}
+.hand {
+	cursor: hand;
+}
+.S_tab_bg {
+	background-image: url(../imagine/1-s_window_bg.jpg);
+}
+.calendar_bg {
+	background-image: url(../imagine/1-calendar_bg.gif);
+}
+.calendar2_bg {
+	background-image: url(../imagine/1-calendar2_bg.gif);
+}
+.calendar3_bg {
+	background-image: url(../imagine/1-calendar3_bg.gif);
+}
+.calendar_title {
+	height:20px;
+	background-image: url(../imagine/calandartitleback.jpg);
+}
+.calendar2_title {
+	height:20px;
+	background-image: url(../imagine/calandartitleback.jpg);
+}
+.calendar3_title{
+	height:20px;
+	background-image: url(../imagine/calandartitleback.jpg);
+}
+.top_line {
+	height:1px;
+	background-image: url(../imagine/inline.jpg);
+}
+.buttom_line {
+	height:1px;
+	background-image: url(../imagine/inline.jpg);
+}
+
+.left_line {
+	width:1px;
+	background-image: url(../imagine/inline.jpg);
+}
+.left_line1 {
+	width:1px;
+	background-image: url(../imagine/inline.jpg);
+}
+.left_line2 {
+	width:1px;
+	background-image: url(../imagine/inline.jpg);
+}
+.left_line3 {
+	width:1px;
+	background-image: url(../imagine/inline.jpg);
+}
+.right_line {
+	width:1px;
+	background-image: url(../imagine/inline.jpg);
+}
+.right_line1{
+	width:1px;
+	background-image: url(../imagine/inline.jpg);
+}
+.right_line2 {
+	width:1px;
+	background-image: url(../imagine/inline.jpg);
+}
+.right_line3 {
+	width:1px;
+	background-image: url(../imagine/inline.jpg);
+}
+
+.L_bbs_tree {
+	background-image: url(../imagine/1-L_bbs_tree_bg.gif);
+}
+.L_sub_tree {
+	background-image: url(../imagine/1-tree_sub_bg.gif);
+}
+.V_item_bg {
+	background-image: url(../imagine/1-item_bg.gif);
+}
