@@ -1,0 +1,17 @@
+/home/pelouch/public_html/masterspecs/serialization/pdf-html/class.html
+---------------------------
+IMG tag in line 156 without ALT attribute.
+
+
+/home/pelouch/public_html/masterspecs/serialization/pdf-html/examples.html
+---------------------------
+TABLE in line 71 contains neither a summary nor a caption.
+TABLE in line 71 doesn't contain any TH elements.
+
+
+/home/pelouch/public_html/masterspecs/serialization/pdf-html/version.html
+---------------------------
+IMG tag in line 98 without ALT attribute.
+
+
+3 files flagged in this report.
