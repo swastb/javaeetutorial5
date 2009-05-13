@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<!-- Inserted by TRADOS: --><META HTTP-EQUIV="content-type" CONTENT="text/html; charset=utf-8">
+
+<link rel="stylesheet" href="../../css/tools.css"  type="text/css" />
+
+
+<title>rmiregistry - Java リモートオブジェクトレジストリ</title>
+<meta name="collection" content="reference">
+</head>
+
+<body>
+<h1>rmiregistry - Java リモートオブジェクトレジストリ</h1>
+
+  <blockquote>
+  <p>
+<b>rmiregistry</b> コマンドは、現在のホストの指定したポート上にリモートオブジェクトレジストリを開始します。</p>
+  </blockquote>
+
+<h2>形式</h2>
+
+  <blockquote>
+    <pre>
+rmiregistry [<i>port</i>]
+</pre>
+  </blockquote>
+
+<h2>説明</h2>
+
+  <blockquote>
+  <p>
+<b>rmiregistry</b> コマンドは、現在のホストの指定 <i>port</i> 上にリモートオブジェクトレジストリを作成し、開始します。<i>port</i> の指定を省略した場合、レジストリはポート 1099 で開始します。<b>rmiregistry</b> コマンドに、出力機能はありません。通常、これはバックグラウンドで実行されます。例を示します。</p>
+
+<p><code>rmiregistry&amp;</code></p>
+
+<p>リモートオブジェクトレジストリは、ブートストラップのネームサービスです。 同一ホストの RMI サーバーが、リモートオブジェクトを名前にバインドするために使用されます。次に、ローカルおよびリモートホストのクライアントはリモートオブジェクトを検索し、リモートメソッドの呼び出しを行います。</p>
+
+<p>レジストリは、一般的に、最初のリモートオブジェクトの位置を指定します。 そこで、アプリケーションはメソッドを呼び出す必要があります。代わって、そのオブジェクトはアプリケーション指定のサポートを提供し、他のオブジェクトを探します。</p>
+
+<p><code>java.rmi.registry.LocateRegistry</code> クラスのメソッドは、ローカルホスト、またはローカルホストとポートで動作するレジストリを取得するために使用されます。</p>
+
+<p><code>java.rmi.Naming</code> クラスの URL ベースのメソッドは、レジストリで動作し、任意のホストおよびローカルホスト上のリモートオブジェクトの検索に使用されます。リモートオブジェクトに単純な (文字列) 名前をバインドしたり、新しい名前をリバインド (古いバインドにオーバーライド) します。 またリモートオブジェクトをアンバインドしたり、レジストリにバインドされた URL を出力します。</p>
+  </blockquote>
+
+<h2><a name="Options"/>オプション</h2>
+
+  <blockquote>
+    <dl>
+<dt><b>-J</b></dt>
+
+<dd><TT>-J</TT> の後ろに続くオプションを <tt>java</tt> インタプリタに引き渡します。<tt> java</tt> オプションと組み合わせて使います (<tt>-J</tt> と <tt>java</tt> オプションの間にスペースは入れない)。</dd>
+    </dl>
+  </blockquote>
+
+<h2>関連項目</h2>
+
+  <blockquote><p>
+<a href="java.html">java</a>、<a href=     "../../../api/java/rmi/registry/LocateRegistry.html"><code>java.rmi.registry.LocateRegistry</code></a>、および <a href=     "../../../api/java/rmi/Naming.html"><code>java.rmi.Naming</code></a></p>
+  </blockquote>
+  <hr/>
+ 
+  <table border="0" width="100%" summary="layout">
+    <tr valign="top">
+      <td>
+<p><a href=         "../../../legal/SMICopyright.html">Copyright</a> &copy; 2003-2006 <a href="http://www.sun.com">Sun Microsystems, Inc.</a> All Rights Reserved.</p>
+      </td>
+
+<td align="right"><img src="../../../images/sunlogo64x30.gif"       alt="Sun" width="64" height="30" /><br /> <i> Java Software </i></td>
+    </tr>
+  </table>
+</body>
+</html>
