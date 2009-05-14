@@ -1,0 +1,287 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+<title>Java VisualVM</title>
+<meta name="collection" content="reference">
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
+<link rel="stylesheet" href="/css/default_developer.css" />
+
+<script language="JavaScript">
+<!--
+
+function SymError()
+{
+  return true;
+}
+
+window.onerror = SymError;
+
+var SymRealWinOpen = window.open;
+
+function SymWinOpen(url, name, attributes)
+{
+  return (new Object());
+}
+
+window.open = SymWinOpen;
+
+//-->
+</script>
+
+<script language="JavaScript" type="text/javascript" src="/js/popUp.js"></script>
+<script language="javascript1.2" type="text/javascript" src="/js/sniff.js"></script>
+<script language="javascript1.2" type="text/javascript" src="/js/menucontent.js"></script>
+<script language="javascript1.2" type="text/javascript" src="/js/menucode.js"></script>
+<script language="javascript1.2" type="text/javascript" src="/js/developer.js"></script>
+</head>
+<!--stopindex-->
+<body leftmargin="0" topmargin="0" marginheight="0" marginwidth="0" rightmargin="0" bgcolor="#ffffff" onload="prepmenus(); done=true">
+<a name="top"></a>
+<!-- BEGIN MASTHEAD -->
+<!-- BEGIN A1 COMPONENT V.0 -->
+<div class="a1 a1r2">
+<div class="a1v0">
+<a href="#skip2content" class="skiplink">Skip to Content</a>
+<span class="toolbarlinks">
+<a href="/global/mh/suncom/index.html">Sun</a>
+<a href="/global/mh/java/">Java</a>
+<a href="/global/mh/solaris/">Solaris</a>
+<a href="/global/mh/communities/" class="dividelink">Communities</a>
+<a href="http://developers.sun.com/global/my_profile.html">My SDN Account</a>
+<a href="http://developers.sun.com/global/join_sdn.html" class="dividelink">Join SDN</a>
+</span>
+</div>
+</div>
+<!-- END A1 COMPONENT V.0 -->
+
+<!-- BEGIN A2 COMPONENT V.1 -->
+<div class="a2w0">
+<div class="a2" id="a2v1">
+<div class="a2w1"><div class="a2w2"><div class="a2w3"><div class="a2w4">
+<div class="a2topiclinks">
+<div class="a2search">
+<form action="http://developers.sun.com/search/onesearch/index.jsp" accept-charset="utf-8" method="GET">
+<input type="hidden" name="charset" value="utf-8">
+<input type="hidden" name="col" value="developer-reference">
+<span class="rightarrowwhite">&raquo;</span>&nbsp;<a href="http://developers.sun.com/global/search_tips.html">search tips</a>&nbsp;
+<input class="searchfield" name="qt" class="medium" size="7" onFocus="if( this.value==this.defaultValue ) this.value='';" value="Search">
+<input id="searchbttn" type="image" border="0" src="/im/a2_bttn_search.gif" alt="Submit Search">
+</form>
+</div>
+<a href="http://www.sun.com" title="Home Page" id="sunlogo"><img src="/im/a.gif" alt="Home Page" width="98" height="58" border="0" /></a>
+<a href="http://developers.sun.com" title="Sun Developer Network"><img src="/im/a.gif" id="venuespacer" alt="Sun Developer Network" width="400" height="33" border="0" /></a>
+<ul id="mtopics">
+<li id="mtopic1"><a id="glink1" class="tpclink a2menu" title="See All APIs" href="/global/mh/api/index.html">APIs</a></li>
+<li id="mtopic2"><a id="glink2" class="tpclink a2menu" title="See All Downloads" href="/global/mh/downloads/index.html">Downloads</a></li>
+<li id="mtopic3"><a id="glink3" class="tpclink a2menu" title="See All Products" href="/global/mh/products/index.html">Products</a></li>
+<li id="mtopic4"><a id="glink4" class="tpclink a2menu" title="See All Support" href="/global/mh/support/index.html">Support</a></li>
+<li id="mtopic5"><a id="glink5" class="tpclink a2menu" title="See All Training" href="/global/mh/training/index.html">Training</a></li>
+<li id="mtopic6"><a id="glink6" class="tpclink a2menu" title="See All Participate" href="/global/mh/participate/index.html">Participate</a></li>
+</ul>
+</div>
+</div></div></div></div>
+</div></div>
+<!-- END A2 COMPONENT V.1 -->
+
+<!-- END MASTHEAD -->
+
+<!-- BEGIN VNV2 BREADCRUMB COMPONENT  -->
+<table border="0" cellpadding="0" cellspacing="0" width="100%" class="vatop">
+<tr>
+<td rowspan="2"><div class="breadcrumb"><img src="../../../images/javalogo52x88.gif"
+        alt="Java" border="0" width="52" height="88" /></div>  <div class="breadcrumb"></div></td>
+<td align="right" valign="bottom" nowrap="nowrap"><div class="breadcrumb">
+<b><a href="http://developers.sun.com/dispatcher.jsp?uid=6910021">Join Sun Developer Network</a></b>
+</div></td>
+</tr>
+<tr>
+<td align="right" valign="bottom" nowrap="nowrap"><div class="breadcrumb">
+  <p><a href="http://developers.sun.com/dispatcher.jsp?uid=6910026"><img src="/im/bc_login.gif" width="43" height="18" border="0" alt="Login" valign="bottom" /></a> <a href="/user_registration/whyregister.jsp"><img src="/im/bc_why_join.gif" width="80" height="18" border="0" alt="Why Join" valign="bottom" /></a></p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+</div></td></tr>
+<tr><td colspan="2"><img src="/im/a.gif" width="770" height="1" border="0" alt="" /></td></tr>
+</table>
+<span class="sp5">&nbsp;</span><br />
+<!-- END VNV2 BREADCRUMB COMPONENT  -->
+
+<!-- BEGIN VNV3 PAGETITLE, two-level variation -->
+<div class="smallpagetitle">
+  <h1>Java VisualVM</h1>
+</div>
+<!-- END VNV3 PAGETITLE, two-level variation -->
+
+<!-- BEGIN WRAPPER TABLE, 1 COLUMN, MAIN -->
+<table border="0" cellpadding="10" cellspacing="0" width="100%">
+  <tr>
+    <td width="100%" valign="top"> 
+      <!-- BEGIN CENTRAL COLUMN COMPONENTS -->
+      <!--startindex-->
+      <a name="skip2content"></a>
+      <!-- ============ Following table is not part of the standard header for java.sun.com, =======->
+      <!-- ============ it is the standard sub-header for Java SE Release Notes files ==============->
+      <!-- ============ Links to JDK Docs and Japanese Release Notes Index Page ================== -->
+      <hr> <table border="0" cellpadding="0" cellspacing="0" width="99%">
+        <tr valign="top" align="left"> 
+          <td> </td>
+          <td ALIGN="right"> <font size="-1"> <a href="index.html">Back to Java VisualVM  
+            Documentation Index </a> 
+
+</font></td>
+</tr>
+</table>
+<!-- ============ -->
+<!-- MAIN CONTENT -->
+<!-- ============ -->
+        <h1>Monitoring Application Threads</h1>
+        <p>Java VisualVM presents data for local and remote applications in a tab specific for that application.
+        Application tabs are displayed in the main window to the right of the Applications window. 
+        You can have multiple application tabs open at one time.
+        Each application tab contains sub-tabs that display different types of information about the application.</p>
+
+        <h3>Monitoring Thread Activity</h3>
+
+        <p>Java VisualVM displays real-time, high-level data on thread activity in the Threads tab.<br/>
+        <b>Note:</b> The information displayed in the Threads tab is based on Java Management Extensions (JMX).
+        The Threads tab is visible if Java VisualVM can make a JMX technology-based connection (JMX connection) with the target application and retrieve JMX instrumentation from the Java Virtual Machine (JVM).
+        If the target application is a local application running on Java Development Kit (JDK) version 1.6, the JMX connection is made automatically.
+        If the target application is not running on JDK version 1.6, you may need to explicitly establish a JMX connection 
+        with the JVM software. For more on establishing a JMX connection, see the following document:</p> 
+        <ul>
+            <li><a href="jmx_connections.html">Connecting to JMX Agents Explicitly</a></li>
+        </ul>
+        
+        <p>By default the Threads tab displays a timeline of current thread activity. 
+        You can click a thread in the timeline to view details about that thread in the Details tab.</p>
+        
+        <h4>Timeline Tab</h4>
+        <p>This tab displays a timeline with real-time thread states. 
+        Use the buttons in the Timeline toolbar to zoom in/out on the current view and to switch to the Scale to Fit mode. 
+        The drop-down list enables you to select which threads are displayed.
+        You can choose to view all threads, live threads or finished threads. 
+        You can also select a single thread or multiple threads to display a subset of the threads. 
+        You can double-click on a thread timeline to open that thread in the Details tab.</p>
+
+        <p>A timeline for each thread provides a quick overview of the thread's activity.</p>
+        <img src="images/thread-timeline-screen.png" style="border:1px solid;" alt="screenshot of timeline in Threads tab" 
+        title="screenshot of timeline in Threads tab" />
+      
+        <h4>Details Tab</h4>
+        <p>The Details tab displays more detailed information about individual threads. 
+        Using the drop-down list, you can select to display all threads, all live threads or all finished threads. 
+        You can also choose to display only the details of threads selected in the Timeline view. 
+        For each thread, the name, classname and current status (alive/finished) are displayed. 
+        A short description of the thread is also provided.</p>
+
+        <p>Each thread displayed in the Details tab has the following tabs:</p>
+        <ul>
+          <li><b>General.</b> This tab displays thread states statistics.</li>
+          <li><b>Details.</b> This tab contains full listings of thread states with timestamps.</li>
+        </ul>
+        <p>A timeline for each thread provides a quick overview of the thread's activity.</p>
+        <img src="images/thread-details-screen.png" style="border:1px solid;" alt="screenshot of timeline in Threads tab" 
+        title="screenshot of thread details in Threads tab" />
+        
+        <h3>Taking a Thread Dump</h3>
+        <p>You can use Java VisualVM to take a thread dump (stack trace) while a local application is running.
+        Taking a thread dump does not stop the application.
+        When you print the thread dump you get a printout of the thread stack that includes thread states for the Java threads.
+        </p>
+        
+        <p>When you print a thread dump in Java VisualVM, the tool prints a stack trace of the active threads of the application.
+        Using Java VisualVM to take a thread dump can be very convenient in cases where you do not have a command-line console for the application.
+        You can use a stack trace to help diagnose a number of issues such as deadlocks or when an application hangs.</p>
+        <p>Screenshot of thread dump (stack trace) in thread dump sub-tab.</p>
+        <img src="images/thread-dump-screen.png" style="border:1px solid;" alt="screenshot of timeline in Threads tab" 
+        title="screenshot of thread dump (stack trace) in thread dump sub-tab" />
+        
+        <hr/>
+        <p><a href="index.html">Return to the Java VisualVM Documentation index</a></p>
+        
+<!-- =================== -->
+<!-- END OF MAIN CONTENT -->
+<!-- =================== -->
+
+<!--stopindex-->
+
+<!-- END CENTRAL COLUMN COMPONENTS -->
+
+<!-- BEGIN SPACER ROW -->
+<tr><td><img src="/im/a.gif" width="750" height="1" border="0" alt=" " /></td></tr>
+<!-- END SPACER ROW -->
+
+<!-- END WRAPPER TABLE, 1 COLUMN, MAIN -->
+
+
+<!-- BEGIN VNV5 FOOTER  -->
+<table border="0" cellpadding="0" cellspacing="10" width="100%">
+<tr>
+<td>
+<table border="0" cellpadding="0" cellspacing="0" width="100%" class="vatop">
+<tr>
+<td colspan="4" valign="top" class="grey3"><img src="http://developers.sun.com/im/a.gif" width="1" height="2" border="0" alt="" /></td></tr>
+<tr>
+<td><img src="http://developers.sun.com/im/a.gif" width="190" height="1" border="0" alt="" /><br />
+<a href="http://www.sun.com"><img src="http://developers.sun.com/im/logo_sun_small_sdn.gif" width="61" height="29" border="0" alt="" vspace="5"/></a></td>
+<td width="100%" valign="top"><img src="http://developers.sun.com/im/a.gif" width="350" height="1" border="0" alt="" /><br />
+<div class="footer">
+<a href="http://developers.sun.com/global/aboutsun.html">About Sun</a> &nbsp;|&nbsp;
+<a href="http://developers.sun.com/global/aboutsdn.html">About This Site</a> &nbsp;|&nbsp;
+<a href="http://developers.sun.com/global/newsletters.html">Newsletters</a> &nbsp;|&nbsp;
+<a href="http://developers.sun.com/global/contact.html">Contact Us</a> &nbsp;|&nbsp;
+<a href="http://developers.sun.com/global/employment.html">Employment</a><br />
+<a href="http://developers.sun.com/global/howtobuy.html">How to Buy</a> &nbsp;|&nbsp;
+<a href="http://developers.sun.com/global/licensing.html">Licensing</a> &nbsp;|&nbsp;
+<a href="http://developers.sun.com/global/termsofuse.html">Terms of Use</a> &nbsp;|&nbsp;
+<a href="http://developers.sun.com/global/privacy.html">Privacy</a> &nbsp;|&nbsp;
+<a href="http://developers.sun.com/global/trademarks.html">Trademarks</a>
+<br /><span class="sp10">&nbsp;</span><br />
+<br /><span class="sp10">&nbsp;</span><br />
+Copyright <span id="copyDate" class="cssDate"></span> Sun Microsystems, Inc.
+</div></td>
+<td><img src="http://developers.sun.com/im/a.gif" width="40" height="1" border="0" alt="" /></td>
+<td valign="top"><div class="footer"><b><a href="http://developers.sun.com/global/aboutsdn.html">A Sun Developer Network Site</a></b></div>
+<div class="footer">
+<img src="http://developers.sun.com/im/a.gif" width="170" height="1" border="0" alt="" /><br />
+Unless otherwise licensed, code in all technical manuals herein (including articles, FAQs, samples) is provided under this <a href="http://developers.sun.com/global/berkeley_license.html">License</a>.
+<br /><span class="sp5">&nbsp;</span><br />
+<a href="http://developers.sun.com/global/rss_sdn.html"><img src="http://developers.sun.com/im/ic_feed_16x.gif" width="16" height="16" align="top" border="0" alt="XML" /></a>&nbsp;<a href="http://developers.sun.com/global/content_feeds.html">Sun Developer RSS Feeds</a>
+</div></td></tr>
+<tr><td colspan="4" valign="top" class="grey3"><img src="http://developers.sun.com/im/a.gif" width="1" height="2" border="0" alt="" /></td></tr>
+</table>
+</td></tr>
+</table>
+<!-- END VNV5 FOOTER -->
+
+</body><script language="JavaScript" src="/js/omi/jsc/s_code_remote.js"></script></html>
+
+
+<script language="JavaScript">
+<!--
+var SymRealOnLoad;
+var SymRealOnUnload;
+
+function SymOnUnload()
+{
+  window.open = SymWinOpen;
+  if(SymRealOnUnload != null)
+     SymRealOnUnload();
+}
+
+function SymOnLoad()
+{
+  if(SymRealOnLoad != null)
+     SymRealOnLoad();
+  window.open = SymRealWinOpen;
+  SymRealOnUnload = window.onunload;
+  window.onunload = SymOnUnload;
+}
+
+SymRealOnLoad = window.onload;
+window.onload = SymOnLoad;
+
+//-->
+</script>
+

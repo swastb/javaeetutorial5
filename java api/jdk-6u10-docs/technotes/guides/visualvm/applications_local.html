@@ -1,0 +1,324 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+<title>Java VisualVM</title>
+<meta name="collection" content="reference">
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
+<link rel="stylesheet" href="/css/default_developer.css" />
+
+<script language="JavaScript">
+<!--
+
+function SymError()
+{
+  return true;
+}
+
+window.onerror = SymError;
+
+var SymRealWinOpen = window.open;
+
+function SymWinOpen(url, name, attributes)
+{
+  return (new Object());
+}
+
+window.open = SymWinOpen;
+
+//-->
+</script>
+
+<script language="JavaScript" type="text/javascript" src="/js/popUp.js"></script>
+<script language="javascript1.2" type="text/javascript" src="/js/sniff.js"></script>
+<script language="javascript1.2" type="text/javascript" src="/js/menucontent.js"></script>
+<script language="javascript1.2" type="text/javascript" src="/js/menucode.js"></script>
+<script language="javascript1.2" type="text/javascript" src="/js/developer.js"></script>
+</head>
+<!--stopindex-->
+<body leftmargin="0" topmargin="0" marginheight="0" marginwidth="0" rightmargin="0" bgcolor="#ffffff" onload="prepmenus(); done=true">
+<a name="top"></a>
+<!-- BEGIN MASTHEAD -->
+<!-- BEGIN A1 COMPONENT V.0 -->
+<div class="a1 a1r2">
+<div class="a1v0">
+<a href="#skip2content" class="skiplink">Skip to Content</a>
+<span class="toolbarlinks">
+<a href="/global/mh/suncom/index.html">Sun</a>
+<a href="/global/mh/java/">Java</a>
+<a href="/global/mh/solaris/">Solaris</a>
+<a href="/global/mh/communities/" class="dividelink">Communities</a>
+<a href="http://developers.sun.com/global/my_profile.html">My SDN Account</a>
+<a href="http://developers.sun.com/global/join_sdn.html" class="dividelink">Join SDN</a>
+</span>
+</div>
+</div>
+<!-- END A1 COMPONENT V.0 -->
+
+<!-- BEGIN A2 COMPONENT V.1 -->
+<div class="a2w0">
+<div class="a2" id="a2v1">
+<div class="a2w1"><div class="a2w2"><div class="a2w3"><div class="a2w4">
+<div class="a2topiclinks">
+<div class="a2search">
+<form action="http://developers.sun.com/search/onesearch/index.jsp" accept-charset="utf-8" method="GET">
+<input type="hidden" name="charset" value="utf-8">
+<input type="hidden" name="col" value="developer-reference">
+<span class="rightarrowwhite">&raquo;</span>&nbsp;<a href="http://developers.sun.com/global/search_tips.html">search tips</a>&nbsp;
+<input class="searchfield" name="qt" class="medium" size="7" onFocus="if( this.value==this.defaultValue ) this.value='';" value="Search">
+<input id="searchbttn" type="image" border="0" src="/im/a2_bttn_search.gif" alt="Submit Search">
+</form>
+</div>
+<a href="http://www.sun.com" title="Home Page" id="sunlogo"><img src="/im/a.gif" alt="Home Page" width="98" height="58" border="0" /></a>
+<a href="http://developers.sun.com" title="Sun Developer Network"><img src="/im/a.gif" id="venuespacer" alt="Sun Developer Network" width="400" height="33" border="0" /></a>
+<ul id="mtopics">
+<li id="mtopic1"><a id="glink1" class="tpclink a2menu" title="See All APIs" href="/global/mh/api/index.html">APIs</a></li>
+<li id="mtopic2"><a id="glink2" class="tpclink a2menu" title="See All Downloads" href="/global/mh/downloads/index.html">Downloads</a></li>
+<li id="mtopic3"><a id="glink3" class="tpclink a2menu" title="See All Products" href="/global/mh/products/index.html">Products</a></li>
+<li id="mtopic4"><a id="glink4" class="tpclink a2menu" title="See All Support" href="/global/mh/support/index.html">Support</a></li>
+<li id="mtopic5"><a id="glink5" class="tpclink a2menu" title="See All Training" href="/global/mh/training/index.html">Training</a></li>
+<li id="mtopic6"><a id="glink6" class="tpclink a2menu" title="See All Participate" href="/global/mh/participate/index.html">Participate</a></li>
+</ul>
+</div>
+</div></div></div></div>
+</div></div>
+<!-- END A2 COMPONENT V.1 -->
+
+<!-- END MASTHEAD -->
+
+<!-- BEGIN VNV2 BREADCRUMB COMPONENT  -->
+<table border="0" cellpadding="0" cellspacing="0" width="100%" class="vatop">
+<tr>
+<td rowspan="2"><div class="breadcrumb"><img src="../../../images/javalogo52x88.gif"
+        alt="Java" border="0" width="52" height="88" /></div>  <div class="breadcrumb"></div></td>
+<td align="right" valign="bottom" nowrap="nowrap"><div class="breadcrumb">
+<b><a href="http://developers.sun.com/dispatcher.jsp?uid=6910021">Join Sun Developer Network</a></b>
+</div></td>
+</tr>
+<tr>
+<td align="right" valign="bottom" nowrap="nowrap"><div class="breadcrumb">
+  <p><a href="http://developers.sun.com/dispatcher.jsp?uid=6910026"><img src="/im/bc_login.gif" width="43" height="18" border="0" alt="Login" valign="bottom" /></a> <a href="/user_registration/whyregister.jsp"><img src="/im/bc_why_join.gif" width="80" height="18" border="0" alt="Why Join" valign="bottom" /></a></p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+</div></td></tr>
+<tr><td colspan="2"><img src="/im/a.gif" width="770" height="1" border="0" alt="" /></td></tr>
+</table>
+<span class="sp5">&nbsp;</span><br />
+<!-- END VNV2 BREADCRUMB COMPONENT  -->
+
+<!-- BEGIN VNV3 PAGETITLE, two-level variation -->
+<div class="smallpagetitle">
+  <h1>Java VisualVM</h1>
+</div>
+<!-- END VNV3 PAGETITLE, two-level variation -->
+
+<!-- BEGIN WRAPPER TABLE, 1 COLUMN, MAIN -->
+<table border="0" cellpadding="10" cellspacing="0" width="100%">
+  <tr>
+    <td width="100%" valign="top"> 
+      <!-- BEGIN CENTRAL COLUMN COMPONENTS -->
+      <!--startindex-->
+      <a name="skip2content"></a>
+      <!-- ============ Following table is not part of the standard header for java.sun.com, =======->
+      <!-- ============ it is the standard sub-header for Java SE Release Notes files ==============->
+      <!-- ============ Links to JDK Docs and Japanese Release Notes Index Page ================== -->
+      <hr> <table border="0" cellpadding="0" cellspacing="0" width="99%">
+        <tr valign="top" align="left"> 
+          <td> </td>
+          <td ALIGN="right"> <font size="-1"> <a href="index.html">Back to Java VisualVM  
+            Documentation Index </a> 
+
+</font></td>
+</tr>
+</table>
+<!-- ============ -->
+<!-- MAIN CONTENT -->
+<!-- ============ -->
+        <h1>Working with Local Applications</h1>
+        <p>When you start Java VisualVM, a node for each local Java application is displayed under the Local node in the Applications window.
+        You can expand an application node to see the profiler snapshots, thread dumps and heap dumps of the application.
+        Right-clicking an application node or sub-node invokes a popup menu enabling you to choose various actions.<br/>
+        <b>Note:</b> The list of local applications always includes Java VisualVM.</p>
+        
+        <img src="images/applications-window-menu.png" style="border:1px solid;" alt="screenshot of VisualVM Applications window showing popup menu options" 
+        title="screenshot of VisualVM Applications window showing popup menu options" />
+ 
+        
+        <p>A local application node generally has the following items available in the popup menu.</p>
+            <ul>
+                <li><b>Open.</b> Opens the tab for the application in the main window where you can view application data.</li>
+                <li><b>Thread Dump.</b> Takes a thread dump for the application.</li>
+                <li><b>Heap Dump.</b> Takes a heap dump for the application.</li>
+                <li><b>Profile.</b> Opens the Profiler sub-tab for the application where you can choose to profile the application. (Note that even though Java VisualVM appears in the application tree, Java VisualVM cannot profile itself). </li>
+                <li><b>Profiler Snapshot.</b> Creates a snapshot of the results from the profiling session.
+                The snapshot opens in the main window and a node for the snapshot appears under the application node.
+                This command is only available when Java VisualVM is profiling the application.</li>
+                <li><b>Application Snapshot.</b> Creates an application snapshot containing all application dumps and snapshots.
+                A node for the application snapshot appears under the Snapshots node.</li>
+                <li><b>Enable Heap Dump on OOME.</b> Select this if you want Java VisualVM to automatically take a heap dump when
+                the application encounters an OutOfMemoryException.</li>
+            </ul>
+        
+        <p>You can perform the following tasks directly from the popup menu.</p>
+    
+        <h4>View Application Data</h4>
+        <p>Java VisualVM displays data about each running local application in a dedicated tab in the main window.
+        Each application tab has sub-tabs where information about that application is displayed.</p>
+        <p>To open the application tab, right-click the application node in the Applications window and choose Open.
+        (Alternatively, double-click the application node.)
+        When you click Open, the Overview tab of the application tab opens in the main window.</p>
+        <p>The application tab for a local application has the following sub-tabs:</p>
+        <ul>
+            <li><b>Overview.</b> For more, see <a href="overview_tab.html">Viewing Application Overview</a></li>
+            <li><b>Monitor.</b> For more, see <a href="monitor_tab.html">Monitoring an Application</a></li>
+            <li><b>Threads.</b> For more, see <a href="threads.html">Monitoring Application Threads</a></li>
+            <li><b>Profiler.</b> For more, see <a href="profiler.html">Profiling Applications</a></li>
+        </ul>
+        <p>Additional tabs and sub-tabs may be visible depending on the installed plugins.</p>
+    
+        <h4>Take a Thread Dump</h4>
+        <p>You can use Java VisualVM to take a thread dump to capture information about the active application threads
+        at the time you take the thread dump.
+        When you take a thread dump, the thread dump opens in a sub-tab of the application in the main window.
+        A node for the thread dump appears under the application node in the Applications window.</p>
+
+        <p>You can take a thread dump in the following ways:</p>
+        <ul>
+            <li>Right-click the application node in the Applications window and choose Thread Dump.</li>
+            <li>Click the Thread Dump button in the Threads tab of the application tab.</li>
+        </ul>
+        <p>When you take a thread dump, the thread dump opens in a sub-tab of the application in the main window.
+        A node for the thread dump appears under the application node.</p>
+        <p>For more about working with application threads, see the following document:</p>
+        <ul><li><a href="threads.html">Monitoring Application Threads</a></li></ul>
+        
+
+        <h4>Take a Heap Dump</h4>
+        <p>You can take a heap dump of a local application to capture a snapshot of the objects on the heap.</p>
+
+        <p>You can take a heap dump in the following ways:</p>
+        <ul>
+            <li>Right-click the application node in the Applications window and choose Heap Dump.</li>
+            <li>Click the Heap Dump button in the Monitor tab of the application tab.</li>
+        </ul>
+        <p>When you take a heap dump, the heap dump opens in a sub-tab of the application in the main window.
+        A node for the heap dump appears under the application node.</p>
+        <p>For more about working with the heap, see the following document:</p>
+        <ul><li><a href="heapdump.html">Browsing a Heap Dump</a></li></ul>
+        
+
+        <h4>Profile an Application</h4>
+        <p>Java VisualVM includes a profiler that enables you to analyze the performance and memory usage of a local application.
+        You can profile an application without restarting it. To start a profiling session, 
+        right-click the application node and choosing Profile from the popup menu to open the profiling tab.<br/>
+        <b>Note:</b> Java VisualVM cannot be used to Profile itself.</p>
+        <p>For more see the following document:</p>
+        <ul><li><a href="profiler.html">Profiling Applications</a></li></ul>
+        
+        
+        
+        <h4>Take Snapshots</h4>
+        <p>Java VisualVM enables you to take snapshots that capture application data at the time the snapshot is taken.
+        You can save snapshots to your local system and then examine them later or send them to others.</p>
+        <p>Java VisualVM enables you to take the following types of snapshots:</p>
+        <ul>
+            <li><b>Profiler snapshots.</b> A profiler snapshot captures the profiling data at the moment the snapshot is takes.
+            The snapshot is either a memory snapshot or a CPU snapshot.
+            You can take a profiler snapshot only when you are profiling an application.</li>
+            <li><b>Application snapshots.</b> An application snapshot is an archive that contains all the heap dumps, 
+            thread dumps and snapshots that are listed below the application node. </li>
+        </ul>
+        
+        <p>For more see the following document:</p>
+        <ul><li><a href="snapshots.html">Working with Snapshots</a></li></ul>
+  
+        <hr/>
+        <p><a href="index.html">Return to the Java VisualVM Documentation Index</a></p>
+
+        <!-- =================== -->
+<!-- END OF MAIN CONTENT -->
+<!-- =================== -->
+
+<!--stopindex-->
+
+<!-- END CENTRAL COLUMN COMPONENTS -->
+
+<!-- BEGIN SPACER ROW -->
+<tr><td><img src="/im/a.gif" width="750" height="1" border="0" alt=" " /></td></tr>
+<!-- END SPACER ROW -->
+
+<!-- END WRAPPER TABLE, 1 COLUMN, MAIN -->
+
+
+<!-- BEGIN VNV5 FOOTER  -->
+<table border="0" cellpadding="0" cellspacing="10" width="100%">
+<tr>
+<td>
+<table border="0" cellpadding="0" cellspacing="0" width="100%" class="vatop">
+<tr>
+<td colspan="4" valign="top" class="grey3"><img src="http://developers.sun.com/im/a.gif" width="1" height="2" border="0" alt="" /></td></tr>
+<tr>
+<td><img src="http://developers.sun.com/im/a.gif" width="190" height="1" border="0" alt="" /><br />
+<a href="http://www.sun.com"><img src="http://developers.sun.com/im/logo_sun_small_sdn.gif" width="61" height="29" border="0" alt="" vspace="5"/></a></td>
+<td width="100%" valign="top"><img src="http://developers.sun.com/im/a.gif" width="350" height="1" border="0" alt="" /><br />
+<div class="footer">
+<a href="http://developers.sun.com/global/aboutsun.html">About Sun</a> &nbsp;|&nbsp;
+<a href="http://developers.sun.com/global/aboutsdn.html">About This Site</a> &nbsp;|&nbsp;
+<a href="http://developers.sun.com/global/newsletters.html">Newsletters</a> &nbsp;|&nbsp;
+<a href="http://developers.sun.com/global/contact.html">Contact Us</a> &nbsp;|&nbsp;
+<a href="http://developers.sun.com/global/employment.html">Employment</a><br />
+<a href="http://developers.sun.com/global/howtobuy.html">How to Buy</a> &nbsp;|&nbsp;
+<a href="http://developers.sun.com/global/licensing.html">Licensing</a> &nbsp;|&nbsp;
+<a href="http://developers.sun.com/global/termsofuse.html">Terms of Use</a> &nbsp;|&nbsp;
+<a href="http://developers.sun.com/global/privacy.html">Privacy</a> &nbsp;|&nbsp;
+<a href="http://developers.sun.com/global/trademarks.html">Trademarks</a>
+<br /><span class="sp10">&nbsp;</span><br />
+<br /><span class="sp10">&nbsp;</span><br />
+Copyright <span id="copyDate" class="cssDate"></span> Sun Microsystems, Inc.
+</div></td>
+<td><img src="http://developers.sun.com/im/a.gif" width="40" height="1" border="0" alt="" /></td>
+<td valign="top"><div class="footer"><b><a href="http://developers.sun.com/global/aboutsdn.html">A Sun Developer Network Site</a></b></div>
+<div class="footer">
+<img src="http://developers.sun.com/im/a.gif" width="170" height="1" border="0" alt="" /><br />
+Unless otherwise licensed, code in all technical manuals herein (including articles, FAQs, samples) is provided under this <a href="http://developers.sun.com/global/berkeley_license.html">License</a>.
+<br /><span class="sp5">&nbsp;</span><br />
+<a href="http://developers.sun.com/global/rss_sdn.html"><img src="http://developers.sun.com/im/ic_feed_16x.gif" width="16" height="16" align="top" border="0" alt="XML" /></a>&nbsp;<a href="http://developers.sun.com/global/content_feeds.html">Sun Developer RSS Feeds</a>
+</div></td></tr>
+<tr><td colspan="4" valign="top" class="grey3"><img src="http://developers.sun.com/im/a.gif" width="1" height="2" border="0" alt="" /></td></tr>
+</table>
+</td></tr>
+</table>
+<!-- END VNV5 FOOTER -->
+
+</body><script language="JavaScript" src="/js/omi/jsc/s_code_remote.js"></script></html>
+
+
+<script language="JavaScript">
+<!--
+var SymRealOnLoad;
+var SymRealOnUnload;
+
+function SymOnUnload()
+{
+  window.open = SymWinOpen;
+  if(SymRealOnUnload != null)
+     SymRealOnUnload();
+}
+
+function SymOnLoad()
+{
+  if(SymRealOnLoad != null)
+     SymRealOnLoad();
+  window.open = SymRealWinOpen;
+  SymRealOnUnload = window.onunload;
+  window.onunload = SymOnUnload;
+}
+
+SymRealOnLoad = window.onload;
+window.onload = SymOnLoad;
+
+//-->
+</script>
+
+
