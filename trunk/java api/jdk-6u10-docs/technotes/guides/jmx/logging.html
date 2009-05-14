@@ -1,0 +1,214 @@
+<html>
+<head>
+     <title>Java Management Extensions</title>
+<meta name="collection" content="reference">
+</head>
+
+<body bgcolor=white>
+
+<!-- document header is table row with 3 cells-->
+<table summary="layout" border=0 width=100%>
+<tr>
+    <!-- Left cell: Java logo -->
+    <td width=60>
+       <img src="../../../images/javalogo52x88.gif" alt="Java (tm)" width=52 height=88>
+
+    </td>
+
+
+    <!-- Center cell: Title -->
+    <td align=center>
+       <h1>Java Management Extensions (JMX) Tracing</h1>
+    </td>
+
+    <!-- Right cell: Up references -->
+    <td align=right valign=top width=60>
+       <font size=-1><a href="../../../index.html">Documentation&nbsp;Contents</a></font>
+    </td>
+</tr>
+</table>
+
+<!-- ====================== Body text begins here ====================== -->
+
+<blockquote>
+
+<p>Traces in the JMX implementation are based on the Java SE logging capability (provided by classes in the <tt>java.util.logging</tt> package). The JMX implementation uses a set of Loggers for sending traces.  All Loggers are contained in the javax.management namespace, which corresponds to the name of the root package hosting all public JMX  interfaces.
+     
+<p>The list below shows the Logger objects used in this implementation and their corresponding category of activity.</p>
+
+
+<table width="100%" cols=2 border="1">
+
+<tr>
+<td valign="top"><strong>Logger Name</strong>:
+</td>
+<td valign="top"><strong>Information logged</strong>
+</td>
+</tr>
+
+<tr>
+<td valign="top"><tt>javax.management.mbeanserver</tt>
+</td>
+<td valign="top">Information about the MBean Server
+</td>
+
+</tr>
+
+<tr>
+<td valign="top"><tt>javax.management.mlet</tt>
+</td>
+<td valign="top">Information from an MLet service
+</td>
+
+</tr>
+
+<tr>
+<td valign="top"><tt>javax.management.monitor</tt>
+</td>
+<td valign="top">Information from a monitor
+</td>
+
+</tr>
+
+<tr>
+<td valign="top"><tt>javax.management.timer</tt>
+</td>
+<td valign="top">Information from a timer
+</td>
+
+</tr>
+
+<tr>
+<td valign="top"><tt>javax.management.notification</tt>
+</td>
+<td valign="top">Information from the notification mechanism
+</td>
+
+</tr>
+
+<tr>
+<td valign="top"><tt>javax.management.relation</tt>
+</td>
+<td valign="top">Information from the Relation Service
+</td>
+
+</tr>
+
+<tr>
+<td valign="top"><tt>javax.management.modelmbean</tt>
+</td>
+<td valign="top">Information from the Model MBean components
+</td>
+
+</tr>
+
+<tr>
+<td valign="top"><tt>javax.management.misc</tt>
+</td>
+<td valign="top">Information sent from any other class.
+</td>
+
+</tr>
+
+
+<tr>
+<td valign="top"><tt>javax.management.remote.rmi</tt>
+</td>
+<td valign="top">Information from the RMI connector.
+</td>
+
+</tr>
+
+<tr>
+<td valign="top"><tt>javax.management.remote.misc</tt>
+</td>
+<td valign="top">Information sent from any other JMX Remote API class.
+</td>
+
+</tr>
+
+</table>
+
+<p>The following log levels are used in JMX:</p>
+
+<table width="100%" cols=2 border="1">
+
+<tr>
+<td valign="top"><strong>JMX log level</strong>:
+</td>
+<td valign="top"><strong>Description</strong>
+</td>
+</tr>
+
+<tr>
+<td valign="top"><tt>Level.FINEST</tt>
+</td>
+<td valign="top">Used to print debugging traces (useful for diagnosing the JMX implementation)
+</td>
+
+</tr>
+
+<tr>
+<td valign="top"><tt>Level.FINER</tt>
+</td>
+<td valign="top">Used to print information traces
+</td>
+
+</tr>
+
+<tr>
+<td valign="top"><tt>Level.SEVERE</tt>
+</td>
+<td valign="top">Used to notify of error conditions
+</td>
+
+</tr>
+
+
+</table>
+
+<br>
+</blockquote>
+
+
+<!-- Body text ends here -->
+<!-- ============================================================== -->
+
+<hr SIZE=3 NOSHADE>
+
+<table summary="layout" BORDER="0" WIDTH="100%">
+<tr VALIGN=TOP>
+
+<td>
+<font SIZE="-2">
+   <a HREF="../../../legal/SMICopyright.html">Copyright</a> &#169; 2004
+   <a HREF="http://www.sun.com/">Sun Microsystems, Inc.</a>
+
+    All Rights Reserved.</font>
+   <br>
+   <br>
+
+   <font SIZE="-1">
+   <a href="http://developers.sun.com/contact/feedback.jsp?referer=http://java.sun.com/javase/6/docs/technotes/guides/jmx/index.html&category=j2se&mailsubject=Java%20Management%20Extensions">Feedback</a> 
+   </font>
+</td>
+
+<td ALIGN=RIGHT>
+   <img SRC="../../../images/sunlogo64x30.gif" ALT="Sun" BORDER=0 WIDTH=64 HEIGHT=30>
+   <br>
+   <br>
+   <font SIZE="+1">
+   <i>Java Software</i>
+   </font>
+</td>
+
+</tr>
+
+</table>
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,264 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><!-- InstanceBegin template="/Templates/jweb_guide_template.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<meta http-equiv="CONTENT-TYPE" content="text/html; charset=iso-8859-1" />
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>LiveConnect Support</title>
+<!-- InstanceEndEditable -->
+<meta name="CREATED" content="20070629;10470800" />
+<meta name="CHANGED" content="20070629;11032100" />
+<meta name="collection" content="reference" />
+<link href="../../../css/guide.css" rel="stylesheet" type="text/css" />
+
+</head>
+<body lang="en-US" dir="LTR">
+<table summary="layout" width=100% border=0 cellpadding=2 cellspacing=2 style="page-break-before: always">
+	<tr>
+		<td width=25%>
+			<p><img src="../../../../images/javalogo52x88.gif" name="Graphic1" alt="Java" align=bottom width=52 height=88 border=0 />
+			</p>
+		</td>
+		<td>  
+      <h1 align=CENTER><!-- InstanceBeginEditable name="Page Title" -->
+      LiveConnect Support <!-- InstanceEndEditable -->
+				<br>for JavaSE 6u10</h1>
+    </td>
+		<td width=25% valign=TOP>
+			<p align=RIGHT>
+				<a href="../../../../index.html"><font size=2>Documentation	Contents</font></a>
+			</p>
+		</td>
+	</tr>
+</table>
+
+<p><a name="PageTop"></a></p>
+<!-- InstanceBeginEditable name="Content" -->
+<p class="crumbs"><a class="crumblink" href="applet_dev_guide.html">Applet Developer's Guide</a> &gt; LiveConnect Support </p>
+<p><b>Contents</b> 
+</p>
+<ul>
+  <li class="TOC"><a href="#intro">Introduction</a>
+</li>
+  <li class="TOC"><a href="#InvokeJavaScript" target="_self">Invoking JavaScript functions from an Applet</a></li>
+  <li class="TOC"> <a href="#InvokeAppletMethods" target="_self">Invoking Applet Methods from JavaScript</a></li>
+</ul>
+<hr>
+<h2><a name="intro" id="intro"></a>Introduction</h2>
+<p>The <a href="http://developer.mozilla.org/en/docs/LiveConnect" target="_blank">LiveConnect</a> specification defines how Java code within an applet can communicate with JavaScript in a web page and vice versa. Methods defined in an applet may invoke JavaScript defined in an HTML page. JavaScript also has the ability to invoke methods defined in an applet and other Java Runtime libraries.</p>
+<p>LiveConnect support has been fortified with backward compatibility in mind. Formerly
+Mozilla-specific LiveConnect functionality, such as the ability to
+call static Java methods, instantiate new Java objects and reference
+third-party packages from JavaScript, is now available in all
+browsers.</p>
+<h2><a name="InvokeJavaScript"></a>Invoking JavaScript Functions from an Applet </h2>
+<p>The <code class="nowrap">Netscape.javascript.JSObject</code> class enables communication between the Java code in the applet and JavaScript in the HTML page. This class is in the <code>plugin.jar</code> file along with the other jars in <code>jre/lib</code>. To access it, add the <code>plugin.jar</code> file to the compilation class path. </p>
+<p>Java<FONT size=-2></FONT> applets may need to perform Java-to-JavaScript communication to access the Document Object Model (DOM) or to call JavaScript functions on an HTML page. Browsers allow communication between Java and JavaScript through the Java wrapper class <CODE>netscape.javascript.JSObject</CODE>. </p>
+<P>Because the JavaScript rendering engine is implemented differently between browsers, Java Plug-in provides different degrees of support for <CODE>JSObject</CODE> in Internet Explorer and Navigator. This document specifies how <CODE>JSObject</CODE> support works in different browser environments. 
+<h3>How <CODE>JSObject</CODE> Works</h3>
+  <P><CODE>JSObjec</CODE>t provides an easy way to access the DOM of an HTML page. But because different browsers implement the DOM differently, using <CODE>JSObject</CODE> in a Java applet may yield different behaviors in Java Plug-in. For details about the DOM implementation in a particular browser, consult the developer guide for that browser. </P>
+  <P>In general, applets access <CODE>JSObject</CODE> as follows:</P>
+  <TABLE cellPadding=5 width="95%" align=center summary=layout>
+    <TBODY>
+      <TR bgColor=#cccccc>
+        <TD><PRE><FONT color=#000000>import netscape.javascript.*;
+import java.applet.*;
+import java.awt.*;
+class MyApplet extends Applet {
+     public void init() {
+         JSObject win = JSObject.getWindow(this);
+         JSObject doc = (JSObject) win.getMember("document");
+         JSObject loc = (JSObject) doc.getMember("location");
+
+         String s = (String) loc.getMember("href");  // document.location.href
+         win.call("f", null);                      // Call f() in HTML page
+     }
+}
+</FONT></PRE></TD>
+      </TR>
+    </TBODY>
+  </TABLE>
+  <P>The starting point is the <CODE>static</CODE> method </P>
+  <BLOCKQUOTE>
+    <PRE>public static JSObject getWindow(Applet a) 
+  </PRE>
+  </BLOCKQUOTE>
+  <P>which returns a <CODE>JSObject</CODE> representing the <CODE>Window</CODE> that contains the given applet. Since this method takes only <CODE>java.applet.Applet</CODE> as parameter, <CODE>JSObject</CODE> can be accessed from an applet, but not from a bean unless the bean is also an applet. </P>
+  <P>Once the <CODE>Window</CODE> object is obtained, the applet can navigate the DOM of the HTML page using the following methods:</P>
+  <UL>
+    <LI><CODE>public Object call(String methodName, Object args[]) </CODE>
+    <LI><CODE>public Object eval(String s) </CODE>
+    <LI><CODE>public Object getMember(String name) </CODE>
+    <LI><CODE>public Object getSlot(int index) </CODE>
+    <LI><CODE>public void removeMember(String name) </CODE>
+    <LI><CODE>public void setMember(String name, Object value) </CODE>
+    <LI><CODE>public void setSlot(int index, Object value) </CODE>
+    <LI><CODE>public String toString() </CODE>
+    <LI><CODE>public boolean equals(Object obj) </CODE></LI>
+  </UL>
+  <P>We recommend using only <CODE>getWindow()</CODE>, <CODE>call()</CODE>, <CODE>eval()</CODE>, <CODE>setMember()</CODE> and <CODE>getMember()</CODE> in Java Plug-in. The implementations of <CODE>getSlot()</CODE>, <CODE>setSlot()</CODE>, <CODE>removeMember()</CODE> and <CODE>toString()</CODE> are browser-dependent; i.e., the result of execution may vary depending on the version and platform of the browser in which Java Plug-in is running.</P>
+  <P>To compile Java code to take advantage of <CODE>JSObject</CODE>, you must have the package <TT>netscape.javascript</TT> in the <CODE>CLASSPATH</CODE>. Since 1.4.2 Java Plug-In ships <TT>netscape.javascript</TT> in a JAR file called <CODE>plugin.jar</CODE>. To compile an applet which uses <CODE>JSObject</CODE>, add <CODE>plugin.jar</CODE> in the <CODE>CLASSPATH</CODE> before compilation.</P>
+  <P>Note that although <CODE>JSObject</CODE> is supported in Java Plug-in, it is not supported in AppletViewer in the Java SE platform. As a result, applets using <CODE>JSObject</CODE> may not run in AppletViewer or result in exceptions.</P>
+  <H3>Enabling <CODE>JSObject</CODE> Support in Java Plug-in </H3>
+  <P>Due to security reasons, <CODE>JSObject</CODE> support is not enabled in Java Plug-in by default. To enable <CODE>JSObject</CODE> support in Java Plug-in, a new attribute called <CODE>MAYSCRIPT</CODE> needs to be present in the <CODE>EMBED/OBJECT</CODE> tag as follows:</P>
+  <H4>Original <CODE>APPLET</CODE> tag:&nbsp; </H4>
+  <TABLE cellPadding=5 width="95%" align=center summary=layout>
+    <TBODY>
+      <TR bgColor=#cccccc>
+        <TD><PRE><FONT color=#000000>&lt;APPLET code="XYZApp.class" codebase="html/" align="baseline"
+     width="200" height="200" </FONT><FONT color=#ff0000>MAYSCRIPT</FONT><FONT color=#000000>&gt;
+&lt;PARAM NAME="model" VALUE="models/HyaluronicAcid.xyz"&gt;
+     No JDK 1.3 support for APPLET!!
+&lt;/APPLET&gt;</FONT></PRE></TD>
+      </TR>
+    </TBODY>
+  </TABLE>
+  <H4>New <CODE>OBJECT</CODE> tag:&nbsp; </H4>
+  <TABLE cellPadding=5 width="95%" align=center summary=layout>
+    <TBODY>
+      <TR bgColor=#cccccc>
+        <TD><PRE><FONT color=#000000>&lt;OBJECT classid="clsid:8AD9C840-044E-11D1-B3E9-00805F499D93"
+     width="200" height="200" align="baseline"
+     codebase="http://java.sun.com/products/plugin/1.3/jinstall-13-win32.cab#Version=1,3,0,0"&gt;
+     &lt;PARAM NAME="code" VALUE="XYZApp.class"&gt;
+     &lt;PARAM NAME="codebase" VALUE="html/"&gt;
+     &lt;PARAM NAME="type" VALUE="application/x-java-applet;version=1.3"&gt;</FONT><FONT color=#0000ff>
+</FONT><FONT color=#008000>    <FONT color=#ff0000> &lt;PARAM NAME="MAYSCRIPT" VALUE="true"&gt;</FONT>
+</FONT><FONT color=#0000ff>     <FONT color=#000000>&lt;PARAM NAME="model" VALUE="models/HyaluronicAcid.xyz"&gt;
+        No JDK 1.3 support for APPLET!!</FONT></FONT><FONT color=#000000>
+&lt;/OBJECT&gt;</FONT></PRE></TD>
+      </TR>
+    </TBODY>
+  </TABLE>
+  <H4>New <CODE>EMBED</CODE> tag:</H4>
+  <TABLE cellPadding=5 width="95%" align=center summary=layout>
+    <TBODY>
+      <TR bgColor=#cccccc>
+        <TD><PRE><FONT color=#000000>&lt;EMBED type="application/x-java-applet;version=1.3" width="200"
+   height="200" align="baseline" code="XYZApp.class"
+   codebase="html/" model="models/HyaluronicAcid.xyz" </FONT><FONT color=#ff0000>MAYSCRIPT=true</FONT><FONT color=#800000>
+   <FONT color=#000000>pluginspage="http://java.sun.com/products/plugin/1.3/plugin-install.html"&gt;
+&lt;NOEMBED&gt;
+   No JDK 1.3 support for APPLET!!
+&lt;/NOEMBED&gt;
+&lt;/EMBED&gt;</FONT>
+</FONT></PRE></TD>
+      </TR>
+    </TBODY>
+  </TABLE>
+  <P>If <CODE>MAYSCRIPT</CODE> is specified as false, or if <CODE>MAYSCRIPT</CODE> is absent, <CODE>JSObject</CODE> is disabled. For more information about the <CODE>MAYSCRIPT</CODE> attribute in the <CODE>EMBED/OBJECT</CODE> tag, see <A 
+href="../../plugin/developer_guide/using_tags.html">Using <CODE>OBJECT</CODE>, <CODE>EMBED</CODE> and <CODE>APPLET</CODE> Tags in Java Plug-in</A>.<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</P>
+  <P>JavaScript and LiveConnect are technologies from Netscape Communications Corporation. Due to the differences in the Javascript engine implemented by Mozilla and Microsoft, data marshalling between Java and JavaScript via LiveConnect may result in different datatypes for different browsers. The main differences in JavaScript implementations from vendors are in JavaScript datatype support, mapping of datatypes between Java and JavaScript, and DOM element implementation.</P>
+  <p>For more information on Java to Javascript communication including JSObject and datatype conversions, see: </p>
+  <p>&nbsp; </p>
+  <H2><a name="InvokeAppletMethods"></a>Invoking Applet Methods from JavaScript</H2>
+  You often want to use scripts to invoke methods on an applet. For example, you might have an HTML button that, when clicked, starts an animation sequence. You do this through a combination of HTML tags and scripting in the HTML file, plus the actual code in the applet itself.
+  <P>You need to include the following in your applet's HTML page:
+      <!-- table #29 start; table #25 still open -->
+  <UL>
+    <LI>Within the <TT>OBJECT</TT> tag, an ID parameter that specifies the name of the applet 
+    <LI>Tags specifying a scripting language and scripting method associated with a particular action 
+    <LI>A SCRIPT tag for the scripting method that the action will invoke </LI>
+  </UL>
+  <P>These tags are explained in the following sections. 
+  <H4>Specify the Applet</H4>
+  You must designate an <TT>ID</TT> parameter within the <TT>OBJECT</TT> tag for your HTML page. Recall that the <TT>OBJECT</TT> tag includes such parameters as <TT>classid</TT>, <TT>width</TT>, <TT>height</TT>, and so on.
+  <P>The <TT>ID</TT> parameter is the symbolic name of the applet. Once you establish a symbolic name for an applet through the <TT>ID</TT> parameter, you can reuse this name later in the scripts to refer to this applet. 
+  <P>For example, suppose you have an applet called Fractal. You add the <TT>ID</TT> parameter to the <TT>OBJECT</TT> tag and set <TT>ID</TT> to the symbolic name of the applet. You might set the tag as follows: 
+  <BLOCKQUOTE>
+    <PRE>ID="Fractal"
+  </PRE>
+    <P>&nbsp;</P>
+  </BLOCKQUOTE>
+  Now, you can use the name <TT>Fractal</TT> within scripts to refer to the Fractal applet.
+  <P>Using the same Fractal applet example, your HTML page would begin with a <TT>FORM</TT> tag, followed by an <TT>OBJECT</TT> tag, that together might look as follows: 
+  <BLOCKQUOTE>
+    <TABLE cellPadding=5 summary=layout>
+      <TBODY>
+        <TR bgColor=#cccccc>
+          <TD><PRE>&lt;form name="Form1"&gt;
+&lt;OBJECT ID="Fractal" WIDTH=500 HEIGHT=120
+CLASSID="CLSID:8AD9C840-044E-11d1-B3E9-00805F499D93"
+&lt;PARAM NAME="code" value="CLSFractal.class"&gt;
+&lt;PARAM NAME="codebase" value="1.0.2"&gt;
+&lt;PARAM NAME="level" value="5"&gt;
+...
+&lt;/OBJECT&gt;</PRE></TD>
+        </TR>
+      </TBODY>
+    </TABLE>
+  </BLOCKQUOTE>
+  <P>
+  <H4>Associate the Action to the Script</H4>
+  <P>The HTML page defines components that are intended to invoke actions triggered by the user. You use the <TT>INPUT</TT> tag to define these components. You specify the <TT>TYPE</TT> of the component, such as <TT>button</TT>, its <TT>NAME</TT>, and <TT>VALUE</TT>. To have the button or other component actually invoke the intended action, you need to add tags that specify: </P>
+  <UL>
+    <LI>What the user does to trigger the action, such as <TT>onClick</TT> for when the user clicks on the button 
+    <LI>The name of the script method that the HTML page will invoke when the specified trigger action occurs 
+    <LI>The language in which the script method is written </LI>
+  </UL>
+  <P>For example, suppose your HTML page creates a button that, when clicked, starts a particular animation sequence. Your HTML tag creates the button and gives that button a name and a value (label). 
+  <P>To do this you want to add two tags. One tag indicates that on a certain action, such as <CODE>onclick</CODE>, a corresponding script method should be called. You might have the tag <TT>onClick="method name"</TT>. The method name is a script method within the same HTML page. 
+  <P>Thus, you might have the following in your HTML page: 
+  <BLOCKQUOTE>
+    <TABLE cellPadding=5 summary=layout>
+      <TBODY>
+        <TR bgColor=#cccccc>
+          <TD><PRE>&lt;input type="button" name="Button1" value="Start"
+onClick="startJSFractal" language="JavaScript"&gt;</PRE></TD>
+        </TR>
+      </TBODY>
+    </TABLE>
+  </BLOCKQUOTE>
+  <P>
+  <P>This <TT>INPUT</TT> tag creates a button, names the button "Button1", and gives it the value "Start" (the label that appears on the button). It also specifies the scripting method that will be called when a user clicks the button, and the scripting method's language. In this example, the scripting method is <TT>startJSFractal</TT>, and the scripting language is JavaScript. When the user clicks this button, the HTML page branches to the script method <TT>startJSFractal</TT>, which is written in JavaScript.
+  <H4>The Script Tag and Method</H4>
+  You must include a <TT>SCRIPT</TT> tag for the method (function) that the <TT>onClick</TT> tag specifies. The <TT>SCRIPT</TT> tag must have the same name as the name used in the <TT>onClick</TT> tag. It also has a parameter that specifies the script language. More importantly, the script method calls the Java applet method. It identifies the method by using the name of the applet as specified by the <TT>ID</TT> tag, followed by the actual method name as implemented in the applet code.
+  <P>For example, the same HTML page might have the following <TT>SCRIPT</TT> tag: 
+    
+<BLOCKQUOTE>
+    <TABLE cellPadding=5 summary=layout>
+      <TBODY>
+        <TR bgColor=#cccccc>
+          <TD><PRE>&lt;SCRIPT language="JavaScript"&gt;
+function startJSFractal() {
+        document.Form1.Fractal.startFractal()
+}
+&lt;/SCRIPT&gt;</PRE></TD>
+        </TR>
+      </TBODY>
+    </TABLE>
+</BLOCKQUOTE>
+  <P>
+  <P>
+  <P>In this example, the <TT>SCRIPT</TT> tag begins by specifying that the scripting language is JavaScript. This is followed by the JavaScript <CODE>function</CODE> statement, which starts the definition of a scripting method. The <CODE>function</CODE> statement supplies a label or name for the scripting method, calling it <TT>startJSFractal</TT>. This name must match the method name given for the input component's action parameter. 
+  <P>For this example, both the <TT>onClick</TT> parameter and the <TT>function</TT> statement specify the identical scripting method. The scripting method <TT>startJSFractal</TT> merely calls the actual method, <TT>startFractal()</TT>, implemented in the applet code. It qualifies the method name by using the document form name , then the applet name (<CODE>OBJECT</CODE> <CODE>ID</CODE>), then the method name itself, as follows: 
+  <BLOCKQUOTE>
+    <PRE>document.Form1.Fractal.startFractal()</PRE>
+  </BLOCKQUOTE>
+  <p>&nbsp;</p>
+  <p>&nbsp; </p>
+<!-- InstanceEndEditable -->
+<hr size=3 noshade />
+<table summary="formatting" width=100% border=0 cellpadding=2 cellspacing=2>
+	<tr valign=TOP>
+		<td> <font size=1><a href="../../../../legal/SMICopyright.html">Copyright 
+      <font size=2 style="font-size: 10pt"><font face="Utopia, serif">&copy;</font></font></a>2008 <a href="http://www.sun.com/">Sun Microsystems, Inc.</a> All Rights Reserved.</font> 
+      <font size=2><br>      
+			<font size="-1">
+				<a HREF="http://developers.sun.com/contact/feedback.jsp				?referer=http://java.sun.com/javase/6/docs/technotes/guides/jweb/index.html				&category=j2se">Feedback</a>
+			</font>
+			
+
+		</font></p> </td>
+		<td>
+			<p align=RIGHT><img src="../../../../images/sunlogo64x30.gif" name="Graphic2" alt="Sun" align=bottom width=64 height=30 border=0 />
+			<br />
+			<font size=4><i>Java Technology </i> </font>
+			</p>
+		</td>
+	</tr>
+</table>
+<p><br /><br />
+</p>
+</body>
+<!-- InstanceEnd --></html>

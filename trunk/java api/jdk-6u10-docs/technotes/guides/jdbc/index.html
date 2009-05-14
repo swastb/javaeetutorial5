@@ -1,0 +1,132 @@
+<html>
+<head>
+<title>JDK 6 Java Database Connectivity (JDBC)-related APIs & Developer Guides -- from Sun Microsystems</title>
+
+<meta name="collection" content="reference">
+</head>
+
+<BODY BGCOLOR="#FFFFFF" TEXT=#000000 LINK=#0000ff VLINK=#000077 ALINK=#ff0000>
+
+<table summary="layout" width=100%>
+<tr>
+<td width=60>
+	<img alt="Java logo" src=../../../images/javalogo52x88.gif>
+</td>
+<td align=center>
+
+           <h1>JDBC</h1>
+</td>
+<TD ALIGN=RIGHT VALIGN=TOP WIDTH=60>
+
+   <font size="-1"><a href="../../../index.html">Documentation&nbsp;Contents</a></font>
+
+</TD>
+</tr>
+</table>
+
+<p>
+
+The Java Database Connectivity (JDBC) API provides universal data
+access from the Java programming language. 
+Using the JDBC 3.0 API, you can access virtually any data source, from
+relational databases to spreadsheets and flat files.
+JDBC technology also provides a common base on which tools and alternate
+interfaces can be built.
+<P>
+The JDBC 3.0 API is comprised of two packages:
+<ol>
+<li>the <code>java.sql</code> package 
+<li>the <code>javax.sql</code> package, which adds server-side capabilities
+</ol>
+<P>
+You automatically get both packages when you download the 
+Java Platform Standard Edition (Java SE) 6. 
+<p>
+
+To use the JDBC API with a particular database management system,
+you need a JDBC technology-based driver to mediate between JDBC
+technology and the database.
+Depending on various factors, a driver might be written purely 
+in the Java programming language or
+in a mixture of the Java programming language and 
+Java Native Interface (JNI)
+native methods.
+The JDBC web site maintains a list of
+<a href=http://java.sun.com/products/jdbc/driverdesc.html>vendors
+with drivers currently available or under
+development</a>.
+<p>
+The latest JDK includes a JDBC-ODBC Bridge
+driver that makes most Open Database Connectivity
+(ODBC) drivers available to programmers using the JDBC API.
+<a href=bridge.html>JDBC-ODBC Bridge Driver</a>
+describes the current status of this software.
+Note that the bridge driver included in the Java Platform Standard Edition
+(Java SE) 6 is appropriate only for experimental use or when no other driver is available.
+
+<h2>Overview</h2>
+<ul>
+<li><b><a href="getstart/GettingStartedTOC.fm.html">JDBC Technology Guide</a></b>  </ul>
+
+<h2>API Specification</h2>
+ <ul>
+   <li><a href=../../../api/java/sql/package-summary.html><b>java.sql</b>
+           </a>
+   <li><a href=../../../api/javax/sql/package-summary.html><b>javax.sql</b>
+           </a>
+	    </ul>
+<p>Specification documents for all releases of the JDBC API are available from the JDBC <a href=http://java.sun.com/products/jdbc/download.html>download 
+         page</a>.
+
+
+
+
+<h2>Tutorials and Programming Guides</h2>
+<ul>
+<li><a href="http://java.sun.com/docs/books/tutorial/jdbc/basics/index.html">Basic Tutorial</a>
+<li><a href="http://developer.java.sun.com/developer/Books/JDBCTutorial/index.html">Advanced Tutorial</a>
+<li><a href="http://java.sun.com/j2se/1.5/pdf/jdbc-rowset-tutorial-1.5.0.pdf">Rowset Tutorial</a> (pdf)
+</ul>
+
+<a name=related></a>
+<h2>More Information</h2>
+<ul>
+<li><a href="http://java.sun.com/javase/technologies/database/index.jsp">JDBC Home Page</a>
+<li><a href=http://java.sun.com/products/jdbc/faq.html>
+		<i>Answers to Frequently-Asked Questions</i></a>
+<li><a href="blob.html">
+                Using Blob objects (Binary Large Objects)</a> Chapter 8 of the
+                JDBC Java Series book
+<li><a href="clob.html">
+                Using Clob objects (Character Large Objects)</a> Chapter 10 of the JDBC Java Series book
+<li><a href=http://java.sun.com/docs/books/jdbc>
+		Java Series book <I>JDBC<sup><font size=-2>TM</font></sup> API Tutorial and Reference, Third Edition</I></a>
+<li><a href=http://java.sun.com/j2ee/docs.html>
+                J2EE documentation web page</a>
+
+</ul>
+<p>
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+<HR SIZE=3 NOSHADE>
+
+<TABLE summary="layout" BORDER=0 WIDTH="100%" >
+<TR VALIGN=TOP>
+<TD><FONT SIZE=-2><A HREF="../../../legal/SMICopyright.html">Copyright
+&copy;</A> 2002 <A HREF="http://www.sun.com/">Sun Microsystems, Inc.</A>
+All Rights Reserved.</FONT>&nbsp;
+<P>
+<FONT SIZE=-1>
+<a
+href="http://developers.sun.com/contact/feedback.jsp?referer=http://java.sun.com/javase/6/docs/technotes/guides/jdbc/index.html&category=j2se&mailsubject=JDBC">Feedback</a> 
+</FONT>
+</TD>
+
+<TD ALIGN=RIGHT><IMG SRC="../../../images/sunlogo64x30.gif" ALT="Sun" BORDER=0 HEIGHT=30 WIDTH=64>
+<P>
+<FONT SIZE=+1><I>Java Software</I></FONT></TD>
+</TR>
+</TABLE>
+
+
+</BODY>
+</HTML>

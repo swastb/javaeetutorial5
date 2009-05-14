@@ -1,0 +1,198 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><!-- InstanceBegin template="/Templates/jweb_guide_template.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<meta http-equiv="CONTENT-TYPE" content="text/html; charset=iso-8859-1" />
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Java(TM) Runtime Environment Installation </title>
+<script language="JavaScript" type="text/JavaScript">
+<!--
+function MM_openBrWindow(theURL,winName,features) { //v2.0
+  window.open(theURL,winName,features);
+}
+//-->
+</script>
+<!-- InstanceEndEditable -->
+<meta name="CREATED" content="20070629;10470800" />
+<meta name="CHANGED" content="20070629;11032100" />
+<meta name="collection" content="reference" />
+<link href="../../../css/guide.css" rel="stylesheet" type="text/css" />
+
+</head>
+<body lang="en-US" dir="LTR">
+<table summary="layout" width=100% border=0 cellpadding=2 cellspacing=2 style="page-break-before: always">
+	<tr>
+		<td width=25%>
+			<p><img src="../../../../images/javalogo52x88.gif" name="Graphic1" alt="Java" align=bottom width=52 height=88 border=0 />
+			</p>
+		</td>
+		<td>  
+      <h1 align=CENTER><!-- InstanceBeginEditable name="Page Title" -->
+      Java<sup><font size="-2">TM</font> </sup> Runtime Environment Installation <!-- InstanceEndEditable -->
+				<br>for JavaSE 6u10</h1>
+    </td>
+		<td width=25% valign=TOP>
+			<p align=RIGHT>
+				<a href="../../../../index.html"><font size=2>Documentation	Contents</font></a>
+			</p>
+		</td>
+	</tr>
+</table>
+
+<p><a name="PageTop"></a></p>
+<!-- InstanceBeginEditable name="Content" -->
+<p class="crumbs">&nbsp;</p>
+<p></p>
+<b>Contents</b>
+<ul>
+  <li class="TOC"><a href="#kernel">Java Kernel Installation </a></li>
+  <li class="TOC"><a href="#jreUpdate">Java Runtime Environment Configuration </a>
+    <ul>
+      <li><a href="#patchInPlace">Patch-in-place configuration</a></li>
+      <li><a href="#static">Static configuration </a></li>
+    </ul>
+  </li>
+  <li class="TOC"><a href="#jreInstallationInstructions">Java Runtime Environment Installation Instructions </a>
+    <ul>
+      <li><a href="#installCommand">JRE Installation Command Line Syntax</a></li>
+      <li><a href="#installCommandExample">JRE Installation Command Line Example</a></li>
+      <li><a href="#uninstallCommand">JRE Uninstallation in Silent Mode</a></li>
+      <li><a href="#uninstallExamples">JRE Uninstallation Example</a></li>
+    </ul>
+  </li>
+</ul>
+<hr>
+<h2><a name="kernel" id="kernel"></a>Java Kernel Installation </h2>
+<p>The Java Runtime Environment (JRE) provides many APIs like Swing, AWT, ImageIO, SQL, CORBA, RMI, math, XML, XSLT, concurrency and so on. This has led to the JRE becoming large and slow to download and install. </p>
+<p>This problem is solved by packaging a certain core set of JRE components (<em>kernel</em>) in the Java Kernel installer. The Java Kernel installer is smaller and thus downloads and installs the JRE much more quickly when compared to the regular online or offline installer. </p>
+<p>The Java Kernel installer may be launched manually. Alternately, it may be launched via the <a href="../deployment_advice.html#deplToolkit">Deployment Toolkit</a> when deploying a Java Web App (applet or Java Web Start application). </p>
+<p>When a user triggers the Java Kernel Installer, the kernel is downloaded first. The additional packages required for a Java Web App are downloaded next. The following dialog is displayed when additional packages are being downloaded.</p>
+<p> <img src="../images/KernelAdditionalPackages.png" alt="Installing Additional Components Dialog" longdesc="Shows progress bar while installing additional components" width="510" height="250"></p>
+<p>The Java Web App continues execution after all required classes have been downloaded. However, the download connection remains open and all remaining classes are downloaded in the background, with no impact on the currently executing Java Web App. </p>
+<p>The final JRE image created is identical to the image installed by the regular online or offline installer. </p>
+<p>&nbsp;</p>
+<h2><a name="jreUpdate"></a>Java Runtime Environment  Configuration </h2>
+<p>In the past, when a user installed different versions of a Java Runtime Environment (JRE), the user would be left with multiple installation directories and several entries in the Add/Remove Programs dialog in the Control Panel. This resulted in unnecessary proliferation of unused JREs.</p>
+<p>The JRE can now be installed in two configurations: patch-in-place and static.  JRE updates may be configured to  patch a pre-existing installation or do a brand new installation. </p>
+<p>The JRE may  be installed in silent (unattended) or non-silent modes. </p>
+<h3><a name="patchInPlace"></a>Patch-in-place configuration </h3>
+<p>The patch-in-place mode implies that when a version of the JRE exists on a machine, any updates belonging to the same JRE family will be done in place, meaning, the existing JRE will be patched with changes. A JRE is <em>installed in patch-in-place mode by default</em>. The default installation directory is c:/Program Files/Java/jre&lt;n&gt; where n is the Java SE minor version number (for example, n = 6 for version 1.6.0_10). </p>
+<p>For example, if a user has previously installed JRE 6u10 in the c:/Program Files/Java/jre6 directory, and now attempts to install JRE 6u14, the version 6u14 installer does not create a new directory. Instead, it  updates the pre-existing c:/Program Files/Java/jre6 directory with the new 6u14 content. The user is left with the 6u14 JRE only. The 6u10 JRE  no longer exists. </p>
+<h3><a name="static"></a>Static configuration</h3>
+<p>When a JRE is installed in the static mode, it will not be updated in place by newer versions. A later version of the same  JRE family will be installed in a separate directory. This mode ensures that vendors, who require a specific version of the JRE for their product, can be certain that the JRE will not be overwritten by a newer version. </p>
+<p>Some of the characteristics of a static JRE installation are as follows:</p>
+<ul>
+  <li>A static JRE installation (example: 6u15) will ignore a previous patch-in-place installation of another JRE (example: 6u10)</li>
+  <li>A static JRE installation is <em>never</em> overwritten by another JRE version </li>
+  <li>When a newer JRE version is present (example: 6u15), older JRE versions ( example: 6u12) are installed in static mode only</li>
+  <li>  A patch-in-place JRE can be overwritten by a static JRE installation of the same version. The user will be left with one static JRE installation. </li>
+</ul>
+<p>The default installation directory of a static JRE is of the form c:/Program Files/Java/jre&lt;version&gt;. For example, by default, a static JRE   for Java SE 6u10 will be installed in the directory c:/Program Files/Java/jre1.6.0_10.</p>
+<p>See <a href="jre_update_scenarios.html">JRE Update Scenarios</a> to see examples of how the installer behaves. </p>
+<p>&nbsp;</p>
+<h2> <a name="jreInstallationInstructions"></a>Java Runtime Environment  Installation Instructions </h2>
+<h3><a name="installCommand" id="installCommand"></a>JRE Installation Command Line Syntax </h3>
+<PRE>&lt;jre&gt;.exe   [/lang=&lt;language ID&gt;] /s <BR>      		   [INSTALLDIR=&lt;drive&gt;:\&lt;install_path&gt;] <BR>            [REBOOT=Suppress] 
+            [STATIC=1]</PRE>
+<P>where 
+<UL>
+  <LI><CODE>&lt;jre&gt;.exe</CODE> is the single executable installer for the Java Runtime Environment (JRE) 
+  <LI><CODE>/lang=&lt;language ID&gt;</CODE>, if used, sets the localized language for the installer 
+	(see <A href="../../deployment/deployment-guide/language.html" target="_blank">language IDs</A>)
+  <LI><code>/s</code>, if used, specifies a silent installation 
+  <LI><CODE>INSTALLDIR</CODE>, if used, specifies the drive and path of the installation   
+  <LI>If <CODE>INSTALLDIR</CODE> is not specified, the installation will go into <CODE>C:\Program Files\java\jre6</CODE> (default location).  
+  <LI><CODE>REBOOT=Suppress</CODE>, if used, indicates that if locked files are encountered the computer should not be rebooted. Most JRE installations will not ask for a reboot. 
+  <LI><CODE>STATIC=1</CODE>, if used, specifies a static installation
+</UL>
+<p>The online installer does not install additional Fonts, Colors, and Soundbank. Support for additional languages is downloaded / installed based on the system environment.</p>
+<p>The offline installer always installs additional Fonts, Colors, and Soundbank and support for additional languages. </p>
+<p>The Java Kernel installer does not support static installation. </p>
+<p><strong>Note</strong>: The command is case sensitive.</p>
+<h3><a name="installCommandExample"></a>JRE Installation Command Line Example</h3>
+<p><CODE>jre-6-rc-windows-i586.exe /s  INSTALLDIR=D:\java\jre"</CODE>  </p>
+<p>installs the JRE to D:\java\jre in silent mode</p>
+<p>To keep the MS-DOS window open, until the installation of JRE is complete use the <CODE>start /w</CODE> command as follows: </p>
+<P><CODE>start /w jre-6-rc-windows-i586.exe </CODE></P>
+<h3> <a name="uninstallCommand"></a>JRE Uninstallation in Silent Mode</h3>
+<p>Run the following command to  uninstall JRE silently for Implementation-Version n1.n2.n3_n4n5::</p>
+<p><code>msiexec.exe /qn /x {26A24AE4-039D-4CA4-87B4-2F8ppn1n2n3n4n5tt}</code></p>
+<p>where </p>
+<p><code>pp</code> is 32 for 32-bit, or
+  64 for 64-bit.  </p>
+<p><code>tt</code> is F0 for a static installation, FF for an initial Patch-in-place mode install, or 
+  FB for a patched-in-place installation.</p>
+<p><strong>Note:</strong></p
+><OL>
+  <LI>This command can be run from anywhere. 
+  <LI>The <CODE>msiexec.exe</CODE> executable is located in the windows system directory. 
+  <LI>The <CODE>REBOOT=Suppress</CODE> option, mentioned above under installation, may also be used with the uninstall command. 
+  <LI>For more information on version formats, see <A 
+href="../../deployment/deployment-guide/version-format.html">Appendix 2: Sun-Supported <CODE>Specification-Version</CODE> and <CODE>Implementation-Version</CODE> Formats</A>. </LI>
+</OL>
+<h3><a name="uninstallExamples"></a>JRE Uninstallation Examples</h3>
+<p>The following examples show how different JRE versions and configurations can be uninstalled. </p>
+<ul>
+  <li> Java(TM) 6 Update 10 (32-bit) Patch-in-place mode install:
+    <p> msiexec.exe /qn /x {26A24AE4-039D-4CA4-87B4-2F83216010FF}</p>
+  </li>
+  <li> Java(TM) 6 Update 10 (32-bit) Static install: </li>
+</ul>
+<blockquote>
+  <p> msiexec.exe /qn /x {26A24AE4-039D-4CA4-87B4-2F83216010F0}</p>
+</blockquote>
+<ul>
+  <li> Java(TM) 6 Update 11 (32-bit) Patch-in-place mode install: </li>
+</ul>
+<blockquote>
+  <p> msiexec.exe /qn /x {26A24AE4-039D-4CA4-87B4-2F83216011FF}</p>
+</blockquote>
+<ul>
+  <li>Java(TM) 6 Update 11 (32-bit) Static install: </li>
+</ul>
+<blockquote>
+  <p> msiexec.exe /qn /x {26A24AE4-039D-4CA4-87B4-2F83216011F0}</p>
+</blockquote>
+<ul>
+  <li> Java(TM) 6 Update 11 (32-bit) that was patched from Update 10: </li>
+</ul>
+<blockquote>
+  <p> msiexec.exe /qn /x {26A24AE4-039D-4CA4-87B4-2F83216011FB}</p>
+</blockquote>
+<ul>
+  <li> Java(TM) 6 Update 12 (32-bit) that was patched from Update 10 or 11: </li>
+</ul>
+<blockquote>
+  <p> msiexec.exe /qn /x {26A24AE4-039D-4CA4-87B4-2F83216012FB}</p>
+</blockquote>
+<ul>
+  <li> Java(TM) 6 Update 10 (64-bit) Patch-in-place mode install: </li>
+</ul>
+<blockquote>
+  <p>msiexec.exe /qn /x {26A24AE4-039D-4CA4-87B4-2F86416010FF}</p>
+</blockquote>
+<p>&nbsp;</p>
+<!-- InstanceEndEditable -->
+<hr size=3 noshade />
+<table summary="formatting" width=100% border=0 cellpadding=2 cellspacing=2>
+	<tr valign=TOP>
+		<td> <font size=1><a href="../../../../legal/SMICopyright.html">Copyright 
+      <font size=2 style="font-size: 10pt"><font face="Utopia, serif">&copy;</font></font></a>2008 <a href="http://www.sun.com/">Sun Microsystems, Inc.</a> All Rights Reserved.</font> 
+      <font size=2><br>      
+			<font size="-1">
+				<a HREF="http://developers.sun.com/contact/feedback.jsp				?referer=http://java.sun.com/javase/6/docs/technotes/guides/jweb/index.html				&category=j2se">Feedback</a>
+			</font>
+			
+
+		</font></p> </td>
+		<td>
+			<p align=RIGHT><img src="../../../../images/sunlogo64x30.gif" name="Graphic2" alt="Sun" align=bottom width=64 height=30 border=0 />
+			<br />
+			<font size=4><i>Java Technology </i> </font>
+			</p>
+		</td>
+	</tr>
+</table>
+<p><br /><br />
+</p>
+</body>
+<!-- InstanceEnd --></html>
