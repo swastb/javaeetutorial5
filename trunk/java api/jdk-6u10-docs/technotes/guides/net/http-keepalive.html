@@ -1,0 +1,225 @@
+<HTML>
+<HEAD>
+	<TITLE>HTTP Persistent Connections</TITLE>
+<meta name="collection" content="reference">
+</HEAD>
+<h1>
+Persistent Connections</h1>
+<h2>What is HTTP Persistent Connections?</h2>
+<P>HTTP
+persistent connections, also called HTTP keep-alive, or HTTP
+connection reuse, is the idea of using the same TCP connection to
+send and receive multiple HTTP requests/responses, as opposed to
+opening a new one for every single request/response pair. Using
+persistent connections is very important for improving HTTP
+performance.
+</P>
+<P>There are several
+advantages of using persistent connections, including:</P>
+<UL>
+	<LI>Network friendly.
+	Less network traffic due to fewer setting up
+	and tearing down of TCP connections.
+	<LI>Reduced latency on
+	subsequent request. Due to avoidance of initial TCP handshake
+	<LI>Long lasting
+	connections allowing TCP sufficient time to determine the congestion
+	state of the network, thus to react appropriately.
+</UL>
+<P>The
+advantages are even more obvious with HTTPS or HTTP over SSL/TLS. 
+There, persistent connections may reduce the number of costly SSL/TLS
+handshake to establish security associations, in addition to the
+initial TCP connection set up.</P>
+<P >In HTTP/1.1, persistent
+connections are the default behavior of any  connection. That is,
+unless otherwise indicated, the client SHOULD assume that the server
+will maintain a persistent connection, even after error responses
+from the server. However, the protocol provides means for a client
+and a server to signal the closing of a TCP connection.</P>
+<h2>What makes a connection reusable?</h2>
+<P>Since TCP by its nature
+is a stream based protocol, in order to reuse an existing connection,
+the HTTP protocol has to have a way to indicate
+the end of the previous response and the beginning of the next one.
+Thus, it is required that all messages on the connection MUST have a
+self-defined message length (i.e., one not defined by closure of the
+connection). Self demarcation is achieved by either setting the
+Content-Length header, or in the case of chunked transfer encoded
+entity body, each chunk starts with a size, and the response body
+ends with a special last chunk.</P>
+<h2>What happens if
+there are proxy servers in between?</h2>
+<P>Since persistent
+connections applies to only one
+transport link, it is important that proxy servers correctly signal
+persistent/or-non-persistent connections separately with its clients
+and the origin servers (or to other proxy servers). From a HTTP 
+client or server's perspective, as far as persistence connection is
+concerned, the presence or absence of proxy servers is transparent.</P>
+<h2>What does the
+current JDK do for Keep-Alive?</h2>
+<P>The JDK supports both
+HTTP/1.1 and HTTP/1.0 persistent connections.</P>
+<P>When the application
+finishes reading the response body or when
+the application calls close() on the <code>InputStream</code>
+returned by <code">URLConnection.getInputStream()</code>,
+the JDK's HTTP protocol handler will try to clean up the connection
+and if successful, put the connection into a connection cache for
+reuse by future HTTP requests.</P>
+<P>The support for HTTP
+keep-Alive is done transparently. However, it can be controlled by
+system properties <code>http.keepAlive</code>,
+and <code>http.maxConnections</code>, as
+well as by HTTP/1.1 specified request
+and response headers.</P>
+<P>The system properties
+that control the behavior of Keep-Alive are:</P>
+<P><code>http.keepAlive=&lt;boolean&gt;<BR>
+default: true</code></P>
+<P>Indicates if keep alive
+(persistent) connections should be supported. 
+</P>
+<P><code>http.maxConnections=&lt;int&gt;<BR>
+default: 5</code></P>
+<P>Indicates the maximum
+number of connections per destination to be kept alive at any given
+time</P>
+<P>HTTP header that
+influences connection persistence is:</P>
+<P><code>Connection: close</code></P>
+<P>If the "Connection"
+header is specified with the value "close" in either the
+request or the response header fields, it indicates that the
+connection <U>should not</U> be considered 'persistent' after the
+current request/response is complete.</P>
+<P>The current
+implementation doesn't buffer the response body.
+Which means that the application has to finish reading the response body or
+call close() to abandon the rest of the response body, in order for
+that connection to be reused. Furthermore, current
+implementation will not try block-reading when cleaning up the
+connection, meaning if the whole response body is not available, the
+connection will not be reused.</P>
+<h2>What's new in Tiger?</h2>
+<P>When the application
+encounters a HTTP 400 or 500 response, it may ignore the <code>IOException</code>
+and then may issue another HTTP request. In this case, the underlying
+TCP connection won't be Kept-Alive because the response body is still
+there to be consumed, so the socket connection is not cleared,
+therefore not available for reuse. What
+the application needs to do is call
+<code>HttpURLConnection.getErrorStream()</code>
+after catching the <code>IOException</code>
+,  read the response body, then close the stream. However, some
+existing applications are not doing this. As a result, they do not
+benefit from persistent connections. To address this problem, we have
+introduced a workaround.</P>
+<P>The workaround involves
+buffering the response body  if the response is &gt;=400, up to a
+certain amount and within a time limit, thus freeing up the
+underlying socket connection for reuse. The rationale behind this is
+that when the server responds with a &gt;=400 error (client error or
+server error. One example is &quot;404: File Not Found&quot; error),
+the server usually sends a small response body to explain whom to
+contact and what to do to recover.</P>
+<P>Several new Sun
+implementation specific properties are introduced to help clean up
+the connections after error response from the server.</P>
+<P>The major one
+is:</P>
+<p><code>sun.net.http.errorstream.enableBuffering=&lt;boolean&gt;</code><br>
+<code>default: false</code></P>
+<P>With the above system
+property set to true (default is false), when the response code is
+&gt;=400, the HTTP handler will try to buffer the response body. Thus
+freeing up the underlying socket connection for reuse. Thus, even if
+the application doesn't call <code>getErrorStream()</code>,
+read the response body, and then call close(), the underlying socket
+connection may still be kept-alive and reused.</P>
+<P>The following two
+system properties provide further control to the error stream
+buffering behavior:</P>
+<P><code>sun.net.http.errorstream.timeout=&lt;int&gt;
+in millisecond<br>
+default: 300 millisecond</code></P>
+<P><code>sun.net.http.errorstream.bufferSize=&lt;int&gt;
+in bytes<BR>
+default: 4096 bytes</code></P>
+<h2>What can you do to
+help with Keep-Alive?</h2>
+<P>Do
+not abandon a connection by ignoring the response body. Doing
+so may results in idle TCP connections. That needs to be garbage
+collected when they are no longer referenced.</P>
+<P>If <code>getInputStream()</code>
+successfully returns, read the entire
+response body.</P>
+<P>When calling
+<code>getInputStream()</code> from
+<code>HttpURLConnection</code>, if an
+<code>IOException</code> occurs, catch the
+exception and call <code>getErrorStream()</code>
+to get the response body (if there is any).</P>
+<P>Reading the response
+body cleans up the connection even if you are not interested in the
+response content itself. But if the response body is long and you are
+not interested in the rest of it after seeing the beginning, you
+can close the InputStream. But you need to be aware that more
+data could be on its way. Thus the connection may not be cleared for
+reuse.</P>
+<P>Here's a code example
+that complies to the above recommendation:</P>
+<pre>
+try {
+	URL a = new URL(args[0]);
+	URLConnection urlc = a.openConnection();
+	is = conn.getInputStream();
+	int ret = 0;
+	while ((ret = is.read(buf)) &gt; 0) {
+	  processBuf(buf);
+	}
+	// close the inputstream
+	is.close();
+} catch (IOException e) {
+	try {
+		respCode = ((HttpURLConnection)conn).getResponseCode();
+		es = ((HttpURLConnection)conn).getErrorStream();
+		int ret = 0;
+		// read the response body
+		while ((ret = es.read(buf)) &gt; 0) {
+			processBuf(buf);
+		}
+		// close the errorstream
+		es.close();
+	} catch(IOException ex) {
+		// deal with the exception
+	}
+}
+</pre>
+<P>If you know ahead of
+time that you won't be interested in the response body, you should
+issue a HEAD request instead of a GET request. For 
+example when you are only interested in the meta info of the
+web resource or when testing for its
+validity, accessibility and recent modification. Here's a code
+snippet:</P>
+<pre>
+URL a = new URL(args[0]);
+URLConnection urlc = a.openConnection();
+HttpURLConnection httpc = (HttpURLConnection)urlc;
+// only interested in the length of the resource
+httpc.setRequestMethod(&quot;HEAD&quot;);
+int len = httpc.getContentLength();
+</pre>
+<h2>Changes in Java SE 6</h2>
+Prior to Java SE 6, if an application closes a HTTP InputStream when
+more than a small amount of data remains to be read, then the connection
+had to be closed, rather than being cached. Now in Java SE 6, the behavior
+is to read up to 512 Kbytes off the connection in a background thread, thus
+allowing the connection to be reused. The exact amount of data which may be read
+is configurable through the <code>http.KeepAlive.remainingData</code>
+system property.
+</BODY>
+</HTML>
