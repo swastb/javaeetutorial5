@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+    
+<HEAD>
+
+<link rel="stylesheet" type="text/css"  href="../../css/index.css">
+
+<style type="text/css">
+
+ul li, ul ul li {font-weight: normal;}
+pre             {margin-left: 42pt;}
+a               {font-weight: bold;}
+
+</style>
+
+<TITLE>Scripting for the Java Platform</TITLE>
+
+</HEAD>
+
+<span BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#000077" ALINK="#FF0000"><p>
+
+<TABLE summary="layout" BORDER="0" WIDTH="100%">
+<TR>
+
+<TD WIDTH="60">
+<IMG SRC="../../../images/javalogo52x88.gif" ALT="Java" BORDER=0 WIDTH=52 HEIGHT=88>
+</TD>
+
+<TD>
+<center>
+<h1 align="center">Scripting for the Java&trade; Platform</h1> 
+</center>
+</TD>
+
+<TD ALIGN=RIGHT VALIGN=TOP>
+<font size="-1"><a href="../../../index.html">Documentation Contents</a></font>
+</TD>
+
+</TR>
+</TABLE>
+
+<!-- Body text begins here -->
+
+
+<p>
+Many implementations of scripting and dynamically typed languages
+generate Java bytecodes so that programs can be run on the Java
+Platform, just as are actual Java programs.  Implementing a language 
+in this way (or as a Java interpreter class for the scripting language)
+provides all the advantages of the Java platform - scripting implementations 
+can take advantage of the Java platform's binary portability, security, 
+and high performance bytecode execution.
+</p>
+<p>
+Java SE 6 includes <a href="http://jcp.org/en/jsr/detail?id=223">JSR 223: Scripting for the Java&trade; 
+Platform</a> API. This is a framework by which Java Applications can "host" script engines. Sun's implementation 
+of Java SE 6 includes an example script engine based on <a href="http://www.mozilla.org/rhino/">Mozilla Rhino:JavaScript for
+Java</a>. The scripting framework supports third-party script engines through jar "service discovery" mechanism.
+It is possible to "drop" any JSR-223 compliant script engine in the CLASSPATH and access the same from your Java applications
+(much like JDBC drivers, JNDI implementations are accessed).
+</p>    
+
+
+<h2>
+API Reference
+</h2>
+<ul>
+<li>
+<b><a href="../../../api/javax/script/package-summary.html">javax.script Package</a></b>
+</li>
+</ul>
+
+<h2>
+Programmer's Guides
+</h2>
+<ul>
+<li>
+<a href="programmer_guide/index.html">
+<b>Java Scripting Programmer's Guide</b>
+</a>
+ - A conceptual description of the Java Scripting API, with code examples.
+</li>
+</ul>
+
+<h2>
+Tool Reference
+</h2>
+<ul>
+<li><a href="../../tools/share/jrunscript.html"><b>jrunscript</b></a> - scripting language independent command line shell
+</ul>
+
+<h2>
+More Information
+</h2>
+<ul>
+<li>
+<a href="http://jcp.org/en/jsr/detail?id=223"><b>JSR-223 Scripting for the Java Platform</b></a>
+</li>
+<li>
+<a href="http://www.mozilla.org/rhino/"><b>Mozilla Rhino:Java Script for Java</b></a>
+</li>
+
+</ul>
+
+<p>
+
+<!-- Body text ends here -->
+
+<!-- ============================================================== -->
+
+<HR SIZE=3 NOSHADE>
+
+
+
+<TABLE summary="layout" BORDER="0" WIDTH="100%">
+
+<TR VALIGN=TOP>
+
+
+
+<TD>
+<FONT SIZE="-2">
+
+<A HREF="../../../legal/SMICopyright.html">Copyright</A> &#169; 2007 <A HREF="http://www.sun.com/">Sun Microsystems, Inc.</A>
+
+All Rights Reserved.</FONT></P>
+
+<font size="-1">
+<a HREF="http://developers.sun.com/contact/feedback.jsp?referer=http://java.sun.com/javase/6/docs/technotes/guides/scripting/index.html&category=j2se&mailsubject=Scripting">
+Feedback</a>
+</font>
+</TD>
+
+
+
+<TD ALIGN=RIGHT>
+<!-- 
+   <IMG SRC="../../../images/sunlogo64x30.gif" ALT="Sun" BORDER=0 WIDTH=64 HEIGHT=30>
+
+   <BR>
+
+   <FONT SIZE="+1">
+
+   <i>Java Software</i>
+
+   </FONT>-->
+
+</TD>
+
+
+
+</TR>
+
+</TABLE>
+
+</body></html>
