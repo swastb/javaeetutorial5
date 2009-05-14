@@ -1,0 +1,84 @@
+<html><head><title>JGSS Enhancements List for Java&trade; 6</title>
+<meta name="collection" content="reference">
+<!-- quick and dirty font fix for jdk6 beta -->
+
+ <style type="text/css">
+ 
+   p   {font-size: medium }
+   li  {font-size: medium }
+   tt  {font-size: 125%   }
+   pre {font-size: 125%   }
+   code {font-size: 125%   }
+   </style>
+   
+   
+</HEAD>
+
+<!-- **** Java cuppa coffee icon block -->
+<BODY text=#000000 vLink=#000077 aLink=#ff0000 link=#0000ff bgColor=#ffffff>
+<TABLE width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD width=60><IMG height=88 alt=Java src="../../../../images/javalogo52x88.gif" width=52 border=0> </TD>
+    <TD>
+    </table>
+    
+<center>
+<h2>
+Java Generic Security Services (Java GSS)</h2> 
+<h3>and Kerberos Enhancements for Java<sup><font size=-2>TM</font></sup> 6
+
+</h3></center
+
+><hr SIZE=3 NOSHADE WIDTH="100%">
+
+<p>The following enhancements were added to the Java GSS/Kerberos implementation in Java SE 6. For details, see the <a href="jgss-features.html">JGSS Feature Enhancements List</a>.
+
+<!-- Please send feedback related to these new features to java-security@sun.com. -->
+
+</p>
+
+<ul>
+<li><b>Support for AES Encryption Type</b>
+
+<br><br>Support for AES encryption type (AES128 and AES256) in Java GSS/Kerberos is available. This improves interoperability of the Java SE Kerberos implementation with other Kerberos implementations, such as Solaris 10 and MIT Kerberos.<br><br></li>
+
+<li><b>Support for RC4-HMAC Encryption Type</b>
+
+<br><br>Support for RC4-HMAC encryption type in Java GSS/Kerberos is available. This improves interoperability of the Java SE Kerberos implementation with other Kerberos implementations, such as Windows, Solaris 10 and MIT Kerberos. Windows Active Directoiory supports RC4-HMAC as the default Kerberos encryption type.<br><br></li>
+
+<li><b>Support for SPNEGO in Java GSS</b>
+
+<br><br>Support for SPNEGO mechanism in Java GSS is now available. The Simple and Protected GSS-API Negotiation (SPNEGO) mechanism is a pseudo security mechanism 
+that enables GSS-API peers to securely negotiate a common security mechanism to be used.<br><br>
+
+Support for SPNEGO authentication scheme in HTTP is also available.<br><br></li>
+
+<li><b>Support for new Pre-Authentication Mechanisms</b>
+
+<br><br>Java GSS/Kerberos now includes support for the new pre-authentication mechanisms as described in the latest Kerberos specification.<br><br></li>
+
+<li><b>Native Platform GSS Integration</b>
+
+<br><br>This feature allows Java GSS applications to take advantage of features in the native GSS implementation available on the platform.<br><br></li>
+
+</ul>
+
+
+
+
+<!-- end insert Java jdk6 release copy here -->
+
+<HR noShade SIZE=3>
+
+<TABLE width="100%" border=0>
+  <TBODY>
+  <TR vAlign=top>
+    <TD>
+      <P><FONT size=-2><A href="../../../../legal/SMICopyright.html">Copyright &copy;
+       </A> 1995-2006 <A href="http://www.sun.com/">Sun Microsystems, Inc.</A> 
+      All Rights Reserved.</FONT></P><FONT size=-1>Please send comments to: <A 
+      href="mailto:java-security@sun.com">java-security@sun.com</A>.  </FONT></TD>
+    <TD align=right><IMG height=30 alt=Sun src="../../../../images/sunlogo64x30.gif" width=64 border=0> <BR><FONT 
+      size=+1><I>Java Software</I> </FONT></TD></TR></TBODY></TABLE></BODY></HTML>
+
