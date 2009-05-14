@@ -1,0 +1,170 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+
+<HEAD>
+	<META HTTP-EQUIV="Content-Type" CONTENT="text/html;CHARSET=iso-8859-1">
+	<TITLE>JPDA Enhancements</TITLE>
+<meta name="collection" content="reference">
+</HEAD>
+
+<BODY TEXT="#000000" BGCOLOR="#FFFFFF" LINK="#0000FF" VLINK="#000077" ALINK="#FF0000">
+
+<P>
+<TABLE BORDER="0" WIDTH="100%" summary="layout">
+<TR>
+<TD WIDTH="60"><IMG SRC="../../../images/javalogo52x88.gif" WIDTH="52" HEIGHT="88" ALIGN="BOTTOM" ALT="Java" BORDER="0"></TD>
+<TD><H1 ALIGN="CENTER">Java<sup><font size="-2">TM</font></sup> Platform Debugger Architecture</h1></TD>
+<TD ALIGN="RIGHT" VALIGN="TOP"><P ALIGN="RIGHT"><A HREF="index.html"><FONT SIZE="2">Back to Home Page</FONT></A></TD>
+</TR>
+</TABLE>
+
+<CENTER><H1>Enhancements</H1></CENTER>
+
+<BLOCKQUOTE>
+	<P>Following is a short summary of the enhancements to JPDA that have been added in Java SE 6.
+           The documentation for these features is available in the
+           <a href=../../../jdk/api/jpda/jdi/index.html>JDI Specification</a>.</P>
+        <P>Not shown here are the equivalent commands in JDWP.
+           The documentation for these features is available in the
+           <a href=jdwp-spec.html>JDWP Specification</a>.</P>
+<pre>
+   - JVMDI has been deleted. See its replacement, <a href=../jvmti/index.html>JVM TI</a>
+
+   - heap walking
+       <a href=http://bugs.sun.com/bugdatabase/view_bug.do?bug_id=5024119>5024119</a> Add ReferenceType.getAllInstances () method to JDI.
+       <a href=http://bugs.sun.com/bugdatabase/view_bug.do?bug_id=5089849>5089849</a> Add support for backtracking reference graph.
+
+       New methods:
+         VirtualMachine:
+           boolean boolean canGetInstanceInfo();       
+           long[] instanceCounts(List<? extends ReferenceType> refTypes);
+
+         ReferenceType:
+           ListObjectReference> instances(long maxInstances);
+
+         ObjectReference:
+           List<ObjectReference> referringObjects(long maxReferrers);
+
+
+   - <a href=http://bugs.sun.com/bugdatabase/view_bug.do?bug_id=5024104>5024104</a> Allow access to Constant Pool in ClassType
+       New methods:
+         VirtualMachine:
+           boolean canGetClassFileVersion();
+           boolean canGetConstantPool();
+
+         ReferenceType:
+           int majorVersion();
+           int minorVersion();
+           int constantPoolCount();
+           byte[] constantPool();
+
+   - <a href=http://bugs.sun.com/bugdatabase/view_bug.do?bug_id=4836939>4836939</a> JDI add addSourceFileFilter to ClassPrepareRequestb
+        New methods:
+          VirtualMachine:
+            boolean canUseSourceNameFilters();
+
+          ClassPrepareRequest:
+            void addSourceNameFilter(String sourceNamePattern);
+
+   - <a href=http://bugs.sun.com/bugdatabase/view_bug.do?bug_id=4490824>4490824</a> JDI: provide arguments when no debug attributes present
+       New methods:
+
+         StackFrame:
+           List<Value> getArgumentValues();
+
+   - <a href=http://bugs.sun.com/bugdatabase/view_bug.do?bug_id=4195445>4195445</a> JDWP, JDI: Add return value to Method Exit Event
+       New methods:
+         VirtualMachine:
+           boolean canGetMethodReturnValues();
+
+         MethodExitEvent: 
+           Value returnValue();
+
+   - <a href=http://bugs.sun.com/bugdatabase/view_bug.do?bug_id=6175634>6175634</a> Allow early return from method
+       New methods:
+         VirtualMachine:
+           boolean canForceEarlyReturn();     
+
+         ThreadReference:
+           void forceEarlyReturn(Value value) throws InvalidTypeException, 
+                                              ClassNotLoadedException,
+                                              IncompatibleThreadStateException;
+
+   - <a href=http://bugs.sun.com/bugdatabase/view_bug.do?bug_id=4401399>4401399</a> Request for breakpoints for monitor acquisitions and releases
+       New methods:
+         VirtualMachine
+           boolean canRequestMonitorEvents();
+
+         EventRequestManager:
+           List<MonitorContendedEnterRequest> monitorContendedEnterRequests();
+           List<MonitorContendedEnteredRequest> monitorContendedEnteredRequests();
+           List<MonitorWaitRequest> monitorWaitRequests();
+           List<MonitorWaitedRequest> monitorWaitedRequests();
+
+       New classes:
+         public interface MonitorContendedEnterRequest extends EventRequest
+         public interface MonitorContendedEnteredRequest extends EventRequest
+         public interface MonitorWaitRequest extends EventRequest
+         public interface MonitorWaitedRequest extends EventRequest
+
+         public interface MonitorContendedEnterEvent extends LocatableEvent 
+         public interface MonitorContendedEnteredEvent extends LocatableEvent 
+         public interface MonitorWaitEvent extends LocatableEvent 
+         public interface MonitorWaitedEvent extends LocatableEvent 
+
+
+   - <a href=http://bugs.sun.com/bugdatabase/view_bug.do?bug_id=6230699>6230699</a>  Need to be able to get the location at which a monitor was acquired 
+       New methods:
+         VirtualMachine
+           boolean canGetMonitorFrameInfo();
+       
+         ThreadReference
+           List<MonitorInfo> ownedMonitorsAndFrames()
+                           throws IncompatibleThreadStateException;
+
+       New classes:
+         public interface MonitorInfo extends Mirror
+
+   - <a href=http://bugs.sun.com/bugdatabase/view_bug.do?bug_id=4527279>4527279</a>: Need a better way to find out the port number on which JPDA is listening
+
+        New Connector:
+            com.sun.tools.jdi.ProcessAttach, with arguments pid and timeout
+            This allows a debugger to attach to a debuggee started in 
+            debug mode via process id instead of transport address.
+
+
+</pre>
+
+</BLOCKQUOTE>
+
+<!-- ============================================================== -->
+<P>
+<HR ALIGN="CENTER" SIZE="3" NOSHADE>
+
+<TABLE BORDER="0" WIDTH="100%" summary="layout">
+<TR VALIGN="TOP">
+<TD><A HREF="../../../legal/SMICopyright.html"><FONT SIZE="1">Copyright &copy;</FONT></A><FONT SIZE="1"> 2006 </FONT><A
+HREF="http://www.sun.com/"><FONT SIZE="1">Sun Microsystems, Inc.</FONT></A><FONT SIZE="1"> All Rights Reserved.<BR>
+<BR>
+</FONT><FONT SIZE="2"><A HREF="http://developers.sun.com/contact/feedback.jsp?referer=http://java.sun.com/javase/6/docs/technotes/guides/jpda/index.html&category=j2se&mailsubject=Java Platform Debugger Architecture">Feedback</A>
+</font></TD>
+<TD ALIGN="RIGHT">
+<P ALIGN="RIGHT"><IMG SRC="../../../images/sunlogo64x30.gif" WIDTH="64" HEIGHT="30" ALIGN="BOTTOM" ALT="Sun" BORDER="0">
+<BR><I><FONT SIZE="+1">Java Software</FONT></I><FONT SIZE="+1"></FONT>
+</TD>
+</TR>
+</TABLE>
+<p></P>
+<PRE>
+
+
+
+
+
+
+
+</PRE>
+
+</BODY>
+
+</HTML>

@@ -1,0 +1,102 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>java.lang.ClassNotFoundException thrown ...</title>
+<meta name="collection" content="reference">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+
+<body>
+
+<style>
+p, li {font-family: arial; font-size: 10pt;}
+</style>
+
+<blockquote> 
+  <h2><code>java.lang.ClassNotFoundException</code> Thrown by the <code>ClassLoader</code> on 
+    the <code>com.ms.security</code> Package </h2>
+  <h3><br>
+    <font >Symptoms</font></h3>
+  <blockquote> 
+    <p> When running an applet in a browser using the Sun Java<sup><font size="1">TM</font></sup> Runtime Environment (JRE<sup><font size="1">TM</font></sup>), a <code>java.lang.ClassNotFoundException</code> 
+      is thrown by the <code>ClassLoader</code> on the <code>com.ms.security</code> 
+      package. The same applet runs without any error under the Microsoft Virtual Machine (VM).</p>
+  </blockquote>
+  <h3><font >Cause</font></h3>
+  <blockquote> 
+    <p> The Microsoft VM provides the proprietary <code>com.ms.security</code> 
+      package for applets and applications to access the security policy at runtime. 
+      Because this package is not available in the Sun JRE, a <code>java.lang.ClassNotFoundException</code> 
+      is thrown when the applet runs in a browser.</p>
+  </blockquote>
+  <h3><font >Resolution</font></h3>
+  <blockquote> 
+    <p> Migrate the applet source from the <code>com.ms.security</code> 
+      package to the <code>java.security</code> package by using similar classes.<br>
+      <br>
+      For example, the following applet uses <code>com.ms.security.PolicyEngine</code> 
+      to assert the network I/O permission before connecting to a URL: </p>
+    <blockquote> 
+      <p><code>public class AssertPermissionApplet extends java.applet.Applet 
+        <br>
+        {<br>
+        &nbsp;&nbsp;&nbsp; public void init() <br>
+        &nbsp;&nbsp;&nbsp; {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; try<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+        <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // 
+        Assert permission on network I/O<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; com.ms.security.PolicyEngine.assertPermission<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (com.ms.security.PermissionID.NETIO);&nbsp; 
+        <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; java.net.URL 
+        url = new java.net.URL(&quot;http://randomhost/randomfile&quot;);<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .....<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } catch (java.net.MalformedURLException 
+        mue) {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; catch (java.io.IOException 
+        ioe) {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } // init<br>
+        }</code></p>
+    </blockquote>
+    <p> In the Java technology, <code>java.security.AccessController</code> provides 
+      similar functionality for permission assertion. The following source code displays the functionality 
+      after migration:</p>
+    <blockquote> 
+      <p> <code>public class AssertPermissionApplet extends java.applet.Applet 
+        <br>
+        {<br>
+        &nbsp;&nbsp;&nbsp; public void init() <br>
+        &nbsp;&nbsp;&nbsp; {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; try<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+        <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // 
+        Assert permission on network I/O<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 	 
+        java.security.AccessController.checkPermission(new java.net.SocketPermission("randomhost:80",  "connect,accept"));<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; java.net.URL 
+        url = new java.net.URL(&quot;http://randomhost/randomfile&quot;);<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .....<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } catch (java.net.MalformedURLException 
+        mue) {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; catch (java.io.IOException 
+        ioe) {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } // init<br>
+        }</code></p>
+
+    </blockquote>
+    <p> See the Java<sup><font size="1">TM</font></sup> SE technology API documentation for more details about security.
+    </p>
+  </blockquote>
+  <h3><font >Related Information</font></h3>
+  <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; See <a href="http://java.sun.com/javase/6/docs/technotes/guides/security/">Security</a>.</p>
+  <p>&nbsp;</p>
+</blockquote>
+</body>
+</html>
