@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+<title>add(expr)</title>
+<meta name="keywords" content="jQuery 1.2 API Reference,Visual jQuery 1.2,jQuery doc,jQuery API,jQuery,jQuery 1.2 API 参考文档中文版,中文版" />
+<meta name="description" content="jQuery 1.2 API 文档中文版，提供最新版 jQuery 开发帮助。" />
+<link rel="stylesheet" type="text/css" href="../../style/jqueryapi.css" />
+<script type="text/javascript" src="../../style/lib/jquery126.js"></script>
+ </script>
+<script type="text/javascript" src="../../style/jqueryapi.js"></script>
+<link rel="shortcut icon" href="../../style/img/favicon.ico" />
+</head>
+<body>
+<div id="topnav">
+		<a href="http://www.jQuery.com/" title="jQuery官网" target="_blank" class="topnav">jQuery官网</a>
+	<span class="topnav">|</span>
+	<a href="http://jquery.org.cn/" title="jQuery中文网站" target="_blank" class="topnav">jQuery中文网站</a>
+	<span class="topnav">|</span>
+	<a href="http://www.cn-cuckoo.com/" title="1.1版译者" target="_blank" class="topnav">为之漫笔</a>
+	<span class="topnav">|</span>
+	<a href="http://shawphy.com/" title="1.2版翻译整理者" target="_blank" class="topnav">Shawphy</a>
+    <span class="topnav">|</span>
+	<a href="http://www.51toria.cn" title="CHM文档制作者:一揪" target="_blank" class="topnav">CHM文档制作者</a> 
+	<span class="topnav">|</span>
+	<a href="http://dl.getdropbox.com/u/81097/jQueryAPI_CHM.CHM" title="" target="_blank" class="topnav">CHM最新版本下载</a> 
+</div>
+<hr style="color:#595959;" />
+
+<div class="content">
+				<h1>add(expr)</h1>
+				<div class="desc">把与表达式匹配的元素添加到jQuery对象中。这个函数可以用于连接分别与两个表达式匹配的元素结果集。</div>  <hr />
+				<div class="desc">Adds more elements, matched by the given expression, to the set of matched elements.</div>  
+				<h2>返回值</h2>
+				<p class="indent">jQuery</p>
+				<h2>参数</h2>
+				<p class="indent"><strong>expr </strong>(String, DOMElement, Array&lt;DOMElement&gt;) : 用于匹配元素并添加的表达式字符串，或者用于动态生成的HTML代码，如果是一个字符串数组则返回多个元素</p>
+				<h2>示例</h2>
+				<p class="indent">
+					添加一个新元素到一组匹配的元素中，并且这个新元素能匹配给定的表达式。
+				</p>
+				<p class="indent"><strong>HTML 代码:</strong></p>
+				<div class="code">
+					&lt;p&gt;Hello&lt;/p&gt;&lt;span&gt;Hello Again&lt;/span&gt; 
+				</div>
+				<p class="indent"><strong>jQuery 代码:</strong></p>
+				<div class="code">
+					$("p").add("span") 
+				</div>
+				<p class="indent"><strong>结果:</strong></p>
+				<div class="code">
+					[ &lt;p&gt;Hello&lt;/p&gt;, &lt;span&gt;Hello Again&lt;/span&gt; ] 
+				</div>
+				<hr />
+				<p class="indent">
+					动态生成一个元素并添加至匹配的元素中
+				</p>
+				<p class="indent"><strong>HTML 代码:</strong></p>
+				<div class="code">
+					&lt;p&gt;Hello&lt;/p&gt; 
+				</div>
+				<p class="indent"><strong>jQuery 代码:</strong></p>
+				<div class="code">
+					$("p").add("&lt;span&gt;Again&lt;/span&gt;") 
+				</div>
+				<p class="indent"><strong>结果:</strong></p>
+				<div class="code">
+					[ &lt;p&gt;Hello&lt;/p&gt;, &lt;span&gt;Hello Again&lt;/span&gt; ] 
+				</div>
+				<hr />
+				<p class="indent">
+					为匹配的元素添加一个或者多个元素
+				</p>
+				<p class="indent"><strong>HTML 代码:</strong></p>
+				<div class="code">
+					&lt;p&gt;Hello&lt;/p&gt;&lt;p&gt;&lt;span id="a"&gt;Hello Again&lt;/span&gt;&lt;/p&gt; 
+				</div>
+				<p class="indent"><strong>jQuery 代码:</strong></p>
+				<div class="code">
+					$("p").add(document.getElementById("a")) 
+				</div>
+				<p class="indent"><strong>结果:</strong></p>
+				<div class="code">
+					[ &lt;p&gt;Hello&lt;/p&gt;, &lt;p&gt;&lt;span id="a"&gt;Hello Again&lt;/span&gt;&lt;/p&gt;, &lt;span id="a"&gt;Hello Again&lt;/span&gt; ] 
+				</div>
+			</div>
+            
+</body>
+</html>

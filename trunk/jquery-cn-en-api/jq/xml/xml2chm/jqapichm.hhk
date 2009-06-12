@@ -1,0 +1,990 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<meta name="GENERATOR" content="Microsoft&reg; HTML Help Workshop 4.1">
+<!-- Sitemap 1.0 -->
+</HEAD><BODY>
+<UL>
+
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="jQuery(expression, [context])">
+		<param name="Local" value="jQuery_expression_context.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="jQuery(html, [ownerDocument])">
+		<param name="Local" value="jQuery_html_ownerDocument.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="jQuery(elements)">
+		<param name="Local" value="jQuery_elements.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="jQuery(callback)">
+		<param name="Local" value="jQuery_callback.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="each(callback)">
+		<param name="Local" value="each_callback.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="size()">
+		<param name="Local" value="size.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="length">
+		<param name="Local" value="length.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="selector">
+		<param name="Local" value="selector.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="context">
+		<param name="Local" value="context.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="get()">
+		<param name="Local" value="get.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="get(index)">
+		<param name="Local" value="get_index.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="index(subject)">
+		<param name="Local" value="index_subject.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="data(name)">
+		<param name="Local" value="data_name.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="data(name, value)">
+		<param name="Local" value="data_name_value.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="removeData(name)">
+		<param name="Local" value="removeData_name.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="queue(name)">
+		<param name="Local" value="queue_name.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="queue(name, callback)">
+		<param name="Local" value="queue_name_callback.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="queue(name, queue)">
+		<param name="Local" value="queue_name_queue.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="dequeue(name)">
+		<param name="Local" value="dequeue_name.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="fn.extend(object)">
+		<param name="Local" value="jQuery.fn.extend_object.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="extend(object)">
+		<param name="Local" value="jQuery.extend_object.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="noConflict()">
+		<param name="Local" value="jQuery.noConflict.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="noConflict(extreme)">
+		<param name="Local" value="jQuery.noConflict_extreme.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="#id">
+		<param name="Local" value="id.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="element">
+		<param name="Local" value="element.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value=".class">
+		<param name="Local" value="class.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="*">
+		<param name="Local" value="all.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="selector1,selector2,selectorN">
+		<param name="Local" value="multiple.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="ancestor descendant">
+		<param name="Local" value="descendant.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="parent > child">
+		<param name="Local" value="child.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="prev + next">
+		<param name="Local" value="next.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="prev ~ siblings">
+		<param name="Local" value="siblings.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value=":first">
+		<param name="Local" value="first.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value=":last">
+		<param name="Local" value="last.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value=":not">
+		<param name="Local" value="not.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value=":even">
+		<param name="Local" value="even.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value=":odd">
+		<param name="Local" value="odd.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value=":eq">
+		<param name="Local" value="eq.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value=":gt">
+		<param name="Local" value="gt.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value=":lt">
+		<param name="Local" value="lt.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value=":header">
+		<param name="Local" value="header.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value=":animated">
+		<param name="Local" value="animated.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value=":contains">
+		<param name="Local" value="contains.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value=":empty">
+		<param name="Local" value="empty-1.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value=":has">
+		<param name="Local" value="has.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value=":parent">
+		<param name="Local" value="parent.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value=":hidden">
+		<param name="Local" value="hidden-1.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value=":visible">
+		<param name="Local" value="visible.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="[attribute]">
+		<param name="Local" value="attributeHas.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="[attribute=value]">
+		<param name="Local" value="attributeEquals.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="[attribute!=value]">
+		<param name="Local" value="attributeNotEqual.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="[attribute^=value]">
+		<param name="Local" value="attributeStartsWith.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="[attribute$=value]">
+		<param name="Local" value="attributeEndsWith.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="[attribute*=value]">
+		<param name="Local" value="attributeContains.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="[selector1][selector2][selectorN]">
+		<param name="Local" value="attributeMultiple.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value=":nth-child">
+		<param name="Local" value="nthChild.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value=":first-child">
+		<param name="Local" value="firstChild.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value=":last-child">
+		<param name="Local" value="lastChild.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value=":only-child">
+		<param name="Local" value="onlyChild.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value=":input">
+		<param name="Local" value="input.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value=":text">
+		<param name="Local" value="text-1.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value=":password">
+		<param name="Local" value="password.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value=":radio">
+		<param name="Local" value="radio.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value=":checkbox">
+		<param name="Local" value="checkbox.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value=":submit">
+		<param name="Local" value="submit-1.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value=":image">
+		<param name="Local" value="image.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value=":reset">
+		<param name="Local" value="reset.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value=":button">
+		<param name="Local" value="button.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value=":file">
+		<param name="Local" value="file.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value=":hidden">
+		<param name="Local" value="hidden-1.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value=":enabled">
+		<param name="Local" value="enabled.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value=":disabled">
+		<param name="Local" value="disabled.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value=":checked">
+		<param name="Local" value="checked.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value=":selected">
+		<param name="Local" value="selected.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="attr(name)">
+		<param name="Local" value="attr_name.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="attr(properties)">
+		<param name="Local" value="attr_properties.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="attr(key, value)">
+		<param name="Local" value="attr_key_value.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="attr(key, fn)">
+		<param name="Local" value="attr_key_fn.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="removeAttr(name)">
+		<param name="Local" value="removeAttr_name.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="addClass(class)">
+		<param name="Local" value="addClass_class.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="removeClass([class])">
+		<param name="Local" value="removeClass_class.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="toggleClass(class)">
+		<param name="Local" value="toggleClass_class.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="toggleClass(class, switch)">
+		<param name="Local" value="toggleClass_class_switch.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="html()">
+		<param name="Local" value="html.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="html(val)">
+		<param name="Local" value="html_val.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="text()">
+		<param name="Local" value="text.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="text(val)">
+		<param name="Local" value="text_val.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="val()">
+		<param name="Local" value="val.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="val(val)">
+		<param name="Local" value="val_val.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="val(val)">
+		<param name="Local" value="val_val-1.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="eq(index)">
+		<param name="Local" value="eq_index.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="hasClass(class)">
+		<param name="Local" value="hasClass_class.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="filter(expr)">
+		<param name="Local" value="filter_expr.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="filter(fn)">
+		<param name="Local" value="filter_fn.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="is(expr)">
+		<param name="Local" value="is_expr.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="map(callback)">
+		<param name="Local" value="map_callback.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="not(expr)">
+		<param name="Local" value="not_expr.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="slice(start, [end])">
+		<param name="Local" value="slice_start_end.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="add(expr)">
+		<param name="Local" value="add_expr.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="children([expr])">
+		<param name="Local" value="children_expr.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="closest([expr])">
+		<param name="Local" value="closest_expr.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="contents()">
+		<param name="Local" value="contents.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="find(expr)">
+		<param name="Local" value="find_expr.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="next([expr])">
+		<param name="Local" value="next_expr.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="nextAll([expr])">
+		<param name="Local" value="nextAll_expr.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="offsetParent()">
+		<param name="Local" value="offsetParent.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="parent([expr])">
+		<param name="Local" value="parent_expr.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="parents([expr])">
+		<param name="Local" value="parents_expr.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="prev([expr])">
+		<param name="Local" value="prev_expr.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="prevAll([expr])">
+		<param name="Local" value="prevAll_expr.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="siblings([expr])">
+		<param name="Local" value="siblings_expr.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="andSelf()">
+		<param name="Local" value="andSelf.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="end()">
+		<param name="Local" value="end.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="append(content)">
+		<param name="Local" value="append_content.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="appendTo(content)">
+		<param name="Local" value="appendTo_content.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="prepend(content)">
+		<param name="Local" value="prepend_content.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="prependTo(content)">
+		<param name="Local" value="prependTo_content.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="after(content)">
+		<param name="Local" value="after_content.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="before(content)">
+		<param name="Local" value="before_content.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="insertAfter(content)">
+		<param name="Local" value="insertAfter_content.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="insertBefore(content)">
+		<param name="Local" value="insertBefore_content.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="wrap(html)">
+		<param name="Local" value="wrap_html.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="wrap(elem)">
+		<param name="Local" value="wrap_elem.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="wrapAll(html)">
+		<param name="Local" value="wrapAll_html.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="wrapAll(elem)">
+		<param name="Local" value="wrapAll_elem.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="wrapInner(html)">
+		<param name="Local" value="wrapInner_html.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="wrapInner(elem)">
+		<param name="Local" value="wrapInner_elem.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="replaceWith(content)">
+		<param name="Local" value="replaceWith_content.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="replaceAll(selector)">
+		<param name="Local" value="replaceAll_selector.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="empty()">
+		<param name="Local" value="empty.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="remove([expr])">
+		<param name="Local" value="remove_expr.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="clone()">
+		<param name="Local" value="clone.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="clone(true)">
+		<param name="Local" value="clone_true.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="css(name)">
+		<param name="Local" value="css_name.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="css(properties)">
+		<param name="Local" value="css_properties.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="css(name, value)">
+		<param name="Local" value="css_name_value.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="offset()">
+		<param name="Local" value="offset.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="position()">
+		<param name="Local" value="position.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="scrollTop()">
+		<param name="Local" value="scrollTop.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="scrollTop(val)">
+		<param name="Local" value="scrollTop_val.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="scrollLeft()">
+		<param name="Local" value="scrollLeft.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="scrollLeft(val)">
+		<param name="Local" value="scrollLeft_val.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="height()">
+		<param name="Local" value="height.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="height(val)">
+		<param name="Local" value="height_val.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="width()">
+		<param name="Local" value="width.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="width(val)">
+		<param name="Local" value="width_val.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="innerHeight()">
+		<param name="Local" value="innerHeight.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="innerWidth()">
+		<param name="Local" value="innerWidth.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="outerHeight(options)">
+		<param name="Local" value="outerHeight_options.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="outerWidth(options)">
+		<param name="Local" value="outerWidth_options.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="ready(fn)">
+		<param name="Local" value="ready_fn.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="bind(type, [data], fn)">
+		<param name="Local" value="bind_type_data_fn.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="one(type, [data], fn)">
+		<param name="Local" value="one_type_data_fn.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="trigger(type, [data])">
+		<param name="Local" value="trigger_type_data.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="triggerHandler(type, [data])">
+		<param name="Local" value="triggerHandler_type_data.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="unbind([type], [data])">
+		<param name="Local" value="unbind_type_data.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="live(type, fn)">
+		<param name="Local" value="live_type_fn.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="die([type], [fn])">
+		<param name="Local" value="die_type_fn.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="hover(over, out)">
+		<param name="Local" value="hover_over_out.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="toggle(fn, fn2, [fn3, fn4, ...])">
+		<param name="Local" value="toggle_fn_fn2_fn3, fn4, ....xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="blur()">
+		<param name="Local" value="blur.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="blur(fn)">
+		<param name="Local" value="blur_fn.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="change()">
+		<param name="Local" value="change.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="change(fn)">
+		<param name="Local" value="change_fn.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="click()">
+		<param name="Local" value="click.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="click(fn)">
+		<param name="Local" value="click_fn.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="dblclick()">
+		<param name="Local" value="dblclick.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="dblclick(fn)">
+		<param name="Local" value="dblclick_fn.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="error()">
+		<param name="Local" value="error.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="error(fn)">
+		<param name="Local" value="error_fn.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="focus()">
+		<param name="Local" value="focus.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="focus(fn)">
+		<param name="Local" value="focus_fn.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="keydown()">
+		<param name="Local" value="keydown.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="keydown(fn)">
+		<param name="Local" value="keydown_fn.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="keypress()">
+		<param name="Local" value="keypress.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="keypress(fn)">
+		<param name="Local" value="keypress_fn.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="keyup()">
+		<param name="Local" value="keyup.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="keyup(fn)">
+		<param name="Local" value="keyup_fn.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="load(fn)">
+		<param name="Local" value="load_fn.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="mousedown(fn)">
+		<param name="Local" value="mousedown_fn.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="mousemove(fn)">
+		<param name="Local" value="mousemove_fn.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="mouseout(fn)">
+		<param name="Local" value="mouseout_fn.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="mouseover(fn)">
+		<param name="Local" value="mouseover_fn.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="mouseup(fn)">
+		<param name="Local" value="mouseup_fn.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="resize(fn)">
+		<param name="Local" value="resize_fn.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="scroll(fn)">
+		<param name="Local" value="scroll_fn.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="select()">
+		<param name="Local" value="select.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="select(fn)">
+		<param name="Local" value="select_fn.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="submit()">
+		<param name="Local" value="submit.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="submit(fn)">
+		<param name="Local" value="submit_fn.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="unload(fn)">
+		<param name="Local" value="unload_fn.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="show()">
+		<param name="Local" value="show.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="show(speed, [callback])">
+		<param name="Local" value="show_speed_callback.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="hide()">
+		<param name="Local" value="hide.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="hide(speed, [callback])">
+		<param name="Local" value="hide_speed_callback.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="toggle()">
+		<param name="Local" value="toggle.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="toggle(switch)">
+		<param name="Local" value="toggle_switch.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="toggle(speed, [callback])">
+		<param name="Local" value="toggle_speed_callback.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="slideDown(speed, [callback])">
+		<param name="Local" value="slideDown_speed_callback.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="slideUp(speed, [callback])">
+		<param name="Local" value="slideUp_speed_callback.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="slideToggle(speed, [callback])">
+		<param name="Local" value="slideToggle_speed_callback.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="fadeIn(speed, [callback])">
+		<param name="Local" value="fadeIn_speed_callback.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="fadeOut(speed, [callback])">
+		<param name="Local" value="fadeOut_speed_callback.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="fadeTo(speed, opacity, [callback])">
+		<param name="Local" value="fadeTo_speed_opacity_callback.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="animate(params, [duration], [easing], [callback])">
+		<param name="Local" value="animate_params_duration_easing_callback.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="animate(params, options)">
+		<param name="Local" value="animate_params_options.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="stop([clearQueue], [gotoEnd])">
+		<param name="Local" value="stop_clearQueue_gotoEnd.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="fx.off">
+		<param name="Local" value="jQuery.fx.off.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="ajax([options])">
+		<param name="Local" value="jQuery.ajax_options.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="load(url, [data], [callback])">
+		<param name="Local" value="load_url_data_callback.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="get(url, [data], [callback], [type])">
+		<param name="Local" value="jQuery.get_url_data_callback_type.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="getJSON(url, [data], [callback])">
+		<param name="Local" value="jQuery.getJSON_url_data_callback.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="getScript(url, [callback])">
+		<param name="Local" value="jQuery.getScript_url_callback.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="post(url, [data], [callback], [type])">
+		<param name="Local" value="jQuery.post_url_data_callback_type.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="ajaxComplete(callback)">
+		<param name="Local" value="ajaxComplete_callback.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="ajaxError(callback)">
+		<param name="Local" value="ajaxError_callback.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="ajaxSend(callback)">
+		<param name="Local" value="ajaxSend_callback.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="ajaxStart(callback)">
+		<param name="Local" value="ajaxStart_callback.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="ajaxStop(callback)">
+		<param name="Local" value="ajaxStop_callback.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="ajaxSuccess(callback)">
+		<param name="Local" value="ajaxSuccess_callback.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="ajaxSetup([options])">
+		<param name="Local" value="jQuery.ajaxSetup_options.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="serialize()">
+		<param name="Local" value="serialize.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="serializeArray()">
+		<param name="Local" value="serializeArray.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="support">
+		<param name="Local" value="jQuery.support.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="browser">
+		<param name="Local" value="jQuery.browser.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="browser.version">
+		<param name="Local" value="jQuery.browser.version.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="boxModel">
+		<param name="Local" value="jQuery.boxModel.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="each(object, [callback])">
+		<param name="Local" value="jQuery.each_object_callback.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="extend(target, object1, [objectN])">
+		<param name="Local" value="jQuery.extend_deep_target_object1_objectN.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="grep(array, callback, [invert])">
+		<param name="Local" value="jQuery.grep_array_callback_invert.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="makeArray(obj)">
+		<param name="Local" value="jQuery.makeArray_obj.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="map(array, callback)">
+		<param name="Local" value="jQuery.map_array_callback.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="inArray(value, array)">
+		<param name="Local" value="jQuery.inArray_value_array.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="merge(first, second)">
+		<param name="Local" value="jQuery.merge_first_second.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="unique(array)">
+		<param name="Local" value="jQuery.unique_array.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="isArray(obj)">
+		<param name="Local" value="jQuery.isArray_obj.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="isFunction(obj)">
+		<param name="Local" value="jQuery.isFunction_obj.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="trim(str)">
+		<param name="Local" value="jQuery.trim_str.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="param(obj)">
+		<param name="Local" value="jQuery.param_obj.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="关于jQuery 中文文档">
+		<param name="Local" value="aboutXMLDoc.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="关于jQuery 1.3 版翻译">
+		<param name="Local" value="aboutDoc1.3.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="关于jQuery 1.2 版翻译">
+		<param name="Local" value="aboutDoc1.2.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="提交bug及获取更新">
+		<param name="Local" value="bugAndUpdate.xml">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="速查表">
+		<param name="Local" value="cheatsheet.html">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="changelog">
+		<param name="Local" value="changelog.txt">
+		</OBJECT>
+</UL>
+</BODY></HTML>
